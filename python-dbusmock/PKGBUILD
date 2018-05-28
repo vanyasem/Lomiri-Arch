@@ -1,7 +1,6 @@
 # Maintainer: Ivan Semkin (ivan at semkin dot ru)
 
-pkgname=(python-dbusmock python2-dbusmock)
-_pkgname=python-dbusmock
+pkgname=python-dbusmock
 pkgver=0.17.2
 pkgrel=1
 pkgdesc='Mock D-Bus objects for tests'
@@ -15,7 +14,7 @@ source=("https://github.com/martinpitt/python-dbusmock/releases/download/0.17.2/
 sha256sums=('56860530d647410375c85e69d44a97b563ae2b45cf77656f726030dc20b47e03')
 
 #check() {
-#  cd "${srcdir}/${_pkgname}-${pkgver}"
+#  cd "${srcdir}/${pkgname}-${pkgver}"
 #  python setup.py test
 #  python2 setup.py test
 #}
@@ -23,7 +22,7 @@ sha256sums=('56860530d647410375c85e69d44a97b563ae2b45cf77656f726030dc20b47e03')
 package_python-dbusmock() {
   depends=(python)
   makedepends=(python-setuptools)
-  cd "${srcdir}/${_pkgname}-${pkgver}"
+  cd "${srcdir}/${pkgname}-${pkgver}"
   python setup.py install --optimize=1 --root="${pkgdir}/"
 }
 # vim:set ts=2 sw=2 et:

@@ -5,12 +5,11 @@ pkgbase = python-dbusmock
 	url = https://github.com/martinpitt/python-dbusmock
 	arch = any
 	license = LGPL3
+	makedepends = python-setuptools
+	depends = python
 	source = https://github.com/martinpitt/python-dbusmock/releases/download/0.17.2/python-dbusmock-0.17.2.tar.gz
 	sha256sums = 56860530d647410375c85e69d44a97b563ae2b45cf77656f726030dc20b47e03
 
 pkgname = python-dbusmock
 	depends = python
-
-pkgname = python2-dbusmock
-	depends = python2
 
