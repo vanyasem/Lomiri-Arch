@@ -1,0 +1,11 @@
+[submodule "gcovr"]
+	path = gcovr
+	url = https://aur.archlinux.org/gcovr.git
+
+[submodule "lcov"]
+	path = lcov
+	url = https://aur.archlinux.org/lcov.git
+	
+[submodule "lcov-git"]
+	path = lcov-git
+	url = https://aur.archlinux.org/lcov-git.git
