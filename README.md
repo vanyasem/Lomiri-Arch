@@ -24,7 +24,7 @@ _Clickable icons:_
 - [ ] `?whoopsie` [repo](https://bazaar.launchpad.net/~daisy-pluckers/whoopsie/trunk/files)
 - [x] `cmake-extras` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/cmake-extras-git) | [⛔️](https://github.com/ubports/cmake-extras/issues/2)
 - [x] `libqtdbustest` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqtdbustest-git) | [⛔️](https://github.com/ubports/libqtdbustest/issues/1)
-- [ ] `unity-api`
+- [x] `unity-api`[🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity-api-git) | [⛔️](https://github.com/ubports/unity-api/issues/2)
 - [ ] `libertine`
 - [ ] `ubuntu-app-launch`
 - [ ] `content-hub`
