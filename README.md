@@ -7,11 +7,12 @@ Currently it is built for `x86_64` only, but support for `i686` and `arm` (`aarc
 
 ### Progress
 _Clickable icons:_
-🌍 - Available in the repository
-✅ - Available in the AUR
-😜 - Git version is available
-⛔️ - Unresolved issues
-🆗 - Resolved issues
+
+- 🌍 - Available in the repository
+- ✅ - Available in the AUR
+- 😜 - Git version is available
+- ⛔️ - Unresolved issues
+- 🆗 - Resolved issues
 
 - [x] `mir` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/mir) [😜](https://aur.archlinux.org/packages/mir-git) | [🆗](https://github.com/MirServer/mir/commit/e6ba0de363320feab9359821c96d69ff61a7f121) 
 - [ ] `ubuntu-download-manager` [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/2) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/3)
@@ -105,7 +106,7 @@ _Your Arch repository will settle in the `unity8` folder._
 Clone this repo's PKGBUILDs:
 ```
 cd PKGBUILDs
-git clone https://github.com/vanyasem/Unity8-Arch.git
+git clone https://github.com/vanyasem/Unity8-Arch.git ./
 git submodule init
 git submodule update
 cd ..
