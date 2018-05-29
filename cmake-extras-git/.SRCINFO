@@ -8,7 +8,9 @@ pkgbase = cmake-extras-git
 	makedepends = git
 	makedepends = cmake
 	source = git+https://github.com/ubports/cmake-extras.git
+	source = Gtest.patch
 	sha256sums = SKIP
+	sha256sums = 84880029cf774b41e6f61f4977bdc3a36621a571087d272a44aa3776a4f883e0
 
 pkgname = cmake-extras-git
 

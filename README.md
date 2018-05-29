@@ -22,8 +22,7 @@ _Clickable icons:_
 - [ ] `history-service`
 - [ ] `ubuntu-ui-toolkit`
 - [ ] `?whoopsie` [repo](https://bazaar.launchpad.net/~daisy-pluckers/whoopsie/trunk/files)
-- [ ] `cmake-extras`
-- [ ] `libqtdbustest`
+- [x] `cmake-extras` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/cmake-extras-git) [⛔️](https://github.com/ubports/cmake-extras/issues/2)
 - [ ] `unity-api`
 - [ ] `ubuntu-app-launch`
 - [ ] `content-hub`

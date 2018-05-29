@@ -10,12 +10,19 @@ arch=(x86_64)
 license=(GPL3)
 depends=()
 makedepends=(git cmake)
-source=('git+https://github.com/ubports/cmake-extras.git')
-sha256sums=('SKIP')
+source=('git+https://github.com/ubports/cmake-extras.git'
+        'Gtest.patch')
+sha256sums=('SKIP'
+            '84880029cf774b41e6f61f4977bdc3a36621a571087d272a44aa3776a4f883e0')
 
 pkgver() {
   cd ${_pkgname}
   git describe --always
+}
+
+prepare() {
+  cd ${_pkgname}
+  patch -Np1 -i "${srcdir}/Gtest.patch"
 }
 
 build() {
