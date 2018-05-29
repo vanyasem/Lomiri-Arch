@@ -11,8 +11,8 @@ arch=(x86_64)
 license=(GPL LGPL)
 conflicts=(mir)
 provides=(mir)
-depends=(boost gcovr lcov capnproto google-glog gflags valgrind liburcu lttng-ust libepoxy nettle libinput libxml++2.6 libxkbcommon python-pillow freetype2 gmock libevdev umockdev python-dbusmock python-dbus python-gobject)
-makedepends=(git glm doxygen)
+depends=(boost gcovr lcov capnproto google-glog gflags libglvnd valgrind liburcu lttng-ust libepoxy nettle libinput libxml++2.6 libxkbcommon python-pillow freetype2 gmock libevdev umockdev python-dbusmock protobuf python-dbus python-gobject)
+makedepends=(git glm doxygen cmake)
 optdepends=('qterminal: required for miral demos'
             'xcursor-dmz: required for miral demos'
             'ttf-ubuntu-font-family: required for miral demos'
