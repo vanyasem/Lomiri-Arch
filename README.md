@@ -25,6 +25,7 @@ _Clickable icons:_
 - [x] `cmake-extras` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/cmake-extras-git) | [⛔️](https://github.com/ubports/cmake-extras/issues/2)
 - [x] `libqtdbustest` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqtdbustest-git) | [⛔️](https://github.com/ubports/libqtdbustest/issues/1)
 - [ ] `unity-api`
+- [ ] `libertine`
 - [ ] `ubuntu-app-launch`
 - [ ] `content-hub`
 - [ ] `qtmir`
