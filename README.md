@@ -20,7 +20,6 @@ _Clickable icons:_
 - [ ] `settings-components`
 - [ ] `history-service`
 - [ ] `ubuntu-ui-toolkit`
-- [ ] `libertine`
 - [ ] `ubuntu-app-launch`
 - [ ] `content-hub`
 - [ ] `qtmir`
