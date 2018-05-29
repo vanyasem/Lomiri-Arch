@@ -8,7 +8,7 @@ pkgdesc='API for Unity shell integration'
 url='https://github.com/ubports/unity-api'
 arch=(x86_64)
 license=(LGPL3)
-depends=()
+depends=(qt5-quickcontrols)
 makedepends=(git cmake libqtdbustest-git)
 source=('git+https://github.com/ubports/unity-api.git'
         'Qt511.patch')
