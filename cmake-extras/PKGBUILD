@@ -1,0 +1,31 @@
+# Maintainer: Ivan Semkin (ivan at semkin dot ru)
+
+pkgname=cmake-extras-git
+_pkgname=cmake-extras
+pkgver=7a46399
+pkgrel=1
+pkgdesc='A collection of add-ons for the CMake build tool'
+url='https://github.com/ubports/cmake-extras'
+arch=(x86_64)
+license=(GPL3)
+depends=()
+makedepends=(git cmake)
+source=('git+https://github.com/ubports/cmake-extras.git')
+sha256sums=('SKIP')
+
+pkgver() {
+  cd ${_pkgname}
+  git describe --always
+}
+
+build() {
+    cd ${_pkgname}
+    cmake .
+    make
+}
+
+package() {
+    cd ${_pkgname}
+    make DESTDIR="${pkgdir}/" install
+}
+# vim:set ts=2 sw=2 et:

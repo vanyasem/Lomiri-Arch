@@ -21,6 +21,10 @@ _Clickable icons:_
 - [ ] `settings-components`
 - [ ] `history-service`
 - [ ] `ubuntu-ui-toolkit`
+- [ ] `?whoopsie` [repo](https://bazaar.launchpad.net/~daisy-pluckers/whoopsie/trunk/files)
+- [ ] `cmake-extras`
+- [ ] `libqtdbustest`
+- [ ] `unity-api`
 - [ ] `ubuntu-app-launch`
 - [ ] `content-hub`
 - [ ] `qtmir`

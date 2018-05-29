@@ -1,0 +1,14 @@
+pkgbase = cmake-extras-git
+	pkgdesc = A collection of add-ons for the CMake build tool
+	pkgver = 7a46399
+	pkgrel = 1
+	url = https://github.com/ubports/cmake-extras
+	arch = x86_64
+	license = GPL3
+	makedepends = git
+	makedepends = cmake
+	source = git+https://github.com/ubports/cmake-extras.git
+	sha256sums = SKIP
+
+pkgname = cmake-extras-git
+
