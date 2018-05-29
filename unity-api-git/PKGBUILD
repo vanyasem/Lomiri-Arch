@@ -1,0 +1,41 @@
+# Maintainer: Ivan Semkin (ivan at semkin dot ru)
+
+pkgname=unity-api-git
+_pkgname=unity-api
+pkgver=b56d9b0
+pkgrel=1
+pkgdesc='API for Unity shell integration'
+url='https://github.com/ubports/unity-api'
+arch=(x86_64)
+license=(LGPL3)
+depends=()
+makedepends=(git cmake libqtdbustest-git)
+source=('git+https://github.com/ubports/unity-api.git'
+        'Qt511.patch')
+sha256sums=('SKIP'
+            '1abc61b62c3e0e2110b6a765064b7a73b8c6bfa7f24ad0065bea940140810be5')
+
+pkgver() {
+  cd ${_pkgname}
+  git describe --always
+}
+
+prepare() {
+  cd ${_pkgname}
+  git checkout bionic
+  patch -Np1 -i "${srcdir}/Qt511.patch"
+}
+
+build() {
+  cd ${_pkgname}
+  mkdir -p build
+  cd build
+  PKG_CONFIG_PATH=/usr/local/lib64/pkgconfig cmake ..
+  make
+}
+
+package() {
+  cd ${_pkgname}/build
+  make DESTDIR="${pkgdir}/" install
+}
+# vim:set ts=2 sw=2 et:

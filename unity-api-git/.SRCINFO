@@ -1,0 +1,17 @@
+pkgbase = unity-api-git
+	pkgdesc = API for Unity shell integration
+	pkgver = b56d9b0
+	pkgrel = 1
+	url = https://github.com/ubports/unity-api
+	arch = x86_64
+	license = LGPL3
+	makedepends = git
+	makedepends = cmake
+	makedepends = libqtdbustest-git
+	source = git+https://github.com/ubports/unity-api.git
+	source = Qt511.patch
+	sha256sums = SKIP
+	sha256sums = 1abc61b62c3e0e2110b6a765064b7a73b8c6bfa7f24ad0065bea940140810be5
+
+pkgname = unity-api-git
+
