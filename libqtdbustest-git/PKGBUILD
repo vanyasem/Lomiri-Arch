@@ -8,7 +8,7 @@ pkgdesc='Library for testing DBus interactions using Qt'
 url='https://github.com/ubports/libqtdbustest'
 arch=(x86_64)
 license=(LGPL3)
-depends=(gcovr lcov gmock)
+depends=(gcovr lcov gmock qt5-base)
 makedepends=(git cmake cmake-extras-git)
 source=('git+https://github.com/ubports/libqtdbustest.git'
         'Qt511.patch')
