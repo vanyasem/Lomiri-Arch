@@ -3,7 +3,7 @@
 
 pkgname=mir-git
 _pkgname=mir
-pkgver=v0.31.2+334+ge26dbf576b
+pkgver=v0.31.2+344+gffb233ad0b
 pkgrel=1
 pkgdesc='The Mir compositor'
 url='https://mir-server.io'
@@ -42,6 +42,5 @@ build() {
 package() {
     cd ${_pkgname}/build-linux-x86
     make DESTDIR="${pkgdir}/" install
-
 }
 # vim:set ts=2 sw=2 et:

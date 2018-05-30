@@ -1,6 +1,6 @@
 pkgbase = cmake-extras-git
 	pkgdesc = A collection of add-ons for the CMake build tool
-	pkgver = 9d76947
+	pkgver = 820b661
 	pkgrel = 1
 	url = https://github.com/ubports/cmake-extras
 	arch = x86_64
