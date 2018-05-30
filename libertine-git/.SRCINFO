@@ -1,0 +1,19 @@
+pkgbase = libertine-git
+	pkgdesc = A sandbox for running legacy deb-based X11 applications
+	pkgver = 4ae89b2
+	pkgrel = 1
+	url = https://github.com/ubports/libertine
+	arch = x86_64
+	license = GPL3
+	makedepends = git
+	makedepends = cmake
+	makedepends = cmake-extras-git
+	makedepends = dbus-test-runner
+	makedepends = intltool
+	source = git+https://github.com/ubports/libertine.git
+	source = GtestInclude.patch
+	sha256sums = SKIP
+	sha256sums = b2159654ed377606e5dc503105837528e6b6b15440067fbd8ed6b12470de0992
+
+pkgname = libertine-git
+

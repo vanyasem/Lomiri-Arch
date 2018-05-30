@@ -1,0 +1,41 @@
+# Maintainer: Ivan Semkin (ivan at semkin dot ru)
+
+pkgname=libertine-git
+_pkgname=libertine
+pkgver=4ae89b2
+pkgrel=1
+pkgdesc='A sandbox for running legacy deb-based X11 applications'
+url='https://github.com/ubports/libertine'
+arch=(x86_64)
+license=(GPL3)
+depends=()
+makedepends=(git cmake cmake-extras-git dbus-test-runner intltool)
+source=('git+https://github.com/ubports/libertine.git'
+        'GtestInclude.patch')
+sha256sums=('SKIP'
+            'b2159654ed377606e5dc503105837528e6b6b15440067fbd8ed6b12470de0992')
+
+pkgver() {
+  cd ${_pkgname}
+  git describe --always
+}
+
+prepare() {
+  cd ${_pkgname}
+  git checkout bionic
+}
+
+build() {
+  cd ${_pkgname}
+  mkdir -p build
+  cd build
+  cmake ..
+  make
+}
+
+package() {
+  cd ${_pkgname}/build
+  patch -Np1 -i "${srcdir}/GtestInclude.patch"
+  make DESTDIR="${pkgdir}/" install
+}
+# vim:set ts=2 sw=2 et:

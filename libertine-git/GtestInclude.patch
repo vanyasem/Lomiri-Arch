@@ -1,0 +1,10 @@
+--- build/tests/unit/gtest/cmake_install_orig.cmake	2018-05-30 14:26:46.000000000 +0300
++++ build/tests/unit/gtest/cmake_install.cmake	2018-05-30 14:32:54.605469936 +0300
+@@ -46,6 +46,6 @@
+ endif()
+ 
+ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/usr/src/gtest/include/gtest")
++  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/usr/src/gtest")
+ endif()
+ 

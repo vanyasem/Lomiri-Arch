@@ -26,7 +26,7 @@ _Clickable icons:_
 - [x] `libqtdbustest` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqtdbustest-git) | [⛔️](https://github.com/ubports/libqtdbustest/issues/1)
 - [x] `dbus-test-runner` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/dbus-test-runner)
 - [x] `unity-api`[🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity-api-git) | [⛔️](https://github.com/ubports/unity-api/issues/2)
-- [ ] `libertine`
+- [x] `libertine` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libertine-git)
 - [ ] `ubuntu-app-launch`
 - [ ] `content-hub`
 - [ ] `qtmir`
