@@ -100,6 +100,8 @@ Server = file:///your/path/$repo/os/$arch
 ```
 
 Assemble the build enviroment:
+
+_Don't forget to configure PACKAGER in /etc/makepkg.conf_
 ```
 sudo pacman -S devtools
 mkdir chroot-x86_64
@@ -148,17 +150,5 @@ builds:
 Build the packages:
 
 _If your decided to use your local repo, you have to build packages in this specific order, as some packages depend on each other_
-```
-# Mir:
-guzuta omakase build lcov
-guzuta omakase build gcovr
-guzuta omakase build python-dbusmock
-guzuta omakase build mir
-guzuta omakase build mir-git
 
-guzuta omakase build cmake-extras-git
-guzuta omakase build libqtdbustest-git
-guzuta omakase build unity-api-git
-guzuta omakase build dbus-test-runner
-guzuta omakase build libertine-git
-```
+Run `rebuild-repo.sh` from the PKGBUILDs directory.
