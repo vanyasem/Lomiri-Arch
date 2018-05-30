@@ -105,7 +105,7 @@ Assemble the build enviroment:
 
 _Don't forget to configure PACKAGER in /etc/makepkg.conf_
 
-_If you want to cross-compile for i686, follow the guide [on the wiki](https://wiki.archlinux.org/index.php/Building_32-bit_packages_on_a_64-bit_system). But as Arch doesn't support i686 by default now, use the [mirrorlist](https://raw.githubusercontent.com/archlinux32/packages/master/core/pacman-mirrorlist/mirrorlist) of the ArchLinux32 project._
+_If you want to cross-compile packages for `i686`, then follow the guide [on the wiki](https://wiki.archlinux.org/index.php/Building_32-bit_packages_on_a_64-bit_system). But as Arch doesn't officially support i686 now, use the [mirrorlist](https://raw.githubusercontent.com/archlinux32/packages/master/core/pacman-mirrorlist/mirrorlist) of the ArchLinux32 project. You will also need to trust 2 GPG keys: `255A76DB9A12601A` and `C8E8F5A0AF9BA7E7` same way as desribed above with my key._
 ```
 sudo pacman -S devtools
 mkdir chroot-x86_64
