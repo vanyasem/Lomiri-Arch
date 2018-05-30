@@ -71,6 +71,8 @@ sudo pacman -S !!!TBD!!!
 You can compile the packages yourself from the AUR.
 
 You can either do it manually for each dependency:
+
+_There is a helper script (`build-packages.sh`) in the root of this repository that will build all packages for you._
 ```
 PACKAGE = !!!TBD!!!
 git clone https://aur.archlinux.org/$PACKAGE.git
@@ -151,4 +153,4 @@ Build the packages:
 
 _If your decided to use your local repo, you have to build packages in this specific order, as some packages depend on each other_
 
-Run `rebuild-repo.sh` from the PKGBUILDs directory.
+Run `rebuild-repo.sh` from the PKGBUILDs directory. Make sure to configure sudo timeout for your build user, as it defaults to 5 minutes.
