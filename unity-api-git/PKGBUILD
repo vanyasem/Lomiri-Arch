@@ -30,7 +30,7 @@ build() {
   cd ${_pkgname}
   mkdir -p build
   cd build
-  PKG_CONFIG_PATH=/usr/local/lib64/pkgconfig cmake -DCMAKE_INSTALL_PREFIX="${pkgdir}/" ..
+  PKG_CONFIG_PATH=/usr/local/lib64/pkgconfig cmake -DCMAKE_INSTALL_PREFIX="${pkgdir}/usr" ..
   make
 }
 
