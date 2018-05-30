@@ -8,6 +8,7 @@ pkgbase = unity-api-git
 	makedepends = git
 	makedepends = cmake
 	makedepends = libqtdbustest-git
+	depends = qt5-quickcontrols
 	source = git+https://github.com/ubports/unity-api.git
 	source = Qt511.patch
 	sha256sums = SKIP

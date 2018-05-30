@@ -1,0 +1,21 @@
+pkgbase = libqtdbustest-git
+	pkgdesc = Library for testing DBus interactions using Qt
+	pkgver = d5c235e
+	pkgrel = 1
+	url = https://github.com/ubports/libqtdbustest
+	arch = x86_64
+	license = LGPL3
+	makedepends = git
+	makedepends = cmake
+	makedepends = cmake-extras-git
+	depends = gcovr
+	depends = lcov
+	depends = gmock
+	depends = qt5-base
+	source = git+https://github.com/ubports/libqtdbustest.git
+	source = Qt511.patch
+	sha256sums = SKIP
+	sha256sums = 7a6ef4b6cf69be9396d19591079fb9e31fcd11673586f762318fb2bff36ed078
+
+pkgname = libqtdbustest-git
+
