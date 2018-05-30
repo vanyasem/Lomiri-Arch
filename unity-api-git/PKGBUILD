@@ -30,12 +30,12 @@ build() {
   cd ${_pkgname}
   mkdir -p build
   cd build
-  PKG_CONFIG_PATH=/usr/local/lib64/pkgconfig cmake ..
+  PKG_CONFIG_PATH=/usr/local/lib64/pkgconfig cmake -DCMAKE_INSTALL_PREFIX="${pkgdir}/" ..
   make
 }
 
 package() {
   cd ${_pkgname}/build
-  make DESTDIR="${pkgdir}/" install
+  make install
 }
 # vim:set ts=2 sw=2 et:
