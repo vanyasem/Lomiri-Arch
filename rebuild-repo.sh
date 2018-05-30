@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # TODO add --clean option
 set -e
-sudo test
+sudo test true
 
 cd ..
 guzuta omakase build lcov

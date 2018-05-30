@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-sudo test
 set -e
+sudo test true
 
 cmd_usage() {
   cat <<-_EOF
