@@ -3,7 +3,7 @@
 ## About
 This project aims to bring [Unity8](https://github.com/ubports/unity8-build) DE to Arch GNU/Linux.
 
-Currently it is built for `x86_64` only, but support for `i686` and `arm` (`aarch64`) is on the roadmap.
+It is built for `x86_64`, `i686`, `armv7h`, and `aarch64`. ARM builds are experimental.
 
 ### Progress
 _Clickable icons:_
@@ -15,13 +15,12 @@ _Clickable icons:_
 - 🆗 - Resolved issues
 
 - [x] `mir` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/mir) [😜](https://aur.archlinux.org/packages/mir-git) | [🆗](https://github.com/MirServer/mir/commit/e6ba0de363320feab9359821c96d69ff61a7f121) 
-- [ ] `ubuntu-download-manager` [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/2) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/3) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/4) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/6)
+- [ ] `ubuntu-download-manager` [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/2) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/3) [🆗](https://github.com/ubports/ubuntu-download-manager/issues/4) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/6)
 - [ ] `url-dispatcher`
 - [ ] `thumbnailer`
 - [ ] `settings-components`
 - [ ] `history-service`
 - [ ] `ubuntu-ui-toolkit`
-- [ ] `?whoopsie` [repo](https://bazaar.launchpad.net/~daisy-pluckers/whoopsie/trunk/files)
 - [x] `cmake-extras` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/cmake-extras-git) | [⛔️](https://github.com/ubports/cmake-extras/issues/2)
 - [x] `libqtdbustest` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqtdbustest-git) | [⛔️](https://github.com/ubports/libqtdbustest/issues/1)
 - [x] `dbus-test-runner` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/dbus-test-runner)
@@ -86,18 +85,24 @@ pacaur -S !!!TBD!!!
 ```
 
 ## (Advanced) Configure a local repository / build the packages
+
+The following instructions assume that you're building `x86_64` packages on a `x86_64` host.
+
+You might want to take a look at [building ARM packgages on `x86_64`](BUILDING-ARM.md), and [building `i686` packgages on `x86_64`](BUILDING-I686.md).
+
 Add the package repository to `/etc/pacman.conf`:
 
-_You can add my repository, or you could specify your own local repo that you will create in the next step. Read more [on the wiki](https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Custom_local_repository)._
+_You can add my repository, or you could specify your own local repo that you will create in the next step. Read more [on the wiki](https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Custom_local_repository). You have to trust my GPG key on the host system prior to building the chroot if you decide to go with my server._
+
 ```
 [unity8]
-SigLevel = Never
+SigLevel = Required
 Server = https://unity8.mynameisivan.ru/$repo/os/$arch
 ```
 _or_
 ```
 [unity8]
-SigLevel = Never
+SigLevel = Required
 Server = file:///your/path/$repo/os/$arch
 ```
 
@@ -105,12 +110,12 @@ Assemble the build enviroment:
 
 _Don't forget to configure PACKAGER in /etc/makepkg.conf_
 
-_If you want to cross-compile packages for `i686`, then follow the guide [on the wiki](https://wiki.archlinux.org/index.php/Building_32-bit_packages_on_a_64-bit_system). But as Arch doesn't officially support i686 now, use the [mirrorlist](https://raw.githubusercontent.com/archlinux32/packages/master/core/pacman-mirrorlist/mirrorlist) of the ArchLinux32 project. You will also need to trust 2 GPG keys: `255A76DB9A12601A` and `C8E8F5A0AF9BA7E7` same way as desribed above with my key._
 ```
 sudo pacman -S devtools
 mkdir chroot-x86_64
-sudo mkarchroot -C /etc/pacman.conf -M /etc/makepkg.conf ./chroot-x86_64/root base base-devel git
-mkdir unity8 sources logs PKGBUILDs
+sudo mkdir -p /var/cache/pacman-x86_64/pkg/
+sudo mkarchroot -C /etc/pacman.conf -M /etc/makepkg.conf -c /var/cache/pacman-x86_64/pkg/ ./chroot-x86_64/root base base-devel git
+mkdir -p unity8 sources logs PKGBUILDs
 ```
 
 _Your Arch repository will settle in the `unity8` folder._
