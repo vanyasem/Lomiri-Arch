@@ -30,7 +30,7 @@ _If you want to cross-compile packages for `i686`, then follow the guide [on the
 sudo pacman -S devtools
 mkdir chroot-i686
 sudo mkdir -p /var/cache/pacman-i686/pkg/
-sudo mkarchroot -C /etc/pacman.conf -M /etc/makepkg.conf -c /var/cache/pacman-i686/pkg/ ./chroot-i686/root base base-devel git
+sudo mkarchroot -C /etc/pacman.conf.i686 -M /etc/makepkg.conf.i686 -c /var/cache/pacman-i686/pkg/ ./chroot-i686/root base base-devel git
 mkdir -p unity8 sources logs PKGBUILDs
 ```
 

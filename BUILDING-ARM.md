@@ -24,14 +24,14 @@ Assemble the build enviroment:
 
 _Don't forget to configure PACKAGER in /etc/makepkg.conf_
 
-_The following commands use `aarch64` as an architecture. If you want to build packages for `armv7h`, just replace `aarch64` with `arm`.
+_The following commands use `aarch64` as an architecture. If you want to build packages for `armv7`, just replace `aarch64` with `armv7h`, and use `/usr/bin/qemu-arm-static` as a QEMU interpreter.
 
 _Install `qemu-user-static` from AUR. Follow the same steps as you would for `i686`, but use the values from the [ArchLinuxArm project.](http://mirror.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz). You will also need to edit `/usr/bin/makechrootpkg` to pass `-s` to every `arch-nspawn` call. Hack-ish, but it does the trick.
 ```
 sudo pacman -S devtools
 mkdir chroot-aarch64
 sudo mkdir -p /var/cache/pacman-aarch64/pkg/
-sudo mkarchroot -f /usr/bin/qemu-aarch64-static -C /etc/pacman.conf -M /etc/makepkg.conf -c /var/cache/pacman-aarch64/pkg/ ./chroot-aarch64/root base base-devel git
+sudo mkarchroot -f /usr/bin/qemu-aarch64-static -C /etc/pacman.conf.aarch64 -M /etc/makepkg.conf.aarch64 -c /var/cache/pacman-aarch64/pkg/ ./chroot-aarch64/root base base-devel git
 mkdir -p unity8 sources logs PKGBUILDs
 ```
 
