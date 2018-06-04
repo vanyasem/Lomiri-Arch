@@ -1,0 +1,13 @@
+pkgbase = lxc-android-git
+	pkgdesc = LXC container configuration for Android
+	pkgver = cd1be3f
+	pkgrel = 1
+	url = https://github.com/Halium/lxc-android
+	arch = armv7h
+	arch = aarch64
+	license = Apache
+	source = git+https://github.com/Halium/lxc-android.git
+	sha256sums = SKIP
+
+pkgname = lxc-android-git
+

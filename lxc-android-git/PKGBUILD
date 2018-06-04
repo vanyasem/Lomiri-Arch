@@ -1,0 +1,56 @@
+# Maintainer: Ivan Semkin <ivan at semkin dot org>
+
+pkgname=lxc-android-git
+_pkgname=lxc-android
+pkgver=cd1be3f
+pkgrel=1
+pkgdesc='LXC container configuration for Android'
+url='https://github.com/Halium/lxc-android'
+arch=(armv7h aarch64)
+license=(Apache)
+source=('git+https://github.com/Halium/lxc-android.git')
+sha256sums=(SKIP)
+
+pkgver() {
+  cd ${_pkgname}
+  git describe --always
+}
+
+build() {
+  cd ${_pkgname}
+}
+
+package() {
+  cd ${_pkgname}
+
+  install -d ${pkgdir}/etc/systemd/system/systemd-udevd.service.d/
+  install -m 644 etc/systemd/system/systemd-udevd.service.d/10_copy-device-udev-rules.conf ${pkgdir}/etc/systemd/system/systemd-udevd.service.d/
+  
+  install -d ${pkgdir}/etc/udev/rules.d/
+  install -m 644 etc/udev/rules.d/50-firmware.rules ${pkgdir}/etc/udev/rules.d/
+  install -m 644 etc/udev/rules.d/60-persistent-v4l.rules ${pkgdir}/etc/udev/rules.d/
+  install -m 644 etc/udev/rules.d/90-alsa-restore.rules ${pkgdir}/etc/udev/rules.d/
+  install -m 644 etc/udev/rules.d/90-alsa-ucm.rules ${pkgdir}/etc/udev/rules.d/
+  
+  install -d ${pkgdir}/usr/lib/systemd/system/
+  install -m 644 lib/systemd/system/adbd.service ${pkgdir}/usr/lib/systemd/system/
+  install -m 644 lib/systemd/system/android-mount.service ${pkgdir}/usr/lib/systemd/system/
+  install -m 644 lib/systemd/system/system.mount ${pkgdir}/usr/lib/systemd/system/
+  
+  install -d ${pkgdir}/usr/lib/udev/rules.d/
+  install -m 644 lib/udev/rules.d/65-android.rules ${pkgdir}/usr/lib/udev/rules.d/
+  install -m 644 lib/udev/rules.d/99-android.rules ${pkgdir}/usr/lib/udev/rules.d/
+  
+  install -d ${pkgdir}/usr/lib/android-tools-adbd/
+  install -m 755 usr/lib/android-tools-adbd/pre-start ${pkgdir}/usr/lib/android-tools-adbd/
+  
+  install -d ${pkgdir}/usr/lib/lxc-android/
+  install -m 644 usr/lib/lxc-android/70-*.rules ${pkgdir}/usr/lib/lxc-android/
+  install -m 755 usr/lib/lxc-android/copy-udev-rules ${pkgdir}/usr/lib/lxc-android/
+  install -m 755 usr/lib/lxc-android/mount-android ${pkgdir}/usr/lib/lxc-android/
+  
+  install -d ${pkgdir}/var/lib/lxc/android/
+  install -m 644 var/lib/lxc/android/config ${pkgdir}/var/lib/lxc/android/
+  install -m 755 var/lib/lxc/android/pre-start.sh ${pkgdir}/var/lib/lxc/android/
+}
+# vim:set ts=2 sw=2 et:

@@ -49,7 +49,7 @@ _Clickable icons:_
 - [x] `hybris-usb` submodule [⛔️](https://aur.archlinux.org/pkgbase/hybris-usb/?comments=all)
 - [ ] `android-headers` submodule
 - [ ] `libhybris-git` submodule
-- [ ] `lxc-android` submodule
+- [x] `lxc-android` [⛔️](https://github.com/Halium/lxc-android/issues/13)
 
 ## Install Unity8 (not implemented, boilerplate text)
 ### Option 1:
