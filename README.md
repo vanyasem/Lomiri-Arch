@@ -15,8 +15,8 @@ _Clickable icons:_
 - 🆗 - Resolved issues
 
 **Mir packages:**
-- [x] `lcov` submodule
-- [x] `gcovr` submodule
+- [x] `lcov` [submodule](https://aur.archlinux.org/packages/lcov/)
+- [x] `gcovr` [submodule](https://aur.archlinux.org/packages/gcovr/)
 - [x] `python-dbusmock` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/python-dbusmock) [✅](https://aur.archlinux.org/packages/python-dbusmock/) [😜](https://aur.archlinux.org/packages/mir-git)
 - [x] `mir` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/mir) [😜](https://aur.archlinux.org/packages/mir-git) | [🆗](https://github.com/MirServer/mir/commit/e6ba0de363320feab9359821c96d69ff61a7f121)
 
@@ -26,8 +26,8 @@ _Clickable icons:_
 - [x] `dbus-test-runner` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/dbus-test-runner) | [⛔️](https://aur.archlinux.org/pkgbase/dbus-test-runner/flag-comment/)
 - [x] `unity-api`[🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity-api-git) | [⛔️](https://github.com/ubports/unity-api/issues/2)
 - [x] `libertine` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libertine-git) | [⛔️](https://github.com/ubports/libertine/issues/3)
-- [ ] `ubuntu-download-manager` [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/2) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/3) [🆗](https://github.com/ubports/ubuntu-download-manager/issues/4) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/6)
-- [ ] `url-dispatcher`
+- [ ] `ubuntu-download-manager` [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/2) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/3) [🆗](https://github.com/ubports/ubuntu-download-manager/issues/4) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/6) [🆗](https://github.com/ubports/ubuntu-app-launch/pull/1)
+- [ ] `url-dispatcher` [🆗](https://github.com/ubports/url-dispatcher/pull/1)
 - [ ] `thumbnailer`
 - [ ] `settings-components`
 - [ ] `history-service`
@@ -46,10 +46,10 @@ _Clickable icons:_
 - [ ] Probably more
 
 **Halium packages (`armv7h`, `aarch64`):**
-- [x] `hybris-usb` submodule [⛔️](https://aur.archlinux.org/pkgbase/hybris-usb/?comments=all)
+- [x] `hybris-usb` [submodule](https://aur.archlinux.org/packages/hybris-usb/) [⛔️](https://aur.archlinux.org/pkgbase/hybris-usb/?comments=all)
 - [ ] `android-headers` submodule
 - [ ] `libhybris-git` submodule
-- [x] `lxc-android` [⛔️](https://github.com/Halium/lxc-android/issues/13)
+- [x] `lxc-android` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/lxc-android-git) | [⛔️](https://github.com/Halium/lxc-android/issues/13)
 
 ## Install Unity8 (not implemented, boilerplate text)
 ### Option 1:
