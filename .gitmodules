@@ -5,3 +5,7 @@
 [submodule "lcov"]
 	path = lcov
 	url = https://aur.archlinux.org/lcov.git
+
+[submodule "hybris-usb"]
+	path = hybris-usb
+	url = https://aur.archlinux.org/hybris-usb.git
