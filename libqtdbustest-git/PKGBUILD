@@ -3,7 +3,7 @@
 pkgname=libqtdbustest-git
 _pkgname=libqtdbustest
 pkgver=d5c235e
-pkgrel=1
+pkgrel=2
 pkgdesc='Library for testing DBus interactions using Qt'
 url='https://github.com/ubports/libqtdbustest'
 arch=(x86_64 i686 armv7h aarch64)
@@ -27,7 +27,7 @@ prepare() {
 
 build() {
   cd ${_pkgname}
-  cmake .
+  cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" -DCMAKE_INSTALL_LIBEXECDIR="lib/${_pkgname}/" .
   make
 }
 
