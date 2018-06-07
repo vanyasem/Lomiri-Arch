@@ -1,7 +1,7 @@
 pkgbase = mir
 	pkgdesc = Canonical's display server
 	pkgver = 0.31.2
-	pkgrel = 2
+	pkgrel = 3
 	url = https://mir-server.io
 	arch = x86_64
 	arch = i686
@@ -36,6 +36,8 @@ pkgbase = mir
 	depends = protobuf
 	depends = python-dbus
 	depends = python-gobject
+	depends = hicolor-icon-theme
+	depends = lib32-glibc
 	optdepends = qterminal: required for miral demos
 	optdepends = xcursor-dmz: required for miral demos
 	optdepends = ttf-ubuntu-font-family: required for miral demos
