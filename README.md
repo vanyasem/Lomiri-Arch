@@ -17,7 +17,7 @@ _Clickable icons:_
 **Mir packages:**
 - [x] `lcov` [submodule](https://aur.archlinux.org/packages/lcov/)
 - [x] `gcovr` [submodule](https://aur.archlinux.org/packages/gcovr/)
-- [x] `python-dbusmock` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/python-dbusmock) [✅](https://aur.archlinux.org/packages/python-dbusmock/) [😜](https://aur.archlinux.org/packages/mir-git)
+- [x] `python-dbusmock` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/python-dbusmock) [✅](https://aur.archlinux.org/packages/python-dbusmock/) [😜](https://aur.archlinux.org/packages/python-dbusmock-git/)
 - [x] `mir` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/mir) [😜](https://aur.archlinux.org/packages/mir-git) | [🆗](https://github.com/MirServer/mir/commit/e6ba0de363320feab9359821c96d69ff61a7f121)
 
 **Unity8 packages:**
@@ -46,8 +46,8 @@ _Clickable icons:_
 - [ ] Probably more
 
 **Halium packages (`armv7h`, `aarch64`):**
-- [x] `hybris-usb` [submodule](https://aur.archlinux.org/packages/hybris-usb/) [⛔️](https://aur.archlinux.org/pkgbase/hybris-usb/?comments=all)
-- [ ] `android-headers` submodule
+- [x] `hybris-usb` [submodule](https://aur.archlinux.org/packages/hybris-usb/) [🆗](https://aur.archlinux.org/pkgbase/hybris-usb/?comments=all)
+- [ ] `android-headers`
 - [ ] `libhybris-git` submodule
 - [x] `lxc-android` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/lxc-android-git) | [⛔️](https://github.com/Halium/lxc-android/issues/13)
 

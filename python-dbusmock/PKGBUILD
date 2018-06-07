@@ -2,26 +2,25 @@
 
 pkgname=python-dbusmock
 pkgver=0.17.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Mock D-Bus objects for tests'
 arch=(any)
 url='https://github.com/martinpitt/python-dbusmock'
 license=(LGPL3)
 depends=(python)
 makedepends=(python-setuptools)
-#checkdepends=(python-nose python2-nose)
+checkdepends=(python-nose)
 source=("https://github.com/martinpitt/python-dbusmock/releases/download/0.17.2/python-dbusmock-${pkgver}.tar.gz")
 sha256sums=('56860530d647410375c85e69d44a97b563ae2b45cf77656f726030dc20b47e03')
 
-#check() {
-#  cd "${srcdir}/${pkgname}-${pkgver}"
-#  python setup.py test
-#  python2 setup.py test
-#}
+BUILDENV+=('!check') # Some tests are broken
 
-package_python-dbusmock() {
-  depends=(python)
-  makedepends=(python-setuptools)
+check() {
+  cd "${srcdir}/${pkgname}-${pkgver}"
+  python setup.py test
+}
+
+package() {
   cd "${srcdir}/${pkgname}-${pkgver}"
   python setup.py install --optimize=1 --root="${pkgdir}/"
 }
