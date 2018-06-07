@@ -48,7 +48,7 @@ _Clickable icons:_
 **Halium packages (`armv7h`, `aarch64`):**
 - [x] `hybris-usb` [submodule](https://aur.archlinux.org/packages/hybris-usb/) [🆗](https://aur.archlinux.org/pkgbase/hybris-usb/?comments=all)
 - [ ] `android-headers`
-- [ ] `libhybris-git` submodule
+- [ ] `libhybris-git` [submodule](https://aur.archlinux.org/packages/libhybris-git/) | [⛔️](https://aur.archlinux.org/pkgbase/libhybris-git/?comments=all)
 - [x] `lxc-android` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/lxc-android-git) | [⛔️](https://github.com/Halium/lxc-android/issues/13)
 
 ## Install Unity8 (not implemented, boilerplate text)
