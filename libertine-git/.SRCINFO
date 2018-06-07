@@ -1,7 +1,7 @@
 pkgbase = libertine-git
 	pkgdesc = A sandbox for running legacy deb-based X11 applications
 	pkgver = 4ae89b2
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ubports/libertine
 	arch = x86_64
 	arch = i686

@@ -3,7 +3,7 @@
 pkgname=libertine-git
 _pkgname=libertine
 pkgver=4ae89b2
-pkgrel=1
+pkgrel=2
 pkgdesc='A sandbox for running legacy deb-based X11 applications'
 url='https://github.com/ubports/libertine'
 arch=(x86_64 i686 armv7h aarch64)
@@ -27,14 +27,12 @@ prepare() {
 
 build() {
   cd ${_pkgname}
-  mkdir -p build
-  cd build
-  cmake ..
+  cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" .
   make
 }
 
 package() {
-  cd ${_pkgname}/build
+  cd ${_pkgname}
   patch -Np1 -i "${srcdir}/GtestInclude.patch"
   make DESTDIR="${pkgdir}/" install
 }
