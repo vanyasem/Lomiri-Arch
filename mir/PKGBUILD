@@ -3,8 +3,8 @@
 
 pkgname=mir
 pkgver=0.31.2
-pkgrel=1
-pkgdesc='The Mir compositor'
+pkgrel=2
+pkgdesc="Canonical's display server"
 url='https://mir-server.io'
 arch=(x86_64 i686 armv7h aarch64)
 license=(GPL LGPL)
@@ -21,19 +21,31 @@ source=("https://github.com/MirServer/mir/releases/download/v${pkgver}/mir-${pkg
 sha256sums=('a4be0c36c9cd0c91f966c4d70ac21e916758adcbf2523ded71a672938a65bad3'
             '83153402ea0220a9ed3f9d2c2c157eb49fedf340f368cd8173f0966b3fbf2647')
 
+BUILD_DIR=build
+
 prepare() {
-    cd ${pkgname}-${pkgver}
-    cp ../FindCapnProto.cmake cmake/
+  cd ${pkgname}-${pkgver}
+  cp ../FindCapnProto.cmake cmake/
 }
 
 build() {
-    cd ${pkgname}-${pkgver}
-    ./native-compile.sh
+  cd ${pkgname}-${pkgver}
+  mkdir -p ${BUILD_DIR}
+  cd ${BUILD_DIR}
+  cmake ..
+  cmake --build ./
+}
+
+check() {
+  cd ${pkgname}-${pkgver}/${BUILD_DIR}
+  GTEST_OUTPUT=xml:./
+  bin/mir_acceptance_tests
+  bin/mir_integration_tests
+  bin/mir_unit_tests
 }
 
 package() {
-    cd ${pkgname}-${pkgver}/build-linux-x86
-    make DESTDIR="${pkgdir}/" install
-
+  cd ${pkgname}-${pkgver}/${BUILD_DIR}
+  make DESTDIR="${pkgdir}/" install
 }
 # vim:set ts=2 sw=2 et:
