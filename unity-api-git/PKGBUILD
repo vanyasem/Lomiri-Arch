@@ -3,7 +3,7 @@
 pkgname=unity-api-git
 _pkgname=unity-api
 pkgver=b56d9b0
-pkgrel=1
+pkgrel=2
 pkgdesc='API for Unity shell integration'
 url='https://github.com/ubports/unity-api'
 arch=(x86_64 i686 armv7h aarch64)
@@ -15,10 +15,7 @@ source=('git+https://github.com/ubports/unity-api.git'
 sha256sums=('SKIP'
             '1abc61b62c3e0e2110b6a765064b7a73b8c6bfa7f24ad0065bea940140810be5')
 
-pkgver() {
-  cd ${_pkgname}
-  git describe --always
-}
+BUILD_DIR=build
 
 prepare() {
   cd ${_pkgname}
@@ -26,16 +23,21 @@ prepare() {
   patch -Np1 -i "${srcdir}/Qt511.patch"
 }
 
+pkgver() {
+  cd ${_pkgname}
+  git describe --always
+}
+
 build() {
   cd ${_pkgname}
-  mkdir -p build
-  cd build
-  PKG_CONFIG_PATH=/usr/local/lib64/pkgconfig cmake -DCMAKE_INSTALL_PREFIX="${pkgdir}/usr/local" ..
+  mkdir -p ${BUILD_DIR}
+  cd ${BUILD_DIR}
+  cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" ..
   make
 }
 
 package() {
-  cd ${_pkgname}/build
-  make install
+  cd ${_pkgname}/${BUILD_DIR}
+  make DESTDIR="${pkgdir}/" install
 }
 # vim:set ts=2 sw=2 et:
