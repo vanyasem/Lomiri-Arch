@@ -26,7 +26,7 @@ _Clickable icons:_
 - [x] `dbus-test-runner` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/dbus-test-runner) | [⛔️](https://aur.archlinux.org/pkgbase/dbus-test-runner/flag-comment/)
 - [x] `unity-api`[🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity-api-git) | [⛔️](https://github.com/ubports/unity-api/issues/2)
 - [x] `libertine` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libertine-git) | [⛔️](https://github.com/ubports/libertine/issues/3)
-- [ ] `ubuntu-download-manager` [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/2) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/3) [🆗](https://github.com/ubports/ubuntu-download-manager/issues/4) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/6) [🆗](https://github.com/ubports/ubuntu-app-launch/pull/1)
+- [x] `ubuntu-download-manager` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/ubuntu-download-manager-git) | [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/2) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/3) [🆗](https://github.com/ubports/ubuntu-download-manager/issues/4) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/6) [🆗](https://github.com/ubports/ubuntu-app-launch/pull/1)
 - [ ] `url-dispatcher` [🆗](https://github.com/ubports/url-dispatcher/pull/1)
 - [ ] `thumbnailer`
 - [ ] `settings-components`
