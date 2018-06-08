@@ -1,0 +1,46 @@
+# Maintainer: Ivan Semkin (ivan at semkin dot ru)
+
+pkgname=url-dispatcher-git
+_pkgname=url-dispatcher
+pkgver=2b0df70
+pkgrel=1
+pkgdesc='Service to allow sending of URLs and get handlers started'
+url='https://github.com/ubports/url-dispatcher'
+arch=(x86_64 i686 armv7h aarch64)
+license=(LGPL)
+depends=(ubuntu-app-launch-git unity-scopes-api-git intltool)
+makedepends=(git cmake cmake-extras-git)
+checkdepends=(python-testtools python-nose)
+source=('git+https://github.com/ubports/url-dispatcher.git'
+        'pthread.patch')
+sha256sums=('SKIP'
+            '9cb86a30189e6114a17f5124f33e0e473d5da4d92af6c9f6c9be916e6ce7d469')
+
+prepare() {
+  cd ${_pkgname}
+  git checkout bionic
+  
+  patch -Np1 -i "${srcdir}/pthread.patch"
+}
+
+pkgver() {
+  cd ${_pkgname}
+  git describe --always
+}
+
+build() {
+  cd ${_pkgname}
+  cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" -DCMAKE_INSTALL_LIBEXECDIR="lib/${_pkgname}/" .
+  make
+}
+
+check() {
+  cd ${_pkgname}
+  make ARGS+="--output-on-failure" test
+}
+
+package() {
+  cd ${_pkgname}
+  make DESTDIR="${pkgdir}/" install
+}
+# vim:set ts=2 sw=2 et:

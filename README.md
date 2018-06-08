@@ -18,7 +18,7 @@ _Clickable icons:_
 - [x] `lcov` [submodule](https://aur.archlinux.org/packages/lcov/)
 - [x] `gcovr` [submodule](https://aur.archlinux.org/packages/gcovr/)
 - [x] `python-dbusmock` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/python-dbusmock) [✅](https://aur.archlinux.org/packages/python-dbusmock/) [😜](https://aur.archlinux.org/packages/python-dbusmock-git/)
-- [x] `mir` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/mir) [😜](https://aur.archlinux.org/packages/mir-git) | [🆗](https://github.com/MirServer/mir/commit/e6ba0de363320feab9359821c96d69ff61a7f121)
+- [x] `mir` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/mir) [😜](https://aur.archlinux.org/packages/mir-git) | [🆗](https://github.com/MirServer/mir/commit/e6ba0de363320feab9359821c96d69ff61a7f121) [⛔️](https://github.com/MirServer/mir/issues/402)
 
 **Unity8 packages:**
 - [x] `cmake-extras` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/cmake-extras-git) | [⛔️](https://github.com/ubports/cmake-extras/issues/2)
@@ -32,12 +32,11 @@ _Clickable icons:_
 - [x] `process-cpp` [submodule](https://aur.archlinux.org/packages/process-cpp/)
 - [x] `perl-rpc-xml` [submodule](https://aur.archlinux.org/packages/perl-rpc-xml/) | [⛔️](https://github.com/rjray/rpc-xml/issues/14)
 - [x] `apparmor-libapparmor` [submodule](https://aur.archlinux.org/packages/apparmor-libapparmor/)
-- [x] `net-cpp` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/net-cpp-git) | [⛔️](https://github.com/ubports/net-cpp/pull/1) Default Python path. Broken flash import
+- [x] `net-cpp` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/net-cpp-git) | [⛔️](https://github.com/ubports/net-cpp/pull/1) [⛔️](https://github.com/ubports/net-cpp/issues/2) [⛔️](https://github.com/ubports/net-cpp/issues/3)
 - [x] `zmqpp` [submodule](https://aur.archlinux.org/packages/zmqpp/)
 - [x] `lttng-tools` [submodule](https://aur.archlinux.org/packages/lttng-toolss/)
-- [x] `unity-scopes-api` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity-scopes-api-git) | [⛔️](https://github.com/ubports/unity-scopes-api/issues/4) [⛔️](https://github.com/ubports/unity-scopes-api/issues/6) [⛔️](https://github.com/ubports/unity-scopes-api/issues/4) [⛔️](https://github.com/ubports/unity-scopes-api/issues/8) [⛔️](https://github.com/ubports/unity-scopes-api/issues/4) [⛔️](https://github.com/ubports/unity-scopes-api/issues/9)
-- [x] `dbus-cpp?` [submodule](https://aur.archlinux.org/packages/dbus-cpp/)
-- [ ] `url-dispatcher` [🆗](https://github.com/ubports/url-dispatcher/pull/1)
+- [x] `unity-scopes-api` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity-scopes-api-git) | [⛔️](https://github.com/ubports/unity-scopes-api/issues/4) [⛔️](https://github.com/ubports/unity-scopes-api/issues/6) [⛔️](https://github.com/ubports/unity-scopes-api/issues/8) [⛔️](https://github.com/ubports/unity-scopes-api/issues/9)
+- [x] `url-dispatcher` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/url-dispatcher-git) | [🆗](https://github.com/ubports/url-dispatcher/pull/1) [⛔️](https://github.com/ubports/url-dispatcher/pull/3)
 - [ ] `thumbnailer`
 - [ ] `settings-components`
 - [ ] `history-service`
@@ -52,6 +51,7 @@ _Clickable icons:_
 - [ ] `keyboard-component`
 - [ ] `system-settings`
 - [ ] `unity8`
+- [x] `dbus-cpp?` [submodule](https://aur.archlinux.org/packages/dbus-cpp/)
 - [ ] Probably more
 
 **Halium packages (`armv7h`, `aarch64`):**
