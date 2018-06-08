@@ -1,11 +1,9 @@
 [submodule "gcovr"]
 	path = gcovr
 	url = https://aur.archlinux.org/gcovr.git
-
 [submodule "lcov"]
 	path = lcov
 	url = https://aur.archlinux.org/lcov.git
-
 [submodule "hybris-usb"]
 	path = hybris-usb
 	url = https://aur.archlinux.org/hybris-usb.git
@@ -18,3 +16,6 @@
 [submodule "properties-cpp"]
 	path = properties-cpp
 	url = https://aur.archlinux.org/properties-cpp.git
+[submodule "apparmor"]
+	path = apparmor
+	url = https://aur.archlinux.org/apparmor.git
