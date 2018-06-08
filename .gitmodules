@@ -22,3 +22,6 @@
 [submodule "perl-rpc-xml"]
 	path = perl-rpc-xml
 	url = https://aur.archlinux.org/perl-rpc-xml.git
+[submodule "zmqpp"]
+	path = zmqpp
+	url = https://aur.archlinux.org/zmqpp.git
