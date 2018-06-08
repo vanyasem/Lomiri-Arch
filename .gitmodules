@@ -12,3 +12,6 @@
 [submodule "dbus-cpp"]
 	path = dbus-cpp
 	url = https://aur.archlinux.org/dbus-cpp.git
+[submodule "process-cpp"]
+	path = process-cpp
+	url = https://aur.archlinux.org/process-cpp.git

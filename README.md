@@ -27,6 +27,8 @@ _Clickable icons:_
 - [x] `unity-api`[🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity-api-git) | [⛔️](https://github.com/ubports/unity-api/issues/2)
 - [x] `libertine` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libertine-git) | [⛔️](https://github.com/ubports/libertine/issues/3)
 - [x] `ubuntu-download-manager` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/ubuntu-download-manager-git) | [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/2) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/3) [🆗](https://github.com/ubports/ubuntu-download-manager/issues/4) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/6) [🆗](https://github.com/ubports/ubuntu-app-launch/pull/1)
+- [x] `dbus-cpp` [submodule](https://aur.archlinux.org/packages/dbus-cpp/)
+- [x] `process-cpp` [submodule](https://aur.archlinux.org/packages/process-cpp/)
 - [ ] `ubuntu-app-launch`
 - [ ] `url-dispatcher` [🆗](https://github.com/ubports/url-dispatcher/pull/1)
 - [ ] `thumbnailer`
