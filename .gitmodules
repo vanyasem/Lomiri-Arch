@@ -9,3 +9,6 @@
 [submodule "hybris-usb"]
 	path = hybris-usb
 	url = https://aur.archlinux.org/hybris-usb.git
+[submodule "dbus-cpp"]
+	path = dbus-cpp
+	url = https://aur.archlinux.org/dbus-cpp.git

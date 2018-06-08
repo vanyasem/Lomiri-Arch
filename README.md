@@ -27,12 +27,12 @@ _Clickable icons:_
 - [x] `unity-api`[🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity-api-git) | [⛔️](https://github.com/ubports/unity-api/issues/2)
 - [x] `libertine` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libertine-git) | [⛔️](https://github.com/ubports/libertine/issues/3)
 - [x] `ubuntu-download-manager` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/ubuntu-download-manager-git) | [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/2) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/3) [🆗](https://github.com/ubports/ubuntu-download-manager/issues/4) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/6) [🆗](https://github.com/ubports/ubuntu-app-launch/pull/1)
+- [ ] `ubuntu-app-launch`
 - [ ] `url-dispatcher` [🆗](https://github.com/ubports/url-dispatcher/pull/1)
 - [ ] `thumbnailer`
 - [ ] `settings-components`
 - [ ] `history-service`
 - [ ] `ubuntu-ui-toolkit`
-- [ ] `ubuntu-app-launch`
 - [ ] `content-hub`
 - [ ] `qtmir`
 - [ ] `trust-store`
@@ -46,7 +46,7 @@ _Clickable icons:_
 - [ ] Probably more
 
 **Halium packages (`armv7h`, `aarch64`):**
-- [x] `hybris-usb` [submodule](https://aur.archlinux.org/packages/hybris-usb/) [🆗](https://aur.archlinux.org/pkgbase/hybris-usb/?comments=all)
+- [x] `hybris-usb` [submodule](https://aur.archlinux.org/packages/hybris-usb/) | [🆗](https://aur.archlinux.org/pkgbase/hybris-usb/?comments=all)
 - [ ] `android-headers`
 - [ ] `libhybris-git` [submodule](https://aur.archlinux.org/packages/libhybris-git/) | [⛔️](https://aur.archlinux.org/pkgbase/libhybris-git/?comments=all)
 - [x] `lxc-android` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/lxc-android-git) | [⛔️](https://github.com/Halium/lxc-android/issues/13)
