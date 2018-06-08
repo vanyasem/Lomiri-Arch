@@ -1,0 +1,37 @@
+pkgbase = net-cpp-git
+	pkgdesc = A simple yet beautiful networking API for C++11
+	pkgver = 14fcc4e
+	pkgrel = 1
+	url = https://github.com/ubports/net-cpp
+	arch = x86_64
+	arch = i686
+	arch = armv7h
+	arch = aarch64
+	license = LGPL
+	makedepends = git
+	makedepends = cmake
+	makedepends = cmake-extras-git
+	makedepends = doxygen
+	makedepends = bsdiff
+	depends = boost
+	depends = process-cpp
+	depends = gmock
+	depends = graphviz
+	depends = properties-cpp
+	depends = jsoncpp
+	depends = python2-flask-script
+	depends = python2-flask
+	depends = python2-decorator
+	depends = python2-simplejson
+	depends = curl
+	source = git+https://github.com/ubports/net-cpp.git
+	source = JsonReader.patch
+	source = Python.patch
+	source = HTTPBin.patch
+	sha256sums = SKIP
+	sha256sums = dd7736ed47821090665f4d4f496fe1565149e028a9c2ecf1b0fcb4f4e86f0c89
+	sha256sums = 36b25f932cca5c3e80882424c0884d0ee03774dd8df9ae243163af0417ac7f86
+	sha256sums = 1ae39a76834511a49712a88c415f7411cde4fbe480e687e0879ece9448885549
+
+pkgname = net-cpp-git
+

@@ -1,0 +1,13 @@
+diff --git a/tests/httpbin.h.in b/tests/httpbin.h.in
+index 30703a2..da3004e 100644
+--- a/tests/httpbin.h.in
++++ b/tests/httpbin.h.in
+@@ -42,7 +42,7 @@ struct Instance
+     Instance()
+         : server
+           {
+-              core::posix::exec("/usr/bin/python", {"@CMAKE_CURRENT_BINARY_DIR@/httpbin/run.py"}, {}, core::posix::StandardStream::stdout | core::posix::StandardStream::stderr)
++              core::posix::exec("/usr/bin/python2", {"@CMAKE_CURRENT_BINARY_DIR@/httpbin/run.py"}, {}, core::posix::StandardStream::stdout | core::posix::StandardStream::stderr)
+           }
+     {
+         std::this_thread::sleep_for(std::chrono::milliseconds{1000});
