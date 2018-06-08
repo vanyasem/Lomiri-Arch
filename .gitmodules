@@ -22,6 +22,3 @@
 [submodule "perl-rpc-xml"]
 	path = perl-rpc-xml
 	url = https://aur.archlinux.org/perl-rpc-xml.git
-[submodule "cpp-netlib"]
-	path = cpp-netlib
-	url = https://aur.archlinux.org/cpp-netlib.git

@@ -32,7 +32,6 @@ _Clickable icons:_
 - [x] `process-cpp` [submodule](https://aur.archlinux.org/packages/process-cpp/)
 - [x] `perl-rpc-xml` [submodule](https://aur.archlinux.org/packages/perl-rpc-xml/) | [⛔️](https://github.com/rjray/rpc-xml/issues/14)
 - [x] `apparmor-libapparmor` [submodule](https://aur.archlinux.org/packages/apparmor-libapparmor/)
-- [x] `cpp-netlib` [submodule](https://aur.archlinux.org/packages/cpp-netlib/)
 - [ ] `unity-scopes-api`
 - [x] `dbus-cpp?` [submodule](https://aur.archlinux.org/packages/dbus-cpp/)
 - [ ] `url-dispatcher` [🆗](https://github.com/ubports/url-dispatcher/pull/1)
