@@ -34,6 +34,7 @@ _Clickable icons:_
 - [x] `apparmor-libapparmor` [submodule](https://aur.archlinux.org/packages/apparmor-libapparmor/)
 - [x] `net-cpp` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/net-cpp-git) | [⛔️](https://github.com/ubports/net-cpp/pull/1)
 - [x] `zmqpp` [submodule](https://aur.archlinux.org/packages/zmqpp/)
+- [x] `lttng-tools` [submodule](https://aur.archlinux.org/packages/lttng-toolss/)
 - [ ] `unity-scopes-api`
 - [x] `dbus-cpp?` [submodule](https://aur.archlinux.org/packages/dbus-cpp/)
 - [ ] `url-dispatcher` [🆗](https://github.com/ubports/url-dispatcher/pull/1)
