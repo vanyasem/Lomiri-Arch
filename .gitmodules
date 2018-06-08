@@ -15,3 +15,6 @@
 [submodule "process-cpp"]
 	path = process-cpp
 	url = https://aur.archlinux.org/process-cpp.git
+[submodule "properties-cpp"]
+	path = properties-cpp
+	url = https://aur.archlinux.org/properties-cpp.git
