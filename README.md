@@ -30,8 +30,9 @@ _Clickable icons:_
 - [x] `properties-cpp` [submodule](https://aur.archlinux.org/packages/properties-cpp/)
 - [x] `ubuntu-app-launch` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/ubuntu-app-launch-git) | [⛔️](https://github.com/ubports/ubuntu-app-launch/issues/2) [⛔️](https://github.com/ubports/ubuntu-app-launch/issues/3) [⛔️](https://github.com/ubports/ubuntu-app-launch/issues/4)
 - [x] `process-cpp` [submodule](https://aur.archlinux.org/packages/process-cpp/)
-- [x] `perl-rpc-xml` [submodule](https://aur.archlinux.org/packages/perl-rpc-xml/)
+- [x] `perl-rpc-xml` [submodule](https://aur.archlinux.org/packages/perl-rpc-xml/) | [⛔️](https://github.com/rjray/rpc-xml/issues/14)
 - [x] `apparmor-libapparmor` [submodule](https://aur.archlinux.org/packages/apparmor-libapparmor/)
+- [x] `cpp-netlib` [submodule](https://aur.archlinux.org/packages/cpp-netlib/)
 - [ ] `unity-scopes-api`
 - [x] `dbus-cpp?` [submodule](https://aur.archlinux.org/packages/dbus-cpp/)
 - [ ] `url-dispatcher` [🆗](https://github.com/ubports/url-dispatcher/pull/1)
