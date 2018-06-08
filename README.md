@@ -28,9 +28,9 @@ _Clickable icons:_
 - [x] `libertine` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libertine-git) | [⛔️](https://github.com/ubports/libertine/issues/3)
 - [x] `ubuntu-download-manager` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/ubuntu-download-manager-git) | [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/2) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/3) [🆗](https://github.com/ubports/ubuntu-download-manager/issues/4) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/6) [🆗](https://github.com/ubports/ubuntu-app-launch/pull/1)
 - [x] `properties-cpp` [submodule](https://aur.archlinux.org/packages/properties-cpp/)
+- [x] `ubuntu-app-launch` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/ubuntu-app-launch-git) | [⛔️](https://github.com/ubports/ubuntu-app-launch/issues/2) [⛔️](https://github.com/ubports/ubuntu-app-launch/issues/3) [⛔️](https://github.com/ubports/ubuntu-app-launch/issues/4)
 - [x] `process-cpp` [submodule](https://aur.archlinux.org/packages/process-cpp/)
-- [x] `dbus-cpp` [submodule](https://aur.archlinux.org/packages/dbus-cpp/)
-- [ ] `ubuntu-app-launch`
+- [x] `dbus-cpp?` [submodule](https://aur.archlinux.org/packages/dbus-cpp/)
 - [ ] `url-dispatcher` [🆗](https://github.com/ubports/url-dispatcher/pull/1)
 - [ ] `thumbnailer`
 - [ ] `settings-components`

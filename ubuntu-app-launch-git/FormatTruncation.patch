@@ -1,0 +1,12 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 352be9e..ba26101 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -54,6 +54,7 @@ add_compile_options(
+ 	-Wall -Werror
+ 	-g
+ 	-pthread
++	-Wno-format-truncation
+ )
+ 
+ set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu99")
