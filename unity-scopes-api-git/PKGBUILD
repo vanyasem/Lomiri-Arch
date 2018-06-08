@@ -3,7 +3,7 @@
 pkgname=unity-scopes-api-git
 _pkgname=unity-scopes-api
 pkgver=c8275a30
-pkgrel=1
+pkgrel=2
 pkgdesc='Library to integrate scopes with the Unity shell'
 url='https://github.com/ubports/unity-scopes-api'
 arch=(x86_64 i686 armv7h aarch64)
@@ -47,7 +47,7 @@ build() {
   cd ${_pkgname}
   mkdir -p ${BUILD_DIR}
   cd ${BUILD_DIR}
-  cmake ..
+  cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" ..
   make
 }
 

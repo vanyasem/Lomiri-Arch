@@ -3,17 +3,20 @@
 pkgname=libqtdbustest-git
 _pkgname=libqtdbustest
 pkgver=d5c235e
-pkgrel=2
+pkgrel=3
 pkgdesc='Library for testing DBus interactions using Qt'
 url='https://github.com/ubports/libqtdbustest'
 arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL3)
 depends=(gcovr lcov gmock qt5-base)
 makedepends=(git cmake cmake-extras-git)
+checkdepends=(python-dbusmock python-dbus python-gobject)
 source=('git+https://github.com/ubports/libqtdbustest.git'
-        'Qt511.patch')
+        'Qt511.patch'
+        'SuicidalSleep.patch')
 sha256sums=('SKIP'
-            '7a6ef4b6cf69be9396d19591079fb9e31fcd11673586f762318fb2bff36ed078')
+            '7a6ef4b6cf69be9396d19591079fb9e31fcd11673586f762318fb2bff36ed078'
+            'adbb9680bf2293fd4694d35ba5876623dc12c6fc78a5f772817f15921d44c5ec')
 
 pkgver() {
   cd ${_pkgname}
@@ -23,12 +26,18 @@ pkgver() {
 prepare() {
   cd ${_pkgname}
   patch -Np1 -i "${srcdir}/Qt511.patch"
+  patch -Np1 -i "${srcdir}/SuicidalSleep.patch"
 }
 
 build() {
   cd ${_pkgname}
   cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" -DCMAKE_INSTALL_LIBEXECDIR="lib/${_pkgname}/" .
   make
+}
+
+check() {
+  cd ${_pkgname}
+  make ARGS+="--output-on-failure" test
 }
 
 package() {

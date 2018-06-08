@@ -17,6 +17,8 @@ sha256sums=('SKIP'
             'db5684a2f42a664d1e1c10af2e1ff6f0edb43d63e7936d37ca75c575875f7f97'
             '3c0a88fce3e8af6ac648a026b2fe592b614b511763ad9defeb87659f29b4a1bd')
 
+BUILDENV+=('!check') # Some tests are broken
+
 prepare() {
   cd ${_pkgname}
   git checkout bionic
@@ -34,6 +36,11 @@ build() {
   cd ${_pkgname}
   cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" -DCMAKE_INSTALL_LIBEXECDIR="lib/${_pkgname}/" .
   make
+}
+
+check() {
+  cd ${_pkgname}
+  make ARGS+="--output-on-failure" test
 }
 
 package() {

@@ -15,6 +15,8 @@ source=('git+https://github.com/ubports/unity-api.git'
 sha256sums=('SKIP'
             '1abc61b62c3e0e2110b6a765064b7a73b8c6bfa7f24ad0065bea940140810be5')
 
+BUILDENV+=('!check') # Some tests are broken
+
 BUILD_DIR=build
 
 prepare() {
@@ -34,6 +36,11 @@ build() {
   cd ${BUILD_DIR}
   cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" ..
   make
+}
+
+check() {
+  cd ${_pkgname}/${BUILD_DIR}
+  make ARGS+="--output-on-failure" test
 }
 
 package() {

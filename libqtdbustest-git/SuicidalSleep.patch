@@ -1,0 +1,13 @@
+diff --git a/tests/libqtdbustest/TestSuicidalProcess.cpp b/tests/libqtdbustest/TestSuicidalProcess.cpp
+index 3bdaeea..c8cbfcc 100644
+--- a/tests/libqtdbustest/TestSuicidalProcess.cpp
++++ b/tests/libqtdbustest/TestSuicidalProcess.cpp
+@@ -51,7 +51,7 @@ TEST_F(TestSuicidalProcess, BehavesLikeNormalQProcess) {
+ 	pgrep.waitForFinished();
+ 	pgrep.waitForReadyRead();
+ 
+-	EXPECT_EQ("sleep 5",
++	EXPECT_EQ("/usr/bin/sleep 5",
+ 			QString::fromUtf8(pgrep.readAll().trimmed()).toStdString());
+ }
+ 

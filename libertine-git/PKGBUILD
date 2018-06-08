@@ -15,20 +15,27 @@ source=('git+https://github.com/ubports/libertine.git'
 sha256sums=('SKIP'
             'b2159654ed377606e5dc503105837528e6b6b15440067fbd8ed6b12470de0992')
 
-pkgver() {
-  cd ${_pkgname}
-  git describe --always
-}
+BUILDENV+=('!check') # Some tests are broken
 
 prepare() {
   cd ${_pkgname}
   git checkout bionic
 }
 
+pkgver() {
+  cd ${_pkgname}
+  git describe --always
+}
+
 build() {
   cd ${_pkgname}
   cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" .
   make
+}
+
+check() {
+  cd ${_pkgname}
+  make ARGS+="--output-on-failure" test
 }
 
 package() {
