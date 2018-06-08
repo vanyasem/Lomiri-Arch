@@ -32,10 +32,10 @@ _Clickable icons:_
 - [x] `process-cpp` [submodule](https://aur.archlinux.org/packages/process-cpp/)
 - [x] `perl-rpc-xml` [submodule](https://aur.archlinux.org/packages/perl-rpc-xml/) | [⛔️](https://github.com/rjray/rpc-xml/issues/14)
 - [x] `apparmor-libapparmor` [submodule](https://aur.archlinux.org/packages/apparmor-libapparmor/)
-- [x] `net-cpp` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/net-cpp-git) | [⛔️](https://github.com/ubports/net-cpp/pull/1)
+- [x] `net-cpp` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/net-cpp-git) | [⛔️](https://github.com/ubports/net-cpp/pull/1) Default Python path. Broken flash import
 - [x] `zmqpp` [submodule](https://aur.archlinux.org/packages/zmqpp/)
 - [x] `lttng-tools` [submodule](https://aur.archlinux.org/packages/lttng-toolss/)
-- [ ] `unity-scopes-api`
+- [x] `unity-scopes-api` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity-scopes-api-git) | [⛔️](https://github.com/ubports/unity-scopes-api/issues/4) [⛔️](https://github.com/ubports/unity-scopes-api/issues/6) [⛔️](https://github.com/ubports/unity-scopes-api/issues/4) [⛔️](https://github.com/ubports/unity-scopes-api/issues/8) [⛔️](https://github.com/ubports/unity-scopes-api/issues/4) [⛔️](https://github.com/ubports/unity-scopes-api/issues/9)
 - [x] `dbus-cpp?` [submodule](https://aur.archlinux.org/packages/dbus-cpp/)
 - [ ] `url-dispatcher` [🆗](https://github.com/ubports/url-dispatcher/pull/1)
 - [ ] `thumbnailer`

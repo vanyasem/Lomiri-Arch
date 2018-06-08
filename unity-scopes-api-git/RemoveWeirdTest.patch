@@ -1,0 +1,9 @@
+diff --git a/test/gtest/scopes/Registry/scopes/CMakeLists.txt b/test/gtest/scopes/Registry/scopes/CMakeLists.txt
+index d616eaf2..67178e4d 100644
+--- a/test/gtest/scopes/Registry/scopes/CMakeLists.txt
++++ b/test/gtest/scopes/Registry/scopes/CMakeLists.txt
+@@ -1,2 +1,2 @@
+-add_subdirectory(testscopeA)
+-add_subdirectory(testscopeB)
++#add_subdirectory(testscopeA)
++#add_subdirectory(testscopeB)

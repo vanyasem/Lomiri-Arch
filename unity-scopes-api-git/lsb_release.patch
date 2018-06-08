@@ -1,0 +1,17 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 087d7981..af0c7b19 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -231,8 +231,10 @@ set(UNITY_SCOPES_MAJOR_MINOR ${UNITY_SCOPES_MAJOR}.${UNITY_SCOPES_MINOR})
+ set(UNITY_SCOPES_FULL_VERSION ${UNITY_SCOPES_MAJOR_MINOR}.${UNITY_SCOPES_MICRO})
+ 
+ execute_process(COMMAND lsb_release -c -s OUTPUT_VARIABLE SERIES)
+-string(STRIP ${SERIES} SERIES)
+-if (${SERIES} STREQUAL "vivid")
++if(NOT SERIES STREQUAL "")
++    string(STRIP ${SERIES} SERIES)
++endif()
++if (SERIES STREQUAL "vivid")
+     # For backward compatibility. On Vivid, the soname started counting at 3: libunity-scopes.so.3.
+     math(EXPR UNITY_SCOPES_SOVERSION "${UNITY_SCOPES_MINOR} + 3")
+ else()

@@ -1,0 +1,12 @@
+diff --git a/data/CMakeLists.txt b/data/CMakeLists.txt
+index 2473e63d..ffacf7fe 100644
+--- a/data/CMakeLists.txt
++++ b/data/CMakeLists.txt
+@@ -26,5 +26,5 @@ file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/${UNITY_SCOPES_LIB})
+ install(DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/${UNITY_SCOPES_LIB}
+ DESTINATION ${CMAKE_INSTALL_LIBDIR})
+ 
+-add_custom_target(pkgversion ALL COMMAND dpkg-parsechangelog -l${CMAKE_SOURCE_DIR}/debian/changelog --show-field version > ${CMAKE_CURRENT_BINARY_DIR}/version)
+-install(FILES ${CMAKE_CURRENT_BINARY_DIR}/version DESTINATION ${CMAKE_INSTALL_LOCALSTATEDIR}/lib/libunity-scopes)
++#add_custom_target(pkgversion ALL COMMAND dpkg-parsechangelog -l${CMAKE_SOURCE_DIR}/debian/changelog --show-field version > ${CMAKE_CURRENT_BINARY_DIR}/version)
++#install(FILES ${CMAKE_CURRENT_BINARY_DIR}/version DESTINATION ${CMAKE_INSTALL_LOCALSTATEDIR}/lib/libunity-scopes)
