@@ -19,3 +19,6 @@
 [submodule "apparmor"]
 	path = apparmor
 	url = https://aur.archlinux.org/apparmor.git
+[submodule "perl-rpc-xml"]
+	path = perl-rpc-xml
+	url = https://aur.archlinux.org/perl-rpc-xml.git
