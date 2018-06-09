@@ -13,11 +13,6 @@ makedepends=(bzr cmake cmake-extras-git doxygen graphviz lcov gcovr gtest)
 source=("bzr+lp:${_pkgname}")
 sha256sums=('SKIP')
 
-prepare() {
-  cd ${_pkgname}
-
-}
-
 pkgver() {
   cd ${_pkgname}
   echo "r$(bzr revno)"

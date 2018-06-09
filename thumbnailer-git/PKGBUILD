@@ -1,0 +1,40 @@
+# Maintainer: Ivan Semkin (ivan at semkin dot ru)
+
+pkgname=thumbnailer-git
+_pkgname=thumbnailer
+pkgver=7787e4f
+pkgrel=1
+pkgdesc='D-Bus service for out of process thumbnailing'
+url='https://github.com/ubports/thumbnailer'
+arch=(x86_64 i686 armv7h aarch64)
+license=(GPL)
+depends=(boost qt5-base qt5-quickcontrols gstreamer gst-plugins-base gdk-pixbuf2 libexif unity-api-git apparmor-libapparmor taglib persistent-cache-cpp-bzr)
+makedepends=(git cmake)
+source=('git+https://github.com/ubports/thumbnailer.git'
+        'Qt511.patch')
+sha256sums=('SKIP'
+            '59ab30c0c9b170c06d5e42c450cbac4b56b57987afcba307e4efdc51e5c163c7')
+
+prepare() {
+  cd ${_pkgname}
+  git checkout bionic
+
+  patch -Np1 -i "${srcdir}/Qt511.patch"
+}
+
+pkgver() {
+  cd ${_pkgname}
+  git describe --always
+}
+
+build() {
+  cd ${_pkgname}
+  cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" .
+  make
+}
+
+package() {
+  cd ${_pkgname}
+  make DESTDIR="${pkgdir}/" install
+}
+# vim:set ts=2 sw=2 et:

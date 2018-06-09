@@ -1,0 +1,30 @@
+pkgbase = thumbnailer-git
+	pkgdesc = D-Bus service for out of process thumbnailing
+	pkgver = 7787e4f
+	pkgrel = 1
+	url = https://github.com/ubports/thumbnailer
+	arch = x86_64
+	arch = i686
+	arch = armv7h
+	arch = aarch64
+	license = GPL
+	makedepends = git
+	makedepends = cmake
+	depends = boost
+	depends = qt5-base
+	depends = qt5-quickcontrols
+	depends = gstreamer
+	depends = gst-plugins-base
+	depends = gdk-pixbuf2
+	depends = libexif
+	depends = unity-api-git
+	depends = apparmor-libapparmor
+	depends = taglib
+	depends = persistent-cache-cpp-bzr
+	source = git+https://github.com/ubports/thumbnailer.git
+	source = Qt511.patch
+	sha256sums = SKIP
+	sha256sums = 59ab30c0c9b170c06d5e42c450cbac4b56b57987afcba307e4efdc51e5c163c7
+
+pkgname = thumbnailer-git
+

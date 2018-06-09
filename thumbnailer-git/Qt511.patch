@@ -1,0 +1,75 @@
+diff --git a/plugins/Ubuntu/Thumbnailer.0.1/CMakeLists.txt b/plugins/Ubuntu/Thumbnailer.0.1/CMakeLists.txt
+index 453c404..c43db9c 100644
+--- a/plugins/Ubuntu/Thumbnailer.0.1/CMakeLists.txt
++++ b/plugins/Ubuntu/Thumbnailer.0.1/CMakeLists.txt
+@@ -9,7 +9,6 @@ add_library(thumbnailer-qml-static STATIC
+   thumbnailgenerator.cpp
+   )
+ set_target_properties(thumbnailer-qml-static PROPERTIES AUTOMOC TRUE)
+-qt5_use_modules(thumbnailer-qml-static Qml Quick)
+ target_link_libraries(thumbnailer-qml-static ${LIBTHUMBNAILER_QT} Qt5::Qml Qt5::Quick)
+ 
+ add_library(thumbnailer-qml MODULE
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index d50058e..7d23e0d 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -39,7 +39,6 @@ add_library(thumbnailer-static STATIC
+     ${CMAKE_SOURCE_DIR}/include/internal/ubuntuserverdownloader.h
+ )
+ 
+-qt5_use_modules(thumbnailer-static Core Network)
+ set_target_properties(thumbnailer-static PROPERTIES AUTOMOC TRUE)
+ 
+ target_link_libraries(thumbnailer-static
+diff --git a/src/libthumbnailer-qt/CMakeLists.txt b/src/libthumbnailer-qt/CMakeLists.txt
+index 19961f9..af2dca4 100644
+--- a/src/libthumbnailer-qt/CMakeLists.txt
++++ b/src/libthumbnailer-qt/CMakeLists.txt
+@@ -23,7 +23,6 @@ set_target_properties(${LIBTHUMBNAILER_QT} PROPERTIES
+                       LINK_FLAGS "${ldflags} -Wl,--version-script,${symbol_map} ")
+ set_target_properties(${LIBTHUMBNAILER_QT} PROPERTIES LINK_DEPENDS ${symbol_map})
+ 
+-qt5_use_modules(${LIBTHUMBNAILER_QT} DBus Gui)
+ target_link_libraries(${LIBTHUMBNAILER_QT} thumbnailer-static Qt5::DBus Qt5::Gui)
+ set_target_properties(${LIBTHUMBNAILER_QT} PROPERTIES AUTOMOC TRUE)
+ add_dependencies(${LIBTHUMBNAILER_QT} thumbnailer-service)
+diff --git a/src/service/CMakeLists.txt b/src/service/CMakeLists.txt
+index 6393256..bb92307 100644
+--- a/src/service/CMakeLists.txt
++++ b/src/service/CMakeLists.txt
+@@ -17,8 +17,7 @@ add_executable(thumbnailer-service
+   ${adaptor_files}
+   ${interface_files}
+ )
+-
+-qt5_use_modules(thumbnailer-service DBus Concurrent)
++find_package(Qt5Concurrent REQUIRED)
+ target_link_libraries(thumbnailer-service thumbnailer-static Qt5::DBus Qt5::Concurrent)
+ set_target_properties(thumbnailer-service PROPERTIES AUTOMOC TRUE)
+ add_dependencies(thumbnailer-service vs-thumb)
+diff --git a/src/thumbnailer-admin/CMakeLists.txt b/src/thumbnailer-admin/CMakeLists.txt
+index f4000e5..609147a 100644
+--- a/src/thumbnailer-admin/CMakeLists.txt
++++ b/src/thumbnailer-admin/CMakeLists.txt
+@@ -25,7 +25,6 @@ add_executable(thumbnailer-admin
+     ${CMAKE_SOURCE_DIR}/src/service/stats.cpp
+     ${interface_files}
+ )
+-qt5_use_modules(thumbnailer-admin DBus)
+ target_link_libraries(thumbnailer-admin thumbnailer-static Qt5::DBus ${CACHE_DEPS_LDFLAGS} ${Boost_LIBRARIES})
+ add_dependencies(thumbnailer-admin thumbnailer-service)
+ 
+diff --git a/src/vs-thumb/CMakeLists.txt b/src/vs-thumb/CMakeLists.txt
+index 6059304..573299a 100644
+--- a/src/vs-thumb/CMakeLists.txt
++++ b/src/vs-thumb/CMakeLists.txt
+@@ -1,7 +1,7 @@
+ add_library(vs-thumb-static STATIC
+     thumbnailextractor.cpp
+ )
+-qt5_use_modules(vs-thumb-static Core)
++target_link_libraries(vs-thumb-static Qt5::Core)
+ 
+ add_executable(vs-thumb
+     vs-thumb.cpp

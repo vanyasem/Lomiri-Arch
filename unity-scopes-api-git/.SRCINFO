@@ -1,7 +1,7 @@
 pkgbase = unity-scopes-api-git
 	pkgdesc = Library to integrate scopes with the Unity shell
 	pkgver = c8275a30
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ubports/unity-scopes-api
 	arch = x86_64
 	arch = i686
