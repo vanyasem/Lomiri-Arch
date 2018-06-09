@@ -41,8 +41,9 @@ _Clickable icons:_
 - [x] `thumbnailer` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/thumbnailer-git) | [⛔️](https://github.com/ubports/thumbnailer/issues/1)
 - [ ] `settings-components`
 - [ ] `history-service`
-- [x] `qtpim` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qtpim-git)
-- [ ] `ubuntu-ui-toolkit`
+- [x] `qtpim` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qt5-pim-git)
+- [x] `qtsystems` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qt5-systems-git)
+- [ ] `ubuntu-ui-toolkit` [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/9) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/10) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/11)
 - [ ] `content-hub` [⛔️](https://github.com/ubports/content-hub/issues/1) [⛔️](https://github.com/ubports/content-hub/issues/2) [⛔️](https://github.com/ubports/content-hub/issues/4)
 - [x] `libqtdbusmock` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqtdbusmock-git) | [⛔️](https://github.com/ubports/libqtdbusmock/issues/1)
 - [ ] `qtmir`

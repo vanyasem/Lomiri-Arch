@@ -1,0 +1,42 @@
+# Maintainer: Ivan Semkin <felixonmars@archlinux.org>
+# Contributor Felix Yan <felixonmars@archlinux.org>
+
+pkgname=qt5-systems-git
+_pkgname=qtsystems
+pkgver=v5.0.0.beta1.r155.g66e45676
+pkgrel=1
+pkgdesc='Qt Publish and Subscribe Add-on Module'
+url='https://github.com/qtproject/qtsystems'
+arch=(x86_64 i686 armv7h aarch64)
+license=(GPL3 LGPL FDL custom)
+depends=(qt5-declarative)
+makedepends=(git)
+provides=(qt5-systems)
+conflicts=(qt5-systems)
+source=('git+http://code.qt.io/cgit/qt/qtsystems.git')
+sha256sums=('SKIP')
+
+pkgver() {
+  cd ${_pkgname}
+  echo "$(git describe --tags | sed 's/-/./; s/-/.r/; s/-/./g')"
+}
+
+build() {
+  cd ${_pkgname}
+
+  qmake-qt5
+  make
+}
+
+package() {
+  cd ${_pkgname}
+
+  make INSTALL_ROOT="${pkgdir}" install
+
+  install -D -m644 LICENSE.GPL3-EXCEPT \
+    "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE.GPL3-EXCEPT
+    
+  # Drop QMAKE_PRL_BUILD_DIR because it references the build dir
+  find "$pkgdir/usr/lib" -type f -name '*.prl' \
+    -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
+}
