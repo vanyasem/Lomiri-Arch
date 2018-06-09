@@ -43,6 +43,7 @@ _Clickable icons:_
 - [ ] `history-service`
 - [ ] `ubuntu-ui-toolkit`
 - [ ] `content-hub`
+- [x] `libqtdbusmock` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqtdbusmock-git) | [⛔️](https://github.com/ubports/libqtdbusmock/issues/1)
 - [ ] `qtmir`
 - [ ] `trust-store`
 - [ ] `location-service`

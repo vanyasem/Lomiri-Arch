@@ -1,0 +1,42 @@
+diff --git a/src/libqtdbusmock/CMakeLists.txt b/src/libqtdbusmock/CMakeLists.txt
+index a14b629..618837d 100644
+--- a/src/libqtdbusmock/CMakeLists.txt
++++ b/src/libqtdbusmock/CMakeLists.txt
+@@ -191,11 +191,11 @@ add_library(
+ 	${QTDBUSMOCK_SRC}
+ )
+ 
+-qt5_use_modules(
+-	qtdbusmock
+-	Core
+-	DBus
+-	Test
++target_link_libraries(
++    qtdbusmock
++    Qt5::Core
++    Qt5::DBus
++    Qt5::Test
+ )
+ 
+ target_link_libraries(
+diff --git a/tests/CMakeLists.txt b/tests/CMakeLists.txt
+index 276de0c..c2ecb5d 100644
+--- a/tests/CMakeLists.txt
++++ b/tests/CMakeLists.txt
+@@ -18,11 +18,11 @@ add_executable(
+ 	${UNIT_TESTS_SRC}
+ )
+ 
+-qt5_use_modules(
+-	unit-tests
+-	Core
+-	DBus
+-	Test
++target_link_libraries(
++    unit-tests
++    Qt5::Core
++    Qt5::DBus
++    Qt5::Test
+ )
+ 
+ target_link_libraries(
