@@ -1,7 +1,7 @@
 pkgbase = ubuntu-app-launch-git
 	pkgdesc = Session init system job for Launching Applications
 	pkgver = bde4305
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ubports/ubuntu-app-launch
 	arch = x86_64
 	arch = i686

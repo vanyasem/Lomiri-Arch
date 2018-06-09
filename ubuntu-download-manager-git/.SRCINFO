@@ -1,7 +1,7 @@
 pkgbase = ubuntu-download-manager-git
 	pkgdesc = Provides a service for downloading files while an application is suspended
 	pkgver = e6cfc9dc
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ubports/ubuntu-download-manager
 	arch = x86_64
 	arch = i686

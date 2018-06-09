@@ -1,0 +1,17 @@
+pkgbase = qt5-pim-git
+	pkgdesc = Qt Personal Information Management
+	pkgver = v5.0.0.beta1.r206.gfcc18340
+	pkgrel = 1
+	url = http://code.qt.io/cgit/qt/qtpim.git
+	arch = x86_64
+	arch = i686
+	arch = armv7h
+	arch = aarch64
+	makedepends = git
+	depends = qt5-base
+	depends = qt5-declarative
+	source = git+http://code.qt.io/cgit/qt/qtpim.git
+	sha256sums = SKIP
+
+pkgname = qt5-pim-git
+
