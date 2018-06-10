@@ -2,7 +2,7 @@
 
 pkgname=content-hub-git
 _pkgname=content-hub
-pkgver=2d489bb
+pkgver=66955f6
 pkgrel=1
 pkgdesc='Content sharing/picking infrastructure and service'
 url='https://github.com/ubports/content-hub'
@@ -13,12 +13,10 @@ makedepends=(git cmake cmake-extras-git doxygen graphviz)
 checkdepends=(xorg-server-xvfb)
 source=('git+https://github.com/ubports/content-hub.git'
         'Gtest.patch'
-        'Qt511.patch'
         'QtArg.patch'
         'GtestSrc.patch')
 sha256sums=('SKIP'
             '9fc3692694d916d329a3830e01a4a8c36d897a7e8e2cce2905b4a8d049b9659f'
-            '42032454aae62e7cd97e66c5b48579504d6c6a48e9678550bb95f264c041fb0b'
             '59f927b1cda19e082fce433a852665f26e40f399433caca5fa0e7841d95d48f0'
             '8c360d0af436f19e7bc15a141a10ebaad4e59af9e582b86feaf207071f748849')
 
@@ -34,7 +32,6 @@ prepare() {
   git checkout bionic
   
   patch -Np1 -i "${srcdir}/Gtest.patch"
-  patch -Np1 -i "${srcdir}/Qt511.patch"
   patch -Np1 -i "${srcdir}/QtArg.patch"
   patch -Np1 -i "${srcdir}/GtestSrc.patch"
   sed -i "s/\${GTEST_ALL_LIBRARIES}/\${GMOCK_LIBRARIES}/g" "${srcdir}/${_pkgname}/tests/acceptance-tests/CMakeLists.txt"
