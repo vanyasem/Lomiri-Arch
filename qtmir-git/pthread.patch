@@ -1,0 +1,12 @@
+diff --git a/tests/mirserver/QtEventFeeder/CMakeLists.txt b/tests/mirserver/QtEventFeeder/CMakeLists.txt
+index 02171b75..89b8da19 100644
+--- a/tests/mirserver/QtEventFeeder/CMakeLists.txt
++++ b/tests/mirserver/QtEventFeeder/CMakeLists.txt
+@@ -19,6 +19,7 @@ add_executable(QtEventFeederTest ${EVENT_FEEDER_TEST_SOURCES})
+ 
+ target_link_libraries(
+   QtEventFeederTest
++  -pthread
+   qpa-mirserver
+   ${GTEST_BOTH_LIBRARIES}
+   ${GMOCK_LIBRARIES}

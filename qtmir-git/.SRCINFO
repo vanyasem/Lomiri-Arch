@@ -1,0 +1,35 @@
+pkgbase = qtmir-git
+	pkgdesc = Qt platform abstraction (QPA) plugin for a Mir server
+	pkgver = 89d57e19
+	pkgrel = 1
+	url = https://github.com/ubports/qtmir
+	arch = x86_64
+	arch = i686
+	arch = armv7h
+	arch = aarch64
+	license = LGPL
+	makedepends = git
+	makedepends = cmake
+	makedepends = cmake-extras-git
+	depends = qt5-base
+	depends = qt5-quickcontrols
+	depends = qt5-sensors
+	depends = mir
+	depends = process-cpp
+	depends = ubuntu-app-launch-git
+	depends = gsettings-qt
+	depends = libqtdbustest-git
+	depends = libqtdbusmock-git
+	depends = content-hub-git
+	depends = url-dispatcher-git
+	depends = glm
+	depends = gtest
+	source = git+https://github.com/ubports/qtmir.git
+	source = NoCatchValue.patch
+	source = pthread.patch
+	sha256sums = SKIP
+	sha256sums = 0e706edbd8ef0bc7358202b01c6efcba1d2837699457628d9ec942e6a5135a4e
+	sha256sums = ceb0ff98e0f0743cc05e5fc49f1d18e75c839e9ded40e841027fc7736042b375
+
+pkgname = qtmir-git
+
