@@ -31,3 +31,6 @@
 [submodule "ubuntu-themes"]
 	path = ubuntu-themes
 	url = https://aur.archlinux.org/ubuntu-themes.git
+[submodule "humanity-icon-theme"]
+	path = humanity-icon-theme
+	url = https://aur.archlinux.org/humanity-icon-theme.git
