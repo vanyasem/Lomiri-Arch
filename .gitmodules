@@ -28,3 +28,6 @@
 [submodule "lttng-tools"]
 	path = lttng-tools
 	url = https://aur.archlinux.org/lttng-tools.git
+[submodule "ubuntu-themes"]
+	path = ubuntu-themes
+	url = https://aur.archlinux.org/ubuntu-themes.git
