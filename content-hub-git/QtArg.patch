@@ -1,0 +1,26 @@
+diff --git a/doc/qml/CMakeLists.txt b/doc/qml/CMakeLists.txt
+index 7036b89..3d94bc4 100644
+--- a/doc/qml/CMakeLists.txt
++++ b/doc/qml/CMakeLists.txt
+@@ -3,7 +3,7 @@ FIND_PROGRAM(QDOC_EXECUTABLE qdoc)
+ if(QDOC_EXECUTABLE)
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/ubuntu-content-hub.qdocconf.in ${CMAKE_CURRENT_BINARY_DIR}/ubuntu-content-hub.qdocconf @ONLY)
+ add_custom_target(qmldoc
+-${QDOC_EXECUTABLE} -qt=qt5 ${CMAKE_CURRENT_BINARY_DIR}/ubuntu-content-hub.qdocconf
++${QDOC_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/ubuntu-content-hub.qdocconf
+ WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+ COMMENT "Generating QML API documentation with qdoc" VERBATIM
+ )
+diff --git a/import/Ubuntu/Content/CMakeLists.txt b/import/Ubuntu/Content/CMakeLists.txt
+index 563f89b..e785d28 100644
+--- a/import/Ubuntu/Content/CMakeLists.txt
++++ b/import/Ubuntu/Content/CMakeLists.txt
+@@ -95,7 +95,7 @@ endif()
+ 
+ if(NOT CMAKE_CROSSCOMPILING)
+ add_custom_command(OUTPUT ${CMAKE_CURRENT_BINARY_DIR}/plugins.qmltypes
+-    COMMAND qmlplugindump -qt=qt5 -noinstantiate -notrelocatable Ubuntu.Content 1.1 ../../ > ${CMAKE_CURRENT_BINARY_DIR}/plugins.qmltypes
++    COMMAND qmlplugindump -noinstantiate -notrelocatable Ubuntu.Content 1.1 ../../ > ${CMAKE_CURRENT_BINARY_DIR}/plugins.qmltypes
+     DEPENDS ${PLUGIN}
+     WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
+ )

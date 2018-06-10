@@ -1,0 +1,26 @@
+diff --git a/tests/CMakeLists.txt b/tests/CMakeLists.txt
+index dc2a07e..ee57f86 100644
+--- a/tests/CMakeLists.txt
++++ b/tests/CMakeLists.txt
+@@ -24,8 +24,6 @@ include_directories (
+   ${UBUNTU_LAUNCH_INCLUDE_DIRS}
+   ${CMAKE_BINARY_DIR}/src
+   ${CMAKE_BINARY_DIR}/src/com/ubuntu/content
+-  ${GMOCK_INCLUDE_DIR}
+-  ${GTEST_INCLUDE_DIR}
+   ${MIRCLIENT_INCLUDE_DIR}
+ )
+ 
+diff --git a/tests/acceptance-tests/CMakeLists.txt b/tests/acceptance-tests/CMakeLists.txt
+index 8be5b27..a8e0dee 100644
+--- a/tests/acceptance-tests/CMakeLists.txt
++++ b/tests/acceptance-tests/CMakeLists.txt
+@@ -39,8 +39,7 @@ set(TESTS
+ )
+ 
+ set(TEST_LIBS
+-  ${GMOCK_LIBRARY}
+-  ${GTEST_BOTH_LIBRARIES}
++  ${GMOCK_LIBRARIES}
+   content-hub
+ )

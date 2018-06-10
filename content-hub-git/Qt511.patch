@@ -1,0 +1,220 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index c8dd6ef..9e49fd6 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -60,6 +60,7 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
+ 
+ find_package(Qt5Core)
+ find_package(Qt5DBus)
++find_package(Qt5Gui)
+ find_package(PkgConfig REQUIRED)
+ pkg_check_modules(GLIB REQUIRED glib-2.0)
+ pkg_check_modules(GIO REQUIRED gio-unix-2.0)
+diff --git a/examples/exporter/CMakeLists.txt b/examples/exporter/CMakeLists.txt
+index fee0a29..64353f6 100644
+--- a/examples/exporter/CMakeLists.txt
++++ b/examples/exporter/CMakeLists.txt
+@@ -23,7 +23,7 @@ add_executable(
+   exampleexporter.cpp
+ )
+ 
+-qt5_use_modules(exporter Core Gui DBus)
++target_link_libraries(exporter Qt5::Core Qt5::Gui Qt5::DBus)
+ 
+ set_target_properties(
+   exporter
+diff --git a/examples/importer/CMakeLists.txt b/examples/importer/CMakeLists.txt
+index b405abc..5599f64 100644
+--- a/examples/importer/CMakeLists.txt
++++ b/examples/importer/CMakeLists.txt
+@@ -24,7 +24,7 @@ add_executable(
+   example.cpp
+ )
+ 
+-qt5_use_modules(importer Core Gui DBus)
++target_link_libraries(importer Qt5::Core Qt5::Gui Qt5::DBus)
+ 
+ set_target_properties(
+   importer
+diff --git a/examples/pasteboard/CMakeLists.txt b/examples/pasteboard/CMakeLists.txt
+index 689ca80..c7ef92d 100644
+--- a/examples/pasteboard/CMakeLists.txt
++++ b/examples/pasteboard/CMakeLists.txt
+@@ -22,7 +22,7 @@ add_executable(
+   copy.cpp
+ )
+ 
+-qt5_use_modules(copy-to-pasteboard Core Gui DBus)
++target_link_libraries(copy-to-pasteboard Qt5::Core Qt5::Gui Qt5::DBus)
+ 
+ set_target_properties(
+   copy-to-pasteboard
+@@ -41,7 +41,7 @@ add_executable(
+   paste.cpp
+ )
+ 
+-qt5_use_modules(paste-from-pasteboard Core Gui DBus)
++target_link_libraries(paste-from-pasteboard Qt5::Core Qt5::Gui Qt5::DBus)
+ 
+ set_target_properties(
+   paste-from-pasteboard
+diff --git a/import/Ubuntu/Content/CMakeLists.txt b/import/Ubuntu/Content/CMakeLists.txt
+index 563f89b..1322309 100644
+--- a/import/Ubuntu/Content/CMakeLists.txt
++++ b/import/Ubuntu/Content/CMakeLists.txt
+@@ -66,7 +66,7 @@ set(PLUGIN_SRC
+ 
+ add_library(${PLUGIN} MODULE ${PLUGIN_SRC} ${PLUGIN_HDRS})
+ 
+-qt5_use_modules(${PLUGIN} Core Qml Quick DBus)
++target_link_libraries(${PLUGIN} Qt5::Core Qt5::Qml Qt5::Quick Qt5::DBus)
+ target_link_libraries(
+     ${PLUGIN}
+     content-hub
+diff --git a/src/com/ubuntu/content/CMakeLists.txt b/src/com/ubuntu/content/CMakeLists.txt
+index ac01b14..f453477 100644
+--- a/src/com/ubuntu/content/CMakeLists.txt
++++ b/src/com/ubuntu/content/CMakeLists.txt
+@@ -112,7 +112,7 @@ set_target_properties(
+   AUTOMOC TRUE
+ )
+ 
+-qt5_use_modules(content-hub Core DBus Gui)
++target_link_libraries(content-hub Qt5::Core Qt5::DBus Qt5::Gui)
+ 
+ target_link_libraries(content-hub
+     ${UBUNTU_LAUNCH_LDFLAGS}
+diff --git a/src/com/ubuntu/content/service/CMakeLists.txt b/src/com/ubuntu/content/service/CMakeLists.txt
+index 825e6f1..2336db5 100644
+--- a/src/com/ubuntu/content/service/CMakeLists.txt
++++ b/src/com/ubuntu/content/service/CMakeLists.txt
+@@ -49,7 +49,7 @@ set_target_properties(
+   AUTOMOC TRUE
+ )
+ 
+-qt5_use_modules(content-hub-service Core DBus Gui)
++target_link_libraries(content-hub-service Qt5::Core Qt5::DBus Qt5::Gui)
+ 
+ target_link_libraries(
+   content-hub-service
+diff --git a/tests/acceptance-tests/CMakeLists.txt b/tests/acceptance-tests/CMakeLists.txt
+index 8be5b27..8f7007e 100644
+--- a/tests/acceptance-tests/CMakeLists.txt
++++ b/tests/acceptance-tests/CMakeLists.txt
+@@ -58,7 +58,8 @@ foreach(test ${TESTS})
+   add_executable(${test}
+     ${${test}_SOURCES}
+   )
+-  qt5_use_modules(${test} Core Gui DBus Test)
++  find_package(Qt5Test REQUIRED)
++  target_link_libraries(${test} Qt5::Core Qt5::Gui Qt5::DBus Qt5::Test)
+ 
+   target_link_libraries(${test}
+     ${TEST_LIBS}
+@@ -81,7 +82,7 @@ add_executable(
+   source_all.json
+ )
+ 
+-qt5_use_modules(test_registry_updater Core Gui DBus Test)
++target_link_libraries(test_registry_updater Qt5::Core Qt5::Gui Qt5::DBus Qt5::Test)
+ target_link_libraries(test_registry_updater content-hub ${GTEST_ALL_LIBRARIES} ${GSETTINGS_LDFLAGS})
+ add_test(NAME test_registry_updater COMMAND dbus-test-runner --task ${CMAKE_CURRENT_BINARY_DIR}/test_registry_updater)
+ 
+diff --git a/tests/peers/exporter/CMakeLists.txt b/tests/peers/exporter/CMakeLists.txt
+index d0fdc26..e663707 100644
+--- a/tests/peers/exporter/CMakeLists.txt
++++ b/tests/peers/exporter/CMakeLists.txt
+@@ -23,7 +23,7 @@ add_executable(
+   autoexporter.cpp
+ )
+ 
+-qt5_use_modules(content-hub-test-exporter Core Gui DBus)
++target_link_libraries(content-hub-test-exporter Qt5::Core Qt5::Gui Qt5::DBus)
+ pkg_check_modules(APPARMOR REQUIRED libapparmor)
+ 
+ set_target_properties(
+diff --git a/tests/peers/importer/CMakeLists.txt b/tests/peers/importer/CMakeLists.txt
+index 3655a45..b25cebc 100644
+--- a/tests/peers/importer/CMakeLists.txt
++++ b/tests/peers/importer/CMakeLists.txt
+@@ -23,7 +23,7 @@ add_executable(
+   autoimporter.cpp
+ )
+ 
+-qt5_use_modules(content-hub-test-importer Core Gui DBus)
++target_link_libraries(content-hub-test-importer Qt5::Core Qt5::Gui Qt5::DBus)
+ 
+ set_target_properties(
+   content-hub-test-importer
+diff --git a/tests/peers/sharer/CMakeLists.txt b/tests/peers/sharer/CMakeLists.txt
+index c7f9f26..a58eac1 100644
+--- a/tests/peers/sharer/CMakeLists.txt
++++ b/tests/peers/sharer/CMakeLists.txt
+@@ -23,7 +23,7 @@ add_executable(
+   autosharer.cpp
+ )
+ 
+-qt5_use_modules(content-hub-test-sharer Core Gui DBus)
++target_link_libraries(content-hub-test-sharer Qt5::Core Qt5::Gui Qt5::DBus)
+ 
+ set_target_properties(
+   content-hub-test-sharer
+diff --git a/tests/qml-tests/CMakeLists.txt b/tests/qml-tests/CMakeLists.txt
+index 2429db9..a305c06 100644
+--- a/tests/qml-tests/CMakeLists.txt
++++ b/tests/qml-tests/CMakeLists.txt
+@@ -15,7 +15,9 @@
+ set(TEST tst_QmlTests)
+ set(XVFB_CMD xvfb-run -a -s "-screen 0 640x480x24")
+ add_executable(${TEST} tst_QmlTests.cpp)
+-qt5_use_modules(${TEST} Core Qml Quick Test QuickTest)
++find_package(Qt5Quick REQUIRED)
++find_package(Qt5QuickTest REQUIRED)
++target_link_libraries(${TEST} Qt5::Core Qt5::Qml Qt5::Quick Qt5::Test Qt5::QuickTest)
+ add_test(NAME ${TEST} COMMAND ${XVFB_CMD} ${CMAKE_CURRENT_BINARY_DIR}/${TEST})
+ set_tests_properties(${TEST} PROPERTIES ENVIRONMENT "QT_QPA_PLATFORM=minimal;QML2_IMPORT_PATH=${CMAKE_BINARY_DIR}/import;APP_ID=com.some.app.for.testing")
+ 
+diff --git a/tools/clipboard/CMakeLists.txt b/tools/clipboard/CMakeLists.txt
+index 52dfafc..d8e5ae9 100644
+--- a/tools/clipboard/CMakeLists.txt
++++ b/tools/clipboard/CMakeLists.txt
+@@ -45,7 +45,9 @@ add_executable(${CLIPBOARD_APP}
+     ${RESOURCES}
+ )
+ 
+-qt5_use_modules(${CLIPBOARD_APP} Core Gui Quick Qml Widgets DBus)
++find_package(Qt5Quick REQUIRED)
++find_package(Qt5Widgets REQUIRED)
++target_link_libraries(${CLIPBOARD_APP} Qt5::Core Qt5::Gui Qt5::Quick Qt5::Qml Qt5::Widgets Qt5::DBus)
+ find_package(Qt5Core 5.4 REQUIRED)
+ include_directories(
+     ${Qt5Gui_PRIVATE_INCLUDE_DIRS}
+diff --git a/tools/peer-picker/CMakeLists.txt b/tools/peer-picker/CMakeLists.txt
+index 3656eeb..0045f78 100644
+--- a/tools/peer-picker/CMakeLists.txt
++++ b/tools/peer-picker/CMakeLists.txt
+@@ -27,7 +27,10 @@ add_executable(
+   ${RESOURCES}
+ )
+ 
+-qt5_use_modules(content-hub-peer-picker Core Gui Quick Qml Widgets)
++find_package(Qt5Quick REQUIRED)
++find_package(Qt5Qml REQUIRED)
++find_package(Qt5Widgets REQUIRED)
++target_link_libraries(content-hub-peer-picker Qt5::Core Qt5::Gui Qt5::Quick Qt5::Qml Qt5::Widgets)
+ 
+ set_target_properties(
+   content-hub-peer-picker
+diff --git a/tools/send/CMakeLists.txt b/tools/send/CMakeLists.txt
+index 91ef774..a3a037d 100644
+--- a/tools/send/CMakeLists.txt
++++ b/tools/send/CMakeLists.txt
+@@ -29,7 +29,7 @@ add_executable(
+   ${CMAKE_SOURCE_DIR}/src/com/ubuntu/content/debug.cpp
+ )
+ 
+-qt5_use_modules(content-hub-send Core Gui DBus)
++target_link_libraries(content-hub-send Qt5::Core Qt5::Gui Qt5::DBus)
+ 
+ set_target_properties(
+   content-hub-send

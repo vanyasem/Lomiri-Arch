@@ -43,10 +43,10 @@ _Clickable icons:_
 - [ ] `history-service`
 - [x] `qtpim` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qt5-pim-git)
 - [x] `qtsystems` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qt5-systems-git)
-- [ ] `ubuntu-ui-toolkit` [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/9) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/10) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/11) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/12) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/13)
-- [ ] `content-hub` [⛔️](https://github.com/ubports/content-hub/issues/1) [⛔️](https://github.com/ubports/content-hub/issues/2) [⛔️](https://github.com/ubports/content-hub/issues/4)
+- [x] `ubuntu-ui-toolkit` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/ubuntu-ui-toolkit-git) | [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/9) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/10) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/11) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/12) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/13)
+- [x] `content-hub` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/content-hub-git) | [⛔️](https://github.com/ubports/content-hub/issues/1) [⛔️](https://github.com/ubports/content-hub/issues/2) [⛔️](https://github.com/ubports/content-hub/issues/4)
 - [x] `libqtdbusmock` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqtdbusmock-git) | [⛔️](https://github.com/ubports/libqtdbusmock/issues/1)
-- [ ] `qtmir`
+- [ ] `qtmir` [⛔️](https://github.com/ubports/qtmir/issues/5) [⛔️](https://github.com/ubports/qtmir/issues/6) [⛔️](https://github.com/ubports/qtmir/issues/7)
 - [ ] `trust-store`
 - [ ] `location-service`
 - [ ] `platform-api`
