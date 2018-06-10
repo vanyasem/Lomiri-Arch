@@ -52,6 +52,7 @@ check() {
 
 package() {
   cd ${_pkgname}
-  make INSTALL_ROOT="${pkgdir}/" install
+  mkdir -p /tmp/runtime-builduser
+  XDG_RUNTIME_DIR=/tmp/runtime-builduser make INSTALL_ROOT="${pkgdir}/" install
 }
 # vim:set ts=2 sw=2 et:

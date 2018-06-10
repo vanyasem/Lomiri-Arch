@@ -42,8 +42,9 @@ prepare() {
 
 build() {
   cd ${_pkgname}
+  mkdir -p /tmp/runtime-builduser
   cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" -DCMAKE_INSTALL_LIBEXECDIR="lib/" .
-  make
+  XDG_RUNTIME_DIR=/tmp/runtime-builduser make
 }
 
 check() {
