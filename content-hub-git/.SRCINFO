@@ -22,6 +22,7 @@ pkgbase = content-hub-git
 	depends = gsettings-qt
 	depends = apparmor-libapparmor
 	depends = libnotify
+	depends = ubuntu-ui-toolkit-git
 	source = git+https://github.com/ubports/content-hub.git
 	source = Gtest.patch
 	source = Qt511.patch
