@@ -1,0 +1,15 @@
+diff --git a/tests/unit/runtest.sh b/tests/unit/runtest.sh
+index f15ed1776..437da71a0 100755
+--- a/tests/unit/runtest.sh
++++ b/tests/unit/runtest.sh
+@@ -88,8 +88,8 @@ function create_test_cmd {
+   EXE=$(abspath $_TARGETPATH)
+   _CMD="-n $_TESTFILE -m 500"
+ 
+-  DEB_HOST_ARCH=$(dpkg-architecture -qDEB_HOST_ARCH)
+-  if [[ ${DEB_HOST_ARCH} =~ 'arm' ]]; then
++  HOST_ARCH=$(uname -m)
++  if [[ HOST_ARCH =~ 'arm' || HOST_ARCH =~ 'aarch64' ]]; then
+     _CMD="dbus-test-runner --task $EXE $_CMD"
+   else
+     _CMD="dbus-test-runner --task gdb -p --quiet $_CMD"

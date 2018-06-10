@@ -1,0 +1,13 @@
+diff --git a/.qmake.conf b/.qmake.conf
+index af163c376..57c79b3ce 100644
+--- a/.qmake.conf
++++ b/.qmake.conf
+@@ -6,7 +6,7 @@
+ # inside the debian/rules file
+ 
+ load(qt_build_config)
+-CONFIG += warning_clean
++CONFIG += warn_off
+ CONFIG += c++11
+ 
+ MODULE_VERSION = 5.5.0

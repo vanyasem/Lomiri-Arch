@@ -1,0 +1,13 @@
+diff --git a/ubuntu-sdk.pro b/ubuntu-sdk.pro
+index 4cd2e9cfe..993277332 100644
+--- a/ubuntu-sdk.pro
++++ b/ubuntu-sdk.pro
+@@ -11,7 +11,7 @@ load(qt_parts)
+ src_uitk_launcher.subdir = ubuntu-ui-toolkit-launcher
+ src_uitk_launcher.depends = sub-src
+ 
+-SUBDIRS += po documentation app-launch-profiler src_uitk_launcher apicheck
++SUBDIRS += po app-launch-profiler src_uitk_launcher apicheck
+ 
+ sub_tests.CONFIG -= no_default_target
+ sub_tests.CONFIG -= no_default_install

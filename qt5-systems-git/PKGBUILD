@@ -23,7 +23,6 @@ pkgver() {
 
 build() {
   cd ${_pkgname}
-
   qmake-qt5
   make
 }
