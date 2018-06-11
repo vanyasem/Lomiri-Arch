@@ -2,7 +2,7 @@
 
 pkgname=net-cpp-git
 _pkgname=net-cpp
-pkgver=14fcc4e
+pkgver=09cac6a
 pkgrel=1
 pkgdesc='A simple yet beautiful networking API for C++11'
 url='https://github.com/ubports/net-cpp'
@@ -11,11 +11,9 @@ license=(LGPL)
 depends=(boost process-cpp gmock graphviz properties-cpp jsoncpp python2-flask-script python2-flask python2-decorator python2-simplejson curl)
 makedepends=(git cmake cmake-extras-git doxygen bsdiff)
 source=('git+https://github.com/ubports/net-cpp.git'
-        'JsonReader.patch'
         'Python.patch'
         'HTTPBin.patch')
 sha256sums=('SKIP'
-            'dd7736ed47821090665f4d4f496fe1565149e028a9c2ecf1b0fcb4f4e86f0c89'
             '36b25f932cca5c3e80882424c0884d0ee03774dd8df9ae243163af0417ac7f86'
             '1ae39a76834511a49712a88c415f7411cde4fbe480e687e0879ece9448885549')
 
@@ -23,7 +21,6 @@ prepare() {
   cd ${_pkgname}
   git checkout bionic
   
-  patch -Np1 -i "${srcdir}/JsonReader.patch"
   patch -Np1 -i "${srcdir}/Python.patch"
   
   cp tests/httpbin.tar.bz2 tests/httpbin.tar.bz2.old

@@ -22,7 +22,7 @@ _Clickable icons:_
 
 **Unity8 packages:**
 - [x] `cmake-extras` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/cmake-extras-git) | [⛔️](https://github.com/ubports/cmake-extras/issues/2)
-- [x] `libqtdbustest` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqtdbustest-git) | [⛔️](https://github.com/ubports/libqtdbustest/issues/1)
+- [x] `libqtdbustest` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqtdbustest-git) | [🆗](https://github.com/ubports/libqtdbustest/issues/1)
 - [x] `dbus-test-runner` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/dbus-test-runner) | [⛔️](https://aur.archlinux.org/pkgbase/dbus-test-runner/flag-comment/)
 - [x] `unity-api`[🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity-api-git) | [⛔️](https://github.com/ubports/unity-api/issues/2)
 - [x] `libertine` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libertine-git) | [⛔️](https://github.com/ubports/libertine/issues/3)
@@ -32,23 +32,23 @@ _Clickable icons:_
 - [x] `process-cpp` [submodule](https://aur.archlinux.org/packages/process-cpp/)
 - [x] `perl-rpc-xml` [submodule](https://aur.archlinux.org/packages/perl-rpc-xml/) | [⛔️](https://github.com/rjray/rpc-xml/issues/14)
 - [x] `apparmor-libapparmor` [submodule](https://aur.archlinux.org/packages/apparmor-libapparmor/)
-- [x] `net-cpp` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/net-cpp-git) | [⛔️](https://github.com/ubports/net-cpp/pull/1) [⛔️](https://github.com/ubports/net-cpp/issues/2) [⛔️](https://github.com/ubports/net-cpp/issues/3)
+- [x] `net-cpp` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/net-cpp-git) | [🆗](https://github.com/ubports/net-cpp/pull/1) [⛔️](https://github.com/ubports/net-cpp/issues/2) [⛔️](https://github.com/ubports/net-cpp/issues/3)
 - [x] `zmqpp` [submodule](https://aur.archlinux.org/packages/zmqpp/)
 - [x] `lttng-tools` [submodule](https://aur.archlinux.org/packages/lttng-toolss/)
-- [x] `unity-scopes-api` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity-scopes-api-git) | [⛔️](https://github.com/ubports/unity-scopes-api/issues/4) [⛔️](https://github.com/ubports/unity-scopes-api/issues/6) [⛔️](https://github.com/ubports/unity-scopes-api/issues/8) [⛔️](https://github.com/ubports/unity-scopes-api/issues/9)
+- [x] `unity-scopes-api` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity-scopes-api-git) | [🆗](https://github.com/ubports/unity-scopes-api/issues/4) [🆗](https://github.com/ubports/unity-scopes-api/issues/6) [⛔️](https://github.com/ubports/unity-scopes-api/issues/8) [⛔️](https://github.com/ubports/unity-scopes-api/issues/9)
 - [x] `url-dispatcher` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/url-dispatcher-git) | [🆗](https://github.com/ubports/url-dispatcher/pull/1) [⛔️](https://github.com/ubports/url-dispatcher/pull/4)
 - [x] `persistent-cache-cpp` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/persistent-cache-cpp-bzr)
-- [x] `thumbnailer` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/thumbnailer-git) | [⛔️](https://github.com/ubports/thumbnailer/issues/1)
+- [x] `thumbnailer` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/thumbnailer-git) | [🆗](https://github.com/ubports/thumbnailer/issues/1)
 - [x] `qtpim` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qt5-pim-git)
 - [x] `qtsystems` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qt5-systems-git)
 - [x] `humanity-icon-theme` [submodule](https://aur.archlinux.org/packages/humanity-icon-theme/)
 - [x] `ubuntu-themes` [submodule](https://aur.archlinux.org/packages/ubuntu-themes/)
 - [x] `ubuntu-ui-toolkit` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/ubuntu-ui-toolkit-git) | [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/9) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/10) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/11) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/12) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/13) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/14)
 - [x] `content-hub` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/content-hub-git) | [⛔️](https://github.com/ubports/content-hub/issues/1) [🆗](https://github.com/ubports/content-hub/issues/2) [⛔️](https://github.com/ubports/content-hub/issues/4) [⛔️](https://github.com/ubports/content-hub/issues/5)
-- [x] `libqtdbusmock` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqtdbusmock-git) | [⛔️](https://github.com/ubports/libqtdbusmock/issues/1)
+- [x] `libqtdbusmock` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqtdbusmock-git) | [🆗](https://github.com/ubports/libqtdbusmock/issues/1)
 - [x] `qtmir` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qtmir-git) |  [⛔️](https://github.com/ubports/qtmir/issues/5) [⛔️](https://github.com/ubports/qtmir/issues/6) [⛔️](https://github.com/ubports/qtmir/issues/8)
 - [x] `settings-components` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/settings-components-git) | [🆗](https://github.com/ubports/settings-components/issues/3)
-- [ ] `history-service` [⛔️](https://github.com/ubports/history-service/issues/1)
+- [ ] `history-service` [🆗](https://github.com/ubports/history-service/issues/1)
 - [ ] `trust-store`
 - [ ] `location-service`
 - [ ] `platform-api`

@@ -2,7 +2,7 @@
 
 pkgname=libqtdbusmock-git
 _pkgname=libqtdbusmock
-pkgver=ad66711
+pkgver=d6d1830
 pkgrel=1
 pkgdesc='Library for mocking DBus interactions using Qt'
 url='https://github.com/ubports/libqtdbusmock'
@@ -11,19 +11,12 @@ license=(LGPL3)
 depends=(networkmanager libqtdbustest-git gmock)
 makedepends=(git cmake cmake-extras-git) 
 checkdepends=(python-dbusmock python-dbus python-gobject)
-source=('git+https://github.com/ubports/libqtdbusmock.git'
-        'Qt511.patch')
-sha256sums=('SKIP'
-            '3903fdd11f0581bacc99be7803b3130b35d5dc5c933bd9306a0375e8c4f8b12a')
+source=('git+https://github.com/ubports/libqtdbusmock.git')
+sha256sums=('SKIP')
 
 pkgver() {
   cd ${_pkgname}
   git describe --always
-}
-
-prepare() {
-  cd ${_pkgname}
-  patch -Np1 -i "${srcdir}/Qt511.patch"
 }
 
 build() {
