@@ -62,7 +62,7 @@ _Clickable icons:_
 
 **Halium packages (`armv7h`, `aarch64`):**
 - [x] `hybris-usb` [submodule](https://aur.archlinux.org/packages/hybris-usb/) | [🆗](https://aur.archlinux.org/pkgbase/hybris-usb/?comments=all)
-- [x] `android-headers 5.1` [submodule](https://aur.archlinux.org/packages/hybris-android-headers/)
+- [ ] `android-headers 5.1` [submodule](https://aur.archlinux.org/packages/hybris-android-headers/)
 - [x] `android-headers 7.1` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/hybris-android-headers-7)
 - [ ] `libhybris-git` [submodule](https://aur.archlinux.org/packages/libhybris-git/)
 - [x] `libhybris-aarch64-git` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libhybris-aarch64-git)

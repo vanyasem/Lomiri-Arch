@@ -22,6 +22,7 @@ build() {
   cd ${_pkgbase}/hybris
 
   ./autogen.sh \
+    --enable-arch=arm64 \
     --prefix=/opt/android/hybris \
     --with-android-headers=/opt/android/include \
     --enable-wayland
