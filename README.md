@@ -26,9 +26,9 @@ _Clickable icons:_
 - [x] `dbus-test-runner` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/dbus-test-runner) | [⛔️](https://aur.archlinux.org/pkgbase/dbus-test-runner/flag-comment/)
 - [x] `unity-api`[🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity-api-git) | [⛔️](https://github.com/ubports/unity-api/issues/2)
 - [x] `libertine` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libertine-git) | [⛔️](https://github.com/ubports/libertine/issues/3)
-- [x] `ubuntu-download-manager` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/ubuntu-download-manager-git) | [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/2) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/3) [🆗](https://github.com/ubports/ubuntu-download-manager/issues/4) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/6) [🆗](https://github.com/ubports/ubuntu-app-launch/pull/1)
+- [x] `ubuntu-download-manager` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/ubuntu-download-manager-git) | [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/2) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/3) [🆗](https://github.com/ubports/ubuntu-download-manager/issues/4) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/6)
 - [x] `properties-cpp` [submodule](https://aur.archlinux.org/packages/properties-cpp/)
-- [x] `ubuntu-app-launch` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/ubuntu-app-launch-git) | [⛔️](https://github.com/ubports/ubuntu-app-launch/issues/2) [⛔️](https://github.com/ubports/ubuntu-app-launch/issues/3) [⛔️](https://github.com/ubports/ubuntu-app-launch/issues/4)
+- [x] `ubuntu-app-launch` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/ubuntu-app-launch-git) | [⛔️](https://github.com/ubports/ubuntu-app-launch/issues/2) [⛔️](https://github.com/ubports/ubuntu-app-launch/issues/3) [⛔️](https://github.com/ubports/ubuntu-app-launch/issues/4) [🆗](https://github.com/ubports/ubuntu-app-launch/pull/1)
 - [x] `process-cpp` [submodule](https://aur.archlinux.org/packages/process-cpp/)
 - [x] `perl-rpc-xml` [submodule](https://aur.archlinux.org/packages/perl-rpc-xml/) | [⛔️](https://github.com/rjray/rpc-xml/issues/14)
 - [x] `apparmor-libapparmor` [submodule](https://aur.archlinux.org/packages/apparmor-libapparmor/)
@@ -47,8 +47,8 @@ _Clickable icons:_
 - [x] `content-hub` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/content-hub-git) | [⛔️](https://github.com/ubports/content-hub/issues/1) [🆗](https://github.com/ubports/content-hub/issues/2) [⛔️](https://github.com/ubports/content-hub/issues/4) [⛔️](https://github.com/ubports/content-hub/issues/5)
 - [x] `libqtdbusmock` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqtdbusmock-git) | [⛔️](https://github.com/ubports/libqtdbusmock/issues/1)
 - [x] `qtmir` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qtmir-git) |  [⛔️](https://github.com/ubports/qtmir/issues/5) [⛔️](https://github.com/ubports/qtmir/issues/6) [⛔️](https://github.com/ubports/qtmir/issues/8)
-- [ ] `settings-components` [⛔️](https://github.com/ubports/settings-components/issues/3)
-- [ ] `history-service`
+- [x] `settings-components` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/settings-components-git) | [🆗](https://github.com/ubports/settings-components/issues/3)
+- [ ] `history-service` [⛔️](https://github.com/ubports/history-service/issues/1)
 - [ ] `trust-store`
 - [ ] `location-service`
 - [ ] `platform-api`
@@ -62,8 +62,10 @@ _Clickable icons:_
 
 **Halium packages (`armv7h`, `aarch64`):**
 - [x] `hybris-usb` [submodule](https://aur.archlinux.org/packages/hybris-usb/) | [🆗](https://aur.archlinux.org/pkgbase/hybris-usb/?comments=all)
-- [ ] `android-headers`
-- [ ] `libhybris-git` [submodule](https://aur.archlinux.org/packages/libhybris-git/) | [⛔️](https://aur.archlinux.org/pkgbase/libhybris-git/?comments=all)
+- [x] `android-headers 5.1` [submodule](https://aur.archlinux.org/packages/hybris-android-headers/)
+- [x] `android-headers 7.1` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/hybris-android-headers-7)
+- [ ] `libhybris-git` [submodule](https://aur.archlinux.org/packages/libhybris-git/)
+- [x] `libhybris-aarch64-git` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libhybris-aarch64-git)
 - [x] `lxc-android` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/lxc-android-git) | [⛔️](https://github.com/Halium/lxc-android/issues/13)
 
 ## Install Unity8 (not implemented, boilerplate text)

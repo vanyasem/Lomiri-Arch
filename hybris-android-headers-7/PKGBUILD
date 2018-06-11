@@ -1,0 +1,25 @@
+# Maintainer: Ivan Semkin (ivan at semkin dot ru)
+# Contributor Michael Serpieri <mickybart@pygoscelis.org>
+
+pkgname=hybris-android-headers-7
+_pkgname=android-headers
+pkgver=7.1.1
+pkgrel=1
+pkgdesc='Android Headers for libhybris'
+url='https://github.com/vanyasem/android-headers'
+arch=(x86_64 i686 armv7h aarch64)
+license=(custom)
+provides=(hybris-android-headers)
+conflicts=(hybris-android-headers)
+source=('git+https://github.com/vanyasem/android-headers.git')
+sha256sums=('SKIP')
+options=('!strip')
+
+package() {
+  cd ${_pkgname}
+  install -d "${pkgdir}/opt/android"
+
+  make DESTDIR="${pkgdir}/" PREFIX="/opt/android" INCLUDEDIR="/opt/android/include" PKGCONFIGDIR="/usr/lib/pkgconfig" install
+  sed -i 's|Cflags:.*|Cflags: -I${includedir}|' "${pkgdir}/usr/lib/pkgconfig/android-headers.pc"
+}
+# vim:set ts=2 sw=2 et:
