@@ -2,29 +2,33 @@
 
 pkgname=lxc-android-git
 _pkgname=lxc-android
-pkgver=cd1be3f
-pkgrel=1
+pkgver=2f5be4b
+pkgrel=2
 pkgdesc='LXC container configuration for Android'
 url='https://github.com/Halium/lxc-android'
-arch=(armv7h aarch64)
+arch=(x86_64 i686 armv7h aarch64)
 license=(Apache)
-source=('git+https://github.com/Halium/lxc-android.git')
-sha256sums=(SKIP)
+source=('git+https://github.com/Halium/lxc-android.git'
+        'lxcconfig.patch')
+sha256sums=('SKIP'
+            'c51d083764bbdf50f8f554582557bed5344b129176b5ab2019674c91bdd6751a')
+
+prepare() {
+  cd ${_pkgname}
+  patch -Np1 -i "${srcdir}/lxcconfig.patch"
+}
 
 pkgver() {
   cd ${_pkgname}
   git describe --always
 }
 
-build() {
-  cd ${_pkgname}
-}
-
 package() {
   cd ${_pkgname}
 
-  install -d ${pkgdir}/etc/systemd/system/systemd-udevd.service.d/
-  install -m 644 etc/systemd/system/systemd-udevd.service.d/10_copy-device-udev-rules.conf ${pkgdir}/etc/systemd/system/systemd-udevd.service.d/
+  # Somehow causes the boot to fail:
+  #install -d ${pkgdir}/etc/systemd/system/systemd-udevd.service.d/
+  #install -m 644 etc/systemd/system/systemd-udevd.service.d/10_copy-device-udev-rules.conf ${pkgdir}/etc/systemd/system/systemd-udevd.service.d/
   
   install -d ${pkgdir}/etc/udev/rules.d/
   install -m 644 etc/udev/rules.d/50-firmware.rules ${pkgdir}/etc/udev/rules.d/
