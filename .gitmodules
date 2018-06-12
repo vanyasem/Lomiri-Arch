@@ -34,3 +34,6 @@
 [submodule "humanity-icon-theme"]
 	path = humanity-icon-theme
 	url = https://aur.archlinux.org/humanity-icon-theme.git
+[submodule "libhybris-git"]
+	path = libhybris-git
+	url = https://aur.archlinux.org/libhybris-git.git

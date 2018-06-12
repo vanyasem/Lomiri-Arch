@@ -64,7 +64,7 @@ _Clickable icons:_
 - [x] `hybris-usb` [submodule](https://aur.archlinux.org/packages/hybris-usb/) | [🆗](https://aur.archlinux.org/pkgbase/hybris-usb/?comments=all) [⛔️](https://aur.archlinux.org/pkgbase/hybris-usb/?comments=all)
 - [x] `android-headers 5.1` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/hybris-android-headers)
 - [x] `android-headers 7.1` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/hybris-android-headers-7)
-- [ ] `libhybris-git` [submodule](https://aur.archlinux.org/packages/libhybris-git/)
+- [x] `libhybris-git` [submodule](https://aur.archlinux.org/packages/libhybris-git/)
 - [x] `libhybris-aarch64-git` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libhybris-aarch64-git)
 - [x] `lxc-android` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/lxc-android-git) | [⛔️](https://github.com/Halium/lxc-android/issues/13) [⛔️](https://github.com/Halium/lxc-android/pull/15)
 
