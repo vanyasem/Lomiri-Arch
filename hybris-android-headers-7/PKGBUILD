@@ -16,7 +16,7 @@ sha256sums=('SKIP')
 options=('!strip')
 
 package_hybris-android-headers-7() {
-  cd ${_pkgname}
+  cd ${_pkgname}-7
   install -d "${pkgdir}/opt/android"
 
   make DESTDIR="${pkgdir}/" PREFIX="/opt/android" INCLUDEDIR="/opt/android/include" PKGCONFIGDIR="/usr/lib/pkgconfig" install
@@ -24,7 +24,7 @@ package_hybris-android-headers-7() {
 }
 
 package_hybris-android-headers-7-caf() {
-  cd ${_pkgname}
+  cd ${_pkgname}-7
   install -d "${pkgdir}/opt/android"
 
   sed '/\/\* CONFIG GOES HERE/,$d' android-config.h > android-config.h.new
