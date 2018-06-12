@@ -1,8 +1,8 @@
-pkgbase = hybris-android-headers-7
+pkgbase = hybris-android-headers
 	pkgdesc = Header files needed to write applications for the Android platform
-	pkgver = 7.1.1
-	pkgrel = 2
-	url = https://github.com/vanyasem/android-headers
+	pkgver = 5.1.1
+	pkgrel = 1
+	url = https://github.com/Halium/android-headers
 	arch = x86_64
 	arch = i686
 	arch = armv7h
@@ -11,10 +11,8 @@ pkgbase = hybris-android-headers-7
 	provides = hybris-android-headers
 	conflicts = hybris-android-headers
 	options = !strip
-	source = git+https://github.com/vanyasem/android-headers.git
+	source = git+https://github.com/Halium/android-headers.git
 	sha256sums = SKIP
 
-pkgname = hybris-android-headers-7
-
-pkgname = hybris-android-headers-7-caf
+pkgname = hybris-android-headers
 
