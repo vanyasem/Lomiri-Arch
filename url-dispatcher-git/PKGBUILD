@@ -11,16 +11,12 @@ license=(LGPL)
 depends=(ubuntu-app-launch-git unity-scopes-api-git intltool)
 makedepends=(git cmake cmake-extras-git)
 checkdepends=(python-testtools python-nose)
-source=('git+https://github.com/ubports/url-dispatcher.git'
-        'pthread.patch')
-sha256sums=('SKIP'
-            '9cb86a30189e6114a17f5124f33e0e473d5da4d92af6c9f6c9be916e6ce7d469')
+source=('git+https://github.com/ubports/url-dispatcher.git')
+sha256sums=('SKIP')
 
 prepare() {
   cd ${_pkgname}
   git checkout bionic
-  
-  patch -Np1 -i "${srcdir}/pthread.patch"
 }
 
 pkgver() {

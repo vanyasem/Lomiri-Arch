@@ -10,10 +10,8 @@ arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL3)
 depends=(qt5-quickcontrols)
 makedepends=(git cmake libqtdbustest-git)
-source=('git+https://github.com/ubports/unity-api.git'
-        'Qt511.patch')
-sha256sums=('SKIP'
-            '1abc61b62c3e0e2110b6a765064b7a73b8c6bfa7f24ad0065bea940140810be5')
+source=('git+https://github.com/ubports/unity-api.git')
+sha256sums=('SKIP')
 
 BUILDENV+=('!check') # Some tests are broken
 
@@ -22,7 +20,6 @@ BUILD_DIR=build
 prepare() {
   cd ${_pkgname}
   git checkout bionic
-  patch -Np1 -i "${srcdir}/Qt511.patch"
 }
 
 pkgver() {
