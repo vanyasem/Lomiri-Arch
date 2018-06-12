@@ -11,7 +11,7 @@ pkgbase = hybris-android-headers-7
 	provides = hybris-android-headers
 	conflicts = hybris-android-headers
 	options = !strip
-	source = git+https://github.com/vanyasem/android-headers.git
+	source = android-headers-7::git+https://github.com/vanyasem/android-headers.git
 	sha256sums = SKIP
 
 pkgname = hybris-android-headers-7
