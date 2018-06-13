@@ -2,7 +2,7 @@
 
 pkgname=trust-store-git
 _pkgname=trust-store
-pkgver=5b93fd6
+pkgver=70540a2
 pkgrel=1
 pkgdesc='C++11 library for persisting trust requests'
 url='https://github.com/ubports/trust-store'
@@ -11,10 +11,8 @@ license=(LGPL)
 depends=(qt5-base qt5-quickcontrols boost dbus-cpp gmock lcov gcovr mir-git apparmor-libapparmor properties-cpp)
 makedepends=(git cmake cmake-extras-git doxygen graphviz)
 source=('git+https://github.com/ubports/trust-store.git'
-        'lsbrelease.patch'
         'Qt511.patch')
 sha256sums=('SKIP'
-            'e5908318ce49424055b22eb63ad5d8a39f2cd4068d908d8ed3ffeb3973daec91'
             '3f703b9d5f4a6b0e877aa5c8fdca30b16087be48d4f4d92bec3f371f7d7e8743')
 
 BUILDENV+=('!check') # https://paste.ubuntu.com/p/NZr7FtGtWw/
@@ -23,7 +21,6 @@ prepare() {
   cd ${_pkgname}
   git checkout bionic
 
-  patch -Np1 -i "${srcdir}/lsbrelease.patch"
   patch -Np1 -i "${srcdir}/Qt511.patch"
 }
 

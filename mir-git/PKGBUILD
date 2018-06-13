@@ -3,7 +3,7 @@
 
 pkgname=mir-git
 _pkgname=mir
-pkgver=v0.31.2+400+gfd0788be81
+pkgver=v0.31.2+403+g9a2ab2014a
 pkgrel=1
 pkgdesc="Canonical's display server"
 url='https://mir-server.io'
@@ -18,13 +18,9 @@ optdepends=('qterminal: required for miral demos'
             'ttf-ubuntu-font-family: required for miral demos'
             'qt5-wayland: required for miral demos')
 source=('git+https://github.com/MirServer/mir.git'
-        'https://raw.githubusercontent.com/capnproto/capnproto/04fd66e2992a3ed38d686642a3c479a7f3e131c9/c%2B%2B/cmake/FindCapnProto.cmake'
-        'boost67.patch'
-        'noloop.patch')
+        'https://raw.githubusercontent.com/capnproto/capnproto/04fd66e2992a3ed38d686642a3c479a7f3e131c9/c%2B%2B/cmake/FindCapnProto.cmake')
 sha256sums=('SKIP'
-            '83153402ea0220a9ed3f9d2c2c157eb49fedf340f368cd8173f0966b3fbf2647'
-            '09234d95c001540ba33b47b3d419a1648b637d9d7c26c5844d0466479faa5021'
-            '4f78830390bb19fd5d80231257c16eeea028822c0e7581a1dc1d41bd7b105a95')
+            '83153402ea0220a9ed3f9d2c2c157eb49fedf340f368cd8173f0966b3fbf2647')
 
 BUILD_DIR=build
 
@@ -33,9 +29,6 @@ prepare() {
   git submodule init
   git submodule update
   cp ../FindCapnProto.cmake cmake/
-
-  patch -Np1 -i "${srcdir}/boost67.patch"
-  patch -Np1 -i "${srcdir}/noloop.patch"
 }
 
 pkgver() {
