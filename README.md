@@ -48,8 +48,9 @@ _Clickable icons:_
 - [x] `libqtdbusmock` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqtdbusmock-git) | [🆗](https://github.com/ubports/libqtdbusmock/issues/1)
 - [x] `qtmir` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qtmir-git) |  [⛔️](https://github.com/ubports/qtmir/issues/5) [⛔️](https://github.com/ubports/qtmir/issues/6) [⛔️](https://github.com/ubports/qtmir/issues/8)
 - [x] `settings-components` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/settings-components-git) | [🆗](https://github.com/ubports/settings-components/issues/3)
-- [ ] `history-service` [🆗](https://github.com/ubports/history-service/issues/1)
-- [ ] `trust-store`
+- [x] `history-service` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/history-service-git) | [🆗](https://github.com/ubports/history-service/issues/1)
+- [x] `dbus-cpp` [submodule](https://aur.archlinux.org/packages/dbus-cpp/)
+- [x] `trust-store` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/trust-store-git) | [⛔️](https://github.com/ubports/trust-store/issues/2) [⛔️](https://github.com/ubports/trust-store/issues/4)
 - [ ] `location-service`
 - [ ] `platform-api`
 - [ ] `qtubuntu`
@@ -57,7 +58,6 @@ _Clickable icons:_
 - [ ] `keyboard-component`
 - [ ] `system-settings`
 - [ ] `unity8`
-- [x] `dbus-cpp?` [submodule](https://aur.archlinux.org/packages/dbus-cpp/)
 - [ ] Probably more
 
 **Halium packages (`armv7h`, `aarch64`):**

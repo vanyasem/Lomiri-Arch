@@ -1,0 +1,34 @@
+pkgbase = trust-store-git
+	pkgdesc = C++11 library for persisting trust requests
+	pkgver = 5b93fd6
+	pkgrel = 1
+	url = https://github.com/ubports/trust-store
+	arch = x86_64
+	arch = i686
+	arch = armv7h
+	arch = aarch64
+	license = LGPL
+	makedepends = git
+	makedepends = cmake
+	makedepends = cmake-extras-git
+	makedepends = doxygen
+	makedepends = graphviz
+	depends = qt5-base
+	depends = qt5-quickcontrols
+	depends = boost
+	depends = dbus-cpp
+	depends = gmock
+	depends = lcov
+	depends = gcovr
+	depends = mir-git
+	depends = apparmor-libapparmor
+	depends = properties-cpp
+	source = git+https://github.com/ubports/trust-store.git
+	source = lsbrelease.patch
+	source = Qt511.patch
+	sha256sums = SKIP
+	sha256sums = e5908318ce49424055b22eb63ad5d8a39f2cd4068d908d8ed3ffeb3973daec91
+	sha256sums = 3f703b9d5f4a6b0e877aa5c8fdca30b16087be48d4f4d92bec3f371f7d7e8743
+
+pkgname = trust-store-git
+

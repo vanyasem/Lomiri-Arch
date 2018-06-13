@@ -1,0 +1,13 @@
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index ff046a5..e87eefd 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -105,7 +105,7 @@ if (TRUST_STORE_MIR_AGENT_ENABLED)
+     core/trust/mir/prompt_main.cpp
+   )
+ 
+-  qt5_use_modules(trust-prompt Core Gui Qml Quick)
++  target_link_libraries(trust-prompt Qt5::Core Qt5::Gui Qt5::Qml Qt5::Quick)
+ 
+   target_link_libraries(
+     trust-prompt
