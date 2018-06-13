@@ -18,7 +18,7 @@ _Clickable icons:_
 - [x] `lcov` [submodule](https://aur.archlinux.org/packages/lcov/)
 - [x] `gcovr` [submodule](https://aur.archlinux.org/packages/gcovr/)
 - [x] `python-dbusmock` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/python-dbusmock) [✅](https://aur.archlinux.org/packages/python-dbusmock/) [😜](https://aur.archlinux.org/packages/python-dbusmock-git/)
-- [x] `mir` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/mir) [✅](https://aur.archlinux.org/packages/mir/) [😜](https://aur.archlinux.org/packages/mir-git) | [🆗](https://github.com/MirServer/mir/commit/e6ba0de363320feab9359821c96d69ff61a7f121) [⛔️](https://github.com/MirServer/mir/issues/402) [⛔️](https://paste.ubuntu.com/p/cvNXMQFr3k/)
+- [x] `mir` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/mir) [✅](https://aur.archlinux.org/packages/mir/) [😜](https://aur.archlinux.org/packages/mir-git) | [🆗](https://github.com/MirServer/mir/commit/e6ba0de363320feab9359821c96d69ff61a7f121) [⛔️](https://paste.ubuntu.com/p/cvNXMQFr3k/) [⛔️](https://github.com/MirServer/mir/issues/402)
 
 **Unity8 packages:**
 - [x] `cmake-extras` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/cmake-extras-git) | [⛔️](https://github.com/ubports/cmake-extras/issues/2)
