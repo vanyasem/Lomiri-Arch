@@ -18,7 +18,7 @@ _Clickable icons:_
 - [x] `lcov` [submodule](https://aur.archlinux.org/packages/lcov/)
 - [x] `gcovr` [submodule](https://aur.archlinux.org/packages/gcovr/)
 - [x] `python-dbusmock` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/python-dbusmock) [✅](https://aur.archlinux.org/packages/python-dbusmock/) [😜](https://aur.archlinux.org/packages/python-dbusmock-git/)
-- [x] `mir` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/mir) [✅](https://aur.archlinux.org/packages/mir/) [😜](https://aur.archlinux.org/packages/mir-git) | [🆗](https://github.com/MirServer/mir/commit/e6ba0de363320feab9359821c96d69ff61a7f121) [⛔️](https://paste.ubuntu.com/p/cvNXMQFr3k/) [⛔️](https://github.com/MirServer/mir/issues/402)
+- [x] `mir` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/mir) [✅](https://aur.archlinux.org/packages/mir/) [😜](https://aur.archlinux.org/packages/mir-git) | [🆗](https://github.com/MirServer/mir/commit/e6ba0de363320feab9359821c96d69ff61a7f121) [⛔️](https://paste.ubuntu.com/p/cvNXMQFr3k/) [🆗](https://github.com/MirServer/mir/issues/402)
 
 **Unity8 packages:**
 - [x] `cmake-extras` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/cmake-extras-git) | [⛔️](https://github.com/ubports/cmake-extras/issues/2)
@@ -50,8 +50,8 @@ _Clickable icons:_
 - [x] `settings-components` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/settings-components-git) | [🆗](https://github.com/ubports/settings-components/issues/3)
 - [x] `history-service` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/history-service-git) | [🆗](https://github.com/ubports/history-service/issues/1)
 - [x] `dbus-cpp` [submodule](https://aur.archlinux.org/packages/dbus-cpp/)
-- [x] `trust-store` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/trust-store-git) | [⛔️](https://github.com/ubports/trust-store/issues/2) [⛔️](https://github.com/ubports/trust-store/issues/4)
-- [ ] `location-service`
+- [x] `trust-store` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/trust-store-git) | [🆗](https://github.com/ubports/trust-store/issues/2) [⛔️](https://github.com/ubports/trust-store/issues/4)
+- [ ] `location-service` [⛔️](https://github.com/ubports/location-service/issues/1)
 - [ ] `platform-api`
 - [ ] `qtubuntu`
 - [ ] `libusermetrics`
@@ -67,6 +67,7 @@ _Clickable icons:_
 - [x] `libhybris-git` [submodule](https://aur.archlinux.org/packages/libhybris-git/)
 - [x] `libhybris-aarch64-git` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libhybris-aarch64-git)
 - [x] `lxc-android` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/lxc-android-git) | [⛔️](https://github.com/Halium/lxc-android/issues/13) [⛔️](https://github.com/Halium/lxc-android/pull/15)
+- [x] `simg-tools` [submodule](https://aur.archlinux.org/packages/simg-tools/) | [🆗](https://aur.archlinux.org/pkgbase/simg-tools/?comments=all)
 
 ## Install Unity8 (not implemented, boilerplate text)
 ### Option 1:

@@ -37,3 +37,6 @@
 [submodule "libhybris-git"]
 	path = libhybris-git
 	url = https://aur.archlinux.org/libhybris-git.git
+[submodule "simg-tools"]
+	path = simg-tools
+	url = https://aur.archlinux.org/simg-tools.git
