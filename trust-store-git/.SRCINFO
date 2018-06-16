@@ -1,6 +1,6 @@
 pkgbase = trust-store-git
 	pkgdesc = C++11 library for persisting trust requests
-	pkgver = 70540a2
+	pkgver = 0292700
 	pkgrel = 1
 	url = https://github.com/ubports/trust-store
 	arch = x86_64
@@ -24,9 +24,7 @@ pkgbase = trust-store-git
 	depends = apparmor-libapparmor
 	depends = properties-cpp
 	source = git+https://github.com/ubports/trust-store.git
-	source = Qt511.patch
 	sha256sums = SKIP
-	sha256sums = 3f703b9d5f4a6b0e877aa5c8fdca30b16087be48d4f4d92bec3f371f7d7e8743
 
 pkgname = trust-store-git
 

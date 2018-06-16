@@ -50,8 +50,8 @@ _Clickable icons:_
 - [x] `settings-components` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/settings-components-git) | [🆗](https://github.com/ubports/settings-components/issues/3)
 - [x] `history-service` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/history-service-git) | [🆗](https://github.com/ubports/history-service/issues/1)
 - [x] `dbus-cpp` [submodule](https://aur.archlinux.org/packages/dbus-cpp/)
-- [x] `trust-store` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/trust-store-git) | [🆗](https://github.com/ubports/trust-store/issues/2) [⛔️](https://github.com/ubports/trust-store/issues/4)
-- [ ] `location-service` [⛔️](https://github.com/ubports/location-service/issues/1)
+- [x] `trust-store` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/trust-store-git) | [🆗](https://github.com/ubports/trust-store/issues/2) [🆗](https://github.com/ubports/trust-store/issues/4)
+- [x] `location-service` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/location-service-git) | [🆗](https://github.com/ubports/location-service/issues/1) [⛔️](https://github.com/ubports/location-service/issues/3)
 - [ ] `platform-api`
 - [ ] `qtubuntu`
 - [ ] `libusermetrics`
