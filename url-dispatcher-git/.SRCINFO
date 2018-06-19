@@ -1,7 +1,7 @@
 pkgbase = url-dispatcher-git
 	pkgdesc = Service to allow sending of URLs and get handlers started
 	pkgver = 2b0df70
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ubports/url-dispatcher
 	arch = x86_64
 	arch = i686
