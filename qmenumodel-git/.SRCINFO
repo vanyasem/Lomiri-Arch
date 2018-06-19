@@ -1,0 +1,21 @@
+pkgbase = qmenumodel-git
+	pkgdesc = Qt binding for GMenuModel
+	pkgver = f236743
+	pkgrel = 1
+	url = https://github.com/ubports/qmenumodel
+	arch = x86_64
+	arch = i686
+	arch = armv7h
+	arch = aarch64
+	license = LGPL3
+	makedepends = git
+	makedepends = cmake
+	depends = qt5-base
+	depends = qt5-quickcontrols
+	source = git+https://github.com/ubports/qmenumodel.git
+	source = Qt511.patch
+	sha256sums = SKIP
+	sha256sums = 15918523f2097e26258e37fabe2bf75f0224438aee902262bdf9ff70889bbd43
+
+pkgname = qmenumodel-git
+

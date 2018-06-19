@@ -1,0 +1,38 @@
+# Maintainer: Ivan Semkin (ivan at semkin dot ru)
+
+pkgname=qmenumodel-git
+_pkgname=qmenumodel
+pkgver=f236743
+pkgrel=1
+pkgdesc='Qt binding for GMenuModel'
+url='https://github.com/ubports/qmenumodel'
+arch=(x86_64 i686 armv7h aarch64)
+license=(LGPL3)
+depends=(qt5-base qt5-quickcontrols)
+makedepends=(git cmake)
+source=('git+https://github.com/ubports/qmenumodel.git'
+        'Qt511.patch')
+sha256sums=('SKIP'
+            '15918523f2097e26258e37fabe2bf75f0224438aee902262bdf9ff70889bbd43')
+
+prepare() {
+  cd ${_pkgname}
+  patch -Np1 -i "${srcdir}/Qt511.patch"
+}
+
+pkgver() {
+  cd ${_pkgname}
+  git describe --always
+}
+
+build() {
+  cd ${_pkgname}
+  cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" .
+  make
+}
+
+package() {
+  cd ${_pkgname}
+  make DESTDIR="${pkgdir}/" install
+}
+# vim:set ts=2 sw=2 et:
