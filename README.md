@@ -52,7 +52,7 @@ _Clickable icons:_
 - [x] `dbus-cpp` [submodule](https://aur.archlinux.org/packages/dbus-cpp/) | [⛔️](https://github.com/ubports/location-service/issues/3)
 - [x] `trust-store` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/trust-store-git) | [🆗](https://github.com/ubports/trust-store/issues/2) [🆗](https://github.com/ubports/trust-store/issues/4)
 - [x] `location-service` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/location-service-git) | [🆗](https://github.com/ubports/location-service/issues/1)
-- [ ] `platform-api`
+- [x] `platform-api` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/platform-api-git) | [⛔️](https://github.com/ubports/platform-api/issues/1) [⛔️](https://github.com/ubports/platform-api/issues/2)
 - [ ] `qtubuntu`
 - [ ] `libusermetrics`
 - [ ] `keyboard-component`

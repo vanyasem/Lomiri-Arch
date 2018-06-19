@@ -1,0 +1,194 @@
+diff --git a/src/ubuntu/application/touch/CMakeLists.txt b/src/ubuntu/application/touch/CMakeLists.txt
+index b0272cd..fb4408d 100644
+--- a/src/ubuntu/application/touch/CMakeLists.txt
++++ b/src/ubuntu/application/touch/CMakeLists.txt
+@@ -1,35 +1,37 @@
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++11")
++if(Hybris)
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++11")
+ 
+-add_subdirectory(hybris)
++    add_subdirectory(hybris)
+ 
+-add_library(
+-  ubuntu_application_api_touch_mirclient SHARED
++    add_library(
++    ubuntu_application_api_touch_mirclient SHARED
+ 
+-  module.cpp
+-  module_version.h
+-)
++    module.cpp
++    module_version.h
++    )
+ 
+-target_link_libraries(
+-  ubuntu_application_api_touch_mirclient
++    target_link_libraries(
++    ubuntu_application_api_touch_mirclient
+ 
+-  "-Wl,--whole-archive"
+-  ubuntu_application_api_mirclient
+-  ubuntu_application_api_hybris
+-  ${UBUNTU_APPLICATION_API_LINK_LIBRARIES}
+-  "-Wl,--no-whole-archive"
+-  #TODO: Alarms
+-)
++    "-Wl,--whole-archive"
++    ubuntu_application_api_mirclient
++    ubuntu_application_api_hybris
++    ${UBUNTU_APPLICATION_API_LINK_LIBRARIES}
++    "-Wl,--no-whole-archive"
++    #TODO: Alarms
++    )
+ 
+-set_target_properties(
+-  ubuntu_application_api_touch_mirclient
+-  PROPERTIES
+-  VERSION ${UBUNTU_PLATFORM_API_VERSION_MAJOR}.${UBUNTU_PLATFORM_API_VERSION_MINOR}.${UBUNTU_PLATFORM_API_VERSION_PATCH}
+-  SOVERSION ${UBUNTU_PLATFORM_API_VERSION_MAJOR}
+-)
++    set_target_properties(
++    ubuntu_application_api_touch_mirclient
++    PROPERTIES
++    VERSION ${UBUNTU_PLATFORM_API_VERSION_MAJOR}.${UBUNTU_PLATFORM_API_VERSION_MINOR}.${UBUNTU_PLATFORM_API_VERSION_PATCH}
++    SOVERSION ${UBUNTU_PLATFORM_API_VERSION_MAJOR}
++    )
+ 
+-install(
+-  TARGETS ubuntu_application_api_touch_mirclient
+-  # this is not a development library to compile against, users should always
+-  # specify the SONAME; so don't build a *.so
+-  LIBRARY DESTINATION "${LIB_INSTALL_DIR}" NAMELINK_SKIP
+-)
++    install(
++    TARGETS ubuntu_application_api_touch_mirclient
++    # this is not a development library to compile against, users should always
++    # specify the SONAME; so don't build a *.so
++    LIBRARY DESTINATION "${LIB_INSTALL_DIR}" NAMELINK_SKIP
++    )
++endif()
+diff --git a/src/ubuntu/application/touch/hybris/CMakeLists.txt b/src/ubuntu/application/touch/hybris/CMakeLists.txt
+index 26a1c59..69f22db 100644
+--- a/src/ubuntu/application/touch/hybris/CMakeLists.txt
++++ b/src/ubuntu/application/touch/hybris/CMakeLists.txt
+@@ -1,17 +1,19 @@
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++11 -fPIC")
++if(Hybris)
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++11 -fPIC")
+ 
+-add_library(
+-  ubuntu_application_api_hybris STATIC
+-  
+-  ubuntu_application_sensors_hybris.cpp
+-)
++    add_library(
++    ubuntu_application_api_hybris STATIC
++    
++    ubuntu_application_sensors_hybris.cpp
++    )
+ 
+-include_directories(
+-  ${CMAKE_BINARY_DIR}/include
+-)
++    include_directories(
++    ${CMAKE_BINARY_DIR}/include
++    )
+ 
+-target_link_libraries(
+-  ubuntu_application_api_hybris
+-  
+-  ${Hybris}
+-)
++    target_link_libraries(
++    ubuntu_application_api_hybris
++    
++    ${Hybris}
++    )
++endif()
+diff --git a/src/ubuntu/hardware/CMakeLists.txt b/src/ubuntu/hardware/CMakeLists.txt
+index df1f0d2..c2a07e8 100644
+--- a/src/ubuntu/hardware/CMakeLists.txt
++++ b/src/ubuntu/hardware/CMakeLists.txt
+@@ -1,45 +1,47 @@
+-set(
+-  UBUNTU_HARDWARE_API_LINK_LIBRARIES
+-    
+-  ubuntu_hardware_alarm
+-)
++if(Hybris)
++    set(
++    UBUNTU_HARDWARE_API_LINK_LIBRARIES
++        
++    ubuntu_hardware_alarm
++    )
+ 
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++11 -fPIC")
++    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++11 -fPIC")
+ 
+-include_directories(
+-  ${CMAKE_BINARY_DIR}/include
+-)
++    include_directories(
++    ${CMAKE_BINARY_DIR}/include
++    )
+ 
+-include_directories(../../bridge)
++    include_directories(../../bridge)
+ 
+-add_subdirectory(alarms/)
++    add_subdirectory(alarms/)
+ 
+-add_library(
+-  ubuntu_platform_hardware_api SHARED
+-  ubuntu_platform_hardware_api.cpp
+-)
++    add_library(
++    ubuntu_platform_hardware_api SHARED
++    ubuntu_platform_hardware_api.cpp
++    )
+ 
+-target_link_libraries(
+-  ubuntu_platform_hardware_api
++    target_link_libraries(
++    ubuntu_platform_hardware_api
+ 
+-  "-Wl,--whole-archive"
+-  ${UBUNTU_HARDWARE_API_LINK_LIBRARIES}
+-  "-Wl,--no-whole-archive"
++    "-Wl,--whole-archive"
++    ${UBUNTU_HARDWARE_API_LINK_LIBRARIES}
++    "-Wl,--no-whole-archive"
+ 
+-  dl
+-  ${Hybris}
+-)
++    dl
++    ${Hybris}
++    )
+ 
+-set_target_properties(
+-  ubuntu_platform_hardware_api
+-  PROPERTIES
+-  VERSION ${UBUNTU_PLATFORM_API_VERSION_MAJOR}.${UBUNTU_PLATFORM_API_VERSION_MINOR}.${UBUNTU_PLATFORM_API_VERSION_PATCH}
+-  SOVERSION ${UBUNTU_PLATFORM_API_VERSION_MAJOR}
+-)
++    set_target_properties(
++    ubuntu_platform_hardware_api
++    PROPERTIES
++    VERSION ${UBUNTU_PLATFORM_API_VERSION_MAJOR}.${UBUNTU_PLATFORM_API_VERSION_MINOR}.${UBUNTU_PLATFORM_API_VERSION_PATCH}
++    SOVERSION ${UBUNTU_PLATFORM_API_VERSION_MAJOR}
++    )
+ 
+-install(
+-  TARGETS ubuntu_platform_hardware_api
+-  ${INSTALL_TARGETS_DEFAULT_ARGS}
+-)
++    install(
++    TARGETS ubuntu_platform_hardware_api
++    ${INSTALL_TARGETS_DEFAULT_ARGS}
++    )
+ 
+-add_subdirectory(tests/)
++    add_subdirectory(tests/)
++endif()

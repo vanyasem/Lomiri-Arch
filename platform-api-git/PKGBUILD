@@ -1,0 +1,49 @@
+# Maintainer: Ivan Semkin (ivan at semkin dot ru)
+
+pkgname=platform-api-git
+_pkgname=platform-api
+pkgver=464a38b
+pkgrel=1
+pkgdesc='Platform API for system level capabilities'
+url='https://github.com/ubports/platform-api'
+arch=(x86_64 i686 armv7h aarch64)
+license=(GPL3)
+depends=(location-service-git url-dispatcher-git process-cpp)
+makedepends=(git cmake cmake-extras-git doxygen)
+source=('git+https://github.com/ubports/platform-api.git'
+        'hybris.patch'
+        'GtestInclude.patch')
+sha256sums=('SKIP'
+            '4ad5879d7e6ba5d9c269dc59b30e6069d9846d40fbb66773170357375fdc0fbe'
+            '0f1e62ddc34e1c7640305da7d4aba44a6f9804b4c8b1b703138597fb51dde683')
+
+prepare() {
+  cd ${_pkgname}
+  git checkout bionic
+
+  patch -Np1 -i "${srcdir}/hybris.patch"
+}
+
+pkgver() {
+  cd ${_pkgname}
+  git describe --always
+}
+
+build() {
+  cd ${_pkgname}
+  cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr .
+  cmake .
+  make
+}
+
+check() {
+  cd ${_pkgname}
+  make ARGS+="--output-on-failure" test
+}
+
+package() {
+  cd ${_pkgname}
+  patch -Np0 -i "${srcdir}/GtestInclude.patch"
+  make DESTDIR="${pkgdir}/" install
+}
+# vim:set ts=2 sw=2 et:
