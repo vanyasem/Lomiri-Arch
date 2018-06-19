@@ -1,0 +1,16 @@
+pkgbase = geonames-git
+	pkgdesc = Parse and query the geonames database dump
+	pkgver = 5d77e82
+	pkgrel = 1
+	url = https://github.com/ubports/geonames
+	arch = x86_64
+	arch = i686
+	arch = armv7h
+	arch = aarch64
+	license = LGPL3
+	makedepends = git
+	makedepends = git-lfs
+	makedepends = gtk-doc
+
+pkgname = geonames-git
+

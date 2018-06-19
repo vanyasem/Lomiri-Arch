@@ -57,6 +57,7 @@ _Clickable icons:_
 - [ ] `libusermetrics`
 - [ ] `keyboard-component`
 - [ ] `system-settings`
+- [x] `geonames` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/geonames-git)
 - [ ] `unity8`
 - [ ] Probably more
 
