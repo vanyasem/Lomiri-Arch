@@ -1,0 +1,31 @@
+pkgbase = system-settings-git
+	pkgdesc = System Settings application for Unity8
+	pkgver = 3b26947f
+	pkgrel = 1
+	url = https://github.com/ubports/system-settings
+	arch = x86_64
+	arch = i686
+	arch = armv7h
+	arch = aarch64
+	license = GPL3
+	checkdepends = xorg-server-xvfb
+	makedepends = git
+	makedepends = cmake
+	makedepends = intltool
+	depends = trust-store-git
+	depends = click-git
+	depends = gnome-desktop
+	depends = ubuntu-app-launch-git
+	depends = geonames-git
+	depends = libqtdbusmock-git
+	depends = ubuntu-ui-toolkit-git
+	depends = gsettings-qt
+	depends = accountsservice-ubuntu
+	depends = upower
+	source = git+https://github.com/ubports/system-settings.git
+	source = Qt511.patch
+	sha256sums = SKIP
+	sha256sums = 554e10d884cee052893a64db9f90dd846ca20f716c7fbd75140af4ea5d197d27
+
+pkgname = system-settings-git
+
