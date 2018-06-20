@@ -32,7 +32,6 @@ pkgver() {
 build() {
   cd ${_pkgname}
   cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr .
-  cmake .
   make
 }
 
