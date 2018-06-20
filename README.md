@@ -56,8 +56,9 @@ _Clickable icons:_
 - [ ] `qtubuntu`
 - [ ] `libusermetrics`
 - [ ] `keyboard-component`
-- [x] `click`
-- [ ] `system-settings` [⛔️](https://github.com/ubports/system-settings/issues/63)
+- [x] `click` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/click-git)
+- [x] `accountsservice` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/accountsservice-ubuntu)
+- [x] `system-settings` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/system-settings-git) | [⛔️](https://github.com/ubports/system-settings/issues/63) [⛔️](https://github.com/ubports/system-settings/issues/65)
 - [x] `geonames` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/geonames-git)
 - [x] `qmenumodel` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qmenumodel-git) | [⛔️](https://github.com/ubports/qmenumodel/issues/1)
 - [ ] `unity8`

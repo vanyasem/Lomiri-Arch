@@ -1,0 +1,84 @@
+# Maintainer: Ivan Semkin (ivan at semkin dot ru)
+# Contributor: Xiao-Long Chen <chenxiaolong@cxl.epac.to>
+# Contributor: Ionut Biru <ibiru@archlinux.org>
+
+pkgname=accountsservice-ubuntu
+_ubuntu_rel=0ubuntu1
+_ubuntu_ver=0.6.42
+pkgver=0.6.42+12+gdac4254
+pkgrel=1
+pkgdesc='D-Bus interface for user account query and manipulation'
+url='https://www.freedesktop.org/software/accountsservice/'
+arch=(i686 x86_64)
+license=(GPL3)
+depends=(glib2 polkit systemd)
+makedepends=(intltool gtk-doc gobject-introspection git)
+provides=("accountsservice=${pkgver}")
+conflicts=(accountsservice)
+_commit=dac425433270c6dc38feba4d2513e4da7bd265fd  # tags/0.6.43^0
+source=("git://anongit.freedesktop.org/accountsservice#commit=${_commit}"
+        "https://launchpad.net/ubuntu/+archive/primary/+files/accountsservice_${_ubuntu_ver:-${pkgver}}-${_ubuntu_rel}.debian.tar.xz")
+sha512sums=('SKIP'
+            '7637354d6785e0fcf1286c4186c508075a54e724f11b3e778dc0a31b8c457777de300b16c300d71ef1886bc0c290c76255ed14ed49398a17b9c075531af1c538')
+
+pkgver() {
+  cd "${pkgname%-*}"
+  git describe --tags | sed 's/-/+/g'
+}
+
+prepare() {
+  cd "${pkgname%-*}"
+
+  sed -i 's|/etc/gdm3/custom.conf|/etc/gdm/custom.conf|g' \
+      ../debian/patches/0007-add-lightdm-support.patch
+
+  sed -i \
+      `# Arch Linux uses wheel group for system administration` \
+      -e '/0002-create-and-manage-groups-like-on-a-ubuntu-system.patch/d' \
+      `# adduser is Debian-specific` \
+      -e '/0006-adduser_instead_of_useradd.patch/d' \
+      `# Language patches are still pretty specific to Ubuntu, though` \
+      `# Ubuntu is trying to get them merged upstream` \
+      -e '/0009-language-tools.patch/d' \
+      -e '/0010-set-language.patch/d' \
+      -e '/0012-add-keyboard-layout-support.patch/d' \
+      `# Ubuntu-specific` \
+      -e '/0005-gdm_config_file_path_ubuntu.patch/d' \
+      -e '/0020-support-login.defs.patch/d' \
+      -e '/0021-support-extrausers.patch/d' \
+      -e '/1002-dont-override-standardoutput.patch/d' \
+      `# Does not apply cleanly` \
+      -e '/0002-On-startup-clean-out-the-data-of-removed-users.patch/d' \
+      -e '/0013-add-has-message-support.patch/d' \
+      `# Applied upstream` \
+      -e '/0018-wtmp-fix-logout-times.patch/d' \
+      ../debian/patches/series
+
+  for i in $(grep -v '#' ../debian/patches/series); do
+    msg "Applying ${i} ..."
+    patch -p1 -i "../debian/patches/${i}"
+  done
+
+  NOCONFIGURE=1 ./autogen.sh
+}
+
+build() {
+  cd "${pkgname%-*}"
+
+  ./configure \
+      --prefix=/usr \
+      --sysconfdir=/etc \
+      --localstatedir=/var \
+      --libexecdir=/usr/lib/accountsservice \
+      --disable-static \
+      --enable-gtk-doc
+
+  make
+}
+
+package() {
+  cd "${pkgname%-*}"
+
+  make DESTDIR="${pkgdir}" install
+}
+# vim:set ts=2 sw=2 et:

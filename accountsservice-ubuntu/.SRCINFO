@@ -1,0 +1,24 @@
+pkgbase = accountsservice-ubuntu
+	pkgdesc = D-Bus interface for user account query and manipulation
+	pkgver = 0.6.42+12+gdac4254
+	pkgrel = 1
+	url = https://www.freedesktop.org/software/accountsservice/
+	arch = i686
+	arch = x86_64
+	license = GPL3
+	makedepends = intltool
+	makedepends = gtk-doc
+	makedepends = gobject-introspection
+	makedepends = git
+	depends = glib2
+	depends = polkit
+	depends = systemd
+	provides = accountsservice=0.6.42+12+gdac4254
+	conflicts = accountsservice
+	source = git://anongit.freedesktop.org/accountsservice#commit=dac425433270c6dc38feba4d2513e4da7bd265fd
+	source = https://launchpad.net/ubuntu/+archive/primary/+files/accountsservice_0.6.42-0ubuntu1.debian.tar.xz
+	sha512sums = SKIP
+	sha512sums = 7637354d6785e0fcf1286c4186c508075a54e724f11b3e778dc0a31b8c457777de300b16c300d71ef1886bc0c290c76255ed14ed49398a17b9c075531af1c538
+
+pkgname = accountsservice-ubuntu
+
