@@ -56,8 +56,10 @@ _Clickable icons:_
 - [ ] `qtubuntu`
 - [ ] `libusermetrics`
 - [ ] `keyboard-component`
-- [ ] `system-settings`
+- [x] `click`
+- [ ] `system-settings` [⛔️](https://github.com/ubports/system-settings/issues/63)
 - [x] `geonames` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/geonames-git)
+- [x] `qmenumodel` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qmenumodel-git) | [⛔️](https://github.com/ubports/qmenumodel/issues/1)
 - [ ] `unity8`
 - [ ] Probably more
 
