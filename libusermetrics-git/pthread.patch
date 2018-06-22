@@ -1,0 +1,24 @@
+diff --git a/tests/unit/libusermetricsoutput/CMakeLists.txt b/tests/unit/libusermetricsoutput/CMakeLists.txt
+index 39117bb..4e5cb4f 100644
+--- a/tests/unit/libusermetricsoutput/CMakeLists.txt
++++ b/tests/unit/libusermetricsoutput/CMakeLists.txt
+@@ -17,6 +17,7 @@ add_executable(
+ 
+ target_link_libraries(
+ 	usermetricsoutput-unit-tests
++	-pthread
+ 	usermetricsoutput-static
+ 	usermetrics-test-utils
+ 	${GSETTINGS_QT_LIBRARIES}
+diff --git a/tests/unit/usermetricsservice/CMakeLists.txt b/tests/unit/usermetricsservice/CMakeLists.txt
+index 56ae069..b918e85 100644
+--- a/tests/unit/usermetricsservice/CMakeLists.txt
++++ b/tests/unit/usermetricsservice/CMakeLists.txt
+@@ -12,6 +12,7 @@ add_executable(
+ 
+ target_link_libraries(
+ 	usermetricsservice-unit-tests
++	-pthread
+ 	usermetricsservice
+ 	usermetrics-test-utils
+ 	${QTDBUSTEST_LIBRARIES}

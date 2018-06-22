@@ -1,0 +1,31 @@
+pkgbase = libusermetrics-git
+	pkgdesc = Library for exporting anonymous metrics about users
+	pkgver = a9ed47e
+	pkgrel = 1
+	url = https://github.com/ubports/libusermetrics
+	arch = x86_64
+	arch = i686
+	arch = armv7h
+	arch = aarch64
+	license = LGPL3
+	license = LGPL
+	license = GPL
+	makedepends = git
+	makedepends = cmake
+	makedepends = cmake-extras-git
+	makedepends = doxygen
+	makedepends = intltool
+	depends = qt5-base
+	depends = qt5-xmlpatterns
+	depends = gsettings-qt
+	depends = apparmor-libapparmor
+	depends = click-git
+	depends = qdjango-git
+	depends = libqtdbustest-git
+	source = git+https://github.com/ubports/libusermetrics.git
+	source = pthread.patch
+	sha256sums = SKIP
+	sha256sums = 76c4da8ad1e6882d23f1c0252689c9642e109cfa5db93d102b0507e604677d43
+
+pkgname = libusermetrics-git
+

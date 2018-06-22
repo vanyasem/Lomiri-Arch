@@ -65,7 +65,7 @@ _Clickable icons:_
 - [x] `gmenuharness` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr) | [⛔️](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr/Functional1.patch) [⛔️](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr/Functional2.patch)
 - [x] `indicator-network` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/indicator-network-git) | [⛔️](https://github.com/ubports/indicator-network/issues/8)
 - [x] `qdjango ` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qdjango-git)
-- [ ] `libusermetrics`
+- [x] `libusermetrics` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libusermetrics-git) | [⛔️](https://github.com/ubports/libusermetrics/issues/1)
 - [ ] `unity8` [⛔️](https://github.com/ubports/unity8/issues/44)
 - [ ] Probably more
 
