@@ -64,7 +64,7 @@ _Clickable icons:_
 - [x] `ofono` [submodule](https://aur.archlinux.org/packages/ofono/) | [⛔️](https://aur.archlinux.org/pkgbase/ofono/flag-comment/)
 - [x] `libqofono` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqofono)
 - [x] `gmenuharness` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr) | [⛔️](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr/Functional1.patch) [⛔️](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr/Functional2.patch)
-- [ ] `indicator-network` [⛔️](https://github.com/ubports/indicator-network/issues/8)
+- [x] `indicator-network` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/indicator-network-git) | [⛔️](https://github.com/ubports/indicator-network/issues/8)
 - [ ] `unity8` [⛔️](https://github.com/ubports/unity8/issues/44)
 - [ ] Probably more
 

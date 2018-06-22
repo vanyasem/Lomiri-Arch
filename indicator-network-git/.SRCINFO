@@ -1,0 +1,29 @@
+pkgbase = indicator-network-git
+	pkgdesc = Network indicator
+	pkgver = 870dd8a2
+	pkgrel = 1
+	url = https://github.com/ubports/indicator-network
+	arch = x86_64
+	arch = i686
+	arch = armv7h
+	arch = aarch64
+	license = LGPL3
+	license = GPL3
+	makedepends = git
+	makedepends = cmake
+	makedepends = cmake-extras-git
+	makedepends = doxygen
+	depends = lcov
+	depends = gcovr
+	depends = gsettings-qt
+	depends = ofono
+	depends = url-dispatcher-git
+	depends = libqofono
+	depends = libqtdbustest-git
+	depends = libqtdbusmock-git
+	depends = gmenuharness-bzr
+	source = git+https://github.com/ubports/indicator-network.git
+	sha256sums = SKIP
+
+pkgname = indicator-network-git
+
