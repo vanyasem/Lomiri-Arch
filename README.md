@@ -54,7 +54,6 @@ _Clickable icons:_
 - [x] `location-service` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/location-service-git) | [🆗](https://github.com/ubports/location-service/issues/1)
 - [x] `platform-api` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/platform-api-git) | [⛔️](https://github.com/ubports/platform-api/issues/1) [⛔️](https://github.com/ubports/platform-api/issues/2)
 - [ ] `qtubuntu`
-- [ ] `libusermetrics`
 - [ ] `keyboard-component`
 - [x] `click` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/click-git)
 - [x] `accountsservice` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/accountsservice-ubuntu)
@@ -65,6 +64,8 @@ _Clickable icons:_
 - [x] `libqofono` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqofono)
 - [x] `gmenuharness` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr) | [⛔️](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr/Functional1.patch) [⛔️](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr/Functional2.patch)
 - [x] `indicator-network` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/indicator-network-git) | [⛔️](https://github.com/ubports/indicator-network/issues/8)
+- [x] `qdjango ` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qdjango-git)
+- [ ] `libusermetrics`
 - [ ] `unity8` [⛔️](https://github.com/ubports/unity8/issues/44)
 - [ ] Probably more
 
