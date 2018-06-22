@@ -1,0 +1,47 @@
+# Maintainer: Ivan Semkin (ivan at semkin dot ru)
+
+pkgname=gmenuharness-bzr
+_pkgname=gmenuharness
+pkgver=r31
+pkgrel=1
+pkgdesc="Testing enablement library for projects exporting GiO's gmenu/gaction endpoints"
+url='https://launchpad.net/gmenuharness'
+arch=(x86_64 i686 armv7h aarch64)
+license=()
+depends=(unity-api-git gtest libqtdbustest-git)
+makedepends=(bzr cmake cmake-extras-git doxygen)
+source=("bzr+lp:${_pkgname}"
+        'Functional1.patch'
+        'Functional2.patch')
+sha256sums=('SKIP'
+            'b055a7811ebe1f347edbdb5e24a1f3264bf6966398a44efc3f1fb435eb7ea223'
+            'b8b2733a1c07617613ec68e678a8cdf7135490772c6dfee22e86ab0d0a33f2ec')
+
+pkgver() {
+  cd ${_pkgname}
+  echo "r$(bzr revno)"
+}
+
+prepare() {
+  cd ${_pkgname}
+
+  patch -Np0 -i "${srcdir}/Functional1.patch"
+  patch -Np0 -i "${srcdir}/Functional2.patch"
+}
+
+build() {
+  cd ${_pkgname}
+  cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" .
+  make
+}
+
+check() {
+  cd ${_pkgname}
+  make ARGS+="--output-on-failure" check
+}
+
+package() {
+  cd ${_pkgname}
+  make DESTDIR="${pkgdir}/" install
+}
+# vim:set ts=2 sw=2 et:

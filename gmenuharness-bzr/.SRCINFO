@@ -1,0 +1,25 @@
+pkgbase = gmenuharness-bzr
+	pkgdesc = Testing enablement library for projects exporting GiO's gmenu/gaction endpoints
+	pkgver = r31
+	pkgrel = 1
+	url = https://launchpad.net/gmenuharness
+	arch = x86_64
+	arch = i686
+	arch = armv7h
+	arch = aarch64
+	makedepends = bzr
+	makedepends = cmake
+	makedepends = cmake-extras-git
+	makedepends = doxygen
+	depends = unity-api-git
+	depends = gtest
+	depends = libqtdbustest-git
+	source = bzr+lp:gmenuharness
+	source = Functional1.patch
+	source = Functional2.patch
+	sha256sums = SKIP
+	sha256sums = b055a7811ebe1f347edbdb5e24a1f3264bf6966398a44efc3f1fb435eb7ea223
+	sha256sums = b8b2733a1c07617613ec68e678a8cdf7135490772c6dfee22e86ab0d0a33f2ec
+
+pkgname = gmenuharness-bzr
+

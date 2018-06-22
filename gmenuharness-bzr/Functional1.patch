@@ -1,0 +1,11 @@
+--- src/MatchUtils.cpp.orig	2018-06-22 20:53:11.467992532 +0300
++++ src/MatchUtils.cpp	2018-06-22 20:53:32.118568790 +0300
+@@ -20,6 +20,8 @@
+ 
+ #include <unity/util/ResourcePtr.h>
+ 
++#include <functional>
++
+ using namespace std;
+ namespace util = unity::util;
+ 
