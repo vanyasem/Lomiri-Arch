@@ -40,3 +40,6 @@
 [submodule "simg-tools"]
 	path = simg-tools
 	url = https://aur.archlinux.org/simg-tools.git
+[submodule "ofono"]
+	path = ofono
+	url = https://aur.archlinux.org/ofono.git

@@ -61,10 +61,10 @@ _Clickable icons:_
 - [x] `system-settings` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/system-settings-git) | [🆗](https://github.com/ubports/system-settings/issues/63) [⛔️](https://github.com/ubports/system-settings/issues/65)
 - [x] `geonames` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/geonames-git)
 - [x] `qmenumodel` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qmenumodel-git) | [⛔️](https://github.com/ubports/qmenumodel/issues/1)
-- [ ] `ofono` submodule
+- [x] `ofono` [submodule](https://aur.archlinux.org/packages/ofono/) | [⛔️](https://aur.archlinux.org/pkgbase/ofono/flag-comment/)
 - [x] `libqofono` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqofono)
 - [x] `gmenuharness` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr) | [⛔️](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr/Functional1.patch) [⛔️](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr/Functional2.patch)
-- [ ] `indicator-network` [⛔️](https://github.com/ubports/indicator-network/issues/7)
+- [ ] `indicator-network` [⛔️](https://github.com/ubports/indicator-network/issues/8)
 - [ ] `unity8` [⛔️](https://github.com/ubports/unity8/issues/44)
 - [ ] Probably more
 
