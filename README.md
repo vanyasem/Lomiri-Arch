@@ -61,7 +61,8 @@ _Clickable icons:_
 - [x] `system-settings` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/system-settings-git) | [⛔️](https://github.com/ubports/system-settings/issues/63) [⛔️](https://github.com/ubports/system-settings/issues/65)
 - [x] `geonames` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/geonames-git)
 - [x] `qmenumodel` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qmenumodel-git) | [⛔️](https://github.com/ubports/qmenumodel/issues/1)
-- [ ] `unity8`
+- [ ] `indicator-network` [⛔️](https://github.com/ubports/indicator-network/issues/7)
+- [ ] `unity8` [⛔️](https://github.com/ubports/unity8/issues/44)
 - [ ] Probably more
 
 **Halium packages (`armv7h`, `aarch64`):**

@@ -23,9 +23,7 @@ pkgbase = system-settings-git
 	depends = accountsservice-ubuntu
 	depends = upower
 	source = git+https://github.com/ubports/system-settings.git
-	source = Qt511.patch
 	sha256sums = SKIP
-	sha256sums = 554e10d884cee052893a64db9f90dd846ca20f716c7fbd75140af4ea5d197d27
 
 pkgname = system-settings-git
 

@@ -11,10 +11,8 @@ license=(GPL3)
 depends=(trust-store-git click-git gnome-desktop ubuntu-app-launch-git geonames-git libqtdbusmock-git ubuntu-ui-toolkit-git gsettings-qt accountsservice-ubuntu upower)
 makedepends=(git cmake intltool)
 checkdepends=(xorg-server-xvfb)
-source=('git+https://github.com/ubports/system-settings.git'
-        'Qt511.patch')
-sha256sums=('SKIP'
-            '554e10d884cee052893a64db9f90dd846ca20f716c7fbd75140af4ea5d197d27')
+source=('git+https://github.com/ubports/system-settings.git')
+sha256sums=('SKIP')
 
 BUILDENV+=('!check') # Some tests fail
 
@@ -27,7 +25,6 @@ prepare() {
   cd ${_pkgname}
   git checkout bionic
 
-  patch -Np1 -i "${srcdir}/Qt511.patch"
   sed -i 's/update.cpp//g' plugins/system-update/CMakeLists.txt
   sed -i 's/apt-pkg//g' plugins/system-update/CMakeLists.txt
   sed -i 's/apt-pkg//g' tests/mocks/Ubuntu/SystemSettings/Update/CMakeLists.txt
