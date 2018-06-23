@@ -10,10 +10,8 @@ arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL3 LGPL GPL)
 depends=(qt5-base qt5-xmlpatterns gsettings-qt apparmor-libapparmor click-git qdjango-git libqtdbustest-git)
 makedepends=(git cmake cmake-extras-git doxygen intltool)
-source=('git+https://github.com/ubports/libusermetrics.git'
-        'pthread.patch')
-sha256sums=('SKIP'
-            '76c4da8ad1e6882d23f1c0252689c9642e109cfa5db93d102b0507e604677d43')
+source=('git+https://github.com/ubports/libusermetrics.git')
+sha256sums=('SKIP')
 
 BUILDENV+=('!check') # Some tests are broken
 
@@ -25,8 +23,6 @@ pkgver() {
 prepare() {
   cd ${_pkgname}
   git checkout bionic
-  
-  patch -Np1 -i "${srcdir}/pthread.patch"
 }
 
 build() {

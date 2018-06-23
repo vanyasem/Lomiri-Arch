@@ -23,9 +23,7 @@ pkgbase = libusermetrics-git
 	depends = qdjango-git
 	depends = libqtdbustest-git
 	source = git+https://github.com/ubports/libusermetrics.git
-	source = pthread.patch
 	sha256sums = SKIP
-	sha256sums = 76c4da8ad1e6882d23f1c0252689c9642e109cfa5db93d102b0507e604677d43
 
 pkgname = libusermetrics-git
 
