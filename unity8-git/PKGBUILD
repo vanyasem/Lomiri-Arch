@@ -3,7 +3,7 @@
 pkgname=unity8-git
 _pkgname=unity8
 pkgver=c4e012d85
-pkgrel=1
+pkgrel=2
 pkgdesc='Unity 8 shell'
 url='https://github.com/ubports/unity8'
 arch=(x86_64 i686 armv7h aarch64)
@@ -12,11 +12,13 @@ depends=(lcov gcovr geonames-git unity-api-git qmenumodel-git gnome-desktop ubun
 makedepends=(git cmake cmake-extras-git doxygen)
 checkdepends=(xorg-server-xvfb)
 source=('git+https://github.com/ubports/unity8.git'
-        'androidaway.patch')
+        'androidaway.patch'
+        'qt59.patch')
 sha256sums=('SKIP'
-            '7bae5293f095e5f40792c86a6a7fb70e4e4b1faa5b04f087dc8ccbbe51f538aa')
+            '7bae5293f095e5f40792c86a6a7fb70e4e4b1faa5b04f087dc8ccbbe51f538aa'
+            'bb7240cffa6ac1ca1789c12573fcab0f88f47191c2e261481777322c0b159f5a')
 
-BUILDENV+=('!check') # One test failed https://paste.ubuntu.com/p/2d33RJX4W8/
+BUILDENV+=('!check') # https://paste.ubuntu.com/p/2d33RJX4W8/
 
 pkgver() {
   cd ${_pkgname}
@@ -28,6 +30,7 @@ prepare() {
   git checkout bionic
   
   patch -Np1 -i "${srcdir}/androidaway.patch"
+  patch -Np1 -i "${srcdir}/qt59.patch"
 }
 
 build() {
