@@ -1,0 +1,50 @@
+# Maintainer: Ivan Semkin (ivan at semkin dot ru)
+
+pkgname=qtubuntu-git
+_pkgname=qtubuntu
+pkgver=e8a2965
+pkgrel=1
+pkgdesc='Qt plugins for Ubuntu Platform API'
+url='https://github.com/ubports/qtubuntu'
+arch=(x86_64 i686 armv7h aarch64)
+license=(LGPL GPL)
+depends=(qt5-base platform-api-git content-hub-git)
+makedepends=(git)
+checkdepends=()
+source=('git+https://github.com/ubports/qtubuntu.git'
+        'windowsStates.patch')
+sha256sums=('SKIP'
+            'd624261a50fe8cd7671ec81181740022ce4f201bcd5b30b97fd77ae4f22b9a46')
+
+# BUILDENV+=('!check')
+
+prepare() {
+  cd ${_pkgname}
+  git checkout bionic
+  
+  patch -Np1 -i "${srcdir}/windowsStates.patch"
+}
+
+pkgver() {
+  cd ${_pkgname}
+  git describe --always
+}
+
+build() {
+  cd ${_pkgname}
+  qmake
+  make
+}
+
+check() {
+  cd ${_pkgname}
+  make check TESTARGS="-silent"
+}
+
+package() {
+  cd ${_pkgname}
+  #mkdir -p /tmp/runtime-builduser
+  #XDG_RUNTIME_DIR=/tmp/runtime-builduser 
+  make INSTALL_ROOT="${pkgdir}/" install
+}
+# vim:set ts=2 sw=2 et:

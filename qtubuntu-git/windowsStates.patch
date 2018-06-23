@@ -1,0 +1,53 @@
+From 46feabed5646c92b1a6910fe5e3b92aad27b43dc Mon Sep 17 00:00:00 2001
+From: Ivan Semkin <ivan@semkin.ru>
+Date: Sun, 24 Jun 2018 00:27:41 +0300
+Subject: [PATCH] Fix Qt5.11 setWindowState API incompatibility
+
+---
+ src/ubuntumirclient/qmirclientwindow.cpp | 9 +++++----
+ src/ubuntumirclient/qmirclientwindow.h   | 2 +-
+ 2 files changed, 6 insertions(+), 5 deletions(-)
+
+diff --git a/src/ubuntumirclient/qmirclientwindow.cpp b/src/ubuntumirclient/qmirclientwindow.cpp
+index 9b28a73..688c95e 100644
+--- a/src/ubuntumirclient/qmirclientwindow.cpp
++++ b/src/ubuntumirclient/qmirclientwindow.cpp
+@@ -56,6 +56,7 @@
+ #include <QSize>
+ #include <QtMath>
+ #include <QtGui/private/qguiapplication_p.h>
++#include <QtGui/private/qwindow_p.h>
+ #include <QtEglSupport/private/qeglconvenience_p.h>
+ 
+ #include <EGL/egl.h>
+@@ -855,13 +856,13 @@ void QMirClientWindow::handleSurfaceStateChanged(Qt::WindowState state)
+     QWindowSystemInterface::handleWindowStateChanged(window(), state);
+ }
+ 
+-void QMirClientWindow::setWindowState(Qt::WindowState state)
++void QMirClientWindow::setWindowState(Qt::WindowStates state)
+ {
+     QMutexLocker lock(&mMutex);
+-    qCDebug(mirclient, "setWindowState(window=%p, %s)", this, qtWindowStateToStr(state));
++    qCDebug(mirclient, "setWindowState(window=%p, %s)", this, qtWindowStateToStr(QWindowPrivate::effectiveState(state)));
+ 
+-    if (mWindowState == state) return;
+-    mWindowState = state;
++    if (mWindowState == QWindowPrivate::effectiveState(state)) return;
++    mWindowState = QWindowPrivate::effectiveState(state);
+ 
+     lock.unlock();
+     updateSurfaceState();
+diff --git a/src/ubuntumirclient/qmirclientwindow.h b/src/ubuntumirclient/qmirclientwindow.h
+index cf3109e..83d9501 100644
+--- a/src/ubuntumirclient/qmirclientwindow.h
++++ b/src/ubuntumirclient/qmirclientwindow.h
+@@ -73,7 +73,7 @@ class QMirClientWindow : public QObject, public QPlatformWindow
+     WId winId() const override;
+     QRect geometry() const override;
+     void setGeometry(const QRect&) override;
+-    void setWindowState(Qt::WindowState state) override;
++    void setWindowState(Qt::WindowStates state) override;
+     void setWindowFlags(Qt::WindowFlags flags) override;
+     void setVisible(bool visible) override;
+     void setWindowTitle(const QString &title) override;

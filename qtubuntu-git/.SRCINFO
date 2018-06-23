@@ -1,0 +1,22 @@
+pkgbase = qtubuntu-git
+	pkgdesc = Qt plugins for Ubuntu Platform API
+	pkgver = e8a2965
+	pkgrel = 1
+	url = https://github.com/ubports/qtubuntu
+	arch = x86_64
+	arch = i686
+	arch = armv7h
+	arch = aarch64
+	license = LGPL
+	license = GPL
+	makedepends = git
+	depends = qt5-base
+	depends = platform-api-git
+	depends = content-hub-git
+	source = git+https://github.com/ubports/qtubuntu.git
+	source = windowsStates.patch
+	sha256sums = SKIP
+	sha256sums = d624261a50fe8cd7671ec81181740022ce4f201bcd5b30b97fd77ae4f22b9a46
+
+pkgname = qtubuntu-git
+
