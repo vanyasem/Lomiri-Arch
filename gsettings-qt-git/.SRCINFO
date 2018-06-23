@@ -1,0 +1,20 @@
+pkgbase = gsettings-qt-git
+	pkgdesc = Library to access GSettings from Qt
+	pkgver = c8ecb2b
+	pkgrel = 1
+	url = https://github.com/ubports/gsettings-qt
+	arch = x86_64
+	arch = i686
+	arch = armv7h
+	arch = aarch64
+	license = LGPL
+	makedepends = git
+	makedepends = cmake
+	depends = qt5-declarative
+	provides = gsettings-qt
+	replaces = gsettings-qt
+	source = git+https://github.com/ubports/gsettings-qt.git
+	sha256sums = SKIP
+
+pkgname = gsettings-qt-git
+
