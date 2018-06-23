@@ -67,7 +67,7 @@ _Clickable icons:_
 - [x] `indicator-network` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/indicator-network-git) | [⛔️](https://github.com/ubports/indicator-network/issues/8)
 - [x] `qdjango ` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qdjango-git)
 - [x] `libusermetrics` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libusermetrics-git) | [🆗](https://github.com/ubports/libusermetrics/issues/1)
-- [x] `unity8`
+- [x] `unity8` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity8-git)
 - [ ] Probably more
 
 **Halium packages (`armv7h`, `aarch64`):**
