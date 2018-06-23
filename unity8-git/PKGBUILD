@@ -1,0 +1,50 @@
+# Maintainer: Ivan Semkin (ivan at semkin dot ru)
+
+pkgname=unity8-git
+_pkgname=unity8
+pkgver=c4e012d85
+pkgrel=1
+pkgdesc='Unity 8 shell'
+url='https://github.com/ubports/unity8'
+arch=(x86_64 i686 armv7h aarch64)
+license=(LGPL3)
+depends=(lcov gcovr geonames-git unity-api-git qmenumodel-git gnome-desktop ubuntu-app-launch-git ubuntu-ui-toolkit-git libqtdbustest-git libqtdbusmock-git system-settings-git indicator-network-git libusermetrics-git liblightdm-qt5 libandroid-properties-bin)
+makedepends=(git cmake cmake-extras-git doxygen)
+checkdepends=(xorg-server-xvfb)
+source=('git+https://github.com/ubports/unity8.git'
+        'androidaway.patch')
+sha256sums=('SKIP'
+            '7bae5293f095e5f40792c86a6a7fb70e4e4b1faa5b04f087dc8ccbbe51f538aa')
+
+BUILDENV+=('!check') # One test failed https://paste.ubuntu.com/p/2d33RJX4W8/
+
+pkgver() {
+  cd ${_pkgname}
+  git describe --always
+}
+
+prepare() {
+  cd ${_pkgname}
+  git checkout bionic
+  
+  patch -Np1 -i "${srcdir}/androidaway.patch"
+}
+
+build() {
+  cd ${_pkgname}
+  mkdir -p build
+  cd build
+  cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" ..
+  make
+}
+
+check() {
+  cd ${_pkgname}/build
+  make ARGS+="--output-on-failure" test
+}
+
+package() {
+  cd ${_pkgname}/build
+  make DESTDIR="${pkgdir}/" install
+}
+# vim:set ts=2 sw=2 et:

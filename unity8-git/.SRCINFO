@@ -1,0 +1,37 @@
+pkgbase = unity8-git
+	pkgdesc = Unity 8 shell
+	pkgver = c4e012d85
+	pkgrel = 1
+	url = https://github.com/ubports/unity8
+	arch = x86_64
+	arch = i686
+	arch = armv7h
+	arch = aarch64
+	license = LGPL3
+	checkdepends = xorg-server-xvfb
+	makedepends = git
+	makedepends = cmake
+	makedepends = cmake-extras-git
+	makedepends = doxygen
+	depends = lcov
+	depends = gcovr
+	depends = geonames-git
+	depends = unity-api-git
+	depends = qmenumodel-git
+	depends = gnome-desktop
+	depends = ubuntu-app-launch-git
+	depends = ubuntu-ui-toolkit-git
+	depends = libqtdbustest-git
+	depends = libqtdbusmock-git
+	depends = system-settings-git
+	depends = indicator-network-git
+	depends = libusermetrics-git
+	depends = liblightdm-qt5
+	depends = libandroid-properties-bin
+	source = git+https://github.com/ubports/unity8.git
+	source = androidaway.patch
+	sha256sums = SKIP
+	sha256sums = 7bae5293f095e5f40792c86a6a7fb70e4e4b1faa5b04f087dc8ccbbe51f538aa
+
+pkgname = unity8-git
+

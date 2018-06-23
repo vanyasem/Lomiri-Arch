@@ -66,7 +66,7 @@ _Clickable icons:_
 - [x] `indicator-network` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/indicator-network-git) | [⛔️](https://github.com/ubports/indicator-network/issues/8)
 - [x] `qdjango ` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qdjango-git)
 - [x] `libusermetrics` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libusermetrics-git) | [⛔️](https://github.com/ubports/libusermetrics/issues/1)
-- [ ] `unity8` [⛔️](https://github.com/ubports/unity8/issues/44)
+- [x] `unity8` [⛔️](https://github.com/ubports/unity8/issues/44)
 - [ ] Probably more
 
 **Halium packages (`armv7h`, `aarch64`):**
@@ -77,7 +77,7 @@ _Clickable icons:_
 - [x] `lxc-android` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/lxc-android-git) | [⛔️](https://github.com/Halium/lxc-android/issues/13) [⛔️](https://github.com/Halium/lxc-android/pull/15)
 - [x] `simg-tools` [submodule](https://aur.archlinux.org/packages/simg-tools/) | [🆗](https://aur.archlinux.org/pkgbase/simg-tools/?comments=all)
 
-## Install Unity8 (not implemented, boilerplate text)
+## Install Unity8
 ### Option 1:
 You can install precompiled packages from my personal repository.
 
@@ -101,17 +101,17 @@ sudo pacman -Syyu
 
 Install Unity8 packages:
 ```
-sudo pacman -S !!!TBD!!!
+sudo pacman -S unity8-git
 ```
 
 ### Option 2:
 You can compile the packages yourself from the AUR.
 
-You can either do it manually for each dependency:
+You will have either do it manually for each dependency:
 
 _There is a helper script (`build-packages.sh`) in the root of this repository that will build all packages for you._
 ```
-PACKAGE = !!!TBD!!!
+PACKAGE = unity8-git
 git clone https://aur.archlinux.org/$PACKAGE.git
 cd $PACKAGE
 makepkg -sic
@@ -119,7 +119,7 @@ makepkg -sic
 
 Or use an AUR helper of your choice:
 ```
-pacaur -S !!!TBD!!!
+trizen -S unity8
 ```
 
 ## (Advanced) Configure a local repository / build the packages
