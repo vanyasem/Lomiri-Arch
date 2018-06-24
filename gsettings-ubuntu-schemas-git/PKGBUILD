@@ -1,0 +1,33 @@
+# Maintainer: Ivan Semkin (ivan at semkin dot ru)
+
+pkgname=gsettings-ubuntu-touch-schemas-git
+_pkgname=gsettings-ubuntu-touch-schemas
+pkgver=0d029fa
+pkgrel=1
+pkgdesc='GSettings desktop-wide schemas for Ubuntu Touch'
+url='https://github.com/ubports/gsettings-ubuntu-touch-schemas'
+arch=(x86_64 i686 armv7h aarch64)
+license=(LGPL2.1)
+depends=(dconf)
+makedepends=(git gnome-common intltool)
+source=('git+https://github.com/ubports/gsettings-ubuntu-touch-schemas.git')
+sha256sums=('SKIP')
+
+pkgver() {
+  cd ${_pkgname}
+  git describe --always
+}
+
+build() {
+  cd ${_pkgname}
+  ./autogen.sh \
+      --prefix=/usr \
+      --localstatedir=/var
+  make
+}
+
+package() {
+  cd ${_pkgname}
+  make DESTDIR="${pkgdir}/" install
+}
+# vim:set ts=2 sw=2 et:
