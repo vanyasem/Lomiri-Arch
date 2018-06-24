@@ -47,14 +47,14 @@ _Clickable icons:_
 - [x] `gsettings-qt` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/gsettings-qt-git)
 - [x] `content-hub` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/content-hub-git) | [⛔️](https://github.com/ubports/content-hub/issues/1) [🆗](https://github.com/ubports/content-hub/issues/2) [⛔️](https://github.com/ubports/content-hub/issues/4) [⛔️](https://github.com/ubports/content-hub/issues/5)
 - [x] `libqtdbusmock` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqtdbusmock-git) | [🆗](https://github.com/ubports/libqtdbusmock/issues/1)
-- [x] `qtmir` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qtmir-git) | [⛔️](https://github.com/ubports/qtmir/issues/5) [⛔️](https://github.com/ubports/qtmir/issues/6) [⛔️](https://github.com/ubports/qtmir/issues/8)
+- [x] `qtmir` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qtmir-git) | [⛔️](https://github.com/ubports/qtmir/issues/5) [⛔️](https://github.com/ubports/qtmir/issues/6) [⛔️](https://github.com/ubports/qtmir/issues/8) [⛔️](https://github.com/ubports/qtmir/issues/9)
 - [x] `settings-components` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/settings-components-git) | [🆗](https://github.com/ubports/settings-components/issues/3)
 - [x] `history-service` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/history-service-git) | [🆗](https://github.com/ubports/history-service/issues/1)
 - [x] `dbus-cpp` [submodule](https://aur.archlinux.org/packages/dbus-cpp/) | [⛔️](https://github.com/ubports/location-service/issues/3)
 - [x] `trust-store` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/trust-store-git) | [🆗](https://github.com/ubports/trust-store/issues/2) [🆗](https://github.com/ubports/trust-store/issues/4)
 - [x] `location-service` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/location-service-git) | [🆗](https://github.com/ubports/location-service/issues/1)
 - [x] `platform-api` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/platform-api-git) | [⛔️](https://github.com/ubports/platform-api/issues/1) [⛔️](https://github.com/ubports/platform-api/issues/2)
-- [ ] `qtubuntu`
+- [x] `qtubuntu` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qtubuntu-git) | [⛔️](https://github.com/ubports/qtubuntu/issues/3)
 - [ ] `keyboard-component`
 - [x] `click` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/click-git)
 - [x] `accountsservice` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/accountsservice-ubuntu)
@@ -64,10 +64,11 @@ _Clickable icons:_
 - [x] `ofono` [submodule](https://aur.archlinux.org/packages/ofono/) | [⛔️](https://aur.archlinux.org/pkgbase/ofono/flag-comment/)
 - [x] `libqofono` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqofono)
 - [x] `gmenuharness` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr) | [⛔️](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr/Functional1.patch) [⛔️](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr/Functional2.patch)
-- [x] `indicator-network` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/indicator-network-git) | [⛔️](https://github.com/ubports/indicator-network/issues/8)
+- [x] `indicator-network` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/indicator-network-git) | [⛔️](https://github.com/ubports/indicator-network/issues/7) [⛔️](https://github.com/ubports/indicator-network/issues/8)
 - [x] `qdjango ` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qdjango-git)
 - [x] `libusermetrics` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libusermetrics-git) | [🆗](https://github.com/ubports/libusermetrics/issues/1)
-- [x] `unity8` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity8-git)
+- [x] `unity8` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity8-git) | [⛔️](https://github.com/ubports/unity8/issues/44) [⛔️](https://github.com/ubports/unity8/issues/45)
+- [ ] `unity-system-compositor` [⛔️](https://github.com/ubports/unity-system-compositor/issues/5)
 - [ ] Probably more
 
 **Halium packages (`armv7h`, `aarch64`):**
