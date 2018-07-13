@@ -11,11 +11,9 @@ license=(LGPL)
 depends=(unity-api-git process-cpp apparmor-libapparmor lttng-ust libaccounts-glib libsignon-glib zeromq net-cpp-git json-glib zmqpp capnproto lttng-tools astyle dos2unix clang dbus-test-runner lcov gcovr valgrind cppcheck python-dbusmock python-tornado)
 makedepends=(git cmake cmake-extras-git doxygen graphviz)
 source=('git+https://github.com/ubports/unity-scopes-api.git'
-        'Functional.patch'
         'ParseChangelog.patch'
         'RemoveWeirdTest.patch')
 sha256sums=('SKIP'
-            '3b25236d723254170f9bee5ffc825b05f4d68cf5b5830033c2304ab87250989a'
             '23f846d0e08c8bd1c33c8581d1c96a6558193b4a26b0c7f3b9cbbc7595b3d339'
             '3f360c514def2ab82e66c9284a0af83dd221e968217218b670e49d26ee00b0b5')
 
@@ -27,7 +25,6 @@ prepare() {
   cd ${_pkgname}
   git checkout bionic
   
-  patch -Np1 -i "${srcdir}/Functional.patch"
   patch -Np1 -i "${srcdir}/ParseChangelog.patch"
   patch -Np1 -i "${srcdir}/RemoveWeirdTest.patch"
 }

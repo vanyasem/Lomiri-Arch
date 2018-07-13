@@ -36,11 +36,9 @@ pkgbase = unity-scopes-api-git
 	depends = python-dbusmock
 	depends = python-tornado
 	source = git+https://github.com/ubports/unity-scopes-api.git
-	source = Functional.patch
 	source = ParseChangelog.patch
 	source = RemoveWeirdTest.patch
 	sha256sums = SKIP
-	sha256sums = 3b25236d723254170f9bee5ffc825b05f4d68cf5b5830033c2304ab87250989a
 	sha256sums = 23f846d0e08c8bd1c33c8581d1c96a6558193b4a26b0c7f3b9cbbc7595b3d339
 	sha256sums = 3f360c514def2ab82e66c9284a0af83dd221e968217218b670e49d26ee00b0b5
 
