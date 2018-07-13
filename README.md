@@ -55,6 +55,7 @@ _Clickable icons:_
 - [x] `location-service` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/location-service-git) | [🆗](https://github.com/ubports/location-service/issues/1)
 - [x] `platform-api` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/platform-api-git) | [⛔️](https://github.com/ubports/platform-api/issues/1) [⛔️](https://github.com/ubports/platform-api/issues/2)
 - [x] `qtubuntu` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qtubuntu-git) | [⛔️](https://github.com/ubports/qtubuntu/issues/3)
+- [ ] `maliit-framework`
 - [ ] `keyboard-component`
 - [x] `click` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/click-git)
 - [x] `accountsservice` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/accountsservice-ubuntu)
@@ -79,6 +80,10 @@ _Clickable icons:_
 - [x] `libhybris-aarch64-git` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libhybris-aarch64-git)
 - [x] `lxc-android` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/lxc-android-git) | [⛔️](https://github.com/Halium/lxc-android/issues/13) [⛔️](https://github.com/Halium/lxc-android/pull/15)
 - [x] `simg-tools` [submodule](https://aur.archlinux.org/packages/simg-tools/) | [🆗](https://aur.archlinux.org/pkgbase/simg-tools/?comments=all)
+- [x] `xf86-video-hwcomposer` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/xf86-video-hwcomposer-git)
+- [x] `drihybris` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/drihybris-git)
+- [x] `glamor-hybris` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/glamor-hybris-git)
+
 
 ## Install Unity8
 ### Option 1:

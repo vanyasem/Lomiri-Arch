@@ -1,0 +1,23 @@
+pkgbase = xf86-video-hwcomposer-git
+	pkgdesc = Xorg DDX driver to renderer through HWComposer API on Android devices via libhybris
+	pkgver = 60f7bfc
+	pkgrel = 1
+	url = https://github.com/NotKit/xf86-video-hwcomposer
+	arch = i686
+	arch = x86_64
+	arch = armv7h
+	arch = aarch64
+	groups = xorg-drivers
+	groups = xorg
+	makedepends = xorg-server-devel
+	makedepends = git
+	depends = xorg-server
+	depends = xproto
+	depends = fontsproto
+	depends = randrproto
+	depends = renderproto
+	source = git+https://github.com/NotKit/xf86-video-hwcomposer
+	sha256sums = SKIP
+
+pkgname = xf86-video-hwcomposer-git
+

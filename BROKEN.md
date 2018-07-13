@@ -24,6 +24,17 @@ unity8:
 missing deps: qtmir-git
 missing /usr/share/backgrounds/warty-final-ubuntu.png (should be /usr/share/wallpapers?) (https://t.me/ubports/136672)
 references build path:  <Unknown File>:46:33: QML CroppedImageMinimumSourceSize: Cannot open: file:///mnt/antihype/Projects/AUR/tests/graphics/applicationIcons/dash.png
+GLib-GIO-ERROR **: Settings schema 'com.canonical.Unity.Launcher' is not installed (comes from https://launchpad.net/ubuntu/xenial/+source/unity)
+[2018-06-25:00:34:32.761] Failed to get all properties for "com.ubuntu.AccountsService.Input" : "No such interface 'com.ubuntu.AccountsService.Input'"
+[2018-06-25:00:34:32.762] Failed to get all properties for "com.ubuntu.AccountsService.SecurityPrivacy" : "No such interface 'com.ubuntu.AccountsService.SecurityPrivacy'"
+[2018-06-25:00:34:32.762] Failed to get all properties for "com.ubuntu.location.providers.here.AccountsService" : "No such interface 'com.ubuntu.location.providers.here.AccountsService'"
+[2018-06-25:00:34:32.762] Failed to get all properties for "com.ubuntu.touch.AccountsService.SecurityPrivacy" : "No such interface 'com.ubuntu.touch.AccountsService.SecurityPrivacy'"
+[2018-06-25:01:27:18.997] ubuntu-app-launch threw an exception getting app info for appId: "dialer-app" : Invalid app ID: dialer-app
+[2018-06-25:01:27:18.997] ubuntu-app-launch threw an exception getting app info for appId: "messaging-app" : Invalid app ID: messaging-app
+[2018-06-25:01:27:18.997] ubuntu-app-launch threw an exception getting app info for appId: "address-book-app" : Invalid app ID: address-book-app
+GLib-GIO-ERROR **: Settings schema 'com.ubuntu.touch.system' is not installed (missing dep gsettings-ubuntu-touch-schemas-git)
+GLib-GIO-ERROR **: Settings schema 'com.canonical.keyboard.maliit' is not installed (missing dep keyboard-component-git)
+
 
 system-settings:
 missing deps: indicator-datetime (unpackaged)

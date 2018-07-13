@@ -1,0 +1,38 @@
+# Maintainer: Ivan Semkin (ivan at semkin dot ru)
+
+pkgname=xf86-video-hwcomposer-git
+_pkgname=xf86-video-hwcomposer
+pkgver=60f7bfc
+pkgrel=1
+pkgdesc='Xorg DDX driver to renderer through HWComposer API on Android devices via libhybris'
+url='https://github.com/NotKit/xf86-video-hwcomposer'
+arch=(i686 x86_64 armv7h aarch64)
+license=()
+depends=(xorg-server xproto fontsproto randrproto renderproto)
+makedepends=(xorg-server-devel git)
+groups=(xorg-drivers xorg)
+source=('git+https://github.com/NotKit/xf86-video-hwcomposer')
+sha256sums=('SKIP')
+
+pkgver() {
+  cd $_pkgname
+  git describe --always
+}
+
+prepare() {
+  cd $_pkgname
+  NOCONFIGURE=1 ./autogen.sh
+}
+
+build() {
+  cd $_pkgname
+  export CPLUS_INCLUDE_PATH=/opt/android/include:/opt/android/hybris/include
+  export C_INCLUDE_PATH=/opt/android/include:/opt/android/hybris/include
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd $_pkgname
+  make DESTDIR="$pkgdir" install
+}

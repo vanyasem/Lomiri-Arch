@@ -1,0 +1,23 @@
+pkgbase = drihybris-git
+	pkgdesc = DRIHYBRIS extension (based on DRI3) for buffer sharing on libhybris-based adaptations
+	pkgver = e7bc95f
+	pkgrel = 1
+	url = https://github.com/NotKit/drihybris
+	arch = i686
+	arch = x86_64
+	arch = armv7h
+	arch = aarch64
+	groups = xorg-drivers
+	groups = xorg
+	makedepends = xorg-server-devel
+	makedepends = git
+	depends = xorg-server
+	depends = xproto
+	depends = fontsproto
+	depends = randrproto
+	depends = renderproto
+	source = git+https://github.com/gemian/drihybris.git
+	sha256sums = SKIP
+
+pkgname = drihybris-git
+
