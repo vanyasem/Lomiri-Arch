@@ -33,8 +33,18 @@ GLib-GIO-ERROR **: Settings schema 'com.canonical.Unity.Launcher' is not install
 [2018-06-25:01:27:18.997] ubuntu-app-launch threw an exception getting app info for appId: "messaging-app" : Invalid app ID: messaging-app
 [2018-06-25:01:27:18.997] ubuntu-app-launch threw an exception getting app info for appId: "address-book-app" : Invalid app ID: address-book-app
 GLib-GIO-ERROR **: Settings schema 'com.ubuntu.touch.system' is not installed (missing dep gsettings-ubuntu-touch-schemas-git)
-GLib-GIO-ERROR **: Settings schema 'com.canonical.keyboard.maliit' is not installed (missing dep keyboard-component-git)
-
+GLib-GIO-ERROR **: Settings schema 'com.canonical.keyboard.maliit' is not installed (missing dep keyboard-component-git, https://github.com/ubports/keyboard-component/blob/master/data/schemas/com.canonical.keyboard.maliit.gschema.xml)
+[2018-07-14:02:35:59.175] Cannot find any language packs, bailing out
+--
+Ivan Semkin 🇧🇾, [14.07.18 02:39]
+can i skip the greeter somehow?
+Marius Gripsgard, [14.07.18 02:41]
+mkdir -p $HOME/.config/ubuntu-system-settings
+    touch $HOME/.config/ubuntu-system-settings/wizard-has-run
+Marius Gripsgard, [14.07.18 02:46]
+@vanyasem but the desktop does not use the wizard anyway, so i think it should be safe to ignore for now
+--
+ MIR_SERVER_CURSOR=null QT_QPA_PLATFORM=mirserver unity8
 
 system-settings:
 missing deps: indicator-datetime (unpackaged)
@@ -46,3 +56,9 @@ missing dep:
 gsettings-qt-git
 
 /usr/include/gtest/CMakeLists.txt exists in both 'libertine-git' and 'platform-api-git'
+
+maliit-framework:
+/usr/share/qt5/mkspecs/features/maliit-defines.prf -> /usr/share/qt/mkspecs/features/maliit-defines.prf
+
+keyboard-component:
+?? patch /usr/share/qt/mkspecs/features/maliit-defines.prf -> /usr/lib/qt/mkspecs/features/maliit-defines.prf
