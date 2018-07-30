@@ -16,7 +16,7 @@ pkgbase = glamor-hybris-git
 	depends = fontsproto
 	depends = randrproto
 	depends = renderproto
-	source = git+https://github.com/NotKit/glamor-hybris
+	source = git+https://github.com/gemian/glamor-hybris
 	sha256sums = SKIP
 
 pkgname = glamor-hybris-git
