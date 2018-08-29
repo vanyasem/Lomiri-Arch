@@ -4,9 +4,6 @@
 [submodule "lcov"]
 	path = lcov
 	url = https://aur.archlinux.org/lcov.git
-[submodule "hybris-usb"]
-	path = hybris-usb
-	url = https://aur.archlinux.org/hybris-usb.git
 [submodule "dbus-cpp"]
 	path = dbus-cpp
 	url = https://aur.archlinux.org/dbus-cpp.git
@@ -34,12 +31,6 @@
 [submodule "humanity-icon-theme"]
 	path = humanity-icon-theme
 	url = https://aur.archlinux.org/humanity-icon-theme.git
-[submodule "libhybris-git"]
-	path = libhybris-git
-	url = https://aur.archlinux.org/libhybris-git.git
-[submodule "simg-tools"]
-	path = simg-tools
-	url = https://aur.archlinux.org/simg-tools.git
 [submodule "ofono"]
 	path = ofono
 	url = https://aur.archlinux.org/ofono.git

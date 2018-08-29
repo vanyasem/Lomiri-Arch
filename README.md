@@ -3,7 +3,7 @@
 ## About
 This project aims to bring [Unity8](https://github.com/ubports/unity8-build) DE to Arch GNU/Linux.
 
-It is built for `x86_64`, `i686`, `armv7h`, and `aarch64`. ARM builds are experimental.
+It is built for `x86_64`. `i686`, `armv7h`, and `aarch64` builds are planned.
 
 ### Progress
 _Clickable icons:_
@@ -72,17 +72,6 @@ _Clickable icons:_
 - [x] `unity8` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity8-git) | [⛔️](https://github.com/ubports/unity8/issues/44) [⛔️](https://github.com/ubports/unity8/issues/45)
 - [ ] `unity-system-compositor` [⛔️](https://github.com/ubports/unity-system-compositor/issues/5)
 - [ ] Probably more
-
-**Halium packages (`armv7h`, `aarch64`):**
-- [x] `hybris-usb` [submodule](https://aur.archlinux.org/packages/hybris-usb/) | [🆗](https://aur.archlinux.org/pkgbase/hybris-usb/?comments=all) [⛔️](https://aur.archlinux.org/pkgbase/hybris-usb/?comments=all)
-- [x] `android-headers 7.1` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/hybris-android-headers-7)
-- [x] `libhybris-git` [submodule](https://aur.archlinux.org/packages/libhybris-git/)
-- [x] `libhybris-aarch64-git` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libhybris-aarch64-git)
-- [x] `lxc-android` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/lxc-android-git) | [⛔️](https://github.com/Halium/lxc-android/issues/13) [⛔️](https://github.com/Halium/lxc-android/pull/15)
-- [x] `simg-tools` [submodule](https://aur.archlinux.org/packages/simg-tools/) | [🆗](https://aur.archlinux.org/pkgbase/simg-tools/?comments=all)
-- [x] `xf86-video-hwcomposer` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/xf86-video-hwcomposer-git)
-- [x] `drihybris` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/drihybris-git)
-- [x] `glamor-hybris` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/glamor-hybris-git)
 
 
 ## Install Unity8
