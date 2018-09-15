@@ -33,7 +33,6 @@ pkgbase = unity8-git
 	source = qt59.patch
 	sha256sums = SKIP
 	sha256sums = 7bae5293f095e5f40792c86a6a7fb70e4e4b1faa5b04f087dc8ccbbe51f538aa
-	sha256sums = bb7240cffa6ac1ca1789c12573fcab0f88f47191c2e261481777322c0b159f5a
 
 pkgname = unity8-git
 

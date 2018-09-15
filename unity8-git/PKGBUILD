@@ -15,8 +15,7 @@ source=('git+https://github.com/ubports/unity8.git'
         'androidaway.patch'
         'qt59.patch')
 sha256sums=('SKIP'
-            '7bae5293f095e5f40792c86a6a7fb70e4e4b1faa5b04f087dc8ccbbe51f538aa'
-            'bb7240cffa6ac1ca1789c12573fcab0f88f47191c2e261481777322c0b159f5a')
+            '7bae5293f095e5f40792c86a6a7fb70e4e4b1faa5b04f087dc8ccbbe51f538aa')
 
 BUILDENV+=('!check') # https://paste.ubuntu.com/p/2d33RJX4W8/
 
@@ -30,7 +29,6 @@ prepare() {
   git checkout bionic
   
   patch -Np1 -i "${srcdir}/androidaway.patch"
-  patch -Np1 -i "${srcdir}/qt59.patch"
 }
 
 build() {
