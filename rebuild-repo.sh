@@ -4,13 +4,8 @@ set -e
 sudo test true
 
 cd ..
-guzuta omakase build lcov
-guzuta omakase build gcovr
-guzuta omakase build python-dbusmock
-guzuta omakase build mir
-guzuta omakase build mir-git
-guzuta omakase build cmake-extras-git
-guzuta omakase build libqtdbustest-git
-guzuta omakase build unity-api-git
-guzuta omakase build dbus-test-runner
-guzuta omakase build libertine-git
+
+PACKAGES=$(cat projects.list)
+for package in $PACKAGES; do
+    guzuta omakase build ${package}
+done

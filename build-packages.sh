@@ -1,17 +1,29 @@
 #!/usr/bin/env bash
 set -e
-sudo test true
 
 cmd_usage() {
   cat <<-_EOF
 Options:
-  help|-h  -  Print usage information
+  help|-h     -  Print usage information
+  build|-b    -  Build and install all packages
   rebuild|-r  -  Rebuild all packages
-  needed|-n  -  Build packages that are not built
-  clean|-c  -  Clean all packages
-  srcinfo|-s  -  Regenerate .SRCINFO
+  needed|-n   -  Build packages that are not built
+  clean|-c    -  Clean all packages
+  srcinfo|-s  -  Regenerate .SRCINFOs of all packages
 _EOF
   exit 0
+}
+
+cmd_build() {
+  sudo test true
+  PACKAGES=$(cat projects.list)
+  for package in $PACKAGES
+  do
+    cd ${package}
+    yes | makepkg -sfi
+    echo "----------------------"
+    cd ..
+  done
 }
 
 cmd_rebuild() {
@@ -58,6 +70,7 @@ cmd_srcinfo() {
 
 case "$1" in
   help|-h)    shift; cmd_usage "$@" ;;
+  build|-b)   shift; cmd_build "$@" ;;
   rebuild|-r) shift; cmd_rebuild "$@" ;;
   needed|-n)  shift; cmd_needed "$@" ;;
   clean|-c)   shift; cmd_clean "$@" ;;
