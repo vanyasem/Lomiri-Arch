@@ -26,10 +26,8 @@ pkgbase = qtmir-git
 	depends = gtest
 	source = git+https://github.com/ubports/qtmir.git
 	source = NoCatchValue.patch
-	source = pthread.patch
 	sha256sums = SKIP
 	sha256sums = 0e706edbd8ef0bc7358202b01c6efcba1d2837699457628d9ec942e6a5135a4e
-	sha256sums = ceb0ff98e0f0743cc05e5fc49f1d18e75c839e9ded40e841027fc7736042b375
 
 pkgname = qtmir-git
 

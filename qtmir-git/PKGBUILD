@@ -11,11 +11,9 @@ license=(LGPL)
 depends=(qt5-base qt5-quickcontrols qt5-sensors mir process-cpp ubuntu-app-launch-git gsettings-qt libqtdbustest-git libqtdbusmock-git content-hub-git url-dispatcher-git glm gtest)
 makedepends=(git cmake cmake-extras-git)
 source=('git+https://github.com/ubports/qtmir.git'
-        'NoCatchValue.patch'
-        'pthread.patch')
+        'NoCatchValue.patch')
 sha256sums=('SKIP'
-            '0e706edbd8ef0bc7358202b01c6efcba1d2837699457628d9ec942e6a5135a4e'
-            'ceb0ff98e0f0743cc05e5fc49f1d18e75c839e9ded40e841027fc7736042b375')
+            '0e706edbd8ef0bc7358202b01c6efcba1d2837699457628d9ec942e6a5135a4e')
 
 BUILD_DIR=build
 
@@ -24,7 +22,6 @@ prepare() {
   git checkout bionic
 
   patch -Np1 -i "${srcdir}/NoCatchValue.patch"
-  patch -Np1 -i "${srcdir}/pthread.patch"
 }
 
 pkgver() {
