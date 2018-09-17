@@ -24,7 +24,7 @@ BUILDENV+=('!check') # https://paste.ubuntu.com/p/XXm29c8rv8/
 
 pkgver() {
   cd ${_pkgname}
-  git describe --always
+  echo "r$(git rev-list --count HEAD).$(git describe --always)"
 }
 
 prepare() {

@@ -40,12 +40,8 @@ cmd_needed() {
   for package in ./*/
   do
     cd ${package}
-    if ! ls ./*.pkg.tar.xz 1> /dev/null 2>&1; then
-      yes | makepkg -sr
-      echo "----------------------"
-    else
-      echo ${package} already built
-    fi
+    yes | makepkg -sr || true
+    echo "----------------------"
     cd ..
   done
 }

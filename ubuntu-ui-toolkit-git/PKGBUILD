@@ -36,7 +36,7 @@ prepare() {
 
 pkgver() {
   cd ${_pkgname}
-  git describe --always
+  echo "r$(git rev-list --count HEAD).$(git describe --always)"
 }
 
 build() {

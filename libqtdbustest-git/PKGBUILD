@@ -2,8 +2,8 @@
 
 pkgname=libqtdbustest-git
 _pkgname=libqtdbustest
-pkgver=24e410e
-pkgrel=2
+pkgver=r83.24e410e
+pkgrel=1
 pkgdesc='Library for testing DBus interactions using Qt'
 url='https://github.com/ubports/libqtdbustest'
 arch=(x86_64 i686 armv7h aarch64)
@@ -16,9 +16,11 @@ source=('git+https://github.com/ubports/libqtdbustest.git'
 sha256sums=('SKIP'
             'adbb9680bf2293fd4694d35ba5876623dc12c6fc78a5f772817f15921d44c5ec')
 
+BUILDENV+=('!check')
+
 pkgver() {
   cd ${_pkgname}
-  git describe --always
+  echo "r$(git rev-list --count HEAD).$(git describe --always)"
 }
 
 prepare() {

@@ -2,8 +2,8 @@
 
 pkgname=cmake-extras-git
 _pkgname=cmake-extras
-pkgver=820b661
-pkgrel=2
+pkgver=r241.820b661
+pkgrel=1
 pkgdesc='A collection of add-ons for the CMake build tool'
 url='https://github.com/ubports/cmake-extras'
 arch=(any)
@@ -23,7 +23,7 @@ prepare() {
             
 pkgver() {
   cd ${_pkgname}
-  git describe --always
+  echo "r$(git rev-list --count HEAD).$(git describe --always)"
 }
 
 build() {

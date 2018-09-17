@@ -2,7 +2,7 @@
 
 pkgname=unity-scopes-api-git
 _pkgname=unity-scopes-api
-pkgver=31ad0017
+pkgver=5fb4ad3a
 pkgrel=1
 pkgdesc='Library to integrate scopes with the Unity shell'
 url='https://github.com/ubports/unity-scopes-api'
@@ -12,10 +12,12 @@ depends=(unity-api-git process-cpp apparmor-libapparmor lttng-ust libaccounts-gl
 makedepends=(git cmake cmake-extras-git doxygen graphviz)
 source=('git+https://github.com/ubports/unity-scopes-api.git'
         'ParseChangelog.patch'
-        'RemoveWeirdTest.patch')
+        'RemoveWeirdTest.patch'
+        'cpp14.patch')
 sha256sums=('SKIP'
             '23f846d0e08c8bd1c33c8581d1c96a6558193b4a26b0c7f3b9cbbc7595b3d339'
-            '3f360c514def2ab82e66c9284a0af83dd221e968217218b670e49d26ee00b0b5')
+            '3f360c514def2ab82e66c9284a0af83dd221e968217218b670e49d26ee00b0b5'
+            'bda59b81f9687cb177b402783102d261a8df17679643285e583437f7028e509e')
 
 BUILDENV+=('!check') # Some tests are broken
 
@@ -27,11 +29,12 @@ prepare() {
   
   patch -Np1 -i "${srcdir}/ParseChangelog.patch"
   patch -Np1 -i "${srcdir}/RemoveWeirdTest.patch"
+  patch -Np1 -i "${srcdir}/cpp14.patch"
 }
 
 pkgver() {
   cd ${_pkgname}
-  git describe --always
+  echo "r$(git rev-list --count HEAD).$(git describe --always)"
 }
 
 build() {
