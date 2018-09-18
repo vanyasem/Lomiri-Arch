@@ -2,7 +2,7 @@
 
 pkgname=url-dispatcher-git
 _pkgname=url-dispatcher
-pkgver=f7b7e00
+pkgver=r734.f7b7e00
 pkgrel=1
 pkgdesc='Service to allow sending of URLs and get handlers started'
 url='https://github.com/ubports/url-dispatcher'

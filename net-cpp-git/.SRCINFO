@@ -1,6 +1,6 @@
 pkgbase = net-cpp-git
 	pkgdesc = A simple yet beautiful networking API for C++11
-	pkgver = 09cac6a
+	pkgver = r141.09cac6a
 	pkgrel = 1
 	url = https://github.com/ubports/net-cpp
 	arch = x86_64

@@ -2,8 +2,8 @@
 
 pkgname=ubuntu-download-manager-git
 _pkgname=ubuntu-download-manager
-pkgver=e6cfc9dc
-pkgrel=2
+pkgver=r2535.e6cfc9dc
+pkgrel=1
 pkgdesc='Provides a service for downloading files while an application is suspended'
 url='https://github.com/ubports/ubuntu-download-manager'
 arch=(x86_64 i686 armv7h aarch64)

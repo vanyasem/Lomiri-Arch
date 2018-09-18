@@ -1,6 +1,6 @@
 pkgbase = unity-scopes-api-git
 	pkgdesc = Library to integrate scopes with the Unity shell
-	pkgver = 5fb4ad3a
+	pkgver = r5028.06c06a64
 	pkgrel = 1
 	url = https://github.com/ubports/unity-scopes-api
 	arch = x86_64
@@ -38,11 +38,9 @@ pkgbase = unity-scopes-api-git
 	source = git+https://github.com/ubports/unity-scopes-api.git
 	source = ParseChangelog.patch
 	source = RemoveWeirdTest.patch
-	source = cpp14.patch
 	sha256sums = SKIP
 	sha256sums = 23f846d0e08c8bd1c33c8581d1c96a6558193b4a26b0c7f3b9cbbc7595b3d339
 	sha256sums = 3f360c514def2ab82e66c9284a0af83dd221e968217218b670e49d26ee00b0b5
-	sha256sums = bda59b81f9687cb177b402783102d261a8df17679643285e583437f7028e509e
 
 pkgname = unity-scopes-api-git
 

@@ -2,7 +2,7 @@
 
 pkgname=net-cpp-git
 _pkgname=net-cpp
-pkgver=09cac6a
+pkgver=r141.09cac6a
 pkgrel=1
 pkgdesc='A simple yet beautiful networking API for C++11'
 url='https://github.com/ubports/net-cpp'

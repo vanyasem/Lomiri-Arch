@@ -2,7 +2,7 @@
 
 pkgname=unity-api-git
 _pkgname=unity-api
-pkgver=r1088.31cad5a
+pkgver=r1091.588b667
 pkgrel=1
 pkgdesc='API for Unity shell integration'
 url='https://github.com/ubports/unity-api'
@@ -31,7 +31,7 @@ build() {
   cd ${_pkgname}
   mkdir -p ${BUILD_DIR}
   cd ${BUILD_DIR}
-  cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" -DNO_TESTS=true ..
+  cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" ..
   make
 }
 
