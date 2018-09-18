@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index dd1d77c..196a476 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -48,6 +48,8 @@ if (${werror})
+   set(CMAKE_C_FLAGS "${CMAKE_CXX_FLAGS} -Werror")
+ endif()
+ 
++set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-discarded-qualifiers")
++
+ pkg_check_modules(UBUNTU_APP_LAUNCH REQUIRED ubuntu-app-launch-3>=0.5)
+ include_directories(${UBUNTU_APP_LAUNCH_INCLUDE_DIRS})
+ 

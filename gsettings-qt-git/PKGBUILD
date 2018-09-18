@@ -2,7 +2,7 @@
 
 pkgname=gsettings-qt-git
 _pkgname=gsettings-qt
-pkgver=c8ecb2b
+pkgver=r185.c8ecb2b
 pkgrel=1
 pkgdesc='Library to access GSettings from Qt'
 url='https://github.com/ubports/gsettings-qt'

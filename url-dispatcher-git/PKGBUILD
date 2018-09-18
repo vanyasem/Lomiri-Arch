@@ -11,12 +11,16 @@ license=(LGPL)
 depends=(ubuntu-app-launch-git unity-scopes-api-git intltool)
 makedepends=(git cmake cmake-extras-git)
 checkdepends=(python-testtools python-nose)
-source=('git+https://github.com/ubports/url-dispatcher.git')
-sha256sums=('SKIP')
+source=('git+https://github.com/ubports/url-dispatcher.git'
+        'no-discarded-qualifiers.patch')
+sha256sums=('SKIP'
+            'acffad6f0cf98faedea4c4ef917e0fcca3f5faa61d95afb55f617ff94ff32d51')
 
 prepare() {
   cd ${_pkgname}
   git checkout bionic
+
+  patch -Np1 -i "${srcdir}/no-discarded-qualifiers.patch"
 }
 
 pkgver() {

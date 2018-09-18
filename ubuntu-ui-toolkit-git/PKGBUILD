@@ -2,13 +2,13 @@
 
 pkgname=ubuntu-ui-toolkit-git
 _pkgname=ubuntu-ui-toolkit
-pkgver=de9a0b250
+pkgver=r17954.de9a0b250
 pkgrel=1
 pkgdesc='Qt Components for Ubuntu'
 url='https://github.com/ubports/ubuntu-ui-toolkit'
 arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL)
-depends=(qt5-base qt5-quickcontrols lttng-ust libnih qt5-systems-git qt5-pim-git qt5-svg qt5-feedback ubuntu-themes qt5-graphicaleffects)
+depends=(qt5-base qt5-quickcontrols lttng-ust libnih qt5-systems-git qt5-pim-git qt5-svg qt5-feedback ubuntu-themes qt5-graphicaleffects bluez-libs)
 makedepends=(git)
 checkdepends=()
 source=('git+https://github.com/ubports/ubuntu-ui-toolkit.git'

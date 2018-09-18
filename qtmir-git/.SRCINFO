@@ -1,6 +1,6 @@
 pkgbase = qtmir-git
 	pkgdesc = Qt platform abstraction (QPA) plugin for a Mir server
-	pkgver = 89d57e19
+	pkgver = r2311.7c91e400
 	pkgrel = 1
 	url = https://github.com/ubports/qtmir
 	arch = x86_64

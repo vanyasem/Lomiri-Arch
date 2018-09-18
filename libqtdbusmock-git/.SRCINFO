@@ -1,6 +1,6 @@
 pkgbase = libqtdbusmock-git
 	pkgdesc = Library for mocking DBus interactions using Qt
-	pkgver = d6d1830
+	pkgver = r122.d6d1830
 	pkgrel = 1
 	url = https://github.com/ubports/libqtdbusmock
 	arch = x86_64

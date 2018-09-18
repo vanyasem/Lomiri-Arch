@@ -2,7 +2,7 @@
 
 pkgname=thumbnailer-git
 _pkgname=thumbnailer
-pkgver=ec1c06a
+pkgver=r1938.ec1c06a
 pkgrel=1
 pkgdesc='D-Bus service for out of process thumbnailing'
 url='https://github.com/ubports/thumbnailer'

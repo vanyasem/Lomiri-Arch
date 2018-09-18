@@ -17,7 +17,9 @@ pkgbase = url-dispatcher-git
 	depends = unity-scopes-api-git
 	depends = intltool
 	source = git+https://github.com/ubports/url-dispatcher.git
+	source = no-discarded-qualifiers.patch
 	sha256sums = SKIP
+	sha256sums = acffad6f0cf98faedea4c4ef917e0fcca3f5faa61d95afb55f617ff94ff32d51
 
 pkgname = url-dispatcher-git
 

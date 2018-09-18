@@ -36,7 +36,7 @@ _Clickable icons:_
 - [x] `zmqpp` [submodule](https://aur.archlinux.org/packages/zmqpp/)
 - [x] `lttng-tools` [submodule](https://aur.archlinux.org/packages/lttng-toolss/)
 - [x] `unity-scopes-api` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity-scopes-api-git) | [🆗](https://github.com/ubports/unity-scopes-api/issues/4) [🆗](https://github.com/ubports/unity-scopes-api/issues/6) [🆗](https://github.com/ubports/unity-scopes-api/issues/8) [⛔️](https://github.com/ubports/unity-scopes-api/issues/9) [🆗](https://github.com/ubports/unity-scopes-api/issues/11)
-- [x] `url-dispatcher` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/url-dispatcher-git) | [🆗](https://github.com/ubports/url-dispatcher/pull/1) [🆗](https://github.com/ubports/url-dispatcher/issues/4)
+- [x] `url-dispatcher` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/url-dispatcher-git) | [🆗](https://github.com/ubports/url-dispatcher/pull/1) [🆗](https://github.com/ubports/url-dispatcher/issues/4) [⛔️](https://github.com/ubports/url-dispatcher/issues/5)
 - [x] `persistent-cache-cpp` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/persistent-cache-cpp-bzr)
 - [x] `thumbnailer` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/thumbnailer-git) | [🆗](https://github.com/ubports/thumbnailer/issues/1)
 - [x] `qtpim` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qt5-pim-git)

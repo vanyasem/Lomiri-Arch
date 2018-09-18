@@ -2,7 +2,7 @@
 
 pkgname=content-hub-git
 _pkgname=content-hub
-pkgver=66955f6
+pkgver=r1507.66955f6
 pkgrel=1
 pkgdesc='Content sharing/picking infrastructure and service'
 url='https://github.com/ubports/content-hub'
