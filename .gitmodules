@@ -34,3 +34,12 @@
 [submodule "ofono"]
 	path = ofono
 	url = https://aur.archlinux.org/ofono.git
+[submodule "mir"]
+	path = mir
+	url = https://aur.archlinux.org/mir.git
+[submodule "mir-git"]
+	path = mir-git
+	url = https://aur.archlinux.org/mir-git.git
+[submodule "python-dbusmock"]
+	path = python-dbusmock
+	url = https://aur.archlinux.org/python-dbusmock.git
