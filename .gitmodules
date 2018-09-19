@@ -43,3 +43,6 @@
 [submodule "python-dbusmock"]
 	path = python-dbusmock
 	url = https://aur.archlinux.org/python-dbusmock.git
+[submodule "ubuntu-wallpapers"]
+	path = ubuntu-wallpapers
+	url = https://aur.archlinux.org/ubuntu-wallpapers.git
