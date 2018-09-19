@@ -3,9 +3,10 @@
 set -e
 sudo test true
 
+PACKAGES=$(cat projects.list)
+
 cd ..
 
-PACKAGES=$(cat projects.list)
 for package in $PACKAGES; do
     guzuta omakase build ${package}
 done
