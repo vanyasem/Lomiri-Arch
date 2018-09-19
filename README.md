@@ -25,7 +25,7 @@ _Clickable icons:_
 - [x] `libqtdbustest` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqtdbustest-git) | [🆗](https://github.com/ubports/libqtdbustest/issues/1)
 - [x] `dbus-test-runner` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/dbus-test-runner) | [🆗](https://aur.archlinux.org/pkgbase/dbus-test-runner/flag-comment/)
 - [x] `unity-api`[🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity-api-git) | [🆗](https://github.com/ubports/unity-api/issues/2) [🆗](https://github.com/ubports/unity-api/issues/4)
-- [x] `libertine` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libertine-git) | [⛔️](https://github.com/ubports/libertine/issues/3) [⛔️](https://github.com/ubports/libertine/issues/5)
+- [x] `libertine` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libertine-git) | [🆗](https://github.com/ubports/libertine/issues/3) [⛔️](https://github.com/ubports/libertine/issues/5)
 - [x] `ubuntu-download-manager` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/ubuntu-download-manager-git) | [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/2) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/3) [🆗](https://github.com/ubports/ubuntu-download-manager/issues/4) [⛔️](https://github.com/ubports/ubuntu-download-manager/issues/6)
 - [x] `properties-cpp` [✅](https://aur.archlinux.org/packages/properties-cpp/)
 - [x] `ubuntu-app-launch` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/ubuntu-app-launch-git) | [⛔️](https://github.com/ubports/ubuntu-app-launch/issues/2) [⛔️](https://github.com/ubports/ubuntu-app-launch/issues/3) [⛔️](https://github.com/ubports/ubuntu-app-launch/issues/4) [🆗](https://github.com/ubports/ubuntu-app-launch/pull/1)
@@ -53,7 +53,7 @@ _Clickable icons:_
 - [x] `dbus-cpp` [✅](https://aur.archlinux.org/packages/dbus-cpp/) | [🆗](https://github.com/ubports/location-service/issues/3)
 - [x] `trust-store` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/trust-store-git) | [🆗](https://github.com/ubports/trust-store/issues/2) [🆗](https://github.com/ubports/trust-store/issues/4)
 - [x] `location-service` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/location-service-git) | [🆗](https://github.com/ubports/location-service/issues/1)
-- [x] `platform-api` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/platform-api-git) | [⛔️](https://github.com/ubports/platform-api/issues/1) [⛔️](https://github.com/ubports/platform-api/issues/2)
+- [x] `platform-api` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/platform-api-git) | [🆗](https://github.com/ubports/platform-api/issues/1) [⛔️](https://github.com/ubports/platform-api/issues/2)
 - [x] `qtubuntu` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qtubuntu-git) | [⛔️](https://github.com/ubports/qtubuntu/issues/3)
 - [ ] `maliit-framework`
 - [ ] `keyboard-component`

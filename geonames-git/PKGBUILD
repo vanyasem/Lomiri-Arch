@@ -2,13 +2,20 @@
 
 pkgname=geonames-git
 _pkgname=geonames
-pkgver=5d77e82
+pkgver=r4.fb9788a
 pkgrel=1
 pkgdesc='Parse and query the geonames database dump'
 url='https://github.com/ubports/geonames'
 arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL3)
-makedepends=(git git-lfs gtk-doc)
+#makedepends=(git git-lfs gtk-doc)
+makedepends=(git gtk-doc)
+source=('git+https://github.com/vanyasem/geonames.git'
+        'https://unity8.mynameisivan.ru/alternateNames.txt')
+sha256sums=('SKIP'
+            'ba6ce17564e83fa53270e482d319ed9442d23fe347e5fbb331b0aff6ee7122de')
+
+BUILDENV+=('!check') # Weird locale issues
 
 pkgver() {
   cd ${_pkgname}
@@ -16,14 +23,16 @@ pkgver() {
 }
 
 prepare() {
+  mv alternateNames.txt ${_pkgname}/data
+
   # makepkg does not support cloning git-lfs repositories
-  if [ -d "${_pkgname}" ] 
-  then
-    git pull origin
-  else
-    git lfs install
-    git clone https://github.com/ubports/geonames.git
-  fi
+  #if [ -d "${_pkgname}" ]
+  #then
+  #  git pull origin
+  #else
+  #  git lfs install # LFS QUOTA LIMIT REACHED - SEE https://github.com/ubports/geonames/issues/1
+  #  git clone https://github.com/ubports/geonames.git
+  #fi
 }
 
 build() {

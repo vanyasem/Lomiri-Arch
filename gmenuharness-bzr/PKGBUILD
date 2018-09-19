@@ -25,8 +25,11 @@ pkgver() {
 prepare() {
   cd ${_pkgname}
 
-  patch -Np0 -i "${srcdir}/Functional1.patch"
-  patch -Np0 -i "${srcdir}/Functional2.patch"
+  if [ ! -f ${srcdir}/patched ]; then
+    patch -Np0 -i "${srcdir}/Functional1.patch"
+    patch -Np0 -i "${srcdir}/Functional2.patch"
+    touch ${srcdir}/patched
+  fi
 }
 
 build() {

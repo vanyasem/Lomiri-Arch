@@ -17,10 +17,8 @@ pkgbase = platform-api-git
 	depends = process-cpp
 	source = git+https://github.com/ubports/platform-api.git
 	source = hybris.patch
-	source = GtestInclude.patch
 	sha256sums = SKIP
 	sha256sums = 4ad5879d7e6ba5d9c269dc59b30e6069d9846d40fbb66773170357375fdc0fbe
-	sha256sums = 0f1e62ddc34e1c7640305da7d4aba44a6f9804b4c8b1b703138597fb51dde683
 
 pkgname = platform-api-git
 

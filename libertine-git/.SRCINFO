@@ -18,9 +18,7 @@ pkgbase = libertine-git
 	depends = qt5-base
 	depends = qt5-quickcontrols
 	source = git+https://github.com/ubports/libertine.git
-	source = GtestInclude.patch
 	sha256sums = SKIP
-	sha256sums = b2159654ed377606e5dc503105837528e6b6b15440067fbd8ed6b12470de0992
 
 pkgname = libertine-git
 

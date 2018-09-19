@@ -10,10 +10,8 @@ arch=(x86_64 i686 armv7h aarch64)
 license=(GPL3)
 depends=(python3 gtest qt5-base qt5-quickcontrols)
 makedepends=(git cmake cmake-extras-git dbus-test-runner intltool)
-source=('git+https://github.com/ubports/libertine.git'
-        'GtestInclude.patch')
-sha256sums=('SKIP'
-            'b2159654ed377606e5dc503105837528e6b6b15440067fbd8ed6b12470de0992')
+source=('git+https://github.com/ubports/libertine.git')
+sha256sums=('SKIP')
 
 BUILDENV+=('!check') # Some tests are broken
 
@@ -40,7 +38,6 @@ check() {
 
 package() {
   cd ${_pkgname}
-  patch -Np1 -i "${srcdir}/GtestInclude.patch"
   make DESTDIR="${pkgdir}/" install
 }
 # vim:set ts=2 sw=2 et:

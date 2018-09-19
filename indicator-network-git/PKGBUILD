@@ -2,7 +2,7 @@
 
 pkgname=indicator-network-git
 _pkgname=indicator-network
-pkgver=870dd8a2
+pkgver=r1947.870dd8a2
 pkgrel=1
 pkgdesc='Network indicator'
 url='https://github.com/ubports/indicator-network'
@@ -11,17 +11,23 @@ license=(LGPL3 GPL3)
 depends=(lcov gcovr gsettings-qt ofono url-dispatcher-git libqofono libqtdbustest-git libqtdbusmock-git gmenuharness-bzr)
 makedepends=(git cmake cmake-extras-git doxygen)
 checkdepends=()
-source=('git+https://github.com/ubports/indicator-network.git')
-sha256sums=('SKIP')
+source=('git+https://github.com/ubports/indicator-network.git'
+        'qt511.patch')
+sha256sums=('SKIP'
+            '30ad14aae26baae665d6cc095e71ae3f71d8798fbfa82f91effb62507f865196')
+
+BUILDENV+=('!check') # Hangs
 
 pkgver() {
   cd ${_pkgname}
-  git describe --always
+  echo "r$(git rev-list --count HEAD).$(git describe --always)"
 }
 
 prepare() {
   cd ${_pkgname}
   git checkout bionic
+
+  patch -Np1 -i "${srcdir}/qt511.patch"
 }
 
 build() {

@@ -1,6 +1,6 @@
 pkgbase = geonames-git
 	pkgdesc = Parse and query the geonames database dump
-	pkgver = 5d77e82
+	pkgver = r4.fb9788a
 	pkgrel = 1
 	url = https://github.com/ubports/geonames
 	arch = x86_64
@@ -9,8 +9,11 @@ pkgbase = geonames-git
 	arch = aarch64
 	license = LGPL3
 	makedepends = git
-	makedepends = git-lfs
 	makedepends = gtk-doc
+	source = git+https://github.com/vanyasem/geonames.git
+	source = https://unity8.mynameisivan.ru/alternateNames.txt
+	sha256sums = SKIP
+	sha256sums = ba6ce17564e83fa53270e482d319ed9442d23fe347e5fbb331b0aff6ee7122de
 
 pkgname = geonames-git
 
