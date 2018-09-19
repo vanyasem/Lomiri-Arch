@@ -1,6 +1,6 @@
 pkgbase = trust-store-git
 	pkgdesc = C++11 library for persisting trust requests
-	pkgver = 0292700
+	pkgver = r423.0292700
 	pkgrel = 1
 	url = https://github.com/ubports/trust-store
 	arch = x86_64

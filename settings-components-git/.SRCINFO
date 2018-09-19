@@ -1,6 +1,6 @@
 pkgbase = settings-components-git
 	pkgdesc = Ubuntu settings components for Unity8
-	pkgver = 886f6de
+	pkgver = r831.d66cac2
 	pkgrel = 1
 	url = https://github.com/ubports/settings-components
 	arch = x86_64
@@ -15,9 +15,7 @@ pkgbase = settings-components-git
 	depends = xorg-server-xvfb
 	depends = qt5-quickcontrols
 	source = git+https://github.com/ubports/settings-components.git
-	source = Qt511.patch
 	sha256sums = SKIP
-	sha256sums = 24ec72e13cdcbc9d9f3ffe71b951340aa5eb7f9bc2fda58d2d46c6e94404d32d
 
 pkgname = settings-components-git
 

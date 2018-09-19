@@ -1,6 +1,6 @@
 pkgbase = qtubuntu-git
 	pkgdesc = Qt plugins for Ubuntu Platform API
-	pkgver = e8a2965
+	pkgver = r2202.e8a2965
 	pkgrel = 1
 	url = https://github.com/ubports/qtubuntu
 	arch = x86_64

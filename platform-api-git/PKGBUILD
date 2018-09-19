@@ -2,7 +2,7 @@
 
 pkgname=platform-api-git
 _pkgname=platform-api
-pkgver=464a38b
+pkgver=r1263.464a38b
 pkgrel=1
 pkgdesc='Platform API for system level capabilities'
 url='https://github.com/ubports/platform-api'

@@ -2,7 +2,7 @@
 
 pkgname=qmenumodel-git
 _pkgname=qmenumodel
-pkgver=f236743
+pkgver=r506.30e3dc5
 pkgrel=1
 pkgdesc='Qt binding for GMenuModel'
 url='https://github.com/ubports/qmenumodel'

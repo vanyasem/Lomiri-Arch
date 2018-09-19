@@ -2,7 +2,7 @@
 
 pkgname=settings-components-git
 _pkgname=settings-components
-pkgver=886f6de
+pkgver=r831.d66cac2
 pkgrel=1
 pkgdesc='Ubuntu settings components for Unity8'
 url='https://github.com/ubports/settings-components'
@@ -10,10 +10,8 @@ arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL GPL)
 depends=(xorg-server-xvfb qt5-quickcontrols)
 makedepends=(git cmake cmake-extras-git)
-source=('git+https://github.com/ubports/settings-components.git'
-        'Qt511.patch')
-sha256sums=('SKIP'
-            '24ec72e13cdcbc9d9f3ffe71b951340aa5eb7f9bc2fda58d2d46c6e94404d32d')
+source=('git+https://github.com/ubports/settings-components.git')
+sha256sums=('SKIP')
 
 BUILDENV+=('!check') # https://paste.ubuntu.com/p/gsfv2YX6Z5/
 BUILD_DIR=build
@@ -21,8 +19,6 @@ BUILD_DIR=build
 prepare() {
   cd ${_pkgname}
   git checkout bionic
-  
-  patch -Np1 -i "${srcdir}/Qt511.patch"
 }
 
 pkgver() {

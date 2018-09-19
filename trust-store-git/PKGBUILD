@@ -2,7 +2,7 @@
 
 pkgname=trust-store-git
 _pkgname=trust-store
-pkgver=0292700
+pkgver=r423.0292700
 pkgrel=1
 pkgdesc='C++11 library for persisting trust requests'
 url='https://github.com/ubports/trust-store'

@@ -2,7 +2,7 @@
 
 pkgname=history-service-git
 _pkgname=history-service
-pkgver=0d4b4b5
+pkgver=r940.75af530
 pkgrel=1
 pkgdesc='History service to store messages and calls'
 url='https://github.com/ubports/history-service'
@@ -10,10 +10,8 @@ arch=(x86_64 i686 armv7h aarch64)
 license=(GPL)
 depends=(lcov gcovr libphonenumber telepathy-qt sqlite telepathy-mission-control qt-gstreamer qt5-pim-git)
 makedepends=(git cmake)
-source=('git+https://github.com/ubports/history-service.git'
-        'Qt511.patch')
-sha256sums=('SKIP'
-            'f282faafc6176f9632a48ecc3a5338025b37d09db06e699e58df6774d0f0b3ec')
+source=('git+https://github.com/ubports/history-service.git')
+sha256sums=('SKIP')
 
 # --   Package 'QtGLib-2.0', required by 'virtual:world', not found (qt-gstreamer)
 BUILDENV+=('!check') # https://paste.ubuntu.com/p/hR9tBFXJ6Y/
@@ -21,8 +19,6 @@ BUILDENV+=('!check') # https://paste.ubuntu.com/p/hR9tBFXJ6Y/
 prepare() {
   cd ${_pkgname}
   git checkout bionic
-
-  patch -Np1 -i "${srcdir}/Qt511.patch"
 }
 
 pkgver() {

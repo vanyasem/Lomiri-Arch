@@ -1,6 +1,6 @@
 pkgbase = history-service-git
 	pkgdesc = History service to store messages and calls
-	pkgver = 0d4b4b5
+	pkgver = r940.75af530
 	pkgrel = 1
 	url = https://github.com/ubports/history-service
 	arch = x86_64
@@ -19,9 +19,7 @@ pkgbase = history-service-git
 	depends = qt-gstreamer
 	depends = qt5-pim-git
 	source = git+https://github.com/ubports/history-service.git
-	source = Qt511.patch
 	sha256sums = SKIP
-	sha256sums = f282faafc6176f9632a48ecc3a5338025b37d09db06e699e58df6774d0f0b3ec
 
 pkgname = history-service-git
 

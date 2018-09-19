@@ -1,6 +1,6 @@
 pkgbase = platform-api-git
 	pkgdesc = Platform API for system level capabilities
-	pkgver = 464a38b
+	pkgver = r1263.464a38b
 	pkgrel = 1
 	url = https://github.com/ubports/platform-api
 	arch = x86_64

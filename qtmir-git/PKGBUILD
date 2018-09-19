@@ -2,7 +2,7 @@
 
 pkgname=qtmir-git
 _pkgname=qtmir
-pkgver=r2311.7c91e400
+pkgver=r2313.b37293e2
 pkgrel=1
 pkgdesc='Qt platform abstraction (QPA) plugin for a Mir server'
 url='https://github.com/ubports/qtmir'

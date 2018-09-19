@@ -2,7 +2,7 @@
 
 pkgname=location-service-git
 _pkgname=location-service
-pkgver=142f6ca
+pkgver=r951.142f6ca
 pkgrel=1
 pkgdesc='Location service aggregating position/velocity/heading updates and exporting them over dbus'
 url='https://github.com/ubports/location-service'

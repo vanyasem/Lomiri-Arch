@@ -2,7 +2,7 @@
 
 pkgname=click-git
 _pkgname=click
-pkgver=28b9c13
+pkgver=r1079.28b9c13
 pkgrel=1
 pkgdesc='Click is a simplified packaging format'
 url='https://github.com/ubports/click'

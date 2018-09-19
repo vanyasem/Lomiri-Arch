@@ -39,11 +39,11 @@ platform-api-git
 qtubuntu-git
 click-git
 accountsservice-ubuntu
-system-settings-git
 geonames-git
 qmenumodel-git
 ofono
 libqofono
+system-settings-git
 gmenuharness-bzr
 indicator-network-git
 qdjango-git

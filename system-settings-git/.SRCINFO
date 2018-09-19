@@ -1,7 +1,7 @@
 pkgbase = system-settings-git
 	pkgdesc = System Settings application for Unity8
-	pkgver = 26e4f74d
-	pkgrel = 2
+	pkgver = r7160.26e4f74d
+	pkgrel = 1
 	url = https://github.com/ubports/system-settings
 	arch = x86_64
 	arch = i686
@@ -23,7 +23,6 @@ pkgbase = system-settings-git
 	depends = accountsservice-ubuntu
 	depends = upower
 	depends = ubuntu-themes
-	depends = system-components-git
 	depends = qmenumodel-git
 	depends = libqofono
 	depends = content-hub-git

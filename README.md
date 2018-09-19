@@ -47,7 +47,7 @@ _Clickable icons:_
 - [x] `gsettings-qt` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/gsettings-qt-git)
 - [x] `content-hub` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/content-hub-git) | [⛔️](https://github.com/ubports/content-hub/issues/1) [🆗](https://github.com/ubports/content-hub/issues/2) [⛔️](https://github.com/ubports/content-hub/issues/4) [⛔️](https://github.com/ubports/content-hub/issues/5)
 - [x] `libqtdbusmock` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqtdbusmock-git) | [🆗](https://github.com/ubports/libqtdbusmock/issues/1)
-- [x] `qtmir` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qtmir-git) | [⛔️](https://github.com/ubports/qtmir/issues/5) [⛔️](https://github.com/ubports/qtmir/issues/6) [🆗](https://github.com/ubports/qtmir/issues/8) [⛔️](https://github.com/ubports/qtmir/issues/9) [⛔️](https://github.com/ubports/qtmir/issues/12)
+- [x] `qtmir` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qtmir-git) | [⛔️](https://github.com/ubports/qtmir/issues/5) [⛔️](https://github.com/ubports/qtmir/issues/6) [🆗](https://github.com/ubports/qtmir/issues/8) [⛔️](https://github.com/ubports/qtmir/issues/9) [🆗](https://github.com/ubports/qtmir/issues/12)
 - [x] `settings-components` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/settings-components-git) | [🆗](https://github.com/ubports/settings-components/issues/3)
 - [x] `history-service` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/history-service-git) | [🆗](https://github.com/ubports/history-service/issues/1)
 - [x] `dbus-cpp` [✅](https://aur.archlinux.org/packages/dbus-cpp/) | [🆗](https://github.com/ubports/location-service/issues/3)
@@ -59,15 +59,15 @@ _Clickable icons:_
 - [ ] `keyboard-component`
 - [x] `click` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/click-git)
 - [x] `accountsservice` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/accountsservice-ubuntu)
-- [x] `system-settings` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/system-settings-git) | [🆗](https://github.com/ubports/system-settings/issues/63) [⛔️](https://github.com/ubports/system-settings/issues/65)
-- [x] `geonames` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/geonames-git)
+- [x] `geonames` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/geonames-git) | [⛔️](https://github.com/ubports/geonames/issues/1)
 - [x] `qmenumodel` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qmenumodel-git) | [🆗](https://github.com/ubports/qmenumodel/issues/1)
 - [x] `ofono` [✅](https://aur.archlinux.org/packages/ofono/) | [🆗](https://aur.archlinux.org/pkgbase/ofono/flag-comment/)
 - [x] `libqofono` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqofono)
+- [x] `system-settings` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/system-settings-git) | [🆗](https://github.com/ubports/system-settings/issues/63) [⛔️](https://github.com/ubports/system-settings/issues/65)
 - [x] `gmenuharness` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr) | [⛔️](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr/Functional1.patch) [⛔️](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr/Functional2.patch)
 - [x] `indicator-network` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/indicator-network-git) | [⛔️](https://github.com/ubports/indicator-network/issues/7) [⛔️](https://github.com/ubports/indicator-network/issues/8)
 - [x] `qdjango ` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qdjango-git)
-- [x] `libusermetrics` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libusermetrics-git) | [🆗](https://github.com/ubports/libusermetrics/issues/1)
+- [x] `libusermetrics` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libusermetrics-git) | [🆗](https://github.com/ubports/libusermetrics/issues/1) [⛔️](https://github.com/ubports/libusermetrics/issues/3)
 - [x] `gsettings-ubuntu-touch-schemas`  [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/gsettings-ubuntu-touch-schemas-git)
 - [x] `unity8` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity8-git) | [⛔️](https://github.com/ubports/unity8/issues/44) [🆗](https://github.com/ubports/unity8/issues/45)
 - [ ] `unity-system-compositor` [⛔️](https://github.com/ubports/unity-system-compositor/issues/5)
@@ -117,6 +117,7 @@ makepkg -sic
 You will need to trust a few GPG keys in order to build packages:
 ```
 gpg --recv-keys 3ECDCBA5FB34D254961CC53F6689E64E3D3664BB # For apparmor
+gpg --recv-keys E932D120BC2AEC444E558F0106CA9F5D1DCF2659 # For ofono
 ```
 
 Or use an AUR helper of your choice:

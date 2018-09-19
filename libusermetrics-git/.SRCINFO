@@ -1,6 +1,6 @@
 pkgbase = libusermetrics-git
 	pkgdesc = Library for exporting anonymous metrics about users
-	pkgver = a9ed47e
+	pkgver = r476.e9d396f
 	pkgrel = 1
 	url = https://github.com/ubports/libusermetrics
 	arch = x86_64

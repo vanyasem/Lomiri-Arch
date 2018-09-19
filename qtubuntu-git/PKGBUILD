@@ -2,7 +2,7 @@
 
 pkgname=qtubuntu-git
 _pkgname=qtubuntu
-pkgver=e8a2965
+pkgver=r2202.e8a2965
 pkgrel=1
 pkgdesc='Qt plugins for Ubuntu Platform API'
 url='https://github.com/ubports/qtubuntu'
