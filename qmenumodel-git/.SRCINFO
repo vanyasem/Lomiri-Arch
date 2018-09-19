@@ -1,7 +1,7 @@
 pkgbase = qmenumodel-git
 	pkgdesc = Qt binding for GMenuModel
 	pkgver = r506.30e3dc5
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ubports/qmenumodel
 	arch = x86_64
 	arch = i686

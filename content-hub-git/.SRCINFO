@@ -1,7 +1,7 @@
 pkgbase = content-hub-git
 	pkgdesc = Content sharing/picking infrastructure and service
 	pkgver = r1507.66955f6
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ubports/content-hub
 	arch = x86_64
 	arch = i686

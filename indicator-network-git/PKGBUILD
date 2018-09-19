@@ -3,7 +3,7 @@
 pkgname=indicator-network-git
 _pkgname=indicator-network
 pkgver=r1949.27fabbd2
-pkgrel=1
+pkgrel=2
 pkgdesc='Network indicator'
 url='https://github.com/ubports/indicator-network'
 arch=(x86_64 i686 armv7h aarch64)
@@ -43,5 +43,6 @@ check() {
 package() {
   cd ${_pkgname}/build
   make DESTDIR="${pkgdir}/" install
+  mv ${pkgdir}/usr/lib/qt5/ ${pkgdir}/usr/lib/qt/
 }
 # vim:set ts=2 sw=2 et:

@@ -1,7 +1,7 @@
 pkgbase = settings-components-git
 	pkgdesc = Ubuntu settings components for Unity8
 	pkgver = r831.d66cac2
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ubports/settings-components
 	arch = x86_64
 	arch = i686

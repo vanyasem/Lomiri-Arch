@@ -1,7 +1,7 @@
 pkgbase = indicator-network-git
 	pkgdesc = Network indicator
 	pkgver = r1949.27fabbd2
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ubports/indicator-network
 	arch = x86_64
 	arch = i686
