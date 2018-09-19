@@ -3,13 +3,13 @@
 pkgname=ubuntu-app-launch-git
 _pkgname=ubuntu-app-launch
 pkgver=r3022.bde4305
-pkgrel=1
+pkgrel=2
 pkgdesc='Session init system job for Launching Applications'
 url='https://github.com/ubports/ubuntu-app-launch'
 arch=(x86_64 i686 armv7h aarch64)
 license=(GPL)
 depends=(zeitgeist gobject-introspection lttng-ust mir libertine-git unity-api-git properties-cpp curl)
-makedepends=(git cmake  cmake-extras-git dbus-test-runner)
+makedepends=(git cmake  cmake-extras-git dbus-test-runner gmock)
 source=('git+https://github.com/ubports/ubuntu-app-launch.git'
         'FormatTruncation.patch'
         'Gtest.patch')
