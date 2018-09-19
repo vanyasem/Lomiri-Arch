@@ -174,6 +174,7 @@ Sync the databases:
 ```
 sudo arch-chroot chroot-x86_64/root
 pacman -Syyu
+pacman -S python python2 python-setuptools python2-setuptools # Those are needed // TODO IVAN MAYBE MAKE METAPACKAGE WITH CI DEPS?
 exit
 ```
 
