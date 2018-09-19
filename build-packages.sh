@@ -63,7 +63,7 @@ cmd_uninstall() {
   PACKAGES=$(cat projects.list)
   for package in $PACKAGES
   do
-    yes | sudo pacman -Rdd ${package}
+    yes | sudo pacman -Rdd ${package} || true
     echo "----------------------"
   done
 }
