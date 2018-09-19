@@ -4,15 +4,18 @@ set -e
 cmd_usage() {
   cat <<-_EOF
 Options:
-  help|-h     -  Print usage information
-  build|-b    -  Build and install all packages
-  rebuild|-r  -  Rebuild all packages
-  needed|-n   -  Build packages that are not built
-  clean|-c    -  Clean all packages
-  srcinfo|-s  -  Regenerate .SRCINFOs of all packages
+  help|-h      -  Print usage information
+  build|-b     -  Build and install all packages
+  rebuild|-r   -  Rebuild all packages
+  needed|-n    -  Build packages that are not built
+  clean|-c     -  Clean all packages
+  uninstall|-u -  Uninstall all packages
+  srcinfo|-s   -  Regenerate .SRCINFOs of all packages
 _EOF
   exit 0
 }
+
+#sudo pacman -S noto-fonts
 
 cmd_build() {
   sudo test true
@@ -55,6 +58,16 @@ cmd_clean() {
   done
 }
 
+cmd_uninstall() {
+  sudo test true
+  PACKAGES=$(cat projects.list)
+  for package in $PACKAGES
+  do
+    yes | sudo pacman -Rdd ${package}
+    echo "----------------------"
+  done
+}
+
 cmd_srcinfo() {
   for package in ./*/
   do
@@ -65,11 +78,12 @@ cmd_srcinfo() {
 }
 
 case "$1" in
-  help|-h)    shift; cmd_usage "$@" ;;
-  build|-b)   shift; cmd_build "$@" ;;
-  rebuild|-r) shift; cmd_rebuild "$@" ;;
-  needed|-n)  shift; cmd_needed "$@" ;;
-  clean|-c)   shift; cmd_clean "$@" ;;
-  srcinfo|-s) shift; cmd_srcinfo "$@" ;;
-  *)                 cmd_usage "$@" ;;
+  help|-h)      shift; cmd_usage "$@" ;;
+  build|-b)     shift; cmd_build "$@" ;;
+  rebuild|-r)   shift; cmd_rebuild "$@" ;;
+  needed|-n)    shift; cmd_needed "$@" ;;
+  clean|-c)     shift; cmd_clean "$@" ;;
+  uninstall|-u) shift; cmd_uninstall "$@" ;;
+  srcinfo|-s)   shift; cmd_srcinfo "$@" ;;
+  *)                   cmd_usage "$@" ;;
 esac
