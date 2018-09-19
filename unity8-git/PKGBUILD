@@ -2,33 +2,35 @@
 
 pkgname=unity8-git
 _pkgname=unity8
-pkgver=c4e012d85
-pkgrel=2
+pkgver=r17979.87aa39508
+pkgrel=1
 pkgdesc='Unity 8 shell'
 url='https://github.com/ubports/unity8'
 arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL3)
-depends=(lcov gcovr geonames-git unity-api-git qmenumodel-git gnome-desktop ubuntu-app-launch-git ubuntu-ui-toolkit-git libqtdbustest-git libqtdbusmock-git system-settings-git indicator-network-git libusermetrics-git liblightdm-qt5 libandroid-properties-bin)
+depends=(lcov gcovr geonames-git unity-api-git qmenumodel-git gnome-desktop ubuntu-app-launch-git ubuntu-ui-toolkit-git libqtdbustest-git libqtdbusmock-git system-settings-git indicator-network-git libusermetrics-git liblightdm-qt5)
 makedepends=(git cmake cmake-extras-git doxygen)
 checkdepends=(xorg-server-xvfb)
 source=('git+https://github.com/ubports/unity8.git'
-        'androidaway.patch'
-        'qt59.patch')
+        'AndroidAway.patch'
+        'NoDpkgParse.patch')
 sha256sums=('SKIP'
-            '7bae5293f095e5f40792c86a6a7fb70e4e4b1faa5b04f087dc8ccbbe51f538aa')
+            'ba26a1235461f531f9961a306da22593db92d3bd08a84139ef4ae2d042a2b1cc'
+            '1523c79cdb8e93deea9cb039665afee61d55d1a3bf69d7499d3338eb9b9397f7')
 
 BUILDENV+=('!check') # https://paste.ubuntu.com/p/2d33RJX4W8/
 
 pkgver() {
   cd ${_pkgname}
-  git describe --always
+  echo "r$(git rev-list --count HEAD).$(git describe --always)"
 }
 
 prepare() {
   cd ${_pkgname}
   git checkout bionic
   
-  patch -Np1 -i "${srcdir}/androidaway.patch"
+  patch -Np1 -i "${srcdir}/AndroidAway.patch"
+  patch -Np1 -i "${srcdir}/NoDpkgParse.patch"
 }
 
 build() {

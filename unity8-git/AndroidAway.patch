@@ -1,0 +1,64 @@
+diff --git a/plugins/Lights/CMakeLists.txt b/plugins/Lights/CMakeLists.txt
+index 22365f6e2..d86f132d1 100644
+--- a/plugins/Lights/CMakeLists.txt
++++ b/plugins/Lights/CMakeLists.txt
+@@ -1,19 +1 @@
+-pkg_check_modules(ANDROID_HEADERS REQUIRED android-headers)
+-pkg_check_modules(ANDROID_HARDWARE REQUIRED libhardware)
+-
+-include_directories(
+-    SYSTEM
+-    ${ANDROID_HEADERS_INCLUDE_DIRS}
+-)
+-
+-add_library(Lights-qml MODULE
+-    plugin.cpp
+-    Lights.cpp
+-    )
+-
+-target_link_libraries(Lights-qml
+-    Qt5::Qml Qt5::Gui
+-    ${ANDROID_HARDWARE_LIBRARIES}
+-    )
+-
+-add_unity8_plugin(Lights 0.1 Lights TARGETS Lights-qml)
++message("Sorry")
+diff --git a/src/CMakeLists.txt b/src/CMakeLists.txt
+index eae303268..98ce82c43 100644
+--- a/src/CMakeLists.txt
++++ b/src/CMakeLists.txt
+@@ -42,7 +42,7 @@ if (ENABLE_TOUCH_EMULATION)
+     set(SOURCE_FILES ${SOURCE_FILES} MouseTouchAdaptor.cpp)
+ endif()
+ 
+-pkg_check_modules(ANDROID_PROPERTIES REQUIRED libandroid-properties)
++#pkg_check_modules(ANDROID_PROPERTIES REQUIRED libandroid-properties) # No Android, I desktop
+ add_executable(${SHELL_APP} ${SOURCE_FILES})
+ 
+ if (NOT "${ANDROID_PROPERTIES_INCLUDE_DIRS}" STREQUAL "")
+diff --git a/src/ShellApplication.cpp b/src/ShellApplication.cpp
+index d7365ca37..c1181cc6f 100644
+--- a/src/ShellApplication.cpp
++++ b/src/ShellApplication.cpp
+@@ -26,7 +26,7 @@
+ #include <libintl.h>
+ 
+ // libandroid-properties
+-#include <hybris/properties/properties.h>
++//#include <hybris/properties/properties.h> // I no Android, I disk top
+ 
+ // local
+ #include <paths.h>
+@@ -49,9 +49,9 @@ ShellApplication::ShellApplication(int & argc, char ** argv, bool isMirServer)
+     if (!parser.deviceName().isEmpty()) {
+         m_deviceName = parser.deviceName();
+     } else {
+-        char buffer[200];
+-        property_get("ro.product.device", buffer /* value */, "desktop" /* default_value*/);
+-        m_deviceName = QString(buffer);
++        //char buffer[200];
++        //property_get("ro.product.device", buffer /* value */, "desktop" /* default_value*/);
++        //m_deviceName = QString(buffer); // I still no Vedroid
+     }
+     m_qmlArgs.setDeviceName(m_deviceName);
+ 
