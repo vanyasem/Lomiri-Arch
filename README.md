@@ -67,7 +67,7 @@ _Clickable icons:_
 - [x] `gmenuharness` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr) | [⛔️](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr/Functional1.patch) [⛔️](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr/Functional2.patch)
 - [x] `indicator-network` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/indicator-network-git) | [🆗](https://github.com/ubports/indicator-network/issues/7) [⛔️](https://github.com/ubports/indicator-network/issues/8)
 - [x] `qdjango ` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qdjango-git)
-- [x] `libusermetrics` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libusermetrics-git) | [🆗](https://github.com/ubports/libusermetrics/issues/1) [⛔️](https://github.com/ubports/libusermetrics/issues/3)
+- [x] `libusermetrics` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libusermetrics-git) | [🆗](https://github.com/ubports/libusermetrics/issues/1) [🆗](https://github.com/ubports/libusermetrics/issues/3)
 - [x] `gsettings-ubuntu-touch-schemas`  [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/gsettings-ubuntu-touch-schemas-git)
 - [x] `unity8` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity8-git) | [🆗](https://github.com/ubports/unity8/issues/44) [🆗](https://github.com/ubports/unity8/issues/45)
 - [ ] `unity-system-compositor` [⛔️](https://github.com/ubports/unity-system-compositor/issues/5)
