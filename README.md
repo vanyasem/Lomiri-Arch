@@ -70,6 +70,7 @@ _Clickable icons:_
 - [x] `libusermetrics` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libusermetrics-git) | [🆗](https://github.com/ubports/libusermetrics/issues/1) [🆗](https://github.com/ubports/libusermetrics/issues/3)
 - [x] `gsettings-ubuntu-touch-schemas`  [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/gsettings-ubuntu-touch-schemas-git)
 - [x] `ubuntu-wallpapers` [✅](https://aur.archlinux.org/packages/ubuntu-wallpapers/)
+- [x] `unity7-schemas`  [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity7-schemas) | Temp. workaround!
 - [x] `unity8` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity8-git) | [🆗](https://github.com/ubports/unity8/issues/44) [🆗](https://github.com/ubports/unity8/issues/45)
 - [ ] `unity-system-compositor` [⛔️](https://github.com/ubports/unity-system-compositor/issues/5)
 - [ ] Probably more

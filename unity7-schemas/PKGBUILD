@@ -1,0 +1,23 @@
+# Maintainer: Ivan Semkin (ivan at semkin dot ru)
+
+# !!! TEMP PACKAGE. Shouldn't really be a thing !!!
+
+pkgname=unity7-schemas
+_pkgname=dayjournal
+pkgver=7.4.5+16.04.20180221
+pkgrel=1
+pkgdesc='GSettings schemas from Unity7'
+url='https://burnsoftware.wordpress.com/dayjournal/'
+arch=(any)
+license=(GPL3)
+source=("https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/unity/$pkgver-0ubuntu1/unity_$pkgver.orig.tar.gz"
+        'https://raw.githubusercontent.com/ubports/keyboard-component/master/data/schemas/com.canonical.keyboard.maliit.gschema.xml')
+sha256sums=('d3e31ee660954ee52ad8b993dc909a9974b9a79938e4520b8da56e2390dbae58'
+            'SKIP')
+
+package() {
+  install -d "${pkgdir}/usr/share/glib-2.0/schemas" 
+  install -m644 "${srcdir}/data/com.canonical.Unity.gschema.xml" "${pkgdir}/usr/share/glib-2.0/schemas/com.canonical.Unity.gschema.xml"
+  install -m644 "${srcdir}/com.canonical.keyboard.maliit.gschema.xml" "${pkgdir}/usr/share/glib-2.0/schemas/com.canonical.keyboard.maliit.gschema.xml"
+}
+# vim:set ts=2 sw=2 et:

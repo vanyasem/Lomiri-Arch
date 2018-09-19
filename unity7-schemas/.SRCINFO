@@ -1,0 +1,14 @@
+pkgbase = unity7-schemas
+	pkgdesc = GSettings schemas from Unity7
+	pkgver = 7.4.5+16.04.20180221
+	pkgrel = 1
+	url = https://burnsoftware.wordpress.com/dayjournal/
+	arch = any
+	license = GPL3
+	source = https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/unity/7.4.5+16.04.20180221-0ubuntu1/unity_7.4.5+16.04.20180221.orig.tar.gz
+	source = https://raw.githubusercontent.com/ubports/keyboard-component/master/data/schemas/com.canonical.keyboard.maliit.gschema.xml
+	sha256sums = d3e31ee660954ee52ad8b993dc909a9974b9a79938e4520b8da56e2390dbae58
+	sha256sums = SKIP
+
+pkgname = unity7-schemas
+
