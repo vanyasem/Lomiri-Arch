@@ -38,7 +38,13 @@ Install Unity8:
 sudo pacman -S unity8-git
 ```
 
-Launch with (either from a tty or from a terminal):
+Skip the greeter (not used on desktops, broken):
+```
+mkdir -p $HOME/.config/ubuntu-system-settings
+touch $HOME/.config/ubuntu-system-settings/wizard-has-run
+```
+
+Launch Unity8 with (either from a tty or from a terminal):
 ```
 MIR_SERVER_CURSOR=null QT_QPA_PLATFORM=mirserver unity8
 ```

@@ -12,15 +12,6 @@ references build path:  <Unknown File>:46:33: QML CroppedImageMinimumSourceSize:
 [2018-06-25:01:27:18.997] ubuntu-app-launch threw an exception getting app info for appId: "messaging-app" : Invalid app ID: messaging-app
 [2018-06-25:01:27:18.997] ubuntu-app-launch threw an exception getting app info for appId: "address-book-app" : Invalid app ID: address-book-app
 [2018-07-14:02:35:59.175] Cannot find any language packs, bailing out
---
-Ivan Semkin 🇧🇾, [14.07.18 02:39]
-can i skip the greeter somehow?
-Marius Gripsgard, [14.07.18 02:41]
-mkdir -p $HOME/.config/ubuntu-system-settings
-    touch $HOME/.config/ubuntu-system-settings/wizard-has-run
-Marius Gripsgard, [14.07.18 02:46]
-@vanyasem but the desktop does not use the wizard anyway, so i think it should be safe to ignore for now
---
 
 system-settings:
 missing deps: indicator-datetime (unpackaged)
