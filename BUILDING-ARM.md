@@ -50,6 +50,7 @@ Sync the databases:
 ```
 sudo arch-chroot chroot-aarch64/root
 pacman -Syyu
+pacman -S python python2 python-setuptools python2-setuptools # Those are needed // TODO IVAN MAYBE MAKE METAPACKAGE WITH CI DEPS?
 exit
 ```
 
@@ -79,7 +80,5 @@ builds:
 ```
 
 Build the packages:
-
-_If your decided to use your local repo, you have to build packages in this specific order, as some packages depend on each other_
 
 Run `rebuild-repo.sh` from the PKGBUILDs directory. Make sure to configure sudo timeout for your build user, as it defaults to 5 minutes.

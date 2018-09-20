@@ -1,8 +1,34 @@
-## (Advanced) Configure a local repository / build the packages
+Building
+========
 
-The following instructions assume that you're building `i686` packages on a `x86_64` host.
+You can compile the packages yourself.
 
-You might want to take a look at [building ARM packgages on `x86_64`](BUILDING-ARM.md), and [building `x86_64` packgages on `x86_64`](README.md).
+You will have to do it manually for each dependency:
+
+```
+PACKAGE = unity8-git
+git clone https://aur.archlinux.org/$PACKAGE.git
+cd $PACKAGE
+makepkg -sic
+```
+
+There is a helper script (`build-packages.sh`) in the root of this repository that will build all the packages for you.
+
+```
+./build-packages.sh -b
+```
+
+You will also need to trust a few GPG keys:
+```
+gpg --recv-keys 3ECDCBA5FB34D254961CC53F6689E64E3D3664BB # For apparmor
+gpg --recv-keys E932D120BC2AEC444E558F0106CA9F5D1DCF2659 # For ofono
+```
+
+## (Advanced) Configure a local repository
+
+The following instructions assume that you're building `x86_64` packages on a `x86_64` host.
+
+You might want to take a look at [building ARM packgages on `x86_64`](BUILDING-ARM.md), and [building `i686` packgages on `x86_64`](BUILDING-I686.md).
 
 Add the package repository to `/etc/pacman.conf`:
 
@@ -24,13 +50,11 @@ Assemble the build enviroment:
 
 _Don't forget to configure PACKAGER in /etc/makepkg.conf_
 
-_If you want to cross-compile packages for `i686`, then follow the guide [on the wiki](https://wiki.archlinux.org/index.php/Building_32-bit_packages_on_a_64-bit_system). But as Arch doesn't officially support i686 now, use the [mirrorlist](https://raw.githubusercontent.com/archlinux32/packages/master/core/pacman-mirrorlist/mirrorlist) of the ArchLinux32 project. You will also need to trust 2 GPG keys: `255A76DB9A12601A` and `C8E8F5A0AF9BA7E7` prior to the chroot creation same way as desribed above with my key._
-
 ```
 sudo pacman -S devtools
-mkdir chroot-i686
-sudo mkdir -p /var/cache/pacman-i686/pkg/
-sudo mkarchroot -C /etc/pacman.conf.i686 -M /etc/makepkg.conf.i686 -c /var/cache/pacman-i686/pkg/ ./chroot-i686/root base base-devel git
+mkdir chroot-x86_64
+sudo mkdir -p /var/cache/pacman-x86_64/pkg/
+sudo mkarchroot -C /etc/pacman.conf -M /etc/makepkg.conf -c /var/cache/pacman-x86_64/pkg/ ./chroot-x86_64/root base base-devel git
 mkdir -p unity8 sources logs PKGBUILDs
 ```
 
@@ -47,7 +71,7 @@ cd ..
 
 Sync the databases:
 ```
-sudo arch-chroot chroot-i686/root
+sudo arch-chroot chroot-x86_64/root
 pacman -Syyu
 pacman -S python python2 python-setuptools python2-setuptools # Those are needed // TODO IVAN MAYBE MAKE METAPACKAGE WITH CI DEPS?
 exit
@@ -69,11 +93,10 @@ srcdest: sources
 logdest: logs
 pkgbuild: PKGBUILDs
 builds:
-  i686:
-    chroot: ./chroot-i686
+  x86_64:
+    chroot: ./chroot-x86_64
 ```
 
 Build the packages:
 
 Run `rebuild-repo.sh` from the PKGBUILDs directory. Make sure to configure sudo timeout for your build user, as it defaults to 5 minutes.
- 
