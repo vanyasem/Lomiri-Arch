@@ -68,6 +68,7 @@ _Clickable icons:_
 - [x] `unity7-schemas`  [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity7-schemas) | Temp. workaround!
 - [x] `unity8` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/unity8-git) | [🆗](https://github.com/ubports/unity8/issues/44) [🆗](https://github.com/ubports/unity8/issues/45)
 - [ ] `unity-system-compositor` [⛔️](https://github.com/ubports/unity-system-compositor/issues/5)
+- [ ] `qqc2-suru-style` [⛔️](https://github.com/ubports/qqc2-suru-style/issues/5)
 - [ ] More to follow
 
 Packaging issues are randomly dumped into [BROKEN.txt](BROKEN.txt).
