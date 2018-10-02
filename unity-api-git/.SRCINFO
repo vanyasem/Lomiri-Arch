@@ -1,7 +1,7 @@
 pkgbase = unity-api-git
 	pkgdesc = API for Unity shell integration
 	pkgver = r1091.588b667
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ubports/unity-api
 	arch = x86_64
 	arch = i686
@@ -14,6 +14,8 @@ pkgbase = unity-api-git
 	makedepends = graphviz
 	makedepends = libqtdbustest-git
 	depends = qt5-quickcontrols
+	provides = unity-api
+	conflicts = unity-api
 	source = git+https://github.com/ubports/unity-api.git
 	sha256sums = SKIP
 

@@ -3,11 +3,13 @@
 pkgname=gmenuharness-bzr
 _pkgname=gmenuharness
 pkgver=r31
-pkgrel=1
+pkgrel=2
 pkgdesc="Testing enablement library for projects exporting GiO's gmenu/gaction endpoints"
 url='https://launchpad.net/gmenuharness'
 arch=(x86_64 i686 armv7h aarch64)
 license=()
+conflicts=(gmenuharness)
+provides=(gmenuharness)
 depends=(unity-api-git gtest libqtdbustest-git)
 makedepends=(bzr cmake cmake-extras-git doxygen)
 source=("bzr+lp:${_pkgname}"

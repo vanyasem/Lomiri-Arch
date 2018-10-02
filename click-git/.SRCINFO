@@ -1,7 +1,7 @@
 pkgbase = click-git
 	pkgdesc = Click is a simplified packaging format
 	pkgver = r1079.28b9c13
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ubports/click
 	arch = x86_64
 	arch = i686
@@ -14,6 +14,8 @@ pkgbase = click-git
 	makedepends = gobject-introspection
 	depends = libgee
 	depends = json-glib
+	provides = click
+	conflicts = click
 	source = git+https://github.com/ubports/click.git
 	sha256sums = SKIP
 

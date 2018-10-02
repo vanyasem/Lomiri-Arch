@@ -1,7 +1,7 @@
 pkgbase = platform-api-git
 	pkgdesc = Platform API for system level capabilities
 	pkgver = r1263.464a38b
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ubports/platform-api
 	arch = x86_64
 	arch = i686
@@ -15,6 +15,8 @@ pkgbase = platform-api-git
 	depends = location-service-git
 	depends = url-dispatcher-git
 	depends = process-cpp
+	provides = platform-api
+	conflicts = platform-api
 	source = git+https://github.com/ubports/platform-api.git
 	source = hybris.patch
 	sha256sums = SKIP

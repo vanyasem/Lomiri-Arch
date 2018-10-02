@@ -1,7 +1,7 @@
 pkgbase = gsettings-ubuntu-touch-schemas-git
 	pkgdesc = GSettings desktop-wide schemas for Ubuntu Touch
 	pkgver = r199.0d029fa
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ubports/gsettings-ubuntu-touch-schemas
 	arch = x86_64
 	arch = i686
@@ -12,6 +12,8 @@ pkgbase = gsettings-ubuntu-touch-schemas-git
 	makedepends = gnome-common
 	makedepends = intltool
 	depends = dconf
+	provides = gsettings-ubuntu-touch-schemas
+	conflicts = gsettings-ubuntu-touch-schemas
 	source = git+https://github.com/ubports/gsettings-ubuntu-touch-schemas.git
 	sha256sums = SKIP
 

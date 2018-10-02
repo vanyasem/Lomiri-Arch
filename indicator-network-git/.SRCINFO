@@ -1,7 +1,7 @@
 pkgbase = indicator-network-git
 	pkgdesc = Network indicator
 	pkgver = r1949.27fabbd2
-	pkgrel = 2
+	pkgrel = 3
 	url = https://github.com/ubports/indicator-network
 	arch = x86_64
 	arch = i686
@@ -22,6 +22,8 @@ pkgbase = indicator-network-git
 	depends = libqtdbustest-git
 	depends = libqtdbusmock-git
 	depends = gmenuharness-bzr
+	provides = indicator-network
+	conflicts = indicator-network
 	source = git+https://github.com/ubports/indicator-network.git
 	sha256sums = SKIP
 

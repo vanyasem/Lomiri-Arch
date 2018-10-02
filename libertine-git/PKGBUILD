@@ -3,11 +3,13 @@
 pkgname=libertine-git
 _pkgname=libertine
 pkgver=r465.4ae89b2
-pkgrel=1
+pkgrel=2
 pkgdesc='A sandbox for running legacy deb-based X11 applications'
 url='https://github.com/ubports/libertine'
 arch=(x86_64 i686 armv7h aarch64)
 license=(GPL3)
+conflicts=(libertine)
+provides=(libertine)
 depends=(python3 gtest qt5-base qt5-quickcontrols)
 makedepends=(git cmake cmake-extras-git dbus-test-runner intltool)
 source=('git+https://github.com/ubports/libertine.git')

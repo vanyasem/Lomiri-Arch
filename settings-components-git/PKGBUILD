@@ -3,11 +3,13 @@
 pkgname=settings-components-git
 _pkgname=settings-components
 pkgver=r831.d66cac2
-pkgrel=2
+pkgrel=3
 pkgdesc='Ubuntu settings components for Unity8'
 url='https://github.com/ubports/settings-components'
 arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL GPL)
+conflicts=(settings-components)
+provides=(settings-components)
 depends=(xorg-server-xvfb qt5-quickcontrols)
 makedepends=(git cmake cmake-extras-git)
 source=('git+https://github.com/ubports/settings-components.git')

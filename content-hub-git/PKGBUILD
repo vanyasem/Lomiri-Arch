@@ -3,11 +3,13 @@
 pkgname=content-hub-git
 _pkgname=content-hub
 pkgver=r1507.66955f6
-pkgrel=2
+pkgrel=3
 pkgdesc='Content sharing/picking infrastructure and service'
 url='https://github.com/ubports/content-hub'
 arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL3)
+conflicts=(content-hub)
+provides=(content-hub)
 depends=(lcov gcovr gmock ubuntu-app-launch-git ubuntu-download-manager-git gsettings-qt apparmor-libapparmor libnotify ubuntu-ui-toolkit-git)
 makedepends=(git cmake cmake-extras-git doxygen graphviz) 
 checkdepends=(xorg-server-xvfb)

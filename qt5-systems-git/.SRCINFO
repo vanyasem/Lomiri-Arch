@@ -1,7 +1,7 @@
 pkgbase = qt5-systems-git
 	pkgdesc = Qt Publish and Subscribe Add-on Module
 	pkgver = v5.0.0.beta1.r155.g66e45676
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/qtproject/qtsystems
 	arch = x86_64
 	arch = i686

@@ -3,11 +3,13 @@
 pkgname=unity-api-git
 _pkgname=unity-api
 pkgver=r1091.588b667
-pkgrel=1
+pkgrel=2
 pkgdesc='API for Unity shell integration'
 url='https://github.com/ubports/unity-api'
 arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL3)
+conflicts=(unity-api)
+provides=(unity-api)
 depends=(qt5-quickcontrols)
 makedepends=(git cmake cppcheck graphviz libqtdbustest-git )
 source=('git+https://github.com/ubports/unity-api.git')

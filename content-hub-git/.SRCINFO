@@ -1,7 +1,7 @@
 pkgbase = content-hub-git
 	pkgdesc = Content sharing/picking infrastructure and service
 	pkgver = r1507.66955f6
-	pkgrel = 2
+	pkgrel = 3
 	url = https://github.com/ubports/content-hub
 	arch = x86_64
 	arch = i686
@@ -23,6 +23,8 @@ pkgbase = content-hub-git
 	depends = apparmor-libapparmor
 	depends = libnotify
 	depends = ubuntu-ui-toolkit-git
+	provides = content-hub
+	conflicts = content-hub
 	source = git+https://github.com/ubports/content-hub.git
 	source = Gtest.patch
 	source = QtArg.patch

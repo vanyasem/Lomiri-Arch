@@ -3,11 +3,13 @@
 pkgname=cmake-extras-git
 _pkgname=cmake-extras
 pkgver=r241.820b661
-pkgrel=1
+pkgrel=2
 pkgdesc='A collection of add-ons for the CMake build tool'
 url='https://github.com/ubports/cmake-extras'
 arch=(any)
 license=(GPL3)
+conflicts=(cmake-extras)
+provides=(cmake-extras)
 depends=(python)
 makedepends=(git cmake)
 source=('git+https://github.com/ubports/cmake-extras.git'

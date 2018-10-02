@@ -1,7 +1,7 @@
 pkgbase = libqtdbustest-git
 	pkgdesc = Library for testing DBus interactions using Qt
 	pkgver = r83.24e410e
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ubports/libqtdbustest
 	arch = x86_64
 	arch = i686
@@ -18,6 +18,8 @@ pkgbase = libqtdbustest-git
 	depends = lcov
 	depends = gmock
 	depends = qt5-base
+	provides = libqtdbustest
+	conflicts = libqtdbustest
 	source = git+https://github.com/ubports/libqtdbustest.git
 	source = SuicidalSleep.patch
 	sha256sums = SKIP

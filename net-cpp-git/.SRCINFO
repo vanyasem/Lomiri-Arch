@@ -1,7 +1,7 @@
 pkgbase = net-cpp-git
 	pkgdesc = A simple yet beautiful networking API for C++11
 	pkgver = r141.09cac6a
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ubports/net-cpp
 	arch = x86_64
 	arch = i686
@@ -24,6 +24,8 @@ pkgbase = net-cpp-git
 	depends = python2-decorator
 	depends = python2-simplejson
 	depends = curl
+	provides = net-cpp
+	conflicts = net-cpp
 	source = git+https://github.com/ubports/net-cpp.git
 	source = Python.patch
 	source = HTTPBin.patch

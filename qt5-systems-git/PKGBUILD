@@ -4,15 +4,15 @@
 pkgname=qt5-systems-git
 _pkgname=qtsystems
 pkgver=v5.0.0.beta1.r155.g66e45676
-pkgrel=1
+pkgrel=2
 pkgdesc='Qt Publish and Subscribe Add-on Module'
 url='https://github.com/qtproject/qtsystems'
 arch=(x86_64 i686 armv7h aarch64)
 license=(GPL3 LGPL FDL custom)
+conflicts=(qt5-systems)
+provides=(qt5-systems)
 depends=(qt5-declarative)
 makedepends=(git)
-provides=(qt5-systems)
-conflicts=(qt5-systems)
 source=('git+http://code.qt.io/cgit/qt/qtsystems.git')
 sha256sums=('SKIP')
 

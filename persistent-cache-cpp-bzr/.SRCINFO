@@ -1,7 +1,7 @@
 pkgbase = persistent-cache-cpp-bzr
 	pkgdesc = A cache of key-value pairs with persistent storage for C++
 	pkgver = r28
-	pkgrel = 1
+	pkgrel = 2
 	url = https://launchpad.net/persistent-cache-cpp
 	arch = x86_64
 	arch = i686
@@ -19,6 +19,8 @@ pkgbase = persistent-cache-cpp-bzr
 	depends = boost
 	depends = leveldb
 	depends = valgrind
+	provides = persistent-cache-cpp
+	conflicts = persistent-cache-cpp
 	source = bzr+lp:persistent-cache-cpp
 	sha256sums = SKIP
 

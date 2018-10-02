@@ -1,7 +1,7 @@
 pkgbase = qtmir-git
 	pkgdesc = Qt platform abstraction (QPA) plugin for a Mir server
 	pkgver = r2313.b37293e2
-	pkgrel = 2
+	pkgrel = 3
 	url = https://github.com/ubports/qtmir
 	arch = x86_64
 	arch = i686
@@ -24,6 +24,8 @@ pkgbase = qtmir-git
 	depends = url-dispatcher-git
 	depends = glm
 	depends = gtest
+	provides = qtmir
+	conflicts = qtmir
 	source = git+https://github.com/ubports/qtmir.git
 	source = NoCatchValue.patch
 	sha256sums = SKIP

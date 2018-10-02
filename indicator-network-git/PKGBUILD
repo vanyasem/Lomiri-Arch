@@ -3,11 +3,13 @@
 pkgname=indicator-network-git
 _pkgname=indicator-network
 pkgver=r1949.27fabbd2
-pkgrel=2
+pkgrel=3
 pkgdesc='Network indicator'
 url='https://github.com/ubports/indicator-network'
 arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL3 GPL3)
+conflicts=(indicator-network)
+provides=(indicator-network)
 depends=(lcov gcovr gsettings-qt ofono url-dispatcher-git libqofono libqtdbustest-git libqtdbusmock-git gmenuharness-bzr)
 makedepends=(git cmake cmake-extras-git doxygen)
 checkdepends=()

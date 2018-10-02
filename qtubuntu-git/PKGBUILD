@@ -3,11 +3,13 @@
 pkgname=qtubuntu-git
 _pkgname=qtubuntu
 pkgver=r2202.e8a2965
-pkgrel=1
+pkgrel=2
 pkgdesc='Qt plugins for Ubuntu Platform API'
 url='https://github.com/ubports/qtubuntu'
 arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL GPL)
+conflicts=(qtubuntu)
+provides=(qtubuntu)
 depends=(qt5-base platform-api-git content-hub-git)
 makedepends=(git)
 checkdepends=()

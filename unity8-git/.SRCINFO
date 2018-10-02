@@ -1,7 +1,7 @@
 pkgbase = unity8-git
 	pkgdesc = Unity 8 shell
 	pkgver = r17979.87aa39508
-	pkgrel = 3
+	pkgrel = 4
 	url = https://github.com/ubports/unity8
 	arch = x86_64
 	arch = i686
@@ -32,6 +32,8 @@ pkgbase = unity8-git
 	depends = gsettings-ubuntu-touch-schemas-git
 	depends = ubuntu-wallpapers
 	depends = qtmir-git
+	provides = unity8
+	conflicts = unity8
 	source = git+https://github.com/ubports/unity8.git
 	source = AndroidAway.patch
 	source = NoDpkgParse.patch

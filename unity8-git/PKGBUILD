@@ -3,11 +3,13 @@
 pkgname=unity8-git
 _pkgname=unity8
 pkgver=r17979.87aa39508
-pkgrel=3
+pkgrel=4
 pkgdesc='Unity 8 shell'
 url='https://github.com/ubports/unity8'
 arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL3)
+conflicts=(unity8)
+provides=(unity8)
 depends=(lcov gcovr geonames-git unity-api-git qmenumodel-git gnome-desktop ubuntu-app-launch-git ubuntu-ui-toolkit-git libqtdbustest-git libqtdbusmock-git system-settings-git indicator-network-git libusermetrics-git liblightdm-qt5 settings-components-git unity7-schemas gsettings-ubuntu-touch-schemas-git ubuntu-wallpapers qtmir-git)
 makedepends=(git cmake cmake-extras-git doxygen)
 checkdepends=(xorg-server-xvfb)

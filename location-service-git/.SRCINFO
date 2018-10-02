@@ -1,7 +1,7 @@
 pkgbase = location-service-git
 	pkgdesc = Location service aggregating position/velocity/heading updates and exporting them over dbus
 	pkgver = r951.142f6ca
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ubports/location-service
 	arch = x86_64
 	arch = i686
@@ -19,6 +19,8 @@ pkgbase = location-service-git
 	depends = gtest
 	depends = gmock
 	depends = clang
+	provides = location-service
+	conflicts = location-service
 	source = git+https://github.com/ubports/location-service.git
 	sha256sums = SKIP
 

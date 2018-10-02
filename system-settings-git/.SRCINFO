@@ -1,7 +1,7 @@
 pkgbase = system-settings-git
 	pkgdesc = System Settings application for Unity8
 	pkgver = r7160.26e4f74d
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ubports/system-settings
 	arch = x86_64
 	arch = i686
@@ -26,6 +26,8 @@ pkgbase = system-settings-git
 	depends = qmenumodel-git
 	depends = libqofono
 	depends = content-hub-git
+	provides = system-settings
+	conflicts = system-settings
 	source = git+https://github.com/ubports/system-settings.git
 	sha256sums = SKIP
 

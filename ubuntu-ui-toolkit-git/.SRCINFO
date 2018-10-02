@@ -1,7 +1,7 @@
 pkgbase = ubuntu-ui-toolkit-git
 	pkgdesc = Qt Components for Ubuntu
 	pkgver = r17954.de9a0b250
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ubports/ubuntu-ui-toolkit
 	arch = x86_64
 	arch = i686
@@ -20,6 +20,8 @@ pkgbase = ubuntu-ui-toolkit-git
 	depends = ubuntu-themes
 	depends = qt5-graphicaleffects
 	depends = bluez-libs
+	provides = ubuntu-ui-toolkit
+	conflicts = ubuntu-ui-toolkit
 	source = git+https://github.com/ubports/ubuntu-ui-toolkit.git
 	source = NoWarns.patch
 	source = QTest.patch

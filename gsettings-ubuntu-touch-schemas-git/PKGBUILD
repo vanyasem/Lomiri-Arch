@@ -3,11 +3,13 @@
 pkgname=gsettings-ubuntu-touch-schemas-git
 _pkgname=gsettings-ubuntu-touch-schemas
 pkgver=r199.0d029fa
-pkgrel=1
+pkgrel=2
 pkgdesc='GSettings desktop-wide schemas for Ubuntu Touch'
 url='https://github.com/ubports/gsettings-ubuntu-touch-schemas'
 arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL2.1)
+conflicts=(gsettings-ubuntu-touch-schemas)
+provides=(gsettings-ubuntu-touch-schemas)
 depends=(dconf)
 makedepends=(git gnome-common intltool)
 source=('git+https://github.com/ubports/gsettings-ubuntu-touch-schemas.git')

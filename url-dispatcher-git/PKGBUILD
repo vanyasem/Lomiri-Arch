@@ -3,11 +3,13 @@
 pkgname=url-dispatcher-git
 _pkgname=url-dispatcher
 pkgver=r734.f7b7e00
-pkgrel=1
+pkgrel=2
 pkgdesc='Service to allow sending of URLs and get handlers started'
 url='https://github.com/ubports/url-dispatcher'
 arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL)
+conflicts=(url-dispatcher)
+provides=(url-dispatcher)
 depends=(ubuntu-app-launch-git unity-scopes-api-git intltool)
 makedepends=(git cmake cmake-extras-git)
 checkdepends=(python-testtools python-nose)

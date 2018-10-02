@@ -1,7 +1,7 @@
 pkgbase = gmenuharness-bzr
 	pkgdesc = Testing enablement library for projects exporting GiO's gmenu/gaction endpoints
 	pkgver = r31
-	pkgrel = 1
+	pkgrel = 2
 	url = https://launchpad.net/gmenuharness
 	arch = x86_64
 	arch = i686
@@ -14,6 +14,8 @@ pkgbase = gmenuharness-bzr
 	depends = unity-api-git
 	depends = gtest
 	depends = libqtdbustest-git
+	provides = gmenuharness
+	conflicts = gmenuharness
 	source = bzr+lp:gmenuharness
 	source = Functional1.patch
 	source = Functional2.patch

@@ -3,11 +3,13 @@
 pkgname=libqtdbusmock-git
 _pkgname=libqtdbusmock
 pkgver=r122.d6d1830
-pkgrel=1
+pkgrel=2
 pkgdesc='Library for mocking DBus interactions using Qt'
 url='https://github.com/ubports/libqtdbusmock'
 arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL3)
+conflicts=(libqtdbusmock)
+provides=(libqtdbusmock)
 depends=(networkmanager libqtdbustest-git gmock)
 makedepends=(git cmake cmake-extras-git) 
 checkdepends=(python-dbusmock python-dbus python-gobject)

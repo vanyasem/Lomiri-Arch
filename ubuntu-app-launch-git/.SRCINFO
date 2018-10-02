@@ -1,7 +1,7 @@
 pkgbase = ubuntu-app-launch-git
 	pkgdesc = Session init system job for Launching Applications
 	pkgver = r3022.bde4305
-	pkgrel = 2
+	pkgrel = 3
 	url = https://github.com/ubports/ubuntu-app-launch
 	arch = x86_64
 	arch = i686
@@ -21,6 +21,8 @@ pkgbase = ubuntu-app-launch-git
 	depends = unity-api-git
 	depends = properties-cpp
 	depends = curl
+	provides = ubuntu-app-launch
+	conflicts = ubuntu-app-launch
 	source = git+https://github.com/ubports/ubuntu-app-launch.git
 	source = FormatTruncation.patch
 	source = Gtest.patch

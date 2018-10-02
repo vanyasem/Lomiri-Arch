@@ -3,11 +3,13 @@
 pkgname=geonames-git
 _pkgname=geonames
 pkgver=r4.fb9788a
-pkgrel=1
+pkgrel=2
 pkgdesc='Parse and query the geonames database dump'
 url='https://github.com/ubports/geonames'
 arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL3)
+conflicts=(geonames)
+provides=(geonames)
 #makedepends=(git git-lfs gtk-doc)
 makedepends=(git gtk-doc)
 source=('git+https://github.com/vanyasem/geonames.git'

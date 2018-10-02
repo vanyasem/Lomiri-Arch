@@ -1,7 +1,7 @@
 pkgbase = ubuntu-download-manager-git
 	pkgdesc = Provides a service for downloading files while an application is suspended
 	pkgver = r2535.e6cfc9dc
-	pkgrel = 2
+	pkgrel = 3
 	url = https://github.com/ubports/ubuntu-download-manager
 	arch = x86_64
 	arch = i686
@@ -18,6 +18,8 @@ pkgbase = ubuntu-download-manager-git
 	depends = qt5-declarative
 	depends = libnih
 	depends = google-glog
+	provides = ubuntu-download-manager
+	conflicts = ubuntu-download-manager
 	source = git+https://github.com/ubports/ubuntu-download-manager.git
 	source = QtArg.patch
 	source = Gtest.patch
