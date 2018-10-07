@@ -3,14 +3,14 @@
 pkgname=trust-store-git
 _pkgname=trust-store
 pkgver=r423.0292700
-pkgrel=2
+pkgrel=3
 pkgdesc='C++11 library for persisting trust requests'
 url='https://github.com/ubports/trust-store'
 arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL)
 conflicts=(trust-store)
 provides=(trust-store)
-depends=(qt5-base qt5-quickcontrols boost dbus-cpp gmock lcov gcovr mir apparmor-libapparmor properties-cpp)
+depends=(qt5-base qt5-quickcontrols boost dbus-cpp gmock lcov gcovr mir apparmor properties-cpp)
 makedepends=(git cmake cmake-extras-git doxygen graphviz)
 source=('git+https://github.com/ubports/trust-store.git')
 sha256sums=('SKIP')

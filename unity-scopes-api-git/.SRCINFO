@@ -1,7 +1,7 @@
 pkgbase = unity-scopes-api-git
 	pkgdesc = Library to integrate scopes with the Unity shell
 	pkgver = r5029.5044aac6
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/ubports/unity-scopes-api
 	arch = x86_64
 	arch = i686
@@ -15,7 +15,7 @@ pkgbase = unity-scopes-api-git
 	makedepends = graphviz
 	depends = unity-api-git
 	depends = process-cpp
-	depends = apparmor-libapparmor
+	depends = apparmor
 	depends = lttng-ust
 	depends = libaccounts-glib
 	depends = libsignon-glib

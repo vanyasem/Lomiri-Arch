@@ -1,7 +1,7 @@
 pkgbase = libusermetrics-git
 	pkgdesc = Library for exporting anonymous metrics about users
 	pkgver = r477.a50ce9f
-	pkgrel = 2
+	pkgrel = 3
 	url = https://github.com/ubports/libusermetrics
 	arch = x86_64
 	arch = i686
@@ -18,7 +18,7 @@ pkgbase = libusermetrics-git
 	depends = qt5-base
 	depends = qt5-xmlpatterns
 	depends = gsettings-qt
-	depends = apparmor-libapparmor
+	depends = apparmor
 	depends = click-git
 	depends = qdjango-git
 	depends = libqtdbustest-git

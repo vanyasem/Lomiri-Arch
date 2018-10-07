@@ -13,9 +13,6 @@
 [submodule "properties-cpp"]
 	path = properties-cpp
 	url = https://aur.archlinux.org/properties-cpp.git
-[submodule "apparmor"]
-	path = apparmor
-	url = https://aur.archlinux.org/apparmor.git
 [submodule "perl-rpc-xml"]
 	path = perl-rpc-xml
 	url = https://aur.archlinux.org/perl-rpc-xml.git

@@ -1,7 +1,7 @@
 pkgbase = thumbnailer-git
 	pkgdesc = D-Bus service for out of process thumbnailing
 	pkgver = r1938.ec1c06a
-	pkgrel = 2
+	pkgrel = 3
 	url = https://github.com/ubports/thumbnailer
 	arch = x86_64
 	arch = i686
@@ -18,7 +18,7 @@ pkgbase = thumbnailer-git
 	depends = gdk-pixbuf2
 	depends = libexif
 	depends = unity-api-git
-	depends = apparmor-libapparmor
+	depends = apparmor
 	depends = taglib
 	depends = persistent-cache-cpp-bzr
 	provides = thumbnailer
