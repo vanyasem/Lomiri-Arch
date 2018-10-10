@@ -3,6 +3,13 @@ Contributing
 
 First of all, let me thank you for your interest in **Unity8-Arch**!
 
+**Special thanks to:**
+- [Abhishek](https://www.patreon.com/abhishekzz) for the idea of the project
+- [Rodney (aka dobey)](https://www.patreon.com/dobey/) for guiding me when I felt lost
+- Marius and Florian from the UBports Dev Team for merging my PRs and motivating me
+- William Wold for patching Mir for Arch
+- [Alex](https://www.patreon.com/WarumLinuxBesserIst) for financial support on Patreon ($20 total). He has a German YouTube channel about Linux: [WarumLinuxBesserIst](https://youtube.com/user/WarumLinuxBesserIst), and a recently created English YouTube channel: [eDrive](https://goo.gl/UFVh4S)
+
 As the project is in it's alpha stage, your contribution is very important.
 
 ### Packaging
