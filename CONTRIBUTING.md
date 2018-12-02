@@ -9,7 +9,7 @@ First of all, let me thank you for your interest in **Unity8-Arch**!
 - Marius and Florian from the UBports Dev Team for merging my PRs and motivating me
 - William Wold for patching Mir for Arch
 - [Alex](https://www.patreon.com/WarumLinuxBesserIst) for financial support on Patreon ($40 total). He has a German YouTube channel about Linux: [WarumLinuxBesserIst](https://youtube.com/user/WarumLinuxBesserIst), and a recently created English YouTube channel: [eDrive](https://goo.gl/UFVh4S)
-- Jeroen Bots for financial support on Patreon ($100 total)
+- [Jeroen Bots](https://www.patreon.com/user?u=251509) for financial support on Patreon ($100 total)
 
 As the project is in it's alpha stage, your contribution is very important.
 
