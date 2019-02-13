@@ -37,11 +37,11 @@ _Clickable icons:_
 - [x] `qtsystems` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qt5-systems-git)
 - [x] `humanity-icon-theme` [✅](https://aur.archlinux.org/packages/humanity-icon-theme/)
 - [x] `ubuntu-themes` [✅](https://aur.archlinux.org/packages/ubuntu-themes/)
-- [x] `ubuntu-ui-toolkit` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/ubuntu-ui-toolkit-git) | [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/9) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/10) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/11) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/12) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/13) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/14)
+- [x] `ubuntu-ui-toolkit` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/ubuntu-ui-toolkit-git) | [✅](https://github.com/ubports/ubuntu-ui-toolkit/issues/9) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/10) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/11) [✅](https://github.com/ubports/ubuntu-ui-toolkit/issues/12) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/13) [⛔️](https://github.com/ubports/ubuntu-ui-toolkit/issues/14)
 - [x] `gsettings-qt` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/gsettings-qt-git) | [⛔️](https://github.com/ubports/gsettings-qt/issues/2)
 - [x] `content-hub` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/content-hub-git) | [⛔️](https://github.com/ubports/content-hub/issues/1) [🆗](https://github.com/ubports/content-hub/issues/2) [⛔️](https://github.com/ubports/content-hub/issues/4) [⛔️](https://github.com/ubports/content-hub/issues/5)
 - [x] `libqtdbusmock` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqtdbusmock-git) | [🆗](https://github.com/ubports/libqtdbusmock/issues/1)
-- [x] `qtmir` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qtmir-git) | [⛔️](https://github.com/ubports/qtmir/issues/5) [⛔️](https://github.com/ubports/qtmir/issues/6) [🆗](https://github.com/ubports/qtmir/issues/8) [⛔️](https://github.com/ubports/qtmir/issues/9) [🆗](https://github.com/ubports/qtmir/issues/12)
+- [x] `qtmir` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qtmir-git) | [⛔️](https://github.com/ubports/qtmir/issues/5) [✅](https://github.com/ubports/qtmir/issues/6) [🆗](https://github.com/ubports/qtmir/issues/8) [⛔️](https://github.com/ubports/qtmir/issues/9) [🆗](https://github.com/ubports/qtmir/issues/12)
 - [x] `settings-components` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/settings-components-git) | [🆗](https://github.com/ubports/settings-components/issues/3)
 - [x] `history-service` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/history-service-git) | [🆗](https://github.com/ubports/history-service/issues/1)
 - [x] `dbus-cpp` [✅](https://aur.archlinux.org/packages/dbus-cpp/) | [🆗](https://github.com/ubports/location-service/issues/3)
@@ -51,7 +51,7 @@ _Clickable icons:_
 - [x] `qtubuntu` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qtubuntu-git) | [⛔️](https://github.com/ubports/qtubuntu/issues/3) [⛔️](https://github.com/ubports/qtubuntu/issues/6)
 - [ ] `maliit-framework`
 - [ ] `keyboard-component`
-- [x] `click` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/click-git) | [⛔️](https://github.com/ubports/click/issues/2)
+- [x] `click` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/click-git) | [✅](https://github.com/ubports/click/issues/2)
 - [x] `accountsservice` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/accountsservice-ubuntu)
 - [x] `geonames` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/geonames-git) | [⛔️](https://github.com/ubports/geonames/issues/1)
 - [x] `qmenumodel` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qmenumodel-git) | [🆗](https://github.com/ubports/qmenumodel/issues/1)
