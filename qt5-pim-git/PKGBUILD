@@ -2,8 +2,8 @@
 
 pkgname=qt5-pim-git
 _pkgname=qtpim
-pkgver=v5.0.0.beta1.r155.g86db658e
-pkgrel=2
+pkgver=v5.0.0.beta1.r218.g3f567865
+pkgrel=1
 pkgdesc='Qt Personal Information Management'
 url='http://code.qt.io/cgit/qt/qtpim.git'
 arch=(x86_64 i686 armv7h aarch64)
@@ -14,13 +14,6 @@ depends=(qt5-declarative)
 makedepends=(git)
 source=('git+http://code.qt.io/cgit/qt/qtpim.git')
 sha256sums=('SKIP')
-
-prepare() {
-  cd ${_pkgname}
-  git checkout 86db658eace4dc84c1d3185c71f2282278b3a452
-  # http://code.qt.io/cgit/qt/qtpim.git/commit/?id=18e3d741c3526978cdacc88bc260d250918d2080 Breaks the build
-  # error: ‘class QtOrganizer::QOrganizerManager’ has no member named ‘defaultCollection’; did you mean ‘defaultCollectionId’?
-}
 
 pkgver() {
   cd ${_pkgname}
