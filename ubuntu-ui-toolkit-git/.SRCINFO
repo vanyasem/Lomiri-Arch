@@ -1,7 +1,7 @@
 pkgbase = ubuntu-ui-toolkit-git
 	pkgdesc = Qt Components for Ubuntu
-	pkgver = r17954.de9a0b250
-	pkgrel = 2
+	pkgver = r18021.cee7f49f4
+	pkgrel = 1
 	url = https://github.com/ubports/ubuntu-ui-toolkit
 	arch = x86_64
 	arch = i686
@@ -13,8 +13,8 @@ pkgbase = ubuntu-ui-toolkit-git
 	depends = qt5-quickcontrols
 	depends = lttng-ust
 	depends = libnih
-	depends = qt5-systems-git
-	depends = qt5-pim-git
+	depends = qt5-systems
+	depends = qt5-pim
 	depends = qt5-svg
 	depends = qt5-feedback
 	depends = ubuntu-themes
@@ -22,16 +22,14 @@ pkgbase = ubuntu-ui-toolkit-git
 	depends = bluez-libs
 	provides = ubuntu-ui-toolkit
 	conflicts = ubuntu-ui-toolkit
-	source = git+https://github.com/ubports/ubuntu-ui-toolkit.git
+	source = git+https://github.com/ubports/ubuntu-ui-toolkit.git#branch=bionic
 	source = NoWarns.patch
-	source = QTest.patch
 	source = dpkg.patch
-	source = NoDocs.patch
+	source = https://github.com/ubports/ubuntu-ui-toolkit/pull/29.patch
 	sha256sums = SKIP
 	sha256sums = 3b8a3165161d5c695a7f3f8f3b08a3de11451b8f52276b5b1856730f0aa557c9
-	sha256sums = 09265797bb847baedc2d7a19968e853d487d63eec538e3be93fc706ff40598d3
 	sha256sums = 5851aec4b72ddd1556494ab188c6de64ccaa77a1b574a0bd2631916300ac242a
-	sha256sums = 7b3e6078815dac602792211e69d7ffd878056ecdb96b19f221db67e6e5ac4614
+	sha256sums = 537d3be7d2d379709de7b28a2bae65ec3fd1af8f023d5a10440f17a63e309600
 
 pkgname = ubuntu-ui-toolkit-git
 

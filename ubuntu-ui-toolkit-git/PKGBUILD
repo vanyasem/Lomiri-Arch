@@ -2,38 +2,34 @@
 
 pkgname=ubuntu-ui-toolkit-git
 _pkgname=ubuntu-ui-toolkit
-pkgver=r17954.de9a0b250
-pkgrel=2
+pkgver=r18021.cee7f49f4
+pkgrel=1
 pkgdesc='Qt Components for Ubuntu'
 url='https://github.com/ubports/ubuntu-ui-toolkit'
 arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL)
 conflicts=(ubuntu-ui-toolkit)
 provides=(ubuntu-ui-toolkit)
-depends=(qt5-base qt5-quickcontrols lttng-ust libnih qt5-systems-git qt5-pim-git qt5-svg qt5-feedback ubuntu-themes qt5-graphicaleffects bluez-libs)
+depends=(qt5-base qt5-quickcontrols lttng-ust libnih qt5-systems qt5-pim qt5-svg qt5-feedback ubuntu-themes qt5-graphicaleffects bluez-libs)
 makedepends=(git)
 checkdepends=()
-source=('git+https://github.com/ubports/ubuntu-ui-toolkit.git'
+source=('git+https://github.com/ubports/ubuntu-ui-toolkit.git#branch=bionic'
         'NoWarns.patch'
-        'QTest.patch'
         'dpkg.patch'
-        'NoDocs.patch')
+        'https://github.com/ubports/ubuntu-ui-toolkit/pull/29.patch')
 sha256sums=('SKIP'
             '3b8a3165161d5c695a7f3f8f3b08a3de11451b8f52276b5b1856730f0aa557c9'
-            '09265797bb847baedc2d7a19968e853d487d63eec538e3be93fc706ff40598d3'
             '5851aec4b72ddd1556494ab188c6de64ccaa77a1b574a0bd2631916300ac242a'
-            '7b3e6078815dac602792211e69d7ffd878056ecdb96b19f221db67e6e5ac4614')
+            '537d3be7d2d379709de7b28a2bae65ec3fd1af8f023d5a10440f17a63e309600')
 
 BUILDENV+=('!check') # It needs a DISPLAY, and I am too tired to set it up now
 
 prepare() {
   cd ${_pkgname}
-  git checkout bionic
-  
+
   patch -Np1 -i "${srcdir}/NoWarns.patch"
-  patch -Np1 -i "${srcdir}/QTest.patch"
   patch -Np1 -i "${srcdir}/dpkg.patch"
-  patch -Np1 -i "${srcdir}/NoDocs.patch"
+  patch -Np1 -i "${srcdir}/29.patch"
 }
 
 pkgver() {
@@ -43,7 +39,7 @@ pkgver() {
 
 build() {
   cd ${_pkgname}
-  qmake
+  qmake CONFIG+=no_docs
   make
 }
 

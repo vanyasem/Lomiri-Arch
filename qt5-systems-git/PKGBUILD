@@ -3,10 +3,10 @@
 
 pkgname=qt5-systems-git
 _pkgname=qtsystems
-pkgver=v5.0.0.beta1.r155.g66e45676
-pkgrel=2
+pkgver=v5.0.0.beta1.r158.ge3332ee3
+pkgrel=1
 pkgdesc='Qt Publish and Subscribe Add-on Module'
-url='https://github.com/qtproject/qtsystems'
+url='https://github.com/qt/qtsystems'
 arch=(x86_64 i686 armv7h aarch64)
 license=(GPL3 LGPL FDL custom)
 conflicts=(qt5-systems)
@@ -34,7 +34,7 @@ package() {
 
   install -D -m644 LICENSE.GPL3-EXCEPT \
     "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE.GPL3-EXCEPT
-    
+
   # Drop QMAKE_PRL_BUILD_DIR because it references the build dir
   find "$pkgdir/usr/lib" -type f -name '*.prl' \
     -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;

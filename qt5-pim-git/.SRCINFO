@@ -1,7 +1,7 @@
 pkgbase = qt5-pim-git
 	pkgdesc = Qt Personal Information Management
-	pkgver = v5.0.0.beta1.r155.g86db658e
-	pkgrel = 2
+	pkgver = v5.0.0.beta1.r218.g3f567865
+	pkgrel = 1
 	url = http://code.qt.io/cgit/qt/qtpim.git
 	arch = x86_64
 	arch = i686
