@@ -5,16 +5,7 @@ Don't forget to run `git submodule init && git submodule update` after cloning t
 
 You can compile the packages yourself. Dependencies: `sudo pacman -S git binutils patch make`
 
-You will have to do it manually for each dependency:
-
-```
-PACKAGE = unity8-git
-git clone https://aur.archlinux.org/$PACKAGE.git
-cd $PACKAGE
-makepkg -sic
-```
-
-There is a helper script (`build-packages.sh`) in the root of this repository that will build all the packages for you.
+There is a helper script (`build-packages.sh`) in the root of this repository that will build all the packages for you in the right order (some packages are required to build other packages, and you cannot satisfy this dependency, as it's not in Arch repos yet).
 
 ```
 ./build-packages.sh -b
