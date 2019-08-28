@@ -1,6 +1,8 @@
 Building
 ========
 
+Don't forget to run `git submodule init` after cloning this repository.
+
 You can compile the packages yourself.
 
 You will have to do it manually for each dependency:
