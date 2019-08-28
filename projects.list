@@ -1,6 +1,4 @@
 lcov
-gcovr
-python-dbusmock
 mir-git
 cmake-extras-git
 libqtdbustest-git
