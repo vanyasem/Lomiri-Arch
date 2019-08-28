@@ -1,6 +1,8 @@
 Building
 ========
 
+You can build the packages on [Windows via WSL](https://github.com/yuk7/ArchWSL) if you wish.
+
 Clone this repo's PKGBUILDs:
 ```
 git clone https://github.com/vanyasem/Unity8-Arch.git
