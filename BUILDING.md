@@ -3,7 +3,7 @@ Building
 
 Don't forget to run `git submodule init && git submodule update` after cloning this repository.
 
-You can compile the packages yourself.
+You can compile the packages yourself. Dependencies: `sudo pacman -S git binutils patch make`
 
 You will have to do it manually for each dependency:
 
