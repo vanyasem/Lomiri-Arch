@@ -1,7 +1,7 @@
 Building
 ========
 
-Don't forget to run `git submodule init` after cloning this repository.
+Don't forget to run `git submodule init && git submodule update` after cloning this repository.
 
 You can compile the packages yourself.
 
