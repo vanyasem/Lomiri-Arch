@@ -1,7 +1,13 @@
 Building
 ========
 
-Don't forget to run `git submodule init && git submodule update` after cloning this repository.
+Clone this repo's PKGBUILDs:
+```
+git clone https://github.com/vanyasem/Unity8-Arch.git
+cd Unity8-Arch
+git submodule init
+git submodule update
+```
 
 You can compile the packages yourself. Dependencies: `sudo pacman -S git binutils patch make`
 
