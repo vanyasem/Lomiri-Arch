@@ -12,6 +12,7 @@ _Clickable icons:_
 
 **Mir packages:**
 - [x] `lcov` [✅](https://aur.archlinux.org/packages/lcov/)
+- [x] `wlcs` [✅](https://aur.archlinux.org/packages/wlcs/)
 - [x] `gcovr` [🥂](https://www.archlinux.org/packages/community/any/gcovr/)
 - [x] `python-dbusmock` [🥂](https://www.archlinux.org/packages/extra/any/python-dbusmock/)
 - [x] `mir` [✅](https://aur.archlinux.org/packages/mir/) [😜](https://aur.archlinux.org/packages/mir-git) | [🆗](https://github.com/MirServer/mir/commit/e6ba0de363320feab9359821c96d69ff61a7f121) [⛔️](https://paste.ubuntu.com/p/cvNXMQFr3k/) [🆗](https://github.com/MirServer/mir/issues/402) [⛔️](https://github.com/MirServer/mir/commit/ce010778096db14de3b682313fc0376e0c8a6ada)

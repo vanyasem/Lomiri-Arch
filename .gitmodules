@@ -37,3 +37,6 @@
 [submodule "ubuntu-wallpapers"]
 	path = ubuntu-wallpapers
 	url = https://aur.archlinux.org/ubuntu-wallpapers.git
+[submodule "wlcs"]
+	path = wlcs
+	url = https://aur.archlinux.org/wlcs.git
