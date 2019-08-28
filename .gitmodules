@@ -1,6 +1,3 @@
-[submodule "gcovr"]
-	path = gcovr
-	url = https://aur.archlinux.org/gcovr.git
 [submodule "lcov"]
 	path = lcov
 	url = https://aur.archlinux.org/lcov.git
@@ -37,9 +34,6 @@
 [submodule "mir-git"]
 	path = mir-git
 	url = https://aur.archlinux.org/mir-git.git
-[submodule "python-dbusmock"]
-	path = python-dbusmock
-	url = https://aur.archlinux.org/python-dbusmock.git
 [submodule "ubuntu-wallpapers"]
 	path = ubuntu-wallpapers
 	url = https://aur.archlinux.org/ubuntu-wallpapers.git
