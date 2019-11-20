@@ -1,7 +1,7 @@
 pkgbase = unity-api-git
 	pkgdesc = API for Unity shell integration
-	pkgver = r1091.588b667
-	pkgrel = 2
+	pkgver = r1102.30dd7b3
+	pkgrel = 1
 	url = https://github.com/ubports/unity-api
 	arch = x86_64
 	arch = i686
@@ -13,6 +13,7 @@ pkgbase = unity-api-git
 	makedepends = cppcheck
 	makedepends = graphviz
 	makedepends = libqtdbustest-git
+	makedepends = cmake-extras-git
 	depends = qt5-quickcontrols
 	provides = unity-api
 	conflicts = unity-api
