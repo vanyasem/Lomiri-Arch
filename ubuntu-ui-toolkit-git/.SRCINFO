@@ -1,6 +1,6 @@
 pkgbase = ubuntu-ui-toolkit-git
 	pkgdesc = Qt Components for Ubuntu
-	pkgver = r18021.cee7f49f4
+	pkgver = r18022.d19600f2e
 	pkgrel = 1
 	url = https://github.com/ubports/ubuntu-ui-toolkit
 	arch = x86_64
@@ -26,10 +26,12 @@ pkgbase = ubuntu-ui-toolkit-git
 	source = NoWarns.patch
 	source = dpkg.patch
 	source = https://github.com/ubports/ubuntu-ui-toolkit/pull/29.patch
+	source = https://github.com/z3ntu/ubuntu-ui-toolkit/commit/ab542b01f461951dd732d8eb1bdb4bf5df4eea6e.patch
 	sha256sums = SKIP
 	sha256sums = 3b8a3165161d5c695a7f3f8f3b08a3de11451b8f52276b5b1856730f0aa557c9
 	sha256sums = 5851aec4b72ddd1556494ab188c6de64ccaa77a1b574a0bd2631916300ac242a
 	sha256sums = 3933506b2f519ad94c0184b00ff7f40f5716eba79057b79a3dc08e098ae52f99
+	sha256sums = 807fead1010f0e4a8cbc66c9a4571d3d3211420a7df23b3e348cb836e4010582
 
 pkgname = ubuntu-ui-toolkit-git
 
