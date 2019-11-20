@@ -21,7 +21,6 @@ There is a helper script (`build-packages.sh`) in the root of this repository th
 
 You will also need to trust a few GPG keys:
 ```
-gpg --recv-keys 3ECDCBA5FB34D254961CC53F6689E64E3D3664BB # For apparmor
 gpg --recv-keys E932D120BC2AEC444E558F0106CA9F5D1DCF2659 # For ofono
 ```
 
