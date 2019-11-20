@@ -13,13 +13,9 @@ provides=(ubuntu-download-manager)
 depends=(boost dbus-test-runner gmock qt5-base qt5-declarative libnih google-glog)
 makedepends=(git doxygen cmake cmake-extras-git gcovr lcov)
 source=('git+https://github.com/ubports/ubuntu-download-manager.git'
-        'QtArg.patch'
-        'QString.patch'
-        'TestMode.patch')
+        'QtArg.patch')
 sha256sums=('SKIP'
-            '8182121308e04f60e29dfc1e3c8e221413b5a905ea1302e75acbe95a6bb7f866'
-            'd4cb82cf3f06c8c539715ffbb132909ad1d4ef1e85647258aec717a0bae6342b'
-            '5818a26e5642bb82936596b9e790c5e0f16ed4f4067125f904f158582d342df0')
+            '8182121308e04f60e29dfc1e3c8e221413b5a905ea1302e75acbe95a6bb7f866')
 
 BUILDENV+=('!check') # Some tests are broken
 
@@ -28,8 +24,6 @@ prepare() {
   git checkout bionic
   
   patch -Np1 -i "${srcdir}/QtArg.patch"
-  patch -Np1 -i "${srcdir}/QString.patch"
-  patch -Np1 -i "${srcdir}/TestMode.patch"
 }
 
 pkgver() {

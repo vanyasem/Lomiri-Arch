@@ -40,3 +40,6 @@
 [submodule "wlcs"]
 	path = wlcs
 	url = https://aur.archlinux.org/wlcs.git
+[submodule "systemtap"]
+	path = systemtap
+	url = https://aur.archlinux.org/systemtap.git
