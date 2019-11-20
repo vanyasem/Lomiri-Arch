@@ -16,7 +16,6 @@ net-cpp-git
 zmqpp
 systemtap
 lttng-tools
-unity-scopes-api-git
 url-dispatcher-git
 persistent-cache-cpp-bzr
 thumbnailer-git
