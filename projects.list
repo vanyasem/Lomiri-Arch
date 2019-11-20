@@ -5,7 +5,6 @@ cmake-extras-git
 libqtdbustest-git
 unity-api-git
 dbus-test-runner
-unity-api-git
 libertine-git
 ubuntu-download-manager-git
 properties-cpp
