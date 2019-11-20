@@ -12,10 +12,8 @@ pkgbase = geonames-git
 	makedepends = gtk-doc
 	provides = geonames
 	conflicts = geonames
-	source = git+https://github.com/vanyasem/geonames.git
-	source = https://unity8.mynameisivan.ru/alternateNames.txt
+	source = git+https://bitbucket.org/vanyasem/geonames
 	sha256sums = SKIP
-	sha256sums = ba6ce17564e83fa53270e482d319ed9442d23fe347e5fbb331b0aff6ee7122de
 
 pkgname = geonames-git
 
