@@ -13,6 +13,7 @@ process-cpp
 perl-rpc-xml
 net-cpp-git
 zmqpp
+systemtap
 lttng-tools
 unity-scopes-api-git
 url-dispatcher-git
