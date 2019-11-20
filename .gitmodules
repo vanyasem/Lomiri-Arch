@@ -43,3 +43,6 @@
 [submodule "systemtap"]
 	path = systemtap
 	url = https://aur.archlinux.org/systemtap.git
+[submodule "python2-flask-script"]
+	path = python2-flask-script
+	url = https://aur.archlinux.org/python2-flask-script.git

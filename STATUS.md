@@ -28,6 +28,7 @@ _Clickable icons:_
 - [x] `ubuntu-app-launch` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/ubuntu-app-launch-git) | [⛔️](https://github.com/ubports/ubuntu-app-launch/issues/2) [⛔️](https://github.com/ubports/ubuntu-app-launch/issues/3) [⛔️](https://github.com/ubports/ubuntu-app-launch/issues/4) [🆗](https://github.com/ubports/ubuntu-app-launch/pull/1)
 - [x] `process-cpp` [✅](https://aur.archlinux.org/packages/process-cpp/)
 - [x] `perl-rpc-xml` [✅](https://aur.archlinux.org/packages/perl-rpc-xml/) | [⛔️](https://github.com/rjray/rpc-xml/issues/14)
+- [x] `python2-flask-script` [✅](https://aur.archlinux.org/packages/python2-flask-script/)
 - [x] `net-cpp` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/net-cpp-git) | [🆗](https://github.com/ubports/net-cpp/pull/1) [⛔️](https://github.com/ubports/net-cpp/issues/2) [⛔️](https://github.com/ubports/net-cpp/issues/3)
 - [x] `zmqpp` [✅](https://aur.archlinux.org/packages/zmqpp/)
 - [x] `lttng-tools` [✅](https://aur.archlinux.org/packages/lttng-tools/)

@@ -11,6 +11,7 @@ properties-cpp
 ubuntu-app-launch-git
 process-cpp
 perl-rpc-xml
+python2-flask-script
 net-cpp-git
 zmqpp
 systemtap
