@@ -14,7 +14,6 @@ pkgbase = url-dispatcher-git
 	makedepends = cmake
 	makedepends = cmake-extras-git
 	depends = ubuntu-app-launch-git
-	depends = unity-scopes-api-git
 	depends = intltool
 	provides = url-dispatcher
 	conflicts = url-dispatcher
