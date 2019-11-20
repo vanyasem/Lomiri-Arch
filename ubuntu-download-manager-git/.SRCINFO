@@ -25,8 +25,12 @@ pkgbase = ubuntu-download-manager-git
 	conflicts = ubuntu-download-manager
 	source = git+https://github.com/ubports/ubuntu-download-manager.git
 	source = QtArg.patch
+	source = QString.patch
+	source = TestMode.patch
 	sha256sums = SKIP
 	sha256sums = 8182121308e04f60e29dfc1e3c8e221413b5a905ea1302e75acbe95a6bb7f866
+	sha256sums = d4cb82cf3f06c8c539715ffbb132909ad1d4ef1e85647258aec717a0bae6342b
+	sha256sums = 5818a26e5642bb82936596b9e790c5e0f16ed4f4067125f904f158582d342df0
 
 pkgname = ubuntu-download-manager-git
 

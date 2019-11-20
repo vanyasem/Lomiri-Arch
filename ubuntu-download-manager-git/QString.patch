@@ -1,0 +1,276 @@
+diff --git a/src/common/priv/ubuntu/transfers/system/network_session.h b/src/common/priv/ubuntu/transfers/system/network_session.h
+index 02a7e24f..de180803 100644
+--- a/src/common/priv/ubuntu/transfers/system/network_session.h
++++ b/src/common/priv/ubuntu/transfers/system/network_session.h
+@@ -68,7 +68,7 @@ class NetworkSession : public QObject {
+     QNetworkConfiguration::BearerType _sessionType =
+         QNetworkConfiguration::BearerUnknown;
+     bool _error = false;
+-    QString _errorMsg = QString::null;
++    QString _errorMsg = QString();
+ };
+ 
+ }
+diff --git a/src/common/priv/ubuntu/transfers/transfer.h b/src/common/priv/ubuntu/transfers/transfer.h
+index bab53a29..7a665ef1 100644
+--- a/src/common/priv/ubuntu/transfers/transfer.h
++++ b/src/common/priv/ubuntu/transfers/transfer.h
+@@ -100,15 +100,15 @@ class Transfer : public QObject {
+  private:
+     bool _isValid = true;
+     bool _addToQueue = true;
+-    QString _lastError = QString::null;
+-    QString _id = QString::null;
+-    QString _appId = QString::null;
++    QString _lastError = QString();
++    QString _id = QString();
++    QString _appId = QString();
+     qulonglong _throttle = 0;
+     bool _allowMobileData = true;
+     Transfer::State _state = State::IDLE;
+-    QString _dbusPath = QString::null;
++    QString _dbusPath = QString();
+     bool _isConfined = true;
+-    QString _rootPath = QString::null;
++    QString _rootPath = QString();
+     System::NetworkSession* _networkSession = nullptr;
+ };
+ 
+diff --git a/src/common/public/ubuntu/transfers/errors/auth_error_struct.h b/src/common/public/ubuntu/transfers/errors/auth_error_struct.h
+index 3dcd42ae..b1a66685 100644
+--- a/src/common/public/ubuntu/transfers/errors/auth_error_struct.h
++++ b/src/common/public/ubuntu/transfers/errors/auth_error_struct.h
+@@ -109,7 +109,7 @@ class AuthErrorStruct {
+     /*!
+         \internal
+     */
+-    QString _phrase = QString::null;
++    QString _phrase = QString();
+ };
+ 
+ }  // Errors
+diff --git a/src/common/public/ubuntu/transfers/errors/hash_error_struct.h b/src/common/public/ubuntu/transfers/errors/hash_error_struct.h
+index ab98ab21..664a935e 100644
+--- a/src/common/public/ubuntu/transfers/errors/hash_error_struct.h
++++ b/src/common/public/ubuntu/transfers/errors/hash_error_struct.h
+@@ -102,17 +102,17 @@ class HashErrorStruct {
+     /*!
+         \internal
+     */
+-    QString _method = QString::null;
++    QString _method = QString();
+ 
+     /*!
+         \internal
+     */
+-    QString _expected = QString::null;
++    QString _expected = QString();
+ 
+     /*!
+         \internal
+     */
+-    QString _found = QString::null;
++    QString _found = QString();
+ };
+ 
+ }
+diff --git a/src/downloads/common/ubuntu/download_manager/download_state_struct.cpp b/src/downloads/common/ubuntu/download_manager/download_state_struct.cpp
+index e39d165e..6591294b 100644
+--- a/src/downloads/common/ubuntu/download_manager/download_state_struct.cpp
++++ b/src/downloads/common/ubuntu/download_manager/download_state_struct.cpp
+@@ -25,9 +25,9 @@ namespace DownloadManager {
+ 
+ DownloadStateStruct::DownloadStateStruct()
+     : _state(-1),
+-      _url(QString::null),
+-      _filePath(QString::null),
+-      _hash(QString::null),
++      _url(QString()),
++      _filePath(QString()),
++      _hash(QString()),
+       _metadata(QVariantMap()) {
+ 
+ }
+@@ -35,7 +35,7 @@ DownloadStateStruct::DownloadStateStruct()
+ DownloadStateStruct::DownloadStateStruct(int state, const QString& url, const QString& hash)
+     : _state(state),
+       _url(url),
+-      _filePath(QString::null),
++      _filePath(QString()),
+       _hash(hash),
+       _metadata(QVariantMap()) {
+ 
+@@ -132,7 +132,7 @@ DownloadStateStruct::getMetadata() const {
+ 
+ bool
+ DownloadStateStruct::isValid() {
+-    return _url != QString::null;
++    return _url != QString();
+ }
+ 
+ }  // DownloadManager
+diff --git a/src/downloads/common/ubuntu/download_manager/download_state_struct.h b/src/downloads/common/ubuntu/download_manager/download_state_struct.h
+index 5422a500..79a5334f 100644
+--- a/src/downloads/common/ubuntu/download_manager/download_state_struct.h
++++ b/src/downloads/common/ubuntu/download_manager/download_state_struct.h
+@@ -124,17 +124,17 @@ class DownloadStateStruct {
+     /*
+         \internal
+     */
+-    DownloadStateStruct(int state, const QString& url, const QString& hash=QString::null);
++    DownloadStateStruct(int state, const QString& url, const QString& hash=QString());
+ 
+     /*
+         \internal
+     */
+-    DownloadStateStruct(int state, const QString& url, const QString& filePath, const QString& hash=QString::null);
++    DownloadStateStruct(int state, const QString& url, const QString& filePath, const QString& hash=QString());
+ 
+     /*
+         \internal
+     */
+-    DownloadStateStruct(int state, const QString& url, const QString& filePath, const QString& hash=QString::null, const QVariantMap& metadata=QVariantMap());
++    DownloadStateStruct(int state, const QString& url, const QString& filePath, const QString& hash=QString(), const QVariantMap& metadata=QVariantMap());
+ 
+  private:
+ 
+@@ -146,17 +146,17 @@ class DownloadStateStruct {
+     /*
+         \internal
+     */
+-    QString _url = QString::null;
++    QString _url = QString();
+ 
+     /*
+         \internal
+     */
+-    QString _filePath = QString::null;
++    QString _filePath = QString();
+ 
+     /*
+         \internal
+     */
+-    QString _hash = QString::null;
++    QString _hash = QString();
+ 
+     /*
+         \internal
+diff --git a/src/downloads/priv/ubuntu/downloads/download.h b/src/downloads/priv/ubuntu/downloads/download.h
+index 67ba2910..14e374e7 100644
+--- a/src/downloads/priv/ubuntu/downloads/download.h
++++ b/src/downloads/priv/ubuntu/downloads/download.h
+@@ -128,7 +128,7 @@ class Download : public Transfer {
+     QVariantMap _metadata;
+ 
+  private:
+-    QString _destinationApp = QString::null;
++    QString _destinationApp = QString();
+     QMap<QString, QString> _headers;
+     QMap<QString, QObject*> _adaptors;
+ };
+diff --git a/src/downloads/priv/ubuntu/downloads/file_download.cpp b/src/downloads/priv/ubuntu/downloads/file_download.cpp
+index d90b82f7..e1c8afcc 100644
+--- a/src/downloads/priv/ubuntu/downloads/file_download.cpp
++++ b/src/downloads/priv/ubuntu/downloads/file_download.cpp
+@@ -643,7 +643,7 @@ FileDownload::writeDataUri() {
+     //
+     // this is due to a bug found in oxide:  https://bugs.launchpad.net/oxide/+bug/1413964 and should be removed
+     // whenever asap
+-    QString urlString = QString::null;
++    QString urlString = QString();
+     auto urlStringParts = _url.toString().split(DATA_URI_PREFIX);
+     if (urlStringParts.count() > 1) {
+         urlString = urlStringParts[1];
+@@ -654,7 +654,7 @@ FileDownload::writeDataUri() {
+     QByteArray data;
+     QMimeDatabase db;
+     QMimeType mimeType;  // init to an invalid type
+-    QString extension = QString::null;
++    QString extension = QString();
+     bool isBase64 = false;
+ 
+     foreach(const QMimeType& type, db.allMimeTypes()) {
+diff --git a/src/extractor/ubuntu/downloads/extractor/deflator.cpp b/src/extractor/ubuntu/downloads/extractor/deflator.cpp
+index 66306858..b57ee288 100644
+--- a/src/extractor/ubuntu/downloads/extractor/deflator.cpp
++++ b/src/extractor/ubuntu/downloads/extractor/deflator.cpp
+@@ -60,7 +60,7 @@ Deflator::Deflator(const QString& path, const QString& destination,
+ 
+ bool
+ Deflator::isError() const {
+-    return _error != QString::null;
++    return _error != QString();
+ }
+ 
+ QString
+diff --git a/src/extractor/ubuntu/downloads/extractor/deflator.h b/src/extractor/ubuntu/downloads/extractor/deflator.h
+index 86b8d332..aed6db8e 100644
+--- a/src/extractor/ubuntu/downloads/extractor/deflator.h
++++ b/src/extractor/ubuntu/downloads/extractor/deflator.h
+@@ -45,12 +45,12 @@ class Deflator : public QObject {
+     void setLastError(const QString& error);
+ 
+  protected:
+-    QString _path = QString::null;
+-    QString _destination = QString::null;
++    QString _path = QString();
++    QString _destination = QString();
+ 
+  private:
+     bool _isError = false;
+-    QString _error = QString::null;
++    QString _error = QString();
+ 
+ };
+ 
+diff --git a/src/extractor/ubuntu/downloads/extractor/factory.cpp b/src/extractor/ubuntu/downloads/extractor/factory.cpp
+index 6f2d9202..abbeb81a 100644
+--- a/src/extractor/ubuntu/downloads/extractor/factory.cpp
++++ b/src/extractor/ubuntu/downloads/extractor/factory.cpp
+@@ -45,7 +45,7 @@ Factory::deflator(const QString& id, const QString& path,
+ 
+ bool
+ Factory::isError() const {
+-    return _error != QString::null;
++    return _error != QString();
+ }
+ 
+ QString
+diff --git a/src/extractor/ubuntu/downloads/extractor/factory.h b/src/extractor/ubuntu/downloads/extractor/factory.h
+index 9b51e54f..630c6a9d 100644
+--- a/src/extractor/ubuntu/downloads/extractor/factory.h
++++ b/src/extractor/ubuntu/downloads/extractor/factory.h
+@@ -40,7 +40,7 @@ class Factory : public QObject {
+     QString lastError() const;
+ 
+  private:
+-    QString _error = QString::null;
++    QString _error = QString();
+ };
+ 
+ }
+diff --git a/tests/downloads/daemon/test_download.h b/tests/downloads/daemon/test_download.h
+index 7af84f10..7f3734d3 100644
+--- a/tests/downloads/daemon/test_download.h
++++ b/tests/downloads/daemon/test_download.h
+@@ -196,15 +196,15 @@ class TestDownload: public BaseTestCase {
+     void testDataUriPostProcessing();
+ 
+  private:
+-    QString _id = QString::null;
+-    QString _appId = QString::null;
++    QString _id = QString();
++    QString _appId = QString();
+     bool _isConfined = false;
+-    QString _rootPath = QString::null;
++    QString _rootPath = QString();
+     QVariantMap _metadata;
+     QMap<QString, QString> _headers;
+-    QString _path = QString::null;
++    QString _path = QString();
+     QUrl _url;
+-    QString _algo = QString::null;
++    QString _algo = QString();
+     MockNetworkSession* _networkSession = nullptr;
+     MockRequestFactory* _reqFactory = nullptr;
+     MockProcessFactory* _processFactory = nullptr;
