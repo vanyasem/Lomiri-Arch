@@ -20,7 +20,7 @@ source=('git+https://github.com/ubports/ubuntu-ui-toolkit.git#branch=bionic'
 sha256sums=('SKIP'
             '3b8a3165161d5c695a7f3f8f3b08a3de11451b8f52276b5b1856730f0aa557c9'
             '5851aec4b72ddd1556494ab188c6de64ccaa77a1b574a0bd2631916300ac242a'
-            '537d3be7d2d379709de7b28a2bae65ec3fd1af8f023d5a10440f17a63e309600')
+            '3933506b2f519ad94c0184b00ff7f40f5716eba79057b79a3dc08e098ae52f99')
 
 BUILDENV+=('!check') # It needs a DISPLAY, and I am too tired to set it up now
 
