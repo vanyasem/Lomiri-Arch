@@ -14,12 +14,6 @@ sha256sums=('f5220a583f559f31f2b8592068f59ad0620e46d1e6bafc0d5d46da6771ecd472')
 
 BUILDENV+=('!check') # Tests can only be run AFTER the package is installed (maybe some prefix exists?)
 
-prepare() {
-  cd ${pkgname}-${pkgver}
-
-  # patch -Np1 -i "${srcdir}/Gtest.patch"
-}
-
 build() {
   cd ${pkgname}-${pkgver}
   qmake
