@@ -3,7 +3,7 @@
 pkgname=ubuntu-app-launch-git
 _pkgname=ubuntu-app-launch
 pkgver=r3022.bde4305
-pkgrel=3
+pkgrel=4
 pkgdesc='Session init system job for Launching Applications'
 url='https://github.com/ubports/ubuntu-app-launch'
 arch=(x86_64 i686 armv7h aarch64)
@@ -11,7 +11,7 @@ license=(GPL)
 conflicts=(ubuntu-app-launch)
 provides=(ubuntu-app-launch)
 depends=(zeitgeist gobject-introspection lttng-ust mir libertine-git unity-api-git properties-cpp curl)
-makedepends=(git cmake  cmake-extras-git dbus-test-runner gmock)
+makedepends=(git cmake  cmake-extras-git dbus-test-runner gmock lcov gcovr)
 source=('git+https://github.com/ubports/ubuntu-app-launch.git'
         'FormatTruncation.patch'
         'Gtest.patch')
@@ -36,6 +36,8 @@ pkgver() {
 
 build() {
   cd ${_pkgname}
+  sed -i 's/-std=gnu99/-std=gnu99 -Wno-deprecated-declarations/g' CMakeLists.txt
+  sed -i 's/-std=c++11/-std=c++11 -Wno-deprecated-declarations/g' CMakeLists.txt
   cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" -DCMAKE_INSTALL_LIBEXECDIR="lib/" .
   make
 }

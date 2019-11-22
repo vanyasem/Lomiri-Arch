@@ -1,7 +1,7 @@
 pkgbase = ubuntu-app-launch-git
 	pkgdesc = Session init system job for Launching Applications
 	pkgver = r3022.bde4305
-	pkgrel = 3
+	pkgrel = 4
 	url = https://github.com/ubports/ubuntu-app-launch
 	arch = x86_64
 	arch = i686
@@ -13,6 +13,8 @@ pkgbase = ubuntu-app-launch-git
 	makedepends = cmake-extras-git
 	makedepends = dbus-test-runner
 	makedepends = gmock
+	makedepends = lcov
+	makedepends = gcovr
 	depends = zeitgeist
 	depends = gobject-introspection
 	depends = lttng-ust
