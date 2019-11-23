@@ -10,7 +10,7 @@ arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL)
 conflicts=(qtmir)
 provides=(qtmir)
-depends=(qt5-base qt5-quickcontrols qt5-sensors mir process-cpp ubuntu-app-launch-git gsettings-qt libqtdbustest-git libqtdbusmock-git content-hub-git url-dispatcher-git glm valgrind)
+depends=(qt5-base qt5-quickcontrols qt5-sensors mir process-cpp ubuntu-app-launch-git gsettings-qt-git libqtdbustest-git libqtdbusmock-git content-hub-git url-dispatcher-git glm valgrind)
 makedepends=(git cmake cmake-extras-git gtest)
 source=('git+https://github.com/ubports/qtmir.git'
         'NoCatchValue.patch'
