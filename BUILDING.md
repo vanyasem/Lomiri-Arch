@@ -42,7 +42,7 @@ Server = https://unity8.mynameisivan.ru/$repo/os/$arch
 _or_
 ```
 [unity8]
-SigLevel = Optional TrustAll
+SigLevel = Never
 Server = file:///your/path/$repo/os/$arch
 ```
 
