@@ -13,7 +13,7 @@ git submodule update
 
 You can compile the packages yourself. Dependencies: `sudo pacman -S git binutils patch make`
 
-There is a helper script (`build-packages.sh`) in the root of this repository that will build all the packages for you in the right order (some packages are required to build other packages, and you cannot satisfy this dependency, as it's not in Arch repos yet).
+There is a helper script (`build-packages.sh`) in the root of this repository that will build all the packages for you in the right order (some packages are required to build other packages, and they are not in Arch repos yet).
 
 ```
 ./build-packages.sh -b
@@ -53,8 +53,8 @@ _Don't forget to configure PACKAGER in /etc/makepkg.conf_
 ```
 sudo pacman -S devtools
 mkdir chroot-x86_64
-sudo mkdir -p /var/cache/pacman-x86_64/pkg/
-sudo mkarchroot -C /etc/pacman.conf -M /etc/makepkg.conf -c /var/cache/pacman-x86_64/pkg/ ./chroot-x86_64/root base base-devel git
+sudo mkdir -p cache/pacman-x86_64/pkg/
+sudo mkarchroot -C /etc/pacman.conf -M /etc/makepkg.conf -c cache/pacman-x86_64/pkg/ ./chroot-x86_64/root base base-devel
 mkdir -p unity8 sources logs PKGBUILDs
 ```
 
@@ -71,9 +71,8 @@ cd ..
 
 Sync the databases:
 ```
-sudo arch-chroot chroot-x86_64/root
+arch-nspawn chroot-x86_64/root
 pacman -Syyu
-pacman -S python python2 python-setuptools python2-setuptools # Those are needed // TODO IVAN MAYBE MAKE METAPACKAGE WITH CI DEPS?
 exit
 ```
 
