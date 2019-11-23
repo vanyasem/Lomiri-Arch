@@ -11,9 +11,9 @@ git submodule init
 git submodule update
 ```
 
-You can compile the packages yourself. Dependencies: `sudo pacman -S git binutils patch make`
+You can [compile the packages](https://wiki.archlinux.org/index.php/Makepkg#Usage) yourself by running `makepkg -sic` in their folders.
 
-There is a helper script (`build-packages.sh`) in the root of this repository that will build all the packages for you in the right order (some packages are required to build other packages, and they are not in Arch repos yet).
+There is a helper script (`build-packages.sh`) in the root of this repository that will build all the packages for you in the right order (some packages are required to build other packages, and they are not in official Arch repos yet).
 
 ```
 ./build-packages.sh -b
@@ -32,7 +32,7 @@ You might want to take a look at [building ARM packgages on `x86_64`](BUILDING-A
 
 Add the package repository to `/etc/pacman.conf`:
 
-_You can add my repository, or you could specify your own local repo that you will create in the next step. Read more [on the wiki](https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Custom_local_repository). You have to trust my GPG key on the host system prior to building the chroot if you decide to go with my server._
+_You can add my repository, or you could specify your own local repo that you will create in the next step. Read more [on the wiki](https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Custom_local_repository). You have to [trust my GPG key](https://github.com/vanyasem/Unity8-Arch#installation) on the host system prior to building the chroot if you decide to go with my server. We disable signature checking on the local repo because signatures will change as we rebuild packages, and guzuta fails to refresh the pacman database properly._
 
 ```
 [unity8]
@@ -42,7 +42,7 @@ Server = https://unity8.mynameisivan.ru/$repo/os/$arch
 _or_
 ```
 [unity8]
-SigLevel = Required
+SigLevel = Optional TrustAll
 Server = file:///your/path/$repo/os/$arch
 ```
 
