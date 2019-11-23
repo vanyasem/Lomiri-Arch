@@ -1,0 +1,22 @@
+diff --git a/src/platforms/mirserver/miral/persist_display_config.cpp b/src/platforms/mirserver/miral/persist_display_config.cpp
+index 48106ba3..0451b098 100644
+--- a/src/platforms/mirserver/miral/persist_display_config.cpp
++++ b/src/platforms/mirserver/miral/persist_display_config.cpp
+@@ -73,6 +73,17 @@ struct DisplayConfigurationObserver : mg::DisplayConfigurationObserver
+     void catastrophic_configuration_error(
+         std::shared_ptr<mg::DisplayConfiguration const> const& /*failed_fallback*/,
+         std::exception const& /*error*/) override {}
++
++    void base_configuration_updated(std::shared_ptr<mg::DisplayConfiguration const> const&) override {}
++
++    void session_configuration_applied(std::shared_ptr<mir::scene::Session> const&,
++                                       std::shared_ptr<mg::DisplayConfiguration> const&) override {}
++
++    void session_configuration_removed(std::shared_ptr<mir::scene::Session> const&) override  {}
++
++    void configuration_updated_for_session(
++           std::shared_ptr<mir::scene::Session> const&,
++            std::shared_ptr<mg::DisplayConfiguration const> const&) override {}
+ };
+ #else
+ struct DisplayConfigurationObserver { };

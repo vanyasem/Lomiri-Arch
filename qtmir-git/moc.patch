@@ -1,0 +1,18 @@
+diff --git a/src/modules/Unity/Application/sharedwakelock.cpp b/src/modules/Unity/Application/sharedwakelock.cpp
+index 9ed0135c..53400cae 100644
+--- a/src/modules/Unity/Application/sharedwakelock.cpp
++++ b/src/modules/Unity/Application/sharedwakelock.cpp
+@@ -168,7 +168,6 @@ private:
+     Q_DISABLE_COPY(Wakelock)
+ };
+ 
+-#include "sharedwakelock.moc"
+ 
+ /**
+  * @brief SharedWakelock - allow a single wakelock instance to be shared between multiple owners
+@@ -229,3 +228,5 @@ void SharedWakelock::release(const QObject *caller)
+ }
+ 
+ } // namespace qtmir
++
++#include "sharedwakelock.moc"

@@ -1,0 +1,37 @@
+diff --git a/src/modules/Unity/Application/mirsurface.cpp b/src/modules/Unity/Application/mirsurface.cpp
+index 2b9cf848..bccebb17 100644
+--- a/src/modules/Unity/Application/mirsurface.cpp
++++ b/src/modules/Unity/Application/mirsurface.cpp
+@@ -31,9 +31,10 @@
+ 
+ // Mir
+ #include <mir/geometry/rectangle.h>
+-#include <mir/scene/surface.h>
+-#include <mir/scene/surface_observer.h>
+-#include <mir/version.h>
++#include <mirserver/mir/scene/surface.h>
++#include <mirserver/mir/scene/surface_observer.h>
++#include <mirserver/mir/version.h>
++#include <mirserver/mir/input/input_reception_mode.h>
+ #include <mir_toolkit/cursors.h>
+ #include <mir/graphics/buffer.h>
+ #include <mir/graphics/texture.h>
+@@ -98,7 +99,7 @@ public:
+ 
+     void alpha_set_to(mir::scene::Surface const*, float) override {}
+     void transformation_set_to(mir::scene::Surface const*, glm::mat4 const&) override {}
+-    void reception_mode_set_to(mir::scene::Surface const*, mir::input::InputReceptionMode) override {}
++    void reception_mode_set_to(mir::scene::Surface const*, mir::input::InputReceptionMode) {}
+     void cursor_image_set_to(mir::scene::Surface const*, mir::graphics::CursorImage const&) override;
+     void orientation_set_to(mir::scene::Surface const*, MirOrientation) override {}
+     void client_surface_close_requested(mir::scene::Surface const*) override {}
+@@ -107,6 +108,9 @@ public:
+     void renamed(mir::scene::Surface const*, char const * name) override;
+     void cursor_image_removed(mir::scene::Surface const*) override;
+ 
++    void depth_layer_set_to(mir::scene::Surface const*, MirDepthLayer) {}
++    void application_id_set_to(mir::scene::Surface const*, std::string const&) {}
++
+ #if MIR_SERVER_VERSION >= MIR_VERSION_NUMBER(0, 25, 0)
+     void placed_relative(mir::scene::Surface const*, mir::geometry::Rectangle const& placement) override;
+ #endif

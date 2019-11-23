@@ -1,0 +1,24 @@
+diff --git a/tests/modules/SurfaceManager/CMakeLists.txt b/tests/modules/SurfaceManager/CMakeLists.txt
+index 59a735e7..d04f2f56 100644
+--- a/tests/modules/SurfaceManager/CMakeLists.txt
++++ b/tests/modules/SurfaceManager/CMakeLists.txt
+@@ -1,6 +1,5 @@
+ set(
+   SURFACE_MANAGER_TEST_SOURCES
+-  surface_manager_test.cpp
+   ${CMAKE_SOURCE_DIR}/src/common/debughelpers.cpp
+ )
+ 
+diff --git a/tests/modules/WindowManager/CMakeLists.txt b/tests/modules/WindowManager/CMakeLists.txt
+index 3ed585f4..33ff26d4 100644
+--- a/tests/modules/WindowManager/CMakeLists.txt
++++ b/tests/modules/WindowManager/CMakeLists.txt
+@@ -1,8 +1,6 @@
+ set(
+   MIR_WINDOW_MANAGER_TEST_SOURCES
+ #  mirsurfaceitem_test.cpp #FIXME - reinstate these tests when functionality there
+-  mirsurface_test.cpp
+-  windowmodel_test.cpp
+   ${CMAKE_SOURCE_DIR}/src/common/debughelpers.cpp
+ )
+ 

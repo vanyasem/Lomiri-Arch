@@ -1,0 +1,29 @@
+diff --git a/tests/framework/mock_mir_session.h b/tests/framework/mock_mir_session.h
+index ea9aec5b..5f74d229 100644
+--- a/tests/framework/mock_mir_session.h
++++ b/tests/framework/mock_mir_session.h
+@@ -50,8 +50,12 @@ struct MockSession : public Session
+     MOCK_METHOD2(create_surface,
+                  frontend::SurfaceId(SurfaceCreationParameters const&,
+                                      std::shared_ptr<frontend::EventSink> const&));
++    MOCK_METHOD2(create_surface,
++                 std::shared_ptr<Surface>(SurfaceCreationParameters const&,
++                                     std::shared_ptr<scene::SurfaceObserver> const&));
+     MOCK_METHOD1(destroy_surface, void (frontend::SurfaceId));
+     MOCK_METHOD1(destroy_surface, void (std::weak_ptr<Surface> const& surface));
++    MOCK_METHOD1(destroy_surface, void (std::shared_ptr<Surface> const& surface));
+ 
+     MOCK_METHOD0(hide, void());
+     MOCK_METHOD0(show, void());
+@@ -66,8 +70,9 @@ struct MockSession : public Session
+     std::shared_ptr<Surface> surface_after(std::shared_ptr<Surface> const&) const override;
+ 
+     MOCK_CONST_METHOD1(get_buffer_stream, std::shared_ptr<frontend::BufferStream>(frontend::BufferStreamId));
+-    MOCK_METHOD1(destroy_buffer_stream, void(frontend::BufferStreamId));
+-    MOCK_METHOD1(create_buffer_stream, frontend::BufferStreamId(graphics::BufferProperties const&));
++    MOCK_METHOD1(destroy_buffer_stream, void(std::shared_ptr<frontend::BufferStream> const&));
++    MOCK_METHOD1(create_buffer_stream,
++                 std::shared_ptr<compositor::BufferStream> (graphics::BufferProperties const&));
+     void configure_streams(Surface&, std::vector<shell::StreamSpecification> const&) override;
+ 
+     void send_error(ClientVisibleError const&) override;
