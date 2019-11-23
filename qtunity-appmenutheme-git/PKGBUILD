@@ -1,0 +1,34 @@
+# Maintainer: Ivan Semkin (ivan at semkin dot ru)
+
+pkgname=qtunity-appmenutheme-git
+_pkgname=qtunity-appmenutheme
+pkgver=r2204.484e3e5
+pkgrel=1
+pkgdesc='Qt platform theme for exported application menus'
+url='https://gitlab.com/ubports/core/qtunity-appmenutheme'
+arch=(x86_64 i686 armv7h aarch64)
+license=(LGPL GPL)
+conflicts=(qtunity-appmenutheme)
+provides=(qtunity-appmenutheme)
+depends=(qt5-base)
+makedepends=(git)
+checkdepends=()
+source=('git+https://gitlab.com/ubports/core/qtunity-appmenutheme')
+sha256sums=('SKIP')
+
+pkgver() {
+  cd ${_pkgname}
+  echo "r$(git rev-list --count HEAD).$(git describe --always)"
+}
+
+build() {
+  cd ${_pkgname}
+  qmake qtunityappmenu.pro
+  make
+}
+
+package() {
+  cd ${_pkgname}
+  make INSTALL_ROOT="${pkgdir}/" install
+}
+# vim:set ts=2 sw=2 et:

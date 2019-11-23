@@ -1,0 +1,20 @@
+pkgbase = qtunity-appmenutheme-git
+	pkgdesc = Qt platform theme for exported application menus
+	pkgver = r2204.484e3e5
+	pkgrel = 1
+	url = https://gitlab.com/ubports/core/qtunity-appmenutheme
+	arch = x86_64
+	arch = i686
+	arch = armv7h
+	arch = aarch64
+	license = LGPL
+	license = GPL
+	makedepends = git
+	depends = qt5-base
+	provides = qtunity-appmenutheme
+	conflicts = qtunity-appmenutheme
+	source = git+https://gitlab.com/ubports/core/qtunity-appmenutheme
+	sha256sums = SKIP
+
+pkgname = qtunity-appmenutheme-git
+
