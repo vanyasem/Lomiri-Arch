@@ -21,7 +21,7 @@ Start off by reading the [AUR](https://wiki.archlinux.org/index.php/Aur) wiki pa
 
 All packages are listed in the [STATUS](STATUS.md) of this repository. They split into 2 categories: `cmake` and `qmake` ones.
 
-Try to build it, make a PKGBUILD for it. Even if it fails to build, PR the PKGBUILD here, and open an issue on the upstream repository. Don't forget to include that issue in your PR.
+Try to build one of them, make a PKGBUILD for it. Even if it fails to build, PR the PKGBUILD here. Open an issue on the upstream repository if you think it's a bug. Don't forget to include the link to that issue in your PR.
 
 ### Testing
 
@@ -31,6 +31,6 @@ If something doesn't feel right, open an issue both upstream and in this reposit
 
 ### Patching
 
-If you have some coding knowledge, you can take a look at the issues list in the [STATUS](STATUS.md).
+If you have some coding knowledge, you can take a look at the issues list in the [STATUS](STATUS.md). There are also some undocumented issues to look for in [BROKEN.txt](BROKEN.txt).
 
 Try to fix as many things as possible. PR a patch upstream, and PR a patch in this repository. A packager will include your patch at compile time until the upstream PR is merged.
