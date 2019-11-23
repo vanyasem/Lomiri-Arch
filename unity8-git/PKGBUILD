@@ -2,15 +2,15 @@
 
 pkgname=unity8-git
 _pkgname=unity8
-pkgver=r17979.87aa39508
-pkgrel=4
+pkgver=r17991.18c3f6f3c
+pkgrel=1
 pkgdesc='Unity 8 shell'
 url='https://github.com/ubports/unity8'
 arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL3)
 conflicts=(unity8)
 provides=(unity8)
-depends=(lcov gcovr geonames-git unity-api-git qmenumodel-git gnome-desktop ubuntu-app-launch-git ubuntu-ui-toolkit-git libqtdbustest-git libqtdbusmock-git system-settings-git indicator-network-git libusermetrics-git liblightdm-qt5 settings-components-git unity7-schemas gsettings-ubuntu-touch-schemas-git ubuntu-wallpapers qtmir-git)
+depends=(lcov gcovr geonames-git unity-api-git qmenumodel-git gnome-desktop ubuntu-app-launch-git ubuntu-ui-toolkit-git libqtdbustest-git libqtdbusmock-git system-settings-git indicator-network-git libusermetrics-git liblightdm-qt5 settings-components-git unity7-schemas gsettings-ubuntu-touch-schemas-git ubuntu-wallpapers)
 makedepends=(git cmake cmake-extras-git doxygen)
 checkdepends=(xorg-server-xvfb)
 source=('git+https://github.com/ubports/unity8.git'
@@ -18,7 +18,7 @@ source=('git+https://github.com/ubports/unity8.git'
         'NoDpkgParse.patch')
 sha256sums=('SKIP'
             'ba26a1235461f531f9961a306da22593db92d3bd08a84139ef4ae2d042a2b1cc'
-            '1523c79cdb8e93deea9cb039665afee61d55d1a3bf69d7499d3338eb9b9397f7')
+            'ef149765d0c8c5f2366d7bab4d7b3084014b57258f759ed41d7c0efd1c75f69e')
 
 BUILDENV+=('!check') # https://paste.ubuntu.com/p/2d33RJX4W8/
 
