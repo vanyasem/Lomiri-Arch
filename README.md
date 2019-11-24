@@ -33,9 +33,9 @@ Refresh the local pacman database:
 sudo pacman -Syyu
 ```
 
-Install Unity8:
+Install Unity8 and some important packages _(TODO: metapackage)_:
 ```
-sudo pacman -S unity8-git
+sudo pacman -S unity8-git qt5-wayland qterminal qtmir-git
 ```
 
 Skip the greeter (not used on desktops, broken):
@@ -49,9 +49,9 @@ Launch Unity8 with (either from a tty or from a terminal):
 MIR_SERVER_CURSOR=null QT_QPA_PLATFORM=mirserver unity8
 ```
 
-It will not work on nvidia proprietary, it's a limitation of Mir.
+It should not work on nvidia proprietary, it's a limitation of Mir.
 
-As it's an alpha build, it takes around 5-10 minutes to start.
+As it's an alpha build, it takes around 5-10 minutes to start (please be patient).
 
 ## Building
 
