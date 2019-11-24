@@ -8,6 +8,7 @@ pkgbase = qdjango-git
 	arch = armv7h
 	arch = aarch64
 	license = LGPL2.1
+	makedepends = git
 	depends = qt5-base
 	provides = qdjango
 	conflicts = qdjango
