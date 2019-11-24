@@ -18,18 +18,19 @@ Builds are provided for `x86_64`.
 Add the Unity8 repository to `/etc/pacman.conf`:
 ```
 [unity8]
-SigLevel = Required
+SigLevel = Required TrustAll
 Server = https://unity8.mynameisivan.ru/$repo/os/$arch
-```
-
-Trust my GPG key that's used to sign packages:
-```
-sudo pacman-key --recv-keys --keyserver hkps://hkps.pool.sks-keyservers.net F3A621DFD4328CC4
-sudo pacman-key --lsign-key F3A621DFD4328CC4
 ```
 
 Refresh the local pacman database:
 ```
+sudo pacman -Syyu
+```
+
+If previous command failed to import my GPG key, do it manually:
+```
+sudo pacman-key --recv-keys --keyserver hkps://hkps.pool.sks-keyservers.net F3A621DFD4328CC4
+sudo pacman-key --lsign-key F3A621DFD4328CC4
 sudo pacman -Syyu
 ```
 
