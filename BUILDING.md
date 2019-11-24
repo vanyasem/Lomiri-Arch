@@ -32,19 +32,21 @@ You might want to take a look at [building ARM packgages on `x86_64`](BUILDING-A
 
 Add the package repository to `/etc/pacman.conf`:
 
-_You can add my repository, or you could specify your own local repo that you will create in the next step. Read more [on the wiki](https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Custom_local_repository). You have to [trust my GPG key](https://github.com/vanyasem/Unity8-Arch#installation) on the host system prior to building the chroot if you decide to go with my server. We disable signature checking on the local repo because signatures will change as we rebuild packages, and guzuta fails to refresh the pacman database properly._
+You can add my repository, or you could specify your own local repo that you will create in the next step. Read more [on the wiki](https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Custom_local_repository). 
 
+_You have to [trust my GPG key](https://github.com/vanyasem/Unity8-Arch#installation) on the host system prior to building the chroot if you decide to go with my server:_
 ```
 [unity8]
 SigLevel = Required
 Server = https://unity8.mynameisivan.ru/$repo/os/$arch
 ```
-_or_
+**or**
+
+_You can't use a local path inside the chroot, so you will need to set up a simple webserver. `python -m http.server 8000` will do._
 ```
-LocalFileSigLevel = Never
 [unity8]
-SigLevel = Never
-Server = file:///your/path/$repo/os/$arch
+SigLevel = Required
+Server = http://localhost:8000/$repo/os/$arch
 ```
 
 Assemble the build enviroment:
