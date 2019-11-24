@@ -42,7 +42,7 @@ Server = https://unity8.mynameisivan.ru/$repo/os/$arch
 ```
 **or**
 
-_You can't use a local path inside the chroot, so you will need to set up a simple webserver. `python -m http.server 8000` will do._
+_You can't use a local path inside the chroot, so you will need to set up a simple webserver (`python -m http.server 8000` will do):_
 ```
 [unity8]
 SigLevel = Required
