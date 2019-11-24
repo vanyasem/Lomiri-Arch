@@ -15,8 +15,6 @@ _EOF
   exit 0
 }
 
-#sudo pacman -S noto-fonts
-
 cmd_build() {
   sudo test true
   PACKAGES=$(cat projects.list)

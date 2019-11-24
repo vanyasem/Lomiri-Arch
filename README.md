@@ -18,14 +18,8 @@ Builds are provided for `x86_64`.
 Add the Unity8 repository to `/etc/pacman.conf`:
 ```
 [unity8]
-SigLevel = Required
+SigLevel = Required TrustAll
 Server = https://unity8.mynameisivan.ru/$repo/os/$arch
-```
-
-Trust my GPG key that's used to sign packages:
-```
-sudo pacman-key --recv-keys --keyserver hkps://hkps.pool.sks-keyservers.net F3A621DFD4328CC4
-sudo pacman-key --lsign-key F3A621DFD4328CC4
 ```
 
 Refresh the local pacman database:
@@ -33,9 +27,16 @@ Refresh the local pacman database:
 sudo pacman -Syyu
 ```
 
-Install Unity8:
+If previous command failed to import my GPG key, do it manually:
 ```
-sudo pacman -S unity8-git
+sudo pacman-key --recv-keys --keyserver hkps://hkps.pool.sks-keyservers.net F3A621DFD4328CC4
+sudo pacman-key --lsign-key F3A621DFD4328CC4
+sudo pacman -Syyu
+```
+
+Install Unity8 and some important packages _(TODO: metapackage)_:
+```
+sudo pacman -S unity8-git qt5-wayland qterminal qtmir-git
 ```
 
 Skip the greeter (not used on desktops, broken):
@@ -49,9 +50,9 @@ Launch Unity8 with (either from a tty or from a terminal):
 MIR_SERVER_CURSOR=null QT_QPA_PLATFORM=mirserver unity8
 ```
 
-It will not work on nvidia proprietary, it's a limitation of Mir.
+It should not work on nvidia proprietary, it's a limitation of Mir.
 
-As it's an alpha build, it takes around 5-10 minutes to start.
+As it's an alpha build, it takes around 5-10 minutes to start (please be patient).
 
 ## Building
 
@@ -63,7 +64,7 @@ Please follow the [contributing guide](CONTRIBUTING.md).
 
 ## License
 
-Copyright (C) 2018 Ivan Semkin
+Copyright (C) 2018-2019 Ivan Semkin
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 

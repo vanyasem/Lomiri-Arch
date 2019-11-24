@@ -14,7 +14,6 @@ perl-rpc-xml
 python2-flask-script
 net-cpp-git
 zmqpp
-systemtap
 lttng-tools
 url-dispatcher-git
 persistent-cache-cpp-bzr
