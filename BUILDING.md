@@ -3,6 +3,12 @@ Building
 
 You can build the packages on [Windows via WSL](https://github.com/yuk7/ArchWSL) if you wish.
 
+Trust a few GPG keys:
+```
+gpg --recv-keys E932D120BC2AEC444E558F0106CA9F5D1DCF2659 # ofono
+gpg --recv-keys 4DE16D68FDBFFFB8 # systemtap
+```
+
 Clone this repo's PKGBUILDs:
 ```
 git clone https://github.com/vanyasem/Unity8-Arch.git
@@ -19,22 +25,13 @@ There is a helper script (`build-packages.sh`) in the root of this repository th
 ./build-packages.sh -b
 ```
 
-You will also need to trust a few GPG keys:
-```
-# ofono
-sudo pacman-key --recv-keys --keyserver hkps://hkps.pool.sks-keyservers.net E932D120BC2AEC444E558F0106CA9F5D1DCF2659
-sudo pacman-key --lsign-key E932D120BC2AEC444E558F0106CA9F5D1DCF2659
-
-# systemtap
-sudo pacman-key --recv-keys --keyserver hkps://hkps.pool.sks-keyservers.net 4DE16D68FDBFFFB8
-sudo pacman-key --lsign-key 4DE16D68FDBFFFB8
-```
-
 ## (Advanced) Configure a [local repository](https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Custom_local_repository)
 
 The following instructions assume that you're building `x86_64` packages on a `x86_64` host.
 
 You might want to take a look at [building ARM packgages on `x86_64`](BUILDING-ARM.md), and [building `i686` packgages on `x86_64`](BUILDING-I686.md).
+
+First of all, trust a few GPG keys mentioned above in the Building section of this document.
 
 Add the package repository to `/etc/pacman.conf`:
 
@@ -102,19 +99,6 @@ arch-nspawn ./chroot-x86_64/root nano /etc/pacman.conf
 Sync the databases inside the chroot:
 ```
 arch-nspawn ./chroot-x86_64/root pacman -Syyu
-```
-
-Trust the keys mentioned in the Building section of this file from inside the chroot:
-```
-arch-nspawn ./chroot-x86_64/root
-
-# ofono
-sudo pacman-key --recv-keys --keyserver hkps://hkps.pool.sks-keyservers.net E932D120BC2AEC444E558F0106CA9F5D1DCF2659
-sudo pacman-key --lsign-key E932D120BC2AEC444E558F0106CA9F5D1DCF2659
-
-# systemtap
-sudo pacman-key --recv-keys --keyserver hkps://hkps.pool.sks-keyservers.net 4DE16D68FDBFFFB8
-sudo pacman-key --lsign-key 4DE16D68FDBFFFB8
 ```
 
 Build the packages:
