@@ -36,8 +36,6 @@ The following instructions assume that you're building `x86_64` packages on a `x
 
 You might want to take a look at [building ARM packgages on `x86_64`](BUILDING-ARM.md), and [building `i686` packgages on `x86_64`](BUILDING-I686.md).
 
-First of all, trust the GPG keys mentioned above in the Building section.
-
 Add the package repository to `/etc/pacman.conf`:
 
 _Comment it out for now, as it doesn't exist yet:_
@@ -76,7 +74,7 @@ cargo install guzuta
 
 Configure guzuta:
 ```
-cat > .guzuta.yml
+echo "
 name: unity8
 package_key: YOUR_GPG_KEY
 repo_key: YOUR_GPG_KEY
@@ -86,6 +84,7 @@ pkgbuild: PKGBUILDs
 builds:
   x86_64:
     chroot: ./chroot-x86_64
+" > .guzuta.yml
 ```
 
 Set up a webserver (any will do):
@@ -102,7 +101,20 @@ arch-nspawn ./chroot-x86_64/root nano /etc/pacman.conf
 
 Sync the databases inside the chroot:
 ```
-arch-nspawn chroot-x86_64/root pacman -Syyu
+arch-nspawn ./chroot-x86_64/root pacman -Syyu
+```
+
+Trust the keys mentioned in the Building section of this file from inside the chroot:
+```
+arch-nspawn ./chroot-x86_64/root
+
+# ofono
+sudo pacman-key --recv-keys --keyserver hkps://hkps.pool.sks-keyservers.net E932D120BC2AEC444E558F0106CA9F5D1DCF2659
+sudo pacman-key --lsign-key E932D120BC2AEC444E558F0106CA9F5D1DCF2659
+
+# systemtap
+sudo pacman-key --recv-keys --keyserver hkps://hkps.pool.sks-keyservers.net 4DE16D68FDBFFFB8
+sudo pacman-key --lsign-key 4DE16D68FDBFFFB8
 ```
 
 Build the packages:
