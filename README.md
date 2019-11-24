@@ -47,7 +47,7 @@ touch $HOME/.config/ubuntu-system-settings/wizard-has-run
 
 Launch Unity8 with (either from a tty or from a terminal):
 ```
-MIR_SERVER_CURSOR=null QT_QPA_PLATFORM=mirserver unity8
+QT_WAYLAND_DISABLE_WINDOWDECORATION=true MIR_SERVER_CURSOR=null QT_QPA_PLATFORM=mirserver unity8
 ```
 
 It should not work on nvidia proprietary, it's a limitation of Mir.
