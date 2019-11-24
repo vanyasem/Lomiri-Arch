@@ -21,7 +21,13 @@ There is a helper script (`build-packages.sh`) in the root of this repository th
 
 You will also need to trust a few GPG keys:
 ```
-gpg --recv-keys E932D120BC2AEC444E558F0106CA9F5D1DCF2659 # For ofono
+# ofono
+sudo pacman-key --recv-keys --keyserver hkps://hkps.pool.sks-keyservers.net E932D120BC2AEC444E558F0106CA9F5D1DCF2659
+sudo pacman-key --lsign-key E932D120BC2AEC444E558F0106CA9F5D1DCF2659
+
+# systemtap
+sudo pacman-key --recv-keys --keyserver hkps://hkps.pool.sks-keyservers.net 4DE16D68FDBFFFB8
+sudo pacman-key --lsign-key 4DE16D68FDBFFFB8
 ```
 
 ## (Advanced) Configure a [local repository](https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Custom_local_repository)
@@ -29,6 +35,8 @@ gpg --recv-keys E932D120BC2AEC444E558F0106CA9F5D1DCF2659 # For ofono
 The following instructions assume that you're building `x86_64` packages on a `x86_64` host.
 
 You might want to take a look at [building ARM packgages on `x86_64`](BUILDING-ARM.md), and [building `i686` packgages on `x86_64`](BUILDING-I686.md).
+
+First of all, trust the GPG keys mentioned above in the Building section.
 
 Add the package repository to `/etc/pacman.conf`:
 
