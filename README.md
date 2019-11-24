@@ -13,7 +13,7 @@ Builds are provided for `x86_64`.
 - [Telegram News Channel](https://t.me/unity8_port_notes)
 - [Project's Patreon](https://www.patreon.com/vanyasem)
 
-## Live USB images
+## Live USB image
 
 **You can grab a pre-made iso image from https://unity8.mynameisivan.ru/iso/**
 
