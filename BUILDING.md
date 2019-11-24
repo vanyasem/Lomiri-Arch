@@ -30,9 +30,9 @@ The following instructions assume that you're building `x86_64` packages on a `x
 
 You might want to take a look at [building ARM packgages on `x86_64`](BUILDING-ARM.md), and [building `i686` packgages on `x86_64`](BUILDING-I686.md).
 
-Add the package repository to pacman:
+Add the package repository to `/etc/pacman.conf`:
 
-_Add an entry for you own local server to `/etc/pacman.conf`, but comment it out for now, as it doesn't exist yet:_
+_Comment it out for now, as it doesn't exist yet:_
 ```
 #[unity8]
 #SigLevel = Required
@@ -41,12 +41,12 @@ _Add an entry for you own local server to `/etc/pacman.conf`, but comment it out
 
 Assemble the build enviroment:
 
-_Don't forget to configure PACKAGER in /etc/makepkg.conf_
+_Don't forget to configure `PACKAGER` in `/etc/makepkg.conf`_
 
 ```
 sudo pacman -S devtools
 mkdir -p chroot-x86_64 cache/pacman-x86_64/pkg unity8 sources logs PKGBUILDs
-sudo mkarchroot -C /etc/pacman.conf -M /etc/makepkg.conf -c $(pwd)/cache/pacman-x86_64/pkg/ ./chroot-x86_64/root base base-devel
+sudo mkarchroot -C /etc/pacman.conf -M /etc/makepkg.conf -c $(pwd)/cache/pacman-x86_64/pkg/ ./chroot-x86_64/root base base-devel nano
 ```
 
 _Your Arch repository will settle in the `unity8` folder._
@@ -58,11 +58,6 @@ git clone https://github.com/vanyasem/Unity8-Arch.git ./
 git submodule init
 git submodule update
 cd ..
-```
-
-Sync the databases inside the chroot:
-```
-arch-nspawn chroot-x86_64/root pacman -Syyu
 ```
 
 Install Arch repository manager ([guzuta](https://github.com/eagletmt/guzuta)):
@@ -85,8 +80,20 @@ builds:
     chroot: ./chroot-x86_64
 ```
 
+Uncomment the repo from inside the chroot:
+```
+arch-nspawn ./chroot-x86_64/root nano /etc/pacman.conf
+```
 
+Sync the databases inside the chroot:
+```
+arch-nspawn chroot-x86_64/root pacman -Syyu
+```
 
 Build the packages:
 
-Run `rebuild-repo.sh` from the PKGBUILDs directory. Make sure to configure sudo timeout for your build user, as it defaults to 5 minutes.
+_Make sure to configure sudo timeout for your build user, as it defaults to 5 minutes._
+```
+cd PKGBUILDs
+./rebuild-repo.sh
+```
