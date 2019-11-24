@@ -41,6 +41,7 @@ Server = https://unity8.mynameisivan.ru/$repo/os/$arch
 ```
 _or_
 ```
+LocalFileSigLevel = Never
 [unity8]
 SigLevel = Never
 Server = file:///your/path/$repo/os/$arch
