@@ -13,7 +13,25 @@ Builds are provided for `x86_64`.
 - [Telegram News Channel](https://t.me/unity8_port_notes)
 - [Project's Patreon](https://www.patreon.com/vanyasem)
 
-## Installation
+## Live USB images
+
+**You can grab a pre-made iso image from https://unity8.mynameisivan.ru/iso/**
+
+Flash it to any usb flashdrive (>= 2 Gb) (you can use [Etcher](https://www.balena.io/etcher/) for that)
+
+Boot from it. You should see a tty with a shell. Don't worry, that's expected.
+
+You can connect to the internet via networkmanager cli gui by running `nmtui` if you wish.
+
+Run `./unity8.sh` to launch Unity8.
+
+As it's an alpha build, it takes around 5-10 minutes to start (you should see an empty black screen with no splashscreen, please be patient).
+
+The default user is `unity8` with no password. My custom repository is already included.
+
+It's expected to crash a lot, it's purpose is to showcase progress of Unity8 on Arch.
+
+## Installing
 
 Add the Unity8 repository to `/etc/pacman.conf`:
 ```
@@ -52,7 +70,7 @@ QT_WAYLAND_DISABLE_WINDOWDECORATION=true MIR_SERVER_CURSOR=null QT_QPA_PLATFORM=
 
 It should not work on nvidia proprietary, it's a limitation of Mir.
 
-As it's an alpha build, it takes around 5-10 minutes to start (please be patient).
+As it's an alpha build, it takes around 5-10 minutes to start (you should see an empty black screen with no splashscreen, please be patient).
 
 ## Building
 
