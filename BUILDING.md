@@ -24,29 +24,19 @@ You will also need to trust a few GPG keys:
 gpg --recv-keys E932D120BC2AEC444E558F0106CA9F5D1DCF2659 # For ofono
 ```
 
-## (Advanced) Configure a local repository
+## (Advanced) Configure a [local repository](https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Custom_local_repository)
 
 The following instructions assume that you're building `x86_64` packages on a `x86_64` host.
 
 You might want to take a look at [building ARM packgages on `x86_64`](BUILDING-ARM.md), and [building `i686` packgages on `x86_64`](BUILDING-I686.md).
 
-Add the package repository to `/etc/pacman.conf`:
+Add the package repository to pacman:
 
-You can add my repository, or you could specify your own local repo that you will create in the next step. Read more [on the wiki](https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Custom_local_repository). 
-
-_You have to [trust my GPG key](https://github.com/vanyasem/Unity8-Arch#installation) on the host system prior to building the chroot if you decide to go with my server:_
+_Add an entry for you own local server to `/etc/pacman.conf`, but comment it out for now, as it doesn't exist yet:_
 ```
-[unity8]
-SigLevel = Required
-Server = https://unity8.mynameisivan.ru/$repo/os/$arch
-```
-**or**
-
-_You can't use a local path inside the chroot, so you will need to set up a simple webserver (`python -m http.server 8000` will do):_
-```
-[unity8]
-SigLevel = Required
-Server = http://localhost:8000/$repo/os/$arch
+#[unity8]
+#SigLevel = Required
+#Server = http://localhost:8000/$repo/os/$arch
 ```
 
 Assemble the build enviroment:
@@ -70,11 +60,9 @@ git submodule update
 cd ..
 ```
 
-Sync the databases:
+Sync the databases inside the chroot:
 ```
-arch-nspawn chroot-x86_64/root
-pacman -Syyu
-exit
+arch-nspawn chroot-x86_64/root pacman -Syyu
 ```
 
 Install Arch repository manager ([guzuta](https://github.com/eagletmt/guzuta)):
@@ -96,6 +84,8 @@ builds:
   x86_64:
     chroot: ./chroot-x86_64
 ```
+
+
 
 Build the packages:
 
