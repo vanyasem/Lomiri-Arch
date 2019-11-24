@@ -3,7 +3,7 @@
 pkgname=unity-api-git
 _pkgname=unity-api
 pkgver=r1102.30dd7b3
-pkgrel=1
+pkgrel=2
 pkgdesc='API for Unity shell integration'
 url='https://github.com/ubports/unity-api'
 arch=(x86_64 i686 armv7h aarch64)
@@ -12,8 +12,10 @@ conflicts=(unity-api)
 provides=(unity-api)
 depends=(qt5-quickcontrols)
 makedepends=(git cmake cppcheck graphviz libqtdbustest-git cmake-extras-git)
-source=('git+https://github.com/ubports/unity-api.git')
-sha256sums=('SKIP')
+source=('git+https://github.com/ubports/unity-api.git'
+        'https://patch-diff.githubusercontent.com/raw/ubports/unity-api/pull/18.patch')
+sha256sums=('SKIP'
+            'SKIP')
 
 BUILDENV+=('!check') # Some tests are broken
 
@@ -22,6 +24,8 @@ BUILD_DIR=build
 prepare() {
   cd ${_pkgname}
   git checkout bionic
+
+  patch -Np1 -i "${srcdir}/18.patch"
 }
 
 pkgver() {
