@@ -54,7 +54,7 @@ _Don't forget to configure PACKAGER in /etc/makepkg.conf_
 ```
 sudo pacman -S devtools
 mkdir -p chroot-x86_64 cache/pacman-x86_64/pkg unity8 sources logs PKGBUILDs
-sudo mkarchroot -C /etc/pacman.conf -M /etc/makepkg.conf -c ./cache/pacman-x86_64/pkg/ ./chroot-x86_64/root base base-devel
+sudo mkarchroot -C /etc/pacman.conf -M /etc/makepkg.conf -c $(pwd)/cache/pacman-x86_64/pkg/ ./chroot-x86_64/root base base-devel
 ```
 
 _Your Arch repository will settle in the `unity8` folder._
