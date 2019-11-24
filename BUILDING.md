@@ -49,7 +49,7 @@ mkdir -p chroot-x86_64 cache/pacman-x86_64/pkg unity8 sources logs PKGBUILDs
 sudo mkarchroot -C /etc/pacman.conf -M /etc/makepkg.conf -c $(pwd)/cache/pacman-x86_64/pkg/ ./chroot-x86_64/root base base-devel nano
 ```
 
-_Your Arch repository will settle in the `unity8` folder._
+_Your Arch repository will settle in the `unity8` folder. This is the only folder that needs to be exposed to the public if you decide to host your repo._
 
 Clone this repo's PKGBUILDs:
 ```
@@ -78,6 +78,13 @@ pkgbuild: PKGBUILDs
 builds:
   x86_64:
     chroot: ./chroot-x86_64
+```
+
+Set up a webserver (any will do):
+
+_This is required due to the fact you cannot use local paths from inside the chroot. You don't need to expose it to the public._
+```
+python -m http.server 8000`
 ```
 
 Uncomment the repo from inside the chroot:
