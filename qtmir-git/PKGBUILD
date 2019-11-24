@@ -2,36 +2,26 @@
 
 pkgname=qtmir-git
 _pkgname=qtmir
-pkgver=r2362.1bddb8c2
-pkgrel=1
+pkgver=r2374.f77ed5dd
+pkgrel=2
 pkgdesc='Qt platform abstraction (QPA) plugin for a Mir server'
 url='https://github.com/ubports/qtmir'
 arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL)
 conflicts=(qtmir)
 provides=(qtmir)
-depends=(qt5-base qt5-quickcontrols qt5-sensors mir process-cpp ubuntu-app-launch-git gsettings-qt-git libqtdbustest-git libqtdbusmock-git content-hub-git url-dispatcher-git glm valgrind)
+depends=(qt5-base qt5-quickcontrols qt5-sensors mir-git process-cpp ubuntu-app-launch-git gsettings-qt-git libqtdbustest-git libqtdbusmock-git content-hub-git url-dispatcher-git glm valgrind)
 makedepends=(git cmake cmake-extras-git gtest)
 source=('git+https://github.com/ubports/qtmir.git'
-        'NoCatchValue.patch'
-        'broketests.patch'
-        'mirpath.patch'
         'moc.patch'
-        'mock.patch'
         'nowerror.patch'
-        'scene.patch'
-        'screen.patch'
-        'weird.patch')
+        'https://patch-diff.githubusercontent.com/raw/ubports/qtmir/pull/35.patch'
+        'https://patch-diff.githubusercontent.com/raw/ubports/qtmir/pull/36.patch')
 sha256sums=('SKIP'
-            '0e706edbd8ef0bc7358202b01c6efcba1d2837699457628d9ec942e6a5135a4e'
-            '58dc4f83b636dcb4f957a3116f42634fc410761a17e872171fc2c4bd3eebeb89'
-            '0320d6756510797ab959632e69191b37ab9e295a8efff009bf950775acd3f376'
             '5338271504bb308ec80ca2b5879451b37aec52f6b3cc9919b7dabe454f1d1ce2'
-            'd57540b4abeecb1533858afa8fe9de5d3def2d1a58bdbdcf25056735b6d14554'
             'f6aff7b48ade3876739a940de19cc404dca53331a19e15b95f825096d8b96d9c'
-            '1166bf1684b4e88bd9486a9ff21b23c50404cb03708415d0a35e7c106183c87f'
-            '904e048ff8513fb2c887ba421d11646f486ba7e540dd00c97039faa45a283a51'
-            'a28df2d8c9574fc3c88e5ff46d01be76aecaf1ba7d0aa87979daad3398623d76')
+            'SKIP'
+            'SKIP')
 
 BUILDENV+=('!check')
 
@@ -39,17 +29,13 @@ BUILD_DIR=build
 
 prepare() {
   cd ${_pkgname}
-  git checkout bionic
+  git checkout xenial_-_edge_-_wayland
 
-  #patch -Np1 -i "${srcdir}/NoCatchValue.patch"
-  patch -Np1 -i "${srcdir}/broketests.patch"
-  patch -Np1 -i "${srcdir}/mirpath.patch"
+  sed -i 's/ubuntu-app-launch-2/ubuntu-app-launch-3/g' CMakeLists.txt
   patch -Np1 -i "${srcdir}/moc.patch"
-  patch -Np1 -i "${srcdir}/mock.patch"
   patch -Np1 -i "${srcdir}/nowerror.patch"
-  patch -Np1 -i "${srcdir}/scene.patch"
-  patch -Np1 -i "${srcdir}/screen.patch"
-  patch -Np1 -i "${srcdir}/weird.patch"
+  patch -Np1 -i "${srcdir}/35.patch"
+  patch -Np1 -i "${srcdir}/36.patch"
 }
 
 pkgver() {
