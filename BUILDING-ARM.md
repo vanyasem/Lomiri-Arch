@@ -1,3 +1,5 @@
+# The following file is severely outdated and not officially supported as of now. Follow the project updates to be the first one to know when it gets implemeneted.
+
 ## (Advanced) Configure a local repository / build the packages
 
 The following instructions assume that you're building ARM packages on a `x86_64` host.
