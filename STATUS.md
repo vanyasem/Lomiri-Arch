@@ -15,7 +15,7 @@ _Clickable icons:_
 - [x] `wlcs` [✅](https://aur.archlinux.org/packages/wlcs/)
 - [x] `gcovr` [🥂](https://www.archlinux.org/packages/community/any/gcovr/)
 - [x] `python-dbusmock` [🥂](https://www.archlinux.org/packages/extra/any/python-dbusmock/)
-- [x] `mir` [✅](https://aur.archlinux.org/packages/mir/) [😜](https://aur.archlinux.org/packages/mir-git) | [🆗](https://github.com/MirServer/mir/commit/e6ba0de363320feab9359821c96d69ff61a7f121) [🆗](https://github.com/MirServer/mir/issues/402) [🆗](https://github.com/MirServer/mir/commit/ce010778096db14de3b682313fc0376e0c8a6ada) [⛔️](https://github.com/MirServer/mir/issues/1084)
+- [x] `mir` [✅](https://aur.archlinux.org/packages/mir/) [😜](https://aur.archlinux.org/packages/mir-git) | [🆗](https://github.com/MirServer/mir/commit/e6ba0de363320feab9359821c96d69ff61a7f121) [🆗](https://github.com/MirServer/mir/issues/402) [🆗](https://github.com/MirServer/mir/commit/ce010778096db14de3b682313fc0376e0c8a6ada) [🆗](https://github.com/MirServer/mir/issues/1084)
 
 **Unity8 packages:**
 - [x] `cmake-extras` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/cmake-extras-git) | [⛔️](https://github.com/ubports/cmake-extras/issues/2)
@@ -59,7 +59,7 @@ _Clickable icons:_
 - [x] `qmenumodel` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qmenumodel-git) | [🆗](https://github.com/ubports/qmenumodel/issues/1)
 - [x] `ofono` [✅](https://aur.archlinux.org/packages/ofono/) | [🆗](https://aur.archlinux.org/pkgbase/ofono/flag-comment/)
 - [x] `libqofono` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/libqofono)
-- [x] `system-settings` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/system-settings-git) | [🆗](https://github.com/ubports/system-settings/issues/63) [⛔️](https://github.com/ubports/system-settings/issues/65)
+- [x] `system-settings` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/system-settings-git) | [🆗](https://github.com/ubports/system-settings/issues/63) [⛔️](https://github.com/ubports/system-settings/issues/65) [🆗](https://github.com/ubports/system-settings/issues/65)
 - [x] `gmenuharness` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr) | [⛔️](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr/Functional1.patch) [⛔️](https://github.com/vanyasem/Unity8-Arch/tree/master/gmenuharness-bzr/Functional2.patch)
 - [x] `indicator-network` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/indicator-network-git) | [🆗](https://github.com/ubports/indicator-network/issues/7) [⛔️](https://github.com/ubports/indicator-network/issues/8)
 - [x] `qdjango ` [🌍](https://github.com/vanyasem/Unity8-Arch/tree/master/qdjango-git)
