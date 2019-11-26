@@ -7,7 +7,7 @@ PACKAGES=$(cat projects.list)
 ARCH=x86_64 # TODO: Arch Selection
 
 cd ..
-arch-nspawn ./chroot-${ARCH}/root pacman -Syyu
+arch-nspawn ./chroot-${ARCH}/root pacman -Syyu --noconfirm
 
 for package in $PACKAGES; do
     guzuta omakase build ${package}
