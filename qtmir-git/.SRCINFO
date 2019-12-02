@@ -1,7 +1,7 @@
 pkgbase = qtmir-git
 	pkgdesc = Qt platform abstraction (QPA) plugin for a Mir server
 	pkgver = r2374.f77ed5dd
-	pkgrel = 2
+	pkgrel = 3
 	url = https://github.com/ubports/qtmir
 	arch = x86_64
 	arch = i686
@@ -30,11 +30,9 @@ pkgbase = qtmir-git
 	source = git+https://github.com/ubports/qtmir.git
 	source = moc.patch
 	source = nowerror.patch
-	source = https://patch-diff.githubusercontent.com/raw/ubports/qtmir/pull/35.patch
 	sha256sums = SKIP
 	sha256sums = 5338271504bb308ec80ca2b5879451b37aec52f6b3cc9919b7dabe454f1d1ce2
 	sha256sums = f6aff7b48ade3876739a940de19cc404dca53331a19e15b95f825096d8b96d9c
-	sha256sums = SKIP
 
 pkgname = qtmir-git
 
