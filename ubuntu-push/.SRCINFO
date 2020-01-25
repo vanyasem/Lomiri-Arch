@@ -1,0 +1,28 @@
+pkgbase = ubuntu-push-git
+	pkgdesc = Protocol, client, and development code for Ubuntu Touch push notifications
+	pkgver = r2434.c4bb268
+	pkgrel = 1
+	url = https://github.com/ubports/ubuntu-push
+	arch = x86_64
+	license = GPL
+	makedepends = git
+	makedepends = go
+	makedepends = click
+	makedepends = url-dispatcher
+	makedepends = ubuntu-app-launch
+	makedepends = indicator-messages
+	provides = ubuntu-push
+	conflicts = ubuntu-push
+	source = git+https://github.com/ubports/ubuntu-push
+	source = 0001-Remove-v0-suffix-from-go-xdg-imports.patch
+	source = 0002-Remove-v1-suffix-from-go-dbus-imports.patch
+	source = 0003-Initial-conversion-to-Go-modules.patch
+	source = 0004-cual-link-against-ual-3.patch
+	sha512sums = SKIP
+	sha512sums = 89c9e7b705b95225d2b82395100eae0078fa15c5acc4e84f536a76f08b2a0c8f9f0df5ce3fce2ae45a77b13ab834a12540f5f22f39614cf36cd130cf01c8f7d6
+	sha512sums = 728af821c5fba83d0b3c47d29d774a1fda947dc55e725fda6989f91130878dc62cdc5aea99332f13865d18719536b8f70add5af79535bed6252eb4336d1fd0ff
+	sha512sums = 2ac56d0c75e020463d841a017db31ea4c9dc26177e55d6a408a44545cbda376c5277ae91588b5f4fb549b4516303398496489d9d6260bb197e44bb2fc7f71309
+	sha512sums = c3472012d999fce9f9fb1d062ddf77cd401ca0197618e5ae4633f4cff88f699f8aca373ccd89740adc16b8a9aeee26a96a75dff0ce0bdd2f99058fb993b0b37f
+
+pkgname = ubuntu-push-git
+
