@@ -1,0 +1,138 @@
+From cf14aa88b4823858d8d3070a0c50664b0efd8ca0 Mon Sep 17 00:00:00 2001
+From: Luca Weiss <luca@z3ntu.xyz>
+Date: Sat, 25 Jan 2020 12:30:32 +0100
+Subject: [PATCH 2/2] Fix build with new glib versions
+
+Replace use of deprecated g_type_class_add_private.
+Replace use of deprecated G_TYPE_INSTANCE_GET_PRIVATE.
+
+Bump the minimal required version of glib to 2.38.0, the version
+where G_PRIVATE_ADD was added.
+---
+ configure.ac                      |  2 +-
+ src/im-accounts-service.c         |  8 +++-----
+ src/indicator-desktop-shortcuts.c | 14 ++++++--------
+ 3 files changed, 10 insertions(+), 14 deletions(-)
+
+diff --git a/configure.ac b/configure.ac
+index 7986cf6..080c46e 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -39,7 +39,7 @@ AC_PROG_CXX
+ ###########################
+ 
+ GIO_UNIX_REQUIRED_VERSION=2.33.10
+-GLIB_REQUIRED_VERSION=2.35.4
++GLIB_REQUIRED_VERSION=2.38.0
+ INTROSPECTION_REQUIRED_VERSION=1.32.0
+ 
+ PKG_CHECK_MODULES(APPLET, gio-unix-2.0 >= $GIO_UNIX_REQUIRED_VERSION
+diff --git a/src/im-accounts-service.c b/src/im-accounts-service.c
+index b7ab15d..ee55817 100644
+--- a/src/im-accounts-service.c
++++ b/src/im-accounts-service.c
+@@ -34,7 +34,7 @@ struct _ImAccountsServicePrivate {
+ };
+ 
+ #define IM_ACCOUNTS_SERVICE_GET_PRIVATE(o) \
+-(G_TYPE_INSTANCE_GET_PRIVATE ((o), IM_ACCOUNTS_SERVICE_TYPE, ImAccountsServicePrivate))
++(im_accounts_service_get_instance_private (o))
+ 
+ static void im_accounts_service_class_init (ImAccountsServiceClass *klass);
+ static void im_accounts_service_init       (ImAccountsService *self);
+@@ -44,15 +44,13 @@ static void user_changed (ActUserManager * manager, ActUser * user, gpointer use
+ static void on_user_manager_loaded (ActUserManager * manager, GParamSpec * pspect, gpointer user_data);
+ static void security_privacy_ready (GObject * obj, GAsyncResult * res, gpointer user_data);
+ 
+-G_DEFINE_TYPE (ImAccountsService, im_accounts_service, G_TYPE_OBJECT);
++G_DEFINE_TYPE_WITH_PRIVATE (ImAccountsService, im_accounts_service, G_TYPE_OBJECT);
+ 
+ static void
+ im_accounts_service_class_init (ImAccountsServiceClass *klass)
+ {
+ 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+ 
+-	g_type_class_add_private (klass, sizeof (ImAccountsServicePrivate));
+-
+ 	object_class->dispose = im_accounts_service_dispose;
+ 	object_class->finalize = im_accounts_service_finalize;
+ }
+@@ -78,7 +76,7 @@ im_accounts_service_init (ImAccountsService *self)
+ static void
+ im_accounts_service_dispose (GObject *object)
+ {
+-	ImAccountsServicePrivate * priv = IM_ACCOUNTS_SERVICE_GET_PRIVATE(object);
++	ImAccountsServicePrivate * priv = IM_ACCOUNTS_SERVICE_GET_PRIVATE(IM_ACCOUNTS_SERVICE (object));
+ 
+ 	if (priv->cancel != NULL) {
+ 		g_cancellable_cancel(priv->cancel);
+diff --git a/src/indicator-desktop-shortcuts.c b/src/indicator-desktop-shortcuts.c
+index 7b43630..bf5198a 100644
+--- a/src/indicator-desktop-shortcuts.c
++++ b/src/indicator-desktop-shortcuts.c
+@@ -61,7 +61,7 @@ enum {
+ };
+ 
+ #define INDICATOR_DESKTOP_SHORTCUTS_GET_PRIVATE(o) \
+-		(G_TYPE_INSTANCE_GET_PRIVATE ((o), INDICATOR_TYPE_DESKTOP_SHORTCUTS, IndicatorDesktopShortcutsPrivate))
++		(indicator_desktop_shortcuts_get_instance_private (o))
+ 
+ static void indicator_desktop_shortcuts_class_init (IndicatorDesktopShortcutsClass *klass);
+ static void indicator_desktop_shortcuts_init       (IndicatorDesktopShortcuts *self);
+@@ -72,7 +72,7 @@ static void get_property (GObject * object, guint prop_id, GValue * value, GPara
+ static void parse_keyfile (IndicatorDesktopShortcuts * ids);
+ static gboolean should_show (GKeyFile * keyfile, const gchar * group, const gchar * identity, gboolean should_have_target);
+ 
+-G_DEFINE_TYPE (IndicatorDesktopShortcuts, indicator_desktop_shortcuts, G_TYPE_OBJECT);
++G_DEFINE_TYPE_WITH_PRIVATE (IndicatorDesktopShortcuts, indicator_desktop_shortcuts, G_TYPE_OBJECT);
+ 
+ /* Build up the class */
+ static void
+@@ -80,8 +80,6 @@ indicator_desktop_shortcuts_class_init (IndicatorDesktopShortcutsClass *klass)
+ {
+ 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
+ 
+-	g_type_class_add_private (klass, sizeof (IndicatorDesktopShortcutsPrivate));
+-
+ 	object_class->dispose = indicator_desktop_shortcuts_dispose;
+ 	object_class->finalize = indicator_desktop_shortcuts_finalize;
+ 
+@@ -124,7 +122,7 @@ indicator_desktop_shortcuts_init (IndicatorDesktopShortcuts *self)
+ static void
+ indicator_desktop_shortcuts_dispose (GObject *object)
+ {
+-	IndicatorDesktopShortcutsPrivate * priv = INDICATOR_DESKTOP_SHORTCUTS_GET_PRIVATE(object);
++	IndicatorDesktopShortcutsPrivate * priv = INDICATOR_DESKTOP_SHORTCUTS_GET_PRIVATE(INDICATOR_DESKTOP_SHORTCUTS (object));
+ 
+ 	if (priv->keyfile) {
+ 		g_key_file_free(priv->keyfile);
+@@ -139,7 +137,7 @@ indicator_desktop_shortcuts_dispose (GObject *object)
+ static void
+ indicator_desktop_shortcuts_finalize (GObject *object)
+ {
+-	IndicatorDesktopShortcutsPrivate * priv = INDICATOR_DESKTOP_SHORTCUTS_GET_PRIVATE(object);
++	IndicatorDesktopShortcutsPrivate * priv = INDICATOR_DESKTOP_SHORTCUTS_GET_PRIVATE(INDICATOR_DESKTOP_SHORTCUTS (object));
+ 
+ 	if (priv->identity != NULL) {
+ 		g_free(priv->identity);
+@@ -170,7 +168,7 @@ static void
+ set_property (GObject * object, guint prop_id, const GValue * value, GParamSpec * pspec)
+ {
+ 	g_return_if_fail(INDICATOR_IS_DESKTOP_SHORTCUTS(object));
+-	IndicatorDesktopShortcutsPrivate * priv = INDICATOR_DESKTOP_SHORTCUTS_GET_PRIVATE(object);
++	IndicatorDesktopShortcutsPrivate * priv = INDICATOR_DESKTOP_SHORTCUTS_GET_PRIVATE(INDICATOR_DESKTOP_SHORTCUTS (object));
+ 
+ 	switch(prop_id) {
+ 	case PROP_DESKTOP_FILE: {
+@@ -233,7 +231,7 @@ static void
+ get_property (GObject * object, guint prop_id, GValue * value, GParamSpec * pspec)
+ {
+ 	g_return_if_fail(INDICATOR_IS_DESKTOP_SHORTCUTS(object));
+-	IndicatorDesktopShortcutsPrivate * priv = INDICATOR_DESKTOP_SHORTCUTS_GET_PRIVATE(object);
++	IndicatorDesktopShortcutsPrivate * priv = INDICATOR_DESKTOP_SHORTCUTS_GET_PRIVATE(INDICATOR_DESKTOP_SHORTCUTS (object));
+ 
+ 	switch(prop_id) {
+ 	case PROP_IDENTITY:
+-- 
+2.25.0
+
