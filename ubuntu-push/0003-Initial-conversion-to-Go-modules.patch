@@ -1,0 +1,50 @@
+From fe732491db7ebf2d0774dd3ddfcfd882447bb886 Mon Sep 17 00:00:00 2001
+From: Luca Weiss <luca@z3ntu.xyz>
+Date: Sat, 25 Jan 2020 12:58:59 +0100
+Subject: [PATCH 3/4] Initial conversion to Go modules
+
+---
+ go.mod | 13 +++++++++++++
+ go.sum | 10 ++++++++++
+ 2 files changed, 23 insertions(+)
+ create mode 100644 go.mod
+ create mode 100644 go.sum
+
+diff --git a/go.mod b/go.mod
+new file mode 100644
+index 0000000..06e38d3
+--- /dev/null
++++ b/go.mod
+@@ -0,0 +1,13 @@
++module github.com/ubports/ubuntu-push
++
++go 1.13
++
++require (
++	github.com/mattn/go-sqlite3 v1.1.1-0.20160927022846-4b0af852c171
++	github.com/pborman/uuid v0.0.0-20160824210600-b984ec7fa9ff
++	launchpad.net/go-dbus v1.0.0-20140208094800-gubd5md7cro3mtxa
++	launchpad.net/go-xdg v0.0.0-20140208094800-000000000010
++	launchpad.net/gocheck v0.0.0-20140225173054-000000000087
++)
++
++replace launchpad.net/go-dbus => github.com/z3ntu/go-dbus v0.0.0-20170220120108-c022b8b2e127
+diff --git a/go.sum b/go.sum
+new file mode 100644
+index 0000000..25b0f45
+--- /dev/null
++++ b/go.sum
+@@ -0,0 +1,10 @@
++github.com/mattn/go-sqlite3 v1.1.1-0.20160927022846-4b0af852c171 h1:bZY9z+CAvIbrKtvxl9Ypy+foX2hxuR5Q+2gziez44CM=
++github.com/mattn/go-sqlite3 v1.1.1-0.20160927022846-4b0af852c171/go.mod h1:FPy6KqzDD04eiIsT53CuJW3U88zkxoIYsOqkbpncsNc=
++github.com/pborman/uuid v0.0.0-20160824210600-b984ec7fa9ff h1:pTiDfW+iOjIxjZeCm88gKn/AmR09UGZYZdqif2yPRrM=
++github.com/pborman/uuid v0.0.0-20160824210600-b984ec7fa9ff/go.mod h1:VyrYX9gd7irzKovcSS6BIIEwPRkP2Wm2m9ufcdFSJ34=
++github.com/z3ntu/go-dbus v0.0.0-20170220120108-c022b8b2e127 h1:5uM5CyMgvx0a/ctLJ3ThGt2fghWoX6cPniYNgGeCuJI=
++github.com/z3ntu/go-dbus v0.0.0-20170220120108-c022b8b2e127/go.mod h1:bUTQ2+DQ82yitPELjqsyPbSZGg05fEKaC3eHCGkCiV4=
++launchpad.net/go-xdg v0.0.0-20140208094800-000000000010 h1:67YK4VRwVpu+qdmji/6lNv7y/O6NmH1oaSb/4ETtTck=
++launchpad.net/go-xdg v0.0.0-20140208094800-000000000010/go.mod h1:LvhuQF+z2nM+7tjWchL2jH2sbCGTtyHFhi4s/dDQEOk=
++launchpad.net/gocheck v0.0.0-20140225173054-000000000087 h1:Izowp2XBH6Ya6rv+hqbceQyw/gSGoXfH/UPoTGduL54=
++launchpad.net/gocheck v0.0.0-20140225173054-000000000087/go.mod h1:hj7XX3B/0A+80Vse0e+BUHsHMTEhd0O4cpUHr/e/BUM=
+-- 
+2.25.0
+

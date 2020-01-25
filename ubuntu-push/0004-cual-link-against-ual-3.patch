@@ -1,0 +1,25 @@
+From bbfb320a630ac6062cdf53e011bbb00a41ba7551 Mon Sep 17 00:00:00 2001
+From: Luca Weiss <luca@z3ntu.xyz>
+Date: Sat, 25 Jan 2020 13:29:50 +0100
+Subject: [PATCH 4/4] cual: link against ual-3
+
+---
+ launch_helper/cual/cual.go | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/launch_helper/cual/cual.go b/launch_helper/cual/cual.go
+index 76d79a4..5cb8919 100644
+--- a/launch_helper/cual/cual.go
++++ b/launch_helper/cual/cual.go
+@@ -17,7 +17,7 @@
+ package cual
+ 
+ /*
+-#cgo pkg-config: ubuntu-app-launch-2
++#cgo pkg-config: ubuntu-app-launch-3
+ #include <glib.h>
+ 
+ gboolean add_observer (gpointer);
+-- 
+2.25.0
+

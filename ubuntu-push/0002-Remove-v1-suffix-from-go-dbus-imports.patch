@@ -1,0 +1,263 @@
+From 4ad32991099257c403648bf892ab19ab9dae88d0 Mon Sep 17 00:00:00 2001
+From: Luca Weiss <luca@z3ntu.xyz>
+Date: Sat, 25 Jan 2020 12:11:46 +0100
+Subject: [PATCH 2/4] Remove v1 suffix from go-dbus imports
+
+---
+ bus/accounts/accounts.go                  | 2 +-
+ bus/accounts/accounts_test.go             | 2 +-
+ bus/bus.go                                | 2 +-
+ bus/bus_test.go                           | 2 +-
+ bus/connectivity/connectivity_test.go     | 2 +-
+ bus/emblemcounter/emblemcounter.go        | 2 +-
+ bus/emblemcounter/emblemcounter_test.go   | 2 +-
+ bus/endpoint.go                           | 2 +-
+ bus/networkmanager/networkmanager.go      | 2 +-
+ bus/networkmanager/networkmanager_test.go | 2 +-
+ bus/notifications/raw.go                  | 2 +-
+ bus/notifications/raw_test.go             | 2 +-
+ bus/testing/testing_endpoint.go           | 2 +-
+ bus/testing/testing_endpoint_test.go      | 2 +-
+ bus/urfkill/urfkill.go                    | 2 +-
+ bus/urfkill/urfkill_test.go               | 2 +-
+ client/client_test.go                     | 2 +-
+ client/service/postal_test.go             | 2 +-
+ 18 files changed, 18 insertions(+), 18 deletions(-)
+
+diff --git a/bus/accounts/accounts.go b/bus/accounts/accounts.go
+index 4812ccf..b765138 100644
+--- a/bus/accounts/accounts.go
++++ b/bus/accounts/accounts.go
+@@ -24,7 +24,7 @@ import (
+ 	"strings"
+ 	"sync"
+ 
+-	"launchpad.net/go-dbus/v1"
++	"launchpad.net/go-dbus"
+ 	"launchpad.net/go-xdg"
+ 
+ 	"github.com/ubports/ubuntu-push/bus"
+diff --git a/bus/accounts/accounts_test.go b/bus/accounts/accounts_test.go
+index 3675251..c63082f 100644
+--- a/bus/accounts/accounts_test.go
++++ b/bus/accounts/accounts_test.go
+@@ -20,7 +20,7 @@ import (
+ 	"errors"
+ 	"testing"
+ 
+-	"launchpad.net/go-dbus/v1"
++	"launchpad.net/go-dbus"
+ 	. "launchpad.net/gocheck"
+ 
+ 	testibus "github.com/ubports/ubuntu-push/bus/testing"
+diff --git a/bus/bus.go b/bus/bus.go
+index a4aab7b..a584fd8 100644
+--- a/bus/bus.go
++++ b/bus/bus.go
+@@ -20,7 +20,7 @@ package bus
+ // Here we define the Bus itself
+ 
+ import (
+-	"launchpad.net/go-dbus/v1"
++	"launchpad.net/go-dbus"
+ 	"github.com/ubports/ubuntu-push/logger"
+ )
+ 
+diff --git a/bus/bus_test.go b/bus/bus_test.go
+index 1cea472..10be830 100644
+--- a/bus/bus_test.go
++++ b/bus/bus_test.go
+@@ -18,7 +18,7 @@ package bus
+ 
+ import (
+ 	"fmt"
+-	"launchpad.net/go-dbus/v1"
++	"launchpad.net/go-dbus"
+ 	. "launchpad.net/gocheck"
+ 	helpers "github.com/ubports/ubuntu-push/testing"
+ 	"testing"
+diff --git a/bus/connectivity/connectivity_test.go b/bus/connectivity/connectivity_test.go
+index 8e0c23e..7d4f7cb 100644
+--- a/bus/connectivity/connectivity_test.go
++++ b/bus/connectivity/connectivity_test.go
+@@ -22,7 +22,7 @@ import (
+ 	"testing"
+ 	"time"
+ 
+-	"launchpad.net/go-dbus/v1"
++	"launchpad.net/go-dbus"
+ 	. "launchpad.net/gocheck"
+ 
+ 	"github.com/ubports/ubuntu-push/bus"
+diff --git a/bus/emblemcounter/emblemcounter.go b/bus/emblemcounter/emblemcounter.go
+index 6ff5b6a..7154abf 100644
+--- a/bus/emblemcounter/emblemcounter.go
++++ b/bus/emblemcounter/emblemcounter.go
+@@ -19,7 +19,7 @@
+ package emblemcounter
+ 
+ import (
+-	"launchpad.net/go-dbus/v1"
++	"launchpad.net/go-dbus"
+ 
+ 	"github.com/ubports/ubuntu-push/bus"
+ 	"github.com/ubports/ubuntu-push/click"
+diff --git a/bus/emblemcounter/emblemcounter_test.go b/bus/emblemcounter/emblemcounter_test.go
+index c8faaa3..f7cdd12 100644
+--- a/bus/emblemcounter/emblemcounter_test.go
++++ b/bus/emblemcounter/emblemcounter_test.go
+@@ -19,7 +19,7 @@ package emblemcounter
+ import (
+ 	"testing"
+ 
+-	"launchpad.net/go-dbus/v1"
++	"launchpad.net/go-dbus"
+ 	. "launchpad.net/gocheck"
+ 
+ 	testibus "github.com/ubports/ubuntu-push/bus/testing"
+diff --git a/bus/endpoint.go b/bus/endpoint.go
+index b735758..c87cbba 100644
+--- a/bus/endpoint.go
++++ b/bus/endpoint.go
+@@ -23,7 +23,7 @@ import (
+ 	"errors"
+ 	"fmt"
+ 
+-	"launchpad.net/go-dbus/v1"
++	"launchpad.net/go-dbus"
+ 
+ 	"github.com/ubports/ubuntu-push/logger"
+ )
+diff --git a/bus/networkmanager/networkmanager.go b/bus/networkmanager/networkmanager.go
+index 28f89ec..7c34010 100644
+--- a/bus/networkmanager/networkmanager.go
++++ b/bus/networkmanager/networkmanager.go
+@@ -21,7 +21,7 @@
+ package networkmanager
+ 
+ import (
+-	"launchpad.net/go-dbus/v1"
++	"launchpad.net/go-dbus"
+ 
+ 	"github.com/ubports/ubuntu-push/bus"
+ 	"github.com/ubports/ubuntu-push/logger"
+diff --git a/bus/networkmanager/networkmanager_test.go b/bus/networkmanager/networkmanager_test.go
+index cf6e69b..9e68f1e 100644
+--- a/bus/networkmanager/networkmanager_test.go
++++ b/bus/networkmanager/networkmanager_test.go
+@@ -19,7 +19,7 @@ package networkmanager
+ import (
+ 	"testing"
+ 
+-	"launchpad.net/go-dbus/v1"
++	"launchpad.net/go-dbus"
+ 	. "launchpad.net/gocheck"
+ 
+ 	testingbus "github.com/ubports/ubuntu-push/bus/testing"
+diff --git a/bus/notifications/raw.go b/bus/notifications/raw.go
+index abb903d..cd61bcf 100644
+--- a/bus/notifications/raw.go
++++ b/bus/notifications/raw.go
+@@ -25,7 +25,7 @@ import (
+ 	"encoding/json"
+ 	"errors"
+ 
+-	"launchpad.net/go-dbus/v1"
++	"launchpad.net/go-dbus"
+ 
+ 	"github.com/ubports/ubuntu-push/bus"
+ 	"github.com/ubports/ubuntu-push/click"
+diff --git a/bus/notifications/raw_test.go b/bus/notifications/raw_test.go
+index b57f8da..0e2fc51 100644
+--- a/bus/notifications/raw_test.go
++++ b/bus/notifications/raw_test.go
+@@ -24,7 +24,7 @@ import (
+ 	"testing"
+ 	"time"
+ 
+-	"launchpad.net/go-dbus/v1"
++	"launchpad.net/go-dbus"
+ 	. "launchpad.net/gocheck"
+ 
+ 	"github.com/ubports/ubuntu-push/bus"
+diff --git a/bus/testing/testing_endpoint.go b/bus/testing/testing_endpoint.go
+index f4dc1c6..c09ec98 100644
+--- a/bus/testing/testing_endpoint.go
++++ b/bus/testing/testing_endpoint.go
+@@ -22,7 +22,7 @@ import (
+ 	"errors"
+ 	"fmt"
+ 
+-	"launchpad.net/go-dbus/v1"
++	"launchpad.net/go-dbus"
+ 
+ 	"github.com/ubports/ubuntu-push/bus"
+ 	"github.com/ubports/ubuntu-push/testing/condition"
+diff --git a/bus/testing/testing_endpoint_test.go b/bus/testing/testing_endpoint_test.go
+index 64fcb23..ddb960f 100644
+--- a/bus/testing/testing_endpoint_test.go
++++ b/bus/testing/testing_endpoint_test.go
+@@ -20,7 +20,7 @@ import (
+ 	"testing"
+ 	"time"
+ 
+-	"launchpad.net/go-dbus/v1"
++	"launchpad.net/go-dbus"
+ 	. "launchpad.net/gocheck"
+ 
+ 	"github.com/ubports/ubuntu-push/bus"
+diff --git a/bus/urfkill/urfkill.go b/bus/urfkill/urfkill.go
+index f456f81..569da65 100644
+--- a/bus/urfkill/urfkill.go
++++ b/bus/urfkill/urfkill.go
+@@ -19,7 +19,7 @@
+ package urfkill
+ 
+ import (
+-	"launchpad.net/go-dbus/v1"
++	"launchpad.net/go-dbus"
+ 
+ 	"github.com/ubports/ubuntu-push/bus"
+ 	"github.com/ubports/ubuntu-push/logger"
+diff --git a/bus/urfkill/urfkill_test.go b/bus/urfkill/urfkill_test.go
+index fd30cb5..caf14a7 100644
+--- a/bus/urfkill/urfkill_test.go
++++ b/bus/urfkill/urfkill_test.go
+@@ -19,7 +19,7 @@ package urfkill
+ import (
+ 	"testing"
+ 
+-	"launchpad.net/go-dbus/v1"
++	"launchpad.net/go-dbus"
+ 	. "launchpad.net/gocheck"
+ 
+ 	testingbus "github.com/ubports/ubuntu-push/bus/testing"
+diff --git a/client/client_test.go b/client/client_test.go
+index b19c4b5..820378e 100644
+--- a/client/client_test.go
++++ b/client/client_test.go
+@@ -31,7 +31,7 @@ import (
+ 	"testing"
+ 	"time"
+ 
+-	"launchpad.net/go-dbus/v1"
++	"launchpad.net/go-dbus"
+ 	. "launchpad.net/gocheck"
+ 
+ 	"github.com/ubports/ubuntu-push/bus"
+diff --git a/client/service/postal_test.go b/client/service/postal_test.go
+index 576c5d3..7c0e30d 100644
+--- a/client/service/postal_test.go
++++ b/client/service/postal_test.go
+@@ -27,7 +27,7 @@ import (
+ 	"sync"
+ 	"time"
+ 
+-	"launchpad.net/go-dbus/v1"
++	"launchpad.net/go-dbus"
+ 	. "launchpad.net/gocheck"
+ 
+ 	"github.com/ubports/ubuntu-push/bus"
+-- 
+2.25.0
+

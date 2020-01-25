@@ -1,0 +1,113 @@
+From 7b4a5c676361d7f1e61822dea77b2e4507bfcf73 Mon Sep 17 00:00:00 2001
+From: Luca Weiss <luca@z3ntu.xyz>
+Date: Sat, 25 Jan 2020 11:37:48 +0100
+Subject: [PATCH 1/4] Remove v0 suffix from go-xdg imports
+
+See https://github.com/golang/go/wiki/Modules#semantic-import-versioning:
+
+> If the module is version v0 or v1, do not include the major version in
+  either the module path or the import path.
+---
+ bus/accounts/accounts.go                     | 2 +-
+ click/click.go                               | 2 +-
+ launch_helper/helper_finder/helper_finder.go | 2 +-
+ launch_helper/kindpool.go                    | 2 +-
+ launch_helper/kindpool_test.go               | 2 +-
+ sounds/sounds.go                             | 2 +-
+ ubuntu-push-client.go                        | 2 +-
+ 7 files changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/bus/accounts/accounts.go b/bus/accounts/accounts.go
+index 3be212a..4812ccf 100644
+--- a/bus/accounts/accounts.go
++++ b/bus/accounts/accounts.go
+@@ -25,7 +25,7 @@ import (
+ 	"sync"
+ 
+ 	"launchpad.net/go-dbus/v1"
+-	"launchpad.net/go-xdg/v0"
++	"launchpad.net/go-xdg"
+ 
+ 	"github.com/ubports/ubuntu-push/bus"
+ 	"github.com/ubports/ubuntu-push/logger"
+diff --git a/click/click.go b/click/click.go
+index 337b6f4..cff1dae 100644
+--- a/click/click.go
++++ b/click/click.go
+@@ -27,7 +27,7 @@ import (
+ 	"strings"
+ 	"sync"
+ 
+-	"launchpad.net/go-xdg/v0"
++	"launchpad.net/go-xdg"
+ 
+ 	"github.com/ubports/ubuntu-push/click/cappinfo"
+ 	"github.com/ubports/ubuntu-push/click/cclick"
+diff --git a/launch_helper/helper_finder/helper_finder.go b/launch_helper/helper_finder/helper_finder.go
+index dcd96e8..725a118 100644
+--- a/launch_helper/helper_finder/helper_finder.go
++++ b/launch_helper/helper_finder/helper_finder.go
+@@ -8,7 +8,7 @@ import (
+ 	"sync"
+ 	"time"
+ 
+-	"launchpad.net/go-xdg/v0"
++	"launchpad.net/go-xdg"
+ 
+ 	"github.com/ubports/ubuntu-push/click"
+ 	"github.com/ubports/ubuntu-push/logger"
+diff --git a/launch_helper/kindpool.go b/launch_helper/kindpool.go
+index 3b598be..cc12084 100644
+--- a/launch_helper/kindpool.go
++++ b/launch_helper/kindpool.go
+@@ -26,7 +26,7 @@ import (
+ 	"sync"
+ 	"time"
+ 
+-	xdg "launchpad.net/go-xdg/v0"
++	xdg "launchpad.net/go-xdg"
+ 
+ 	"github.com/ubports/ubuntu-push/click"
+ 	"github.com/ubports/ubuntu-push/launch_helper/cual"
+diff --git a/launch_helper/kindpool_test.go b/launch_helper/kindpool_test.go
+index f3358cf..26f4f5f 100644
+--- a/launch_helper/kindpool_test.go
++++ b/launch_helper/kindpool_test.go
+@@ -24,7 +24,7 @@ import (
+ 	"path/filepath"
+ 	"time"
+ 
+-	xdg "launchpad.net/go-xdg/v0"
++	xdg "launchpad.net/go-xdg"
+ 	. "launchpad.net/gocheck"
+ 
+ 	"github.com/ubports/ubuntu-push/click"
+diff --git a/sounds/sounds.go b/sounds/sounds.go
+index 29a3b7e..470f776 100644
+--- a/sounds/sounds.go
++++ b/sounds/sounds.go
+@@ -23,7 +23,7 @@ import (
+ 	"path/filepath"
+ 	"strings"
+ 
+-	"launchpad.net/go-xdg/v0"
++	"launchpad.net/go-xdg"
+ 
+ 	"github.com/ubports/ubuntu-push/bus/accounts"
+ 	"github.com/ubports/ubuntu-push/click"
+diff --git a/ubuntu-push-client.go b/ubuntu-push-client.go
+index d82394e..50b1576 100644
+--- a/ubuntu-push-client.go
++++ b/ubuntu-push-client.go
+@@ -23,7 +23,7 @@ import (
+ 	"runtime"
+ 	"syscall"
+ 
+-	"launchpad.net/go-xdg/v0"
++	"launchpad.net/go-xdg"
+ 
+ 	"github.com/ubports/ubuntu-push/client"
+ )
+-- 
+2.25.0
+
