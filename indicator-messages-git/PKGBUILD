@@ -1,0 +1,50 @@
+# Maintainer: Ivan Semkin (ivan at semkin dot ru)
+
+pkgname=indicator-messages-git
+_pkgname=indicator-messages
+pkgver=r1979.1d60a2d
+pkgrel=1
+pkgdesc='Notifications indicator'
+url='https://github.com/ubports/indicator-messages'
+arch=(x86_64 i686 armv7h aarch64)
+license=(GPL3)
+conflicts=(indicator-messages)
+provides=(indicator-messages)
+depends=(accountsservice-ubuntu)
+makedepends=(git gobject-introspection intltool gtk-doc dbus-test-runner)
+source=('git+https://github.com/ubports/indicator-messages.git'
+        '0001-Replace-gnome-common-in-autogen.sh.patch'
+        '0002-Fix-build-with-new-glib-versions.patch')
+sha256sums=('SKIP'
+            '023ee2b2f057588f2dc8cc1827c3dfddc965d87e40b5292fd5882f1e16878aa6'
+            '1bd5780d16c228b008cb4170f4971609189223d09e65929541a9101969d8e975')
+
+pkgver() {
+  cd ${_pkgname}
+  echo "r$(git rev-list --count HEAD).$(git describe --always)"
+}
+
+prepare() {
+  cd ${_pkgname}
+  patch -Np1 -i ../0001-Replace-gnome-common-in-autogen.sh.patch
+  patch -Np1 -i ../0002-Fix-build-with-new-glib-versions.patch
+}
+
+build() {
+  cd ${_pkgname}
+  ./autogen.sh
+  ./configure --prefix=/usr --disable-packagekit
+  make
+}
+
+check() {
+  cd ${_pkgname}
+  make check
+}
+
+package() {
+  cd ${_pkgname}
+  make DESTDIR="${pkgdir}/" PYTHON_INSTALL_FLAGS="--root=${pkgdir}/" install
+}
+
+# vim:set ts=2 sw=2 et:

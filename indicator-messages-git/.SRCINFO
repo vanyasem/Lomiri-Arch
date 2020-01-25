@@ -1,0 +1,27 @@
+pkgbase = indicator-messages-git
+	pkgdesc = Notifications indicator
+	pkgver = r1979.1d60a2d
+	pkgrel = 1
+	url = https://github.com/ubports/indicator-messages
+	arch = x86_64
+	arch = i686
+	arch = armv7h
+	arch = aarch64
+	license = GPL3
+	makedepends = git
+	makedepends = gobject-introspection
+	makedepends = intltool
+	makedepends = gtk-doc
+	makedepends = dbus-test-runner
+	depends = accountsservice-ubuntu
+	provides = indicator-messages
+	conflicts = indicator-messages
+	source = git+https://github.com/ubports/indicator-messages.git
+	source = 0001-Replace-gnome-common-in-autogen.sh.patch
+	source = 0002-Fix-build-with-new-glib-versions.patch
+	sha256sums = SKIP
+	sha256sums = 023ee2b2f057588f2dc8cc1827c3dfddc965d87e40b5292fd5882f1e16878aa6
+	sha256sums = 1bd5780d16c228b008cb4170f4971609189223d09e65929541a9101969d8e975
+
+pkgname = indicator-messages-git
+
