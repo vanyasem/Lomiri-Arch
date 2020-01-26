@@ -2,7 +2,7 @@
 
 pkgname=ubuntu-download-manager-git
 _pkgname=ubuntu-download-manager
-pkgver=r2545.695e5dc8
+pkgver=r2545.f0dea590
 pkgrel=1
 pkgdesc='Provides a service for downloading files while an application is suspended'
 url='https://github.com/ubports/ubuntu-download-manager'
@@ -12,7 +12,7 @@ conflicts=(ubuntu-download-manager)
 provides=(ubuntu-download-manager)
 depends=(boost dbus-test-runner gmock qt5-base qt5-declarative libnih google-glog)
 makedepends=(git doxygen cmake cmake-extras-git gcovr lcov)
-source=('git+https://github.com/ubports/ubuntu-download-manager.git'
+source=('git+https://github.com/ubports/ubuntu-download-manager.git#branch=xenial'
         'QtArg.patch')
 sha256sums=('SKIP'
             '8182121308e04f60e29dfc1e3c8e221413b5a905ea1302e75acbe95a6bb7f866')
@@ -21,8 +21,6 @@ BUILDENV+=('!check') # Some tests are broken
 
 prepare() {
   cd ${_pkgname}
-  git checkout bionic
-  
   patch -Np1 -i "${srcdir}/QtArg.patch"
 }
 
