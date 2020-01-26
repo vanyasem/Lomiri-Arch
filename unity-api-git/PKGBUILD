@@ -2,8 +2,8 @@
 
 pkgname=unity-api-git
 _pkgname=unity-api
-pkgver=r1102.30dd7b3
-pkgrel=2
+pkgver=r1104.d74beb0
+pkgrel=1
 pkgdesc='API for Unity shell integration'
 url='https://github.com/ubports/unity-api'
 arch=(x86_64 i686 armv7h aarch64)
@@ -12,21 +12,10 @@ conflicts=(unity-api)
 provides=(unity-api)
 depends=(qt5-quickcontrols)
 makedepends=(git cmake cppcheck graphviz libqtdbustest-git cmake-extras-git)
-source=('git+https://github.com/ubports/unity-api.git'
-        'https://patch-diff.githubusercontent.com/raw/ubports/unity-api/pull/18.patch')
-sha256sums=('SKIP'
-            'SKIP')
+source=('git+https://github.com/ubports/unity-api.git#branch=bionic')
+sha256sums=('SKIP')
 
 BUILDENV+=('!check') # Some tests are broken
-
-BUILD_DIR=build
-
-prepare() {
-  cd ${_pkgname}
-  git checkout bionic
-
-  patch -Np1 -i "${srcdir}/18.patch"
-}
 
 pkgver() {
   cd ${_pkgname}
@@ -35,19 +24,19 @@ pkgver() {
 
 build() {
   cd ${_pkgname}
-  mkdir -p ${BUILD_DIR}
-  cd ${BUILD_DIR}
+  mkdir -p build
+  cd build
   cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" ..
   make
 }
 
 check() {
-  cd ${_pkgname}/${BUILD_DIR}
+  cd ${_pkgname}/build
   make ARGS+="--output-on-failure" test
 }
 
 package() {
-  cd ${_pkgname}/${BUILD_DIR}
+  cd ${_pkgname}/build
   make DESTDIR="${pkgdir}/" install
 }
 # vim:set ts=2 sw=2 et:
