@@ -13,7 +13,7 @@ provides=(ubuntu-ui-toolkit)
 depends=(qt5-base qt5-quickcontrols lttng-ust libnih qt5-systems qt5-pim qt5-svg qt5-feedback ubuntu-themes qt5-graphicaleffects bluez-libs)
 makedepends=(git)
 checkdepends=()
-source=('git+https://github.com/ubports/ubuntu-ui-toolkit.git#branch=xenial_-_newerqt'
+source=('git+https://github.com/ubports/ubuntu-ui-toolkit.git#branch=xenial'
         'NoWarns.patch'
         'dpkg.patch')
 sha256sums=('SKIP'
