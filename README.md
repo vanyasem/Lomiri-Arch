@@ -1,7 +1,7 @@
-Unity8 for Arch GNU/Linux
-=========================
+Lomiri for Arch
+===============
 
-This project aims to bring [Unity8](https://github.com/ubports/unity8-build) DE to Arch GNU/Linux.
+This project aims to bring [Lomiri](https://github.com/ubports/unity8-build) (former Unity8) DE to Arch GNU/Linux.
 
 Builds are provided for `x86_64`.
 
@@ -10,7 +10,7 @@ Builds are provided for `x86_64`.
 ## Resources
 
 - [Packaging status](STATUS.md)
-- [Telegram News Channel](https://t.me/unity8_port_notes)
+- [Telegram News Channel](https://t.me/Unity8_Arch)
 - [Project's Patreon](https://www.patreon.com/vanyasem)
 
 ## Live USB image
@@ -23,7 +23,7 @@ Boot from it. You should see a tty with a shell. Don't worry, that's expected.
 
 You can connect to the internet via networkmanager cli gui by running `nmtui` if you wish.
 
-Run `./unity8.sh` to launch Unity8.
+Run `./unity8.sh` to launch Lomiri.
 
 As it's an alpha build, it takes around 5-10 minutes to start (you should see an empty black screen with no splashscreen, please be patient).
 
