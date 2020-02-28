@@ -29,11 +29,11 @@ As it's an alpha build, it takes around 5-10 minutes to start (you should see an
 
 The default user is `unity8` with no password. My custom repository is already included.
 
-It's expected to crash a lot, it's purpose is to showcase progress of Unity8 on Arch.
+It's expected to crash a lot, it's purpose is to showcase progress of Lomiri on Arch.
 
 ## Installing
 
-Add the Unity8 repository to `/etc/pacman.conf`:
+Add the Lomiri repository to `/etc/pacman.conf`:
 ```
 [unity8]
 SigLevel = Required TrustAll
@@ -52,7 +52,7 @@ sudo pacman-key --lsign-key F3A621DFD4328CC4
 sudo pacman -Syyu
 ```
 
-Install Unity8 and some important packages _(TODO: metapackage)_:
+Install Lomiri and some important packages _(TODO: metapackage)_:
 ```
 sudo pacman -S unity8-git qt5-wayland qterminal qtmir-git
 ```
@@ -63,7 +63,7 @@ mkdir -p $HOME/.config/ubuntu-system-settings
 touch $HOME/.config/ubuntu-system-settings/wizard-has-run
 ```
 
-Launch Unity8 with (either from a tty or from a terminal):
+Launch Lomiri with (either from a tty or from a terminal):
 ```
 QT_WAYLAND_DISABLE_WINDOWDECORATION=true MIR_SERVER_CURSOR=null QT_QPA_PLATFORM=mirserver unity8
 ```
