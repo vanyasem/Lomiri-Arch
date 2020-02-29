@@ -15,7 +15,7 @@ Builds are provided for `x86_64`.
 
 ## Live USB image
 
-**You can grab a pre-made iso image from https://unity8.mynameisivan.ru/iso/**
+**You can grab a pre-made iso image from https://lomiri.mynameisivan.ru/iso/**
 
 Flash it to any usb flashdrive (>= 2 Gb) (you can use [Etcher](https://www.balena.io/etcher/) for that)
 
@@ -35,9 +35,9 @@ It's expected to crash a lot, it's purpose is to showcase progress of Lomiri on 
 
 Add the Lomiri repository to `/etc/pacman.conf`:
 ```
-[unity8]
+[lomiri]
 SigLevel = Required TrustAll
-Server = https://unity8.mynameisivan.ru/$repo/os/$arch
+Server = https://lomiri.mynameisivan.ru/$repo/os/$arch
 ```
 
 Refresh the local pacman database:
