@@ -11,8 +11,8 @@ gpg --recv-keys 4DE16D68FDBFFFB8 # systemtap
 
 Clone this repo's PKGBUILDs:
 ```
-git clone https://github.com/vanyasem/Unity8-Arch.git
-cd Unity8-Arch
+git clone https://github.com/vanyasem/Lomiri-Arch.git
+cd Lomiri-Arch
 git submodule init
 git submodule update
 ```
@@ -37,7 +37,7 @@ Add the package repository to `/etc/pacman.conf`:
 
 _Comment it out for now, as it doesn't exist yet:_
 ```
-#[unity8]
+#[lomiri]
 #SigLevel = Required
 #Server = http://localhost:8000/$repo/os/$arch
 ```
@@ -48,16 +48,16 @@ _Don't forget to configure `PACKAGER` in `/etc/makepkg.conf`_
 
 ```
 sudo pacman -S devtools
-mkdir -p chroot-x86_64 cache/pacman-x86_64/pkg unity8 sources logs PKGBUILDs
+mkdir -p chroot-x86_64 cache/pacman-x86_64/pkg lomiri sources logs PKGBUILDs
 sudo mkarchroot -C /etc/pacman.conf -M /etc/makepkg.conf -c $(pwd)/cache/pacman-x86_64/pkg/ ./chroot-x86_64/root base base-devel nano
 ```
 
-_Your Arch repository will settle in the `unity8` folder. This is the only folder that needs to be exposed to the public if you decide to host your repo._
+_Your Arch repository will settle in the `lomiri` folder. This is the only folder that needs to be exposed to the public if you decide to host your repo._
 
 Clone this repo's PKGBUILDs:
 ```
 cd PKGBUILDs
-git clone https://github.com/vanyasem/Unity8-Arch.git ./
+git clone https://github.com/vanyasem/Lomiri-Arch.git ./
 git submodule init
 git submodule update
 cd ..
@@ -72,7 +72,7 @@ cargo install guzuta
 Configure guzuta:
 ```
 echo "
-name: unity8
+name: lomiri
 package_key: YOUR_GPG_KEY
 repo_key: YOUR_GPG_KEY
 srcdest: sources
