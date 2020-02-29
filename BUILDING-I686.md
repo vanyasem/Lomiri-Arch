@@ -11,13 +11,13 @@ Add the package repository to `/etc/pacman.conf`:
 _You can add my repository, or you could specify your own local repo that you will create in the next step. Read more [on the wiki](https://wiki.archlinux.org/index.php/Pacman/Tips_and_tricks#Custom_local_repository). You have to trust my GPG key on the host system prior to building the chroot if you decide to go with my server._
 
 ```
-[unity8]
+[lomiri]
 SigLevel = Required
-Server = https://unity8.mynameisivan.ru/$repo/os/$arch
+Server = https://lomiri.mynameisivan.ru/$repo/os/$arch
 ```
 _or_
 ```
-[unity8]
+[lomiri]
 SigLevel = Required
 Server = file:///your/path/$repo/os/$arch
 ```
@@ -33,15 +33,15 @@ sudo pacman -S devtools
 mkdir chroot-i686
 sudo mkdir -p /var/cache/pacman-i686/pkg/
 sudo mkarchroot -C /etc/pacman.conf.i686 -M /etc/makepkg.conf.i686 -c /var/cache/pacman-i686/pkg/ ./chroot-i686/root base base-devel git
-mkdir -p unity8 sources logs PKGBUILDs
+mkdir -p lomiri sources logs PKGBUILDs
 ```
 
-_Your Arch repository will settle in the `unity8` folder._
+_Your Arch repository will settle in the `lomiri` folder._
 
 Clone this repo's PKGBUILDs:
 ```
 cd PKGBUILDs
-git clone https://github.com/vanyasem/Unity8-Arch.git ./
+git clone https://github.com/vanyasem/Lomiri-Arch.git ./
 git submodule init
 git submodule update
 cd ..
@@ -64,7 +64,7 @@ cargo install guzuta
 Configure guzuta:
 ```
 cat > .guzuta.yml
-name: unity8
+name: lomiri
 package_key: YOUR_GPG_KEY
 repo_key: YOUR_GPG_KEY
 srcdest: sources
