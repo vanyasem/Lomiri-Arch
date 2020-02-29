@@ -1,7 +1,7 @@
 Contributing
 ============
 
-First of all, let me thank you for your interest in **Unity8-Arch**!
+First of all, let me thank you for your interest in **Lomiri-Arch**!
 
 **Special thanks to:**
 - [Abhishek](https://www.patreon.com/abhishekzz) for the idea of the project
@@ -15,7 +15,7 @@ First of all, let me thank you for your interest in **Unity8-Arch**!
 As the project is in it's alpha stage, your contribution is very important.
 
 ### Packaging
-You can help us by packaging the components of Unity8.
+You can help us by packaging the components of Lomiri.
 
 Start off by reading the [AUR](https://wiki.archlinux.org/index.php/Aur) wiki page. Make yourself familiar with [PKGBUILDs](https://wiki.archlinux.org/index.php/PKGBUILD).
 
@@ -25,7 +25,7 @@ Try to build one of them, make a PKGBUILD for it. Even if it fails to build, PR 
 
 ### Testing
 
-You can install Unity8 on your system, and help by testing individual packages.
+You can install Lomiri on your system, and help by testing individual packages.
 
 If something doesn't feel right, open an issue both upstream and in this repository.
 
