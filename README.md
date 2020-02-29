@@ -1,7 +1,7 @@
 Lomiri for Arch
 ===============
 
-This project aims to bring [Lomiri](https://github.com/ubports/unity8-build) (former Unity8) DE to Arch GNU/Linux.
+This project aims to bring [Lomiri](https://unity8.io/) (former Unity8) DE to Arch GNU/Linux.
 
 Builds are provided for `x86_64`.
 
