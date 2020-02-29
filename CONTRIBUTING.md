@@ -7,9 +7,10 @@ First of all, let me thank you for your interest in **Lomiri-Arch**!
 - [Abhishek](https://www.patreon.com/abhishekzz) for the idea of the project
 - [Rodney (aka dobey)](https://www.patreon.com/dobey/) for guiding me when I felt lost
 - Marius and Florian from the UBports Dev Team for merging my PRs and motivating me
-- William Wold for helping with Mir and for the financial support on Patreon ($80 total)
+- Dalton from the UBports Dev Team for assisting me with project management
+- William Wold for helping with Mir and for the financial support on Patreon ($95 total)
 - [Alex](https://www.patreon.com/WarumLinuxBesserIst) for former financial support on Patreon ($40 total). He has a German YouTube channel about Linux: [WarumLinuxBesserIst](https://youtube.com/user/WarumLinuxBesserIst), and a recently created English YouTube channel: [eDrive](https://goo.gl/UFVh4S)
-- [Jeroen Bots](https://www.patreon.com/user?u=251509) for financial support on Patreon ($1050 total)
+- [Jeroen Bots](https://www.patreon.com/user?u=251509) for financial support on Patreon ($1450 total)
 - [z3ntu](https://github.com/z3ntu) for helping with updating and patching packages
 
 As the project is in it's alpha stage, your contribution is very important.
