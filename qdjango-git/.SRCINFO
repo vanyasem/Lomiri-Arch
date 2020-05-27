@@ -13,7 +13,9 @@ pkgbase = qdjango-git
 	provides = qdjango
 	conflicts = qdjango
 	source = git+https://github.com/jlaine/qdjango.git
+	source = qdjango.patch
 	sha256sums = SKIP
+	sha256sums = 74e802a40c57b0685a0bd951884d476b273e775551338b5e7e0212fabd53e974
 
 pkgname = qdjango-git
 
