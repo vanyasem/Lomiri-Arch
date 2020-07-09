@@ -2,22 +2,26 @@
 
 pkgname=qtmir-git
 _pkgname=qtmir
-pkgver=r2374.f77ed5dd
-pkgrel=3
+pkgver=r2401.58f26ad4
+pkgrel=1
 pkgdesc='Qt platform abstraction (QPA) plugin for a Mir server'
 url='https://github.com/ubports/qtmir'
 arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL)
 conflicts=(qtmir)
 provides=(qtmir)
-depends=(qt5-base qt5-quickcontrols qt5-sensors mir-git process-cpp ubuntu-app-launch-git gsettings-qt-git libqtdbustest-git libqtdbusmock-git content-hub-git url-dispatcher-git glm valgrind)
+depends=(qt5-base qt5-quickcontrols qt5-sensors mir process-cpp ubuntu-app-launch-git gsettings-qt-git libqtdbustest-git libqtdbusmock-git url-dispatcher-git glm valgrind)
 makedepends=(git cmake cmake-extras-git gtest)
 source=('git+https://github.com/ubports/qtmir.git'
         'moc.patch'
-        'nowerror.patch')
+        'nowerror.patch'
+        '0001-Revert-Revert-Remove-need-for-cgmanager-we-got-no-ne.patch'
+        '53.patch')
 sha256sums=('SKIP'
             '5338271504bb308ec80ca2b5879451b37aec52f6b3cc9919b7dabe454f1d1ce2'
-            'f6aff7b48ade3876739a940de19cc404dca53331a19e15b95f825096d8b96d9c')
+            'SKIP'
+            'SKIP'
+            'SKIP')
 
 BUILDENV+=('!check')
 
@@ -25,11 +29,13 @@ BUILD_DIR=build
 
 prepare() {
   cd ${_pkgname}
-  git checkout xenial_-_edge_-_wayland
+  git checkout xenial_-_edge_-_wayland_-_x11
 
   sed -i 's/ubuntu-app-launch-2/ubuntu-app-launch-3/g' CMakeLists.txt
   patch -Np1 -i "${srcdir}/moc.patch"
   patch -Np1 -i "${srcdir}/nowerror.patch"
+  patch -Np1 -i "${srcdir}/0001-Revert-Revert-Remove-need-for-cgmanager-we-got-no-ne.patch"
+  patch -Np1 -i "${srcdir}/53.patch"
 }
 
 pkgver() {

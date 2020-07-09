@@ -2,7 +2,7 @@
 
 pkgname=unity-api-git
 _pkgname=unity-api
-pkgver=r1104.d74beb0
+pkgver=r1105.e2994d7
 pkgrel=1
 pkgdesc='API for Unity shell integration'
 url='https://github.com/ubports/unity-api'
@@ -12,7 +12,7 @@ conflicts=(unity-api)
 provides=(unity-api)
 depends=(qt5-quickcontrols)
 makedepends=(git cmake cppcheck graphviz libqtdbustest-git cmake-extras-git)
-source=('git+https://github.com/ubports/unity-api.git#branch=bionic')
+source=('git+https://github.com/ubports/unity-api.git#branch=xenial_-_edge')
 sha256sums=('SKIP')
 
 BUILDENV+=('!check') # Some tests are broken

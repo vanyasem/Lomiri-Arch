@@ -1,0 +1,12 @@
+diff --git a/service/bad-url/exec-tool.cpp b/service/bad-url/exec-tool.cpp
+index f3336cf..235f405 100644
+--- a/service/bad-url/exec-tool.cpp
++++ b/service/bad-url/exec-tool.cpp
+@@ -19,6 +19,7 @@
+ 
+ #include <ubuntu-app-launch/helper.h>
+ #include <glib.h>
++#include <stdexcept>
+ 
+ int
+ main (int argc, char * argv[])

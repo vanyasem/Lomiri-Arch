@@ -14,9 +14,11 @@ depends=(ubuntu-app-launch-git intltool apparmor)
 makedepends=(git cmake cmake-extras-git dbus-test-runner lcov gcovr gmock)
 checkdepends=(python-testtools python-nose python-dbusmock)
 source=('git+https://github.com/ubports/url-dispatcher.git'
-        'no-discarded-qualifiers.patch')
+        'no-discarded-qualifiers.patch'
+        'bad-url.patch')
 sha256sums=('SKIP'
-            'acffad6f0cf98faedea4c4ef917e0fcca3f5faa61d95afb55f617ff94ff32d51')
+            'acffad6f0cf98faedea4c4ef917e0fcca3f5faa61d95afb55f617ff94ff32d51'
+            'b5dbcd6e778fd5bd0235abe9ae388b07d2f0f6409c8059d3fae4bd91f433fa30')
 
 prepare() {
   cd ${_pkgname}
@@ -24,6 +26,7 @@ prepare() {
 
   sed -i 's/-Wall/-Wall -Wno-deprecated-declarations/g' CMakeLists.txt
   patch -Np1 -i "${srcdir}/no-discarded-qualifiers.patch"
+  patch -Np1 -i "${srcdir}/bad-url.patch"
 }
 
 pkgver() {

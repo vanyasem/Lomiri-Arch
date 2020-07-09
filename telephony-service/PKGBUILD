@@ -1,0 +1,38 @@
+# Maintainer: Marius Gripsgard <marius@ubports.com>
+
+pkgname=telephony-service-git
+_pkgname=telephony-service
+pkgver=r4579.f80374d6
+pkgrel=1
+pkgdesc='This project provides an implementation of the Free Desktop Notification server for Unity'
+url='https://github.com/ubports/telephony-service'
+arch=(x86_64 i686 armv7h aarch64)
+license=(LGPL GPL)
+conflicts=(telephony-service)
+provides=(telephony-service)
+depends=(qt5-base qt5-pim-git dbus-test-runner libusermetrics-git url-dispatcher-git)
+makedepends=(git)
+checkdepends=()
+source=('git+https://github.com/ubports/telephony-service.git')
+sha256sums=('SKIP')
+
+BUILD_DIR=build
+
+pkgver() {
+  cd ${_pkgname}
+  echo "r$(git rev-list --count HEAD).$(git describe --always)"
+}
+
+build() {
+  cd ${_pkgname}
+  mkdir -p ${BUILD_DIR}
+  cd ${BUILD_DIR}
+  cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" -DWANT_UI_SERVICES=off ..
+  make
+}
+
+package() {
+  cd ${_pkgname}/${BUILD_DIR}
+  make DESTDIR="${pkgdir}/" install
+  mv ${pkgdir}/usr/lib/qt5/ ${pkgdir}/usr/lib/qt/
+}

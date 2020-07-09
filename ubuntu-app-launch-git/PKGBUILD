@@ -2,8 +2,8 @@
 
 pkgname=ubuntu-app-launch-git
 _pkgname=ubuntu-app-launch
-pkgver=r3022.bde4305
-pkgrel=4
+pkgver=r3028.456c701
+pkgrel=1
 pkgdesc='Session init system job for Launching Applications'
 url='https://github.com/ubports/ubuntu-app-launch'
 arch=(x86_64 i686 armv7h aarch64)
@@ -14,19 +14,22 @@ depends=(zeitgeist gobject-introspection lttng-ust mir libertine-git unity-api-g
 makedepends=(git cmake  cmake-extras-git dbus-test-runner gmock lcov gcovr)
 source=('git+https://github.com/ubports/ubuntu-app-launch.git'
         'FormatTruncation.patch'
-        'Gtest.patch')
+        'Gtest.patch'
+        'no-libertine.patch')
 sha256sums=('SKIP'
             'db5684a2f42a664d1e1c10af2e1ff6f0edb43d63e7936d37ca75c575875f7f97'
-            '3c0a88fce3e8af6ac648a026b2fe592b614b511763ad9defeb87659f29b4a1bd')
+            '3c0a88fce3e8af6ac648a026b2fe592b614b511763ad9defeb87659f29b4a1bd'
+            'SKIP')
 
 BUILDENV+=('!check') # Some tests are broken
 
 prepare() {
   cd ${_pkgname}
-  git checkout bionic
+  git checkout bionic_-_libertine-optional
 
   patch -Np1 -i "${srcdir}/FormatTruncation.patch"
   patch -Np1 -i "${srcdir}/Gtest.patch"
+  patch -Np1 -i "${srcdir}/no-libertine.patch"
 }
 
 pkgver() {

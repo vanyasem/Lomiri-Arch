@@ -1,8 +1,8 @@
 diff --git a/data/CMakeLists.txt b/data/CMakeLists.txt
-index f13c6b639..ea0d788f1 100644
+index 2cb8c2d5a..ec10a81ea 100644
 --- a/data/CMakeLists.txt
 +++ b/data/CMakeLists.txt
-@@ -20,7 +20,7 @@ install(FILES
+@@ -20,8 +20,8 @@ install(FILES
      DESTINATION ${CMAKE_INSTALL_DATADIR}/lightdm/lightdm.conf.d
      )
  
@@ -10,5 +10,6 @@ index f13c6b639..ea0d788f1 100644
 +#add_custom_target(pkgversion ALL COMMAND dpkg-parsechangelog -l${CMAKE_SOURCE_DIR}/debian/changelog --show-field version > ${CMAKE_CURRENT_BINARY_DIR}/version)
  
  install(FILES com.canonical.Unity8.gschema.xml DESTINATION ${CMAKE_INSTALL_DATADIR}/glib-2.0/schemas)
+ install(FILES com.canonical.Unity.gschema.xml DESTINATION ${CMAKE_INSTALL_DATADIR}/glib-2.0/schemas)
 -install(FILES ${CMAKE_CURRENT_BINARY_DIR}/version DESTINATION ${CMAKE_INSTALL_LOCALSTATEDIR}/lib/unity8)
 +#install(FILES ${CMAKE_CURRENT_BINARY_DIR}/version DESTINATION ${CMAKE_INSTALL_LOCALSTATEDIR}/lib/unity8)

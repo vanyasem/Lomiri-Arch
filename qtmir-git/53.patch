@@ -1,0 +1,38 @@
+From 8fe6dc6db543dfe6e49d97af8ba11cd2a6bf0edc Mon Sep 17 00:00:00 2001
+From: Luca Weiss <luca@z3ntu.xyz>
+Date: Fri, 17 Apr 2020 19:30:54 +0200
+Subject: [PATCH] Fix compilation with Qt 5.14
+
+Fixes #52
+---
+ src/modules/Unity/Application/mirsurfaceitem.cpp | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
+diff --git a/src/modules/Unity/Application/mirsurfaceitem.cpp b/src/modules/Unity/Application/mirsurfaceitem.cpp
+index 556afb83..1d7a9588 100644
+--- a/src/modules/Unity/Application/mirsurfaceitem.cpp
++++ b/src/modules/Unity/Application/mirsurfaceitem.cpp
+@@ -32,6 +32,10 @@
+ #include <QQmlEngine>
+ #include <QQuickWindow>
+ #include <QScreen>
++#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
++#include <private/qquickwindow_p.h>
++#include <private/qsgdefaultrendercontext_p.h>
++#endif
+ #include <private/qsgdefaultinternalimagenode_p.h>
+ #include <QTimer>
+ #include <QSGTextureProvider>
+@@ -234,7 +238,12 @@ QSGNode *MirSurfaceItem::updatePaintNode(QSGNode *oldNode, UpdatePaintNodeData *
+     m_textureProvider->smooth = smooth();
+     QSGDefaultInternalImageNode *node = static_cast<QSGDefaultInternalImageNode*>(oldNode);
+     if (!node) {
++#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
++        QSGRenderContext *rc = QQuickWindowPrivate::get(window())->context;
++        node = new QSGDefaultInternalImageNode(static_cast<QSGDefaultRenderContext *>(rc));
++#else
+         node = new QSGDefaultInternalImageNode;
++#endif
+         node->setMipmapFiltering(QSGTexture::None);
+         node->setHorizontalWrapMode(QSGTexture::ClampToEdge);
+         node->setVerticalWrapMode(QSGTexture::ClampToEdge);

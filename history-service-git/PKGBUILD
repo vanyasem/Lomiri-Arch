@@ -2,8 +2,8 @@
 
 pkgname=history-service-git
 _pkgname=history-service
-pkgver=r940.75af530
-pkgrel=2
+pkgver=r1425.648b3ee
+pkgrel=1
 pkgdesc='History service to store messages and calls'
 url='https://github.com/ubports/history-service'
 arch=(x86_64 i686 armv7h aarch64)

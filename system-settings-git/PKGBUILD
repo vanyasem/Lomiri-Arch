@@ -2,8 +2,8 @@
 
 pkgname=system-settings-git
 _pkgname=system-settings
-pkgver=r7160.26e4f74d
-pkgrel=2
+pkgver=r7731.eab0d2ec
+pkgrel=1
 pkgdesc='System Settings application for Unity8'
 url='https://github.com/ubports/system-settings'
 arch=(x86_64 i686 armv7h aarch64)
@@ -25,19 +25,19 @@ pkgver() {
 
 prepare() {
   cd ${_pkgname}
-  git checkout bionic
+  git checkout xenial
 
-  sed -i 's/update.cpp//g' plugins/system-update/CMakeLists.txt
-  sed -i 's/apt-pkg//g' plugins/system-update/CMakeLists.txt
-  sed -i 's/apt-pkg//g' tests/mocks/Ubuntu/SystemSettings/Update/CMakeLists.txt
-  echo 'message("No updates sorry")' > tests/plugins/system-update/CMakeLists.txt
+  sed -i 's/add_subdirectory(system-update)//g' plugins/CMakeLists.txt
+  sed -i 's/add_subdirectory(system-update)//g' tests/plugins/CMakeLists.txt
+
+  sed -i 's/add_subdirectory(Update)//g' tests/mocks/Ubuntu/SystemSettings/CMakeLists.txt
 }
 
 build() {
   cd ${_pkgname}
   mkdir -p build
   cd build
-  cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" ..
+  cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" -DENABLE_TESTS=off ..
   make
 }
 

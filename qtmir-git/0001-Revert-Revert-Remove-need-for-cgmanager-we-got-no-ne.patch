@@ -1,0 +1,305 @@
+From 405cfdd5510fb4efc90a05c437e3cf17e7c2daa2 Mon Sep 17 00:00:00 2001
+From: Marius Gripsgard <marius@ubports.com>
+Date: Wed, 8 Jul 2020 23:28:46 +0200
+Subject: [PATCH] Revert "Revert "Remove need for cgmanager, we got no need for
+ upstart cgroups anymore""
+
+This reverts commit d54d46318152a7ca8ba429d424e091d7bdadf651.
+---
+ CMakeLists.txt                                |   1 -
+ debian/control                                |   1 -
+ src/modules/Unity/Application/CMakeLists.txt  |   2 -
+ src/modules/Unity/Application/cgmanager.cpp   | 117 ------------------
+ src/modules/Unity/Application/cgmanager.h     |  42 -------
+ .../Unity/Application/dbusfocusinfo.cpp       |  22 +---
+ src/modules/Unity/Application/dbusfocusinfo.h |   3 -
+ 7 files changed, 3 insertions(+), 185 deletions(-)
+ delete mode 100644 src/modules/Unity/Application/cgmanager.cpp
+ delete mode 100644 src/modules/Unity/Application/cgmanager.h
+
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index c8bff409..43927600 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -93,7 +93,6 @@ pkg_check_modules(GSETTINGS_QT REQUIRED gsettings-qt)
+ pkg_check_modules(QTDBUSTEST libqtdbustest-1 REQUIRED)
+ pkg_check_modules(QTDBUSMOCK libqtdbusmock-1 REQUIRED)
+ pkg_check_modules(APPLICATION_API REQUIRED unity-shell-application=27)
+-pkg_check_modules(CGMANAGER libcgmanager REQUIRED)
+ pkg_check_modules(VALGRIND valgrind REQUIRED)
+ 
+ if(WITH_CONTENTHUB)
+diff --git a/debian/control b/debian/control
+index 703d0474..4e0b066f 100644
+--- a/debian/control
++++ b/debian/control
+@@ -6,7 +6,6 @@ Build-Depends: cmake,
+                cmake-extras (>= 0.10),
+                debhelper (>= 9),
+                google-mock (>= 1.6.0+svn437),
+-               libcgmanager-dev,
+                libcontent-hub-dev (>= 0.2),
+                libfontconfig1-dev,
+                libgles2-mesa-dev,
+diff --git a/src/modules/Unity/Application/CMakeLists.txt b/src/modules/Unity/Application/CMakeLists.txt
+index 95b0fab6..ba9539cd 100644
+--- a/src/modules/Unity/Application/CMakeLists.txt
++++ b/src/modules/Unity/Application/CMakeLists.txt
+@@ -15,7 +15,6 @@ include_directories(
+     ${UBUNTU_PLATFORM_API_INCLUDE_DIRS}
+     ${UBUNTU_APP_LAUNCH_INCLUDE_DIRS}
+     ${GSETTINGS_QT_INCLUDE_DIRS}
+-    ${CGMANAGER_INCLUDE_DIRS}
+ 
+     ${LTTNG_INCLUDE_DIRS}
+     ${Qt5Gui_PRIVATE_INCLUDE_DIRS}
+@@ -31,7 +30,6 @@ add_definitions(-DBYTE_ORDER=__BYTE_ORDER)
+ set(QMLMIRPLUGIN_SRC
+     application_manager.cpp
+     application.cpp
+-    cgmanager.cpp
+     ../../../common/abstractdbusservicemonitor.cpp
+     ../../../common/debughelpers.cpp
+     dbusfocusinfo.cpp
+diff --git a/src/modules/Unity/Application/cgmanager.cpp b/src/modules/Unity/Application/cgmanager.cpp
+deleted file mode 100644
+index 3bee36e2..00000000
+--- a/src/modules/Unity/Application/cgmanager.cpp
++++ /dev/null
+@@ -1,117 +0,0 @@
+-/*
+- * Copyright (C) 2016 Canonical, Ltd.
+- *
+- * This program is free software: you can redistribute it and/or modify it under
+- * the terms of the GNU Lesser General Public License version 3, as published by
+- * the Free Software Foundation.
+- *
+- * This program is distributed in the hope that it will be useful, but WITHOUT
+- * ANY WARRANTY; without even the implied warranties of MERCHANTABILITY,
+- * SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
+- *
+- * You should have received a copy of the GNU Lesser General Public License
+- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+- */
+-
+-#include "cgmanager.h"
+-
+-// QPA mirserver
+-#include <logging.h>
+-
+-#include <cgmanager/cgmanager.h>
+-
+-#include <QDBusArgument>
+-#include <QDBusMessage>
+-
+-using namespace qtmir;
+-
+-// According to D-Bus interface defined in:
+-// https://github.com/lxc/cgmanager/blob/master/org.linuxcontainers.cgmanager.xml
+-
+-CGManager::CGManager(QObject *parent)
+-    : QObject(parent)
+-{
+-}
+-
+-CGManager::~CGManager()
+-{
+-    QDBusConnection::disconnectFromPeer("cgmanager");
+-}
+-
+-QDBusConnection CGManager::getConnection()
+-{
+-    auto connection = QDBusConnection("cgmanager");
+-
+-    if (!connection.isConnected()) {
+-        connection = QDBusConnection::connectToPeer(CGMANAGER_DBUS_PATH, "cgmanager");
+-        if (!connection.isConnected()) {
+-            qCWarning(QTMIR_DBUS, "CGManager: Failed to connect to %s", CGMANAGER_DBUS_PATH);
+-        }
+-    }
+-
+-    return connection;
+-}
+-
+-QString CGManager::getCGroupOfPid(const QString &controller, pid_t pid)
+-{
+-    auto connection = getConnection();
+-    if (!connection.isConnected()) {
+-        return QString();
+-    }
+-
+-    auto message = QDBusMessage::createMethodCall(QString() /*service*/, m_path, m_interface, "GetPidCgroup");
+-
+-    QList<QVariant> arguments;
+-    arguments << QVariant(controller);
+-    arguments << QVariant((int)pid);
+-
+-    message.setArguments(arguments);
+-
+-    QDBusMessage reply = connection.call(message);
+-
+-    if (reply.type() == QDBusMessage::ReplyMessage) {
+-        return reply.arguments().at(0).toString();
+-    } else {
+-        Q_ASSERT(reply.type() == QDBusMessage::ErrorMessage);
+-        qCWarning(QTMIR_DBUS) << "CGManager::getCGroupOfPid failed." << reply.errorMessage();
+-        return QString();
+-    }
+-}
+-
+-QSet<pid_t> CGManager::getTasks(const QString &controller, const QString &cgroup)
+-{
+-    auto connection = getConnection();
+-    if (!connection.isConnected()) {
+-        return QSet<pid_t>();
+-    }
+-
+-    auto message = QDBusMessage::createMethodCall(QString() /*service*/, m_path, m_interface, "GetTasks");
+-
+-    QList<QVariant> arguments;
+-    arguments << QVariant(controller);
+-    arguments << QVariant(cgroup);
+-
+-    message.setArguments(arguments);
+-
+-    QDBusMessage reply = connection.call(message);
+-
+-    if (reply.type() == QDBusMessage::ErrorMessage) {
+-        qCWarning(QTMIR_DBUS) << "CGManager::getCGroupOfPid failed." << reply.errorMessage();
+-        return QSet<pid_t>();
+-    }
+-
+-    Q_ASSERT(reply.type() == QDBusMessage::ReplyMessage);
+-
+-    auto arg = reply.arguments().at(0).value<QDBusArgument>();
+-    Q_ASSERT(arg.currentType() == QDBusArgument::ArrayType);
+-
+-    auto pidList = qdbus_cast<QList<int>>(arg);
+-    Q_ASSERT(pidList.count() > 0);
+-
+-    QSet<pid_t> pidSet;
+-    for (int i = 0; i < pidList.count(); ++i) {
+-        pidSet << (pid_t)pidList[i];
+-    }
+-    return pidSet;
+-}
+diff --git a/src/modules/Unity/Application/cgmanager.h b/src/modules/Unity/Application/cgmanager.h
+deleted file mode 100644
+index c6021c18..00000000
+--- a/src/modules/Unity/Application/cgmanager.h
++++ /dev/null
+@@ -1,42 +0,0 @@
+-/*
+- * Copyright (C) 2016 Canonical, Ltd.
+- *
+- * This program is free software: you can redistribute it and/or modify it under
+- * the terms of the GNU Lesser General Public License version 3, as published by
+- * the Free Software Foundation.
+- *
+- * This program is distributed in the hope that it will be useful, but WITHOUT
+- * ANY WARRANTY; without even the implied warranties of MERCHANTABILITY,
+- * SATISFACTORY QUALITY, or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+- * Lesser General Public License for more details.
+- *
+- * You should have received a copy of the GNU Lesser General Public License
+- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+- */
+-
+-#ifndef QTMIR_CGMANAGER_H
+-#define QTMIR_CGMANAGER_H
+-
+-#include <QDBusConnection>
+-
+-namespace qtmir {
+-
+-class CGManager : public QObject {
+-    Q_OBJECT
+-public:
+-    CGManager(QObject *parent = nullptr);
+-    virtual ~CGManager();
+-
+-    QString getCGroupOfPid(const QString &controller, pid_t pid);
+-
+-    QSet<pid_t> getTasks(const QString &controller, const QString &cgroup);
+-
+-private:
+-    const QString m_interface{"org.linuxcontainers.cgmanager0_0"};
+-    const QString m_path{"/org/linuxcontainers/cgmanager"};
+-    QDBusConnection getConnection();
+-};
+-
+-} // namespace qtmir
+-
+-#endif // QTMIR_CGMANAGER_H
+diff --git a/src/modules/Unity/Application/dbusfocusinfo.cpp b/src/modules/Unity/Application/dbusfocusinfo.cpp
+index 7a5edb54..f03e7c37 100644
+--- a/src/modules/Unity/Application/dbusfocusinfo.cpp
++++ b/src/modules/Unity/Application/dbusfocusinfo.cpp
+@@ -17,7 +17,6 @@
+ #include "dbusfocusinfo.h"
+ 
+ // local
+-#include "cgmanager.h"
+ #include "mirsurfacelistmodel.h"
+ #include "mirsurfaceinterface.h"
+ #include "session_interface.h"
+@@ -35,8 +34,6 @@ DBusFocusInfo::DBusFocusInfo(const QList<Application*> &applications)
+ {
+     QDBusConnection::sessionBus().registerService("com.canonical.Unity.FocusInfo");
+     QDBusConnection::sessionBus().registerObject("/com/canonical/Unity/FocusInfo", this, QDBusConnection::ExportScriptableSlots);
+-
+-    m_cgManager = new CGManager(this);
+ }
+ 
+ bool DBusFocusInfo::isPidFocused(unsigned int pid)
+@@ -54,22 +51,9 @@ bool DBusFocusInfo::isPidFocused(unsigned int pid)
+ 
+ QSet<pid_t> DBusFocusInfo::fetchAssociatedPids(pid_t pid)
+ {
+-    QString cgroup = m_cgManager->getCGroupOfPid("freezer", pid);
+-
+-    // If a cgroup has a format like this:
+-    // /user.slice/user-32011.slice/session-c3.scope/upstart/application-legacy-puritine_gedit_0.0-
+-    // All PIds in it are associated with a single application.
+-    if (cgroup.split("/").contains("upstart")) {
+-        QSet<pid_t> pidSet = m_cgManager->getTasks("freezer", cgroup);
+-        qCDebug(QTMIR_DBUS) << "DBusFocusInfo: pid" << pid << "is in cgroup" << cgroup << "along with:" << pidSet;
+-        if (pidSet.isEmpty()) {
+-            pidSet << pid;
+-        }
+-        return pidSet;
+-    } else {
+-        qCDebug(QTMIR_DBUS) << "DBusFocusInfo: pid" << pid << "is in cgroup" << cgroup << "which is not app-specific";
+-        return QSet<pid_t>({pid});
+-    }
++    // TODO port me to systemd ubuntu-app-launch
++    qCDebug(QTMIR_DBUS) << "DBusFocusInfo: pid" << pid << "unable to determine cgroup, assuming is not app-specific.";
++    return QSet<pid_t>({pid});
+ }
+ 
+ SessionInterface* DBusFocusInfo::findSessionWithPid(const QSet<pid_t> &pidSet)
+diff --git a/src/modules/Unity/Application/dbusfocusinfo.h b/src/modules/Unity/Application/dbusfocusinfo.h
+index f9e652fa..0adff9b9 100644
+--- a/src/modules/Unity/Application/dbusfocusinfo.h
++++ b/src/modules/Unity/Application/dbusfocusinfo.h
+@@ -21,7 +21,6 @@
+ 
+ namespace qtmir {
+ 
+-class CGManager;
+ class MirSurfaceInterface;
+ 
+ /*
+@@ -57,8 +56,6 @@ private:
+     MirSurfaceInterface *findQmlSurface(const QString &serializedId);
+ 
+     const QList<Application*> &m_applications;
+-
+-    CGManager *m_cgManager;
+ };
+ 
+ } // namespace qtmir
+-- 
+2.27.0
+

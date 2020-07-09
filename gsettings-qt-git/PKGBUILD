@@ -2,7 +2,7 @@
 
 pkgname=gsettings-qt-git
 _pkgname=gsettings-qt
-pkgver=r185.c8ecb2b
+pkgver=r187.fa7454a
 pkgrel=1
 pkgdesc='Library to access GSettings from Qt'
 url='https://github.com/ubports/gsettings-qt'
@@ -12,7 +12,7 @@ depends=(qt5-base qt5-declarative)
 makedepends=(git)
 provides=(gsettings-qt)
 replaces=(gsettings-qt)
-source=('git+https://github.com/ubports/gsettings-qt.git')
+source=('git+https://gitlab.com/ubports/core/gsettings-qt.git')
 sha256sums=('SKIP')
 
 #BUILDENV+=('!check') 
@@ -20,11 +20,6 @@ sha256sums=('SKIP')
 pkgver() {
   cd ${_pkgname}
   echo "r$(git rev-list --count HEAD).$(git describe --always)"
-}
-
-prepare() {
-  cd ${_pkgname}
-  git checkout bionic
 }
 
 build() {

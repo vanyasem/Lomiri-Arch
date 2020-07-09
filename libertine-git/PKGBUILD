@@ -2,8 +2,8 @@
 
 pkgname=libertine-git
 _pkgname=libertine
-pkgver=r465.4ae89b2
-pkgrel=2
+pkgver=r467.e1c5b7b
+pkgrel=1
 pkgdesc='A sandbox for running legacy deb-based X11 applications'
 url='https://github.com/ubports/libertine'
 arch=(x86_64 i686 armv7h aarch64)

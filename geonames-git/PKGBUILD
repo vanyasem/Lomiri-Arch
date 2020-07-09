@@ -2,8 +2,8 @@
 
 pkgname=geonames-git
 _pkgname=geonames
-pkgver=r4.fb9788a
-pkgrel=2
+pkgver=r5.ce158ce
+pkgrel=1
 pkgdesc='Parse and query the geonames database dump'
 url='https://github.com/ubports/geonames'
 arch=(x86_64 i686 armv7h aarch64)

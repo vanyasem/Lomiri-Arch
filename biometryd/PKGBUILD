@@ -1,0 +1,38 @@
+# Maintainer: Marius Gripsgard <marius@ubports.com>
+
+pkgname=biometryd-git
+_pkgname=biometryd
+pkgver=r126.1e82bbe
+pkgrel=1
+pkgdesc='This project provides an implementation of the Free Desktop Notification server for Unity'
+url='https://github.com/ubports/biometryd'
+arch=(x86_64 i686 armv7h aarch64)
+license=(LGPL GPL)
+conflicts=(biometryd)
+provides=(biometryd)
+depends=(qt5-base dbus-cpp process-cpp cmake-extras-git boost-libs gtest libelf sqlite)
+makedepends=(git)
+checkdepends=()
+source=('git+https://github.com/ubports/biometryd.git')
+sha256sums=('SKIP')
+
+BUILD_DIR=build
+
+pkgver() {
+  cd ${_pkgname}
+  echo "r$(git rev-list --count HEAD).$(git describe --always)"
+}
+
+build() {
+  cd ${_pkgname}
+  mkdir -p ${BUILD_DIR}
+  cd ${BUILD_DIR}
+  cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr -DCMAKE_INSTALL_LIBDIR="lib/" -DWANT_UI_SERVICES=off ..
+  make
+}
+
+package() {
+  cd ${_pkgname}/${BUILD_DIR}
+  make DESTDIR="${pkgdir}/" install
+  mv ${pkgdir}/usr/lib/qt5/ ${pkgdir}/usr/lib/qt/
+}

@@ -12,12 +12,16 @@ conflicts=(thumbnailer)
 provides=(thumbnailer)
 depends=(boost qt5-base qt5-quickcontrols gstreamer gst-plugins-base gdk-pixbuf2 libexif unity-api-git apparmor taglib persistent-cache-cpp-bzr)
 makedepends=(git cmake)
-source=('git+https://github.com/ubports/thumbnailer.git')
-sha256sums=('SKIP')
+source=('git+https://github.com/ubports/thumbnailer.git'
+        'mark-inline.patch')
+sha256sums=('SKIP'
+            'SKIP')
 
 prepare() {
   cd ${_pkgname}
   git checkout bionic
+
+  patch -Np1 -i "${srcdir}/mark-inline.patch"
 }
 
 pkgver() {
@@ -34,5 +38,6 @@ build() {
 package() {
   cd ${_pkgname}
   make DESTDIR="${pkgdir}/" install
+  mv ${pkgdir}/usr/lib/qt5/ ${pkgdir}/usr/lib/qt/
 }
 # vim:set ts=2 sw=2 et:
