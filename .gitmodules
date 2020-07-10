@@ -30,7 +30,7 @@
 	url = https://aur.archlinux.org/ofono.git
 [submodule "mir"]
 	path = mir
-	url = https://aur.archlinux.org/mir.git
+	url = git@github.com:mariogrip/mir-arch-pkg.git
 [submodule "mir-git"]
 	path = mir-git
 	url = https://aur.archlinux.org/mir-git.git
