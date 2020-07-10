@@ -1,6 +1,6 @@
 lcov
 wlcs
-mir-git
+mir
 cmake-extras-git
 libqtdbustest-git
 unity-api-git
@@ -11,7 +11,6 @@ properties-cpp
 ubuntu-app-launch-git
 process-cpp
 perl-rpc-xml
-python2-flask-script
 net-cpp-git
 zmqpp
 lttng-tools
@@ -46,6 +45,6 @@ indicator-network-git
 qdjango-git
 libusermetrics-git
 gsettings-ubuntu-touch-schemas-git
-ubuntu-wallpapers
-unity7-schemas
+biometryd
+unity-notifications
 unity8-git
