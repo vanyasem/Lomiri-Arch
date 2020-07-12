@@ -15,7 +15,7 @@ net-cpp-git
 zmqpp
 lttng-tools
 url-dispatcher-git
-persistent-cache-cpp-bzr
+persistent-cache-cpp-git
 thumbnailer-git
 qt5-pim-git
 qt5-systems-git
