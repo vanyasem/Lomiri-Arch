@@ -51,6 +51,7 @@ build() {
 package() {
   cd ${_pkgname}
   mkdir -p /tmp/runtime-builduser
-  XDG_RUNTIME_DIR=/tmp/runtime-builduser make INSTALL_ROOT="${pkgdir}/" install
+  # Running it twice seems to work for some unknown reason
+  XDG_RUNTIME_DIR=/tmp/runtime-builduser make INSTALL_ROOT="${pkgdir}/" install || XDG_RUNTIME_DIR=/tmp/runtime-builduser make INSTALL_ROOT="${pkgdir}/" install
 }
 # vim:set ts=2 sw=2 et:
