@@ -1,6 +1,7 @@
 # Maintainer: Ivan Semkin (ivan at semkin dot ru)
 
-pkgname=libqofono
+pkgname=libqofono-qt5
+_pkgname=libqofono
 pkgver=0.94
 pkgrel=1
 pkgdesc='A library for accessing the ofono daemon, and a declarative plugin for it'
@@ -15,18 +16,18 @@ sha256sums=('f5220a583f559f31f2b8592068f59ad0620e46d1e6bafc0d5d46da6771ecd472')
 BUILDENV+=('!check') # Tests can only be run AFTER the package is installed (maybe some prefix exists?)
 
 build() {
-  cd ${pkgname}-${pkgver}
+  cd ${_pkgname}-${pkgver}
   qmake
   make
 }
 
 check() {
-  cd ${pkgname}-${pkgver}
+  cd ${_pkgname}-${pkgver}
   make check TESTARGS="-silent"
 }
 
 package() {
-  cd ${pkgname}-${pkgver}
+  cd ${_pkgname}-${pkgver}
   make INSTALL_ROOT="${pkgdir}/" install
 }
 # vim:set ts=2 sw=2 et:
