@@ -15,9 +15,11 @@ makedepends=(git cmake cmake-extras-git doxygen)
 checkdepends=(xorg-server-xvfb)
 source=('git+https://github.com/ubports/unity8.git'
         'AndroidAway.patch'
-        'NoDpkgParse.patch')
+        'NoDpkgParse.patch'
+        'no-lights.patch')
 sha256sums=('SKIP'
             'ba26a1235461f531f9961a306da22593db92d3bd08a84139ef4ae2d042a2b1cc'
+            'SKIP'
             'SKIP')
 
 BUILDENV+=('!check') # https://paste.ubuntu.com/p/2d33RJX4W8/
@@ -35,6 +37,7 @@ prepare() {
   
   patch -Np1 -i "${srcdir}/AndroidAway.patch"
   patch -Np1 -i "${srcdir}/NoDpkgParse.patch"
+  patch -Np1 -i "${srcdir}/no-lights.patch"
 }
 
 build() {

@@ -1,0 +1,79 @@
+diff --git a/src/biometry/devices/forwarding.cpp b/src/biometry/devices/forwarding.cpp
+index 0b5ac97..a751b7e 100644
+--- a/src/biometry/devices/forwarding.cpp
++++ b/src/biometry/devices/forwarding.cpp
+@@ -19,6 +19,8 @@
+ 
+ #include <biometry/devices/forwarding.h>
+ 
++#include <stdexcept>
++
+ biometry::devices::Forwarding::Forwarding(const std::shared_ptr<Device>& device)
+     : impl{device}
+ {
+diff --git a/src/biometry/runtime.cpp b/src/biometry/runtime.cpp
+index be345f7..feb168f 100644
+--- a/src/biometry/runtime.cpp
++++ b/src/biometry/runtime.cpp
+@@ -52,12 +52,12 @@ void exception_safe_run(boost::asio::io_service& service)
+ }
+ }
+ 
+-std::shared_ptr<biometry::Runtime> biometry::Runtime::create(std::uint32_t pool_size)
++std::shared_ptr<biometry::Runtime> biometry::Runtime::create(std::int32_t pool_size)
+ {
+     return std::shared_ptr<biometry::Runtime>(new biometry::Runtime(pool_size));
+ }
+ 
+-biometry::Runtime::Runtime(std::uint32_t pool_size)
++biometry::Runtime::Runtime(std::int32_t pool_size)
+     : pool_size_{pool_size},
+       service_{pool_size_},
+       strand_{service_},
+@@ -78,7 +78,7 @@ biometry::Runtime::~Runtime()
+ 
+ void biometry::Runtime::start()
+ {
+-    for (unsigned int i = 0; i < pool_size_; i++)
++    for (int i = 0; i < pool_size_; i++)
+         workers_.push_back(std::thread{exception_safe_run, std::ref(service_)});
+ }
+ 
+diff --git a/src/biometry/runtime.h b/src/biometry/runtime.h
+index 2c6d96c..ab4c150 100644
+--- a/src/biometry/runtime.h
++++ b/src/biometry/runtime.h
+@@ -44,7 +44,7 @@ public:
+ 
+     // create returns a Runtime instance with pool_size worker threads
+     // executing the underlying service.
+-    static std::shared_ptr<Runtime> create(std::uint32_t pool_size = worker_threads);
++    static std::shared_ptr<Runtime> create(std::int32_t pool_size = worker_threads);
+ 
+     Runtime(const Runtime&) = delete;
+     Runtime(Runtime&&) = delete;
+@@ -72,9 +72,9 @@ public:
+ private:
+     // Runtime constructs a new instance, firing up pool_size
+     // worker threads.
+-    Runtime(std::uint32_t pool_size);
++    Runtime(std::int32_t pool_size);
+ 
+-    std::uint32_t pool_size_;
++    std::int32_t pool_size_;
+     boost::asio::io_service service_;
+     boost::asio::io_service::strand strand_;
+     boost::asio::io_service::work keep_alive_;
+diff --git a/src/biometry/variant.cpp b/src/biometry/variant.cpp
+index 921dfcf..ad1d848 100644
+--- a/src/biometry/variant.cpp
++++ b/src/biometry/variant.cpp
+@@ -21,6 +21,8 @@
+ 
+ #include <boost/variant.hpp>
+ 
++#include <iostream>
++
+ namespace
+ {
+ typedef typename boost::make_recursive_variant
