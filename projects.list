@@ -36,7 +36,7 @@ accountsservice-ubuntu
 geonames-git
 qmenumodel-git
 ofono
-libqofono
+libqofono-qt5
 system-settings-git
 gmenuharness-bzr
 indicator-network-git
@@ -45,4 +45,5 @@ libusermetrics-git
 gsettings-ubuntu-touch-schemas-git
 biometryd
 unity-notifications
+telephony-service
 unity8-git
