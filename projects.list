@@ -5,12 +5,10 @@ cmake-extras-git
 libqtdbustest-git
 unity-api-git
 dbus-test-runner
-libertine-git
 ubuntu-download-manager-git
 properties-cpp
 ubuntu-app-launch-git
 process-cpp
-perl-rpc-xml
 net-cpp-git
 zmqpp
 lttng-tools
