@@ -11,44 +11,50 @@ Options:
   clean|-c     -  Clean all packages
   uninstall|-u -  Uninstall all packages
   srcinfo|-s   -  Regenerate .SRCINFOs of all packages
+Environment Variables:
+  PROJECT_LIST - select list to use
 _EOF
   exit 0
 }
 
+PACKAGES=$(cat "${PROJECT_LIST:-projects.list}")
+
 cmd_build() {
   sudo test true
-  PACKAGES=$(cat projects.list)
   for package in $PACKAGES
   do
     cd ${package}
-    yes | makepkg -sfi
+    makepkg -si --noconfirm
     echo "----------------------"
     cd ..
   done
 }
 
 cmd_rebuild() {
-  for package in ./*/
+  sudo test true
+  for package in $PACKAGES
   do
     cd ${package}
-    yes | makepkg -sfr --holdver
+    makepkg -sfr --holdver --noconfirm
     echo "----------------------"
     cd ..
   done
 }
 
 cmd_needed() {
-  for package in ./*/
+  sudo test true
+  for package in $PACKAGES
   do
     cd ${package}
-    yes | makepkg -sr || true
+    makepkg -si --needed --noconfirm
     echo "----------------------"
     cd ..
   done
 }
 
 cmd_clean() {
-  for package in ./*/
+  sudo test true
+  for package in $PACKAGES
   do
     cd ${package}
     makepkg -dCo
@@ -58,7 +64,6 @@ cmd_clean() {
 
 cmd_uninstall() {
   sudo test true
-  PACKAGES=$(cat projects.list)
   for package in $PACKAGES
   do
     yes | sudo pacman -Rdd ${package} || true
@@ -67,7 +72,7 @@ cmd_uninstall() {
 }
 
 cmd_srcinfo() {
-  for package in ./*/
+  for package in $PACKAGES
   do
     cd ${package}
     makepkg --printsrcinfo > .SRCINFO
