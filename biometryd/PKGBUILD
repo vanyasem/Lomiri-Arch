@@ -2,7 +2,7 @@
 
 pkgname=biometryd-git
 _pkgname=biometryd
-pkgver=r126.1e82bbe
+pkgver=r129.da7940e
 pkgrel=1
 pkgdesc='This project provides an implementation of the Free Desktop Notification server for Unity'
 url='https://github.com/ubports/biometryd'
@@ -13,8 +13,10 @@ provides=(biometryd)
 depends=(qt5-base dbus-cpp process-cpp cmake-extras-git boost-libs gtest libelf sqlite)
 makedepends=(git)
 checkdepends=()
-source=('git+https://github.com/ubports/biometryd.git')
-sha256sums=('SKIP')
+source=('git+https://github.com/ubports/biometryd.git'
+        'fix-new-gcc-and-boost.patch')
+sha256sums=('SKIP'
+            'SKIP')
 
 BUILD_DIR=build
 
@@ -22,6 +24,14 @@ pkgver() {
   cd ${_pkgname}
   echo "r$(git rev-list --count HEAD).$(git describe --always)"
 }
+
+prepare() {
+  cd ${_pkgname}
+  git checkout bionic
+
+  patch -Np1 -i "${srcdir}/fix-new-gcc-and-boost.patch"
+}
+
 
 build() {
   cd ${_pkgname}
