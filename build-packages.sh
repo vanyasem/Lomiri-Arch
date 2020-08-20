@@ -50,7 +50,7 @@ cmd_needed() {
 
 cmd_missing() {
  sudo test true
- PACKAGES=$(cat projects.list.minimal)
+ PACKAGES=$(cat projects.list)
  pacman -Q | awk '{print $1}' > packages_on_system.txt
  readarray -t package_on_system_list < packages_on_system.txt
  
