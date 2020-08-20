@@ -8,6 +8,7 @@ Options:
   build|-b     -  Build and install all packages
   rebuild|-r   -  Rebuild all packages
   needed|-n    -  Build packages that are not built
+  missing|-m)  -  Build and install packages that are not yet installed
   clean|-c     -  Clean all packages
   uninstall|-u -  Uninstall all packages
   srcinfo|-s   -  Regenerate .SRCINFOs of all packages
@@ -47,6 +48,35 @@ cmd_needed() {
   done
 }
 
+cmd_missing() {
+ sudo test true
+ PACKAGES=$(cat projects.list.minimal)
+ pacman -Q | awk '{print $1}' > packages_on_system.txt
+ readarray -t package_on_system_list < packages_on_system.txt
+ 
+
+   for package in $PACKAGES
+   do
+   
+   result="$(value_in_array "${package}")"
+   
+    if [ "false" = "${result}" ]
+   then
+     cd "${package}"
+     echo "#####  ${package}  #####"
+     yes | makepkg -si
+     echo "----------------------"
+     cd ..
+     fi
+   done
+ 
+}
+
+value_in_array() {
+  readarray -t package_on_system_list < packages_on_system.txt
+  [[ " ${package_on_system_list[@]} " =~ " ${1} " ]] && echo "true" || echo "false"
+}
+
 cmd_clean() {
   for package in ./*/
   do
@@ -80,6 +110,7 @@ case "$1" in
   build|-b)     shift; cmd_build "$@" ;;
   rebuild|-r)   shift; cmd_rebuild "$@" ;;
   needed|-n)    shift; cmd_needed "$@" ;;
+  missing|-m)    shift; cmd_missing "$@" ;;
   clean|-c)     shift; cmd_clean "$@" ;;
   uninstall|-u) shift; cmd_uninstall "$@" ;;
   srcinfo|-s)   shift; cmd_srcinfo "$@" ;;
