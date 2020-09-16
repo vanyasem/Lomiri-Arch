@@ -1,0 +1,12 @@
+diff --git a/qml/Panel/Indicators/IndicatorsLight.qml b/qml/Panel/Indicators/IndicatorsLight.qml
+index db053bc25..040d4cbd8 100644
+--- a/qml/Panel/Indicators/IndicatorsLight.qml
++++ b/qml/Panel/Indicators/IndicatorsLight.qml
+@@ -20,7 +20,6 @@
+ 
+ import QtQuick 2.4
+ import Powerd 0.1
+-import Lights 0.1
+ import QMenuModel 0.1 as QMenuModel
+ import Unity.Indicators 0.1 as Indicators
+ import Wizard 0.1

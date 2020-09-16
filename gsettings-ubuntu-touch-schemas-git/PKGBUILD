@@ -2,8 +2,8 @@
 
 pkgname=gsettings-ubuntu-touch-schemas-git
 _pkgname=gsettings-ubuntu-touch-schemas
-pkgver=r199.0d029fa
-pkgrel=2
+pkgver=r202.b3bdf17
+pkgrel=1
 pkgdesc='GSettings desktop-wide schemas for Ubuntu Touch'
 url='https://github.com/ubports/gsettings-ubuntu-touch-schemas'
 arch=(x86_64 i686 armv7h aarch64)

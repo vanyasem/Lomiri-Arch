@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 8e0e7525..35300813 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -56,7 +56,7 @@ pkg_check_modules(GLOG REQUIRED libglog)
+ pkg_check_modules(GLOG libglog)
+ 
+ enable_testing()
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pipe -std=c++11 -Werror -O2 -Wall -W -D_REENTRANT -fPIC -pedantic -Wextra")
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pipe -std=c++11 -Wno-error -O2 -Wall -W -D_REENTRANT -fPIC -pedantic -Wextra")
+ add_definitions("-DNDEBUG")
+ 
+ if(NOT CMAKE_BUILD_TYPE)

@@ -29,6 +29,9 @@ build() {
   cd build
   qmake PREFIX=/usr ..
   make
+
+  cd ../doc
+  doxygen
 }
 
 package() {

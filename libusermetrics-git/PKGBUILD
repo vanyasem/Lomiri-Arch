@@ -2,8 +2,8 @@
 
 pkgname=libusermetrics-git
 _pkgname=libusermetrics
-pkgver=r477.a50ce9f
-pkgrel=3
+pkgver=r479.ed7dd5d
+pkgrel=1
 pkgdesc='Library for exporting anonymous metrics about users'
 url='https://github.com/ubports/libusermetrics'
 arch=(x86_64 i686 armv7h aarch64)

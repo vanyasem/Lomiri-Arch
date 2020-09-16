@@ -2,8 +2,8 @@
 
 pkgname=click-git
 _pkgname=click
-pkgver=r1079.28b9c13
-pkgrel=2
+pkgver=r1082.cc10894
+pkgrel=1
 pkgdesc='Click is a simplified packaging format'
 url='https://github.com/ubports/click'
 arch=(x86_64 i686 armv7h aarch64)

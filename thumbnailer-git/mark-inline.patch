@@ -1,0 +1,22 @@
+diff --git a/include/internal/raii.h b/include/internal/raii.h
+index 730f6d3..fbde51f 100644
+--- a/include/internal/raii.h
++++ b/include/internal/raii.h
+@@ -33,7 +33,7 @@ namespace thumbnailer
+ namespace internal
+ {
+ 
+-auto do_close = [](int fd)
++inline auto do_close = [](int fd)
+ {
+     if (fd >= 0)
+     {
+@@ -42,7 +42,7 @@ auto do_close = [](int fd)
+ };
+ typedef unity::util::ResourcePtr<int, decltype(do_close)> FdPtr;
+ 
+-auto do_unlink = [](std::string const& filename)
++inline auto do_unlink = [](std::string const& filename)
+ {
+     ::unlink(filename.c_str());
+ };

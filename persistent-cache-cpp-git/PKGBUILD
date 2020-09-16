@@ -1,23 +1,23 @@
-# Maintainer: Ivan Semkin (ivan at semkin dot ru)
+# Maintainer: Marius Gripsgard <marius@ubports.com>
 
-pkgname=persistent-cache-cpp-bzr
+pkgname=persistent-cache-cpp-git
 _pkgname=persistent-cache-cpp
-pkgver=r28
-pkgrel=2
+pkgver=r108.57ccf1a
+pkgrel=1
 pkgdesc='A cache of key-value pairs with persistent storage for C++'
-url='https://launchpad.net/persistent-cache-cpp'
+url='https://gitlab.com/ubports/core/lib-cpp/persistent-cache-cpp'
 arch=(x86_64 i686 armv7h aarch64)
 license=(LGPL)
 conflicts=(persistent-cache-cpp)
 provides=(persistent-cache-cpp)
 depends=(boost leveldb valgrind)
 makedepends=(bzr cmake cmake-extras-git doxygen graphviz lcov gcovr gtest)
-source=("bzr+lp:${_pkgname}")
+source=("git+https://gitlab.com/ubports/core/lib-cpp/persistent-cache-cpp.git")
 sha256sums=('SKIP')
 
 pkgver() {
   cd ${_pkgname}
-  echo "r$(bzr revno)"
+  echo "r$(git rev-list --count HEAD).$(git describe --always)"
 }
 
 build() {

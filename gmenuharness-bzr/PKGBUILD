@@ -11,7 +11,7 @@ license=()
 conflicts=(gmenuharness)
 provides=(gmenuharness)
 depends=(unity-api-git gtest libqtdbustest-git)
-makedepends=(bzr cmake cmake-extras-git doxygen)
+makedepends=(bzr cmake cmake-extras-git doxygen python-dulwich)
 source=("bzr+lp:${_pkgname}"
         'Functional1.patch'
         'Functional2.patch')

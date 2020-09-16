@@ -1,0 +1,108 @@
+From 60b897f28b088a30dcf72600cf44cd730caf0c88 Mon Sep 17 00:00:00 2001
+From: Luca Weiss <luca@z3ntu.xyz>
+Date: Sat, 13 Jun 2020 22:55:35 +0200
+Subject: [PATCH 1/2] Compatibility with Qt 5.15
+
+---
+ apicheck/apicheck.cpp                        | 8 ++++++++
+ src/UbuntuToolkit/ucqquickimageextension.cpp | 4 +++-
+ 2 files changed, 11 insertions(+), 1 deletion(-)
+
+diff --git a/apicheck/apicheck.cpp b/apicheck/apicheck.cpp
+index 6b44d3675..8a822fba4 100644
+--- a/apicheck/apicheck.cpp
++++ b/apicheck/apicheck.cpp
+@@ -911,11 +911,19 @@ int main(int argc, char *argv[])
+ #if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+             Q_FOREACH (const QQmlJS::DiagnosticMessage &e, p.errors(qmlDirFile.fileName())) {
+                 QString errorString = QLatin1String("qmldir");
++#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
++                if (e.loc.startLine > 0) {
++                    errorString += QLatin1Char(':') + QString::number(e.loc.startLine);
++                    if (e.loc.startColumn > 0)
++                        errorString += QLatin1Char(':') + QString::number(e.loc.startColumn);
++                }
++#else
+                 if (e.line > 0) {
+                     errorString += QLatin1Char(':') + QString::number(e.line);
+                     if (e.column > 0)
+                         errorString += QLatin1Char(':') + QString::number(e.column);
+                 }
++#endif
+ 
+                 errorString += QLatin1String(": ") + e.message;
+                 std::cerr << qPrintable( errorString ) << std::endl;
+diff --git a/src/UbuntuToolkit/ucqquickimageextension.cpp b/src/UbuntuToolkit/ucqquickimageextension.cpp
+index a0df3c2ea..d84273453 100644
+--- a/src/UbuntuToolkit/ucqquickimageextension.cpp
++++ b/src/UbuntuToolkit/ucqquickimageextension.cpp
+@@ -127,7 +127,9 @@ void UCQQuickImageExtension::reloadSource()
+             ss = QSize(-1, -1);
+         }
+ 
+-#if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
++#if QT_VERSION >= QT_VERSION_CHECK(5, 15, 0)
++        if (QQuickPixmap::isCached(m_source, QRect(), ss, 0, QQuickImageProviderOptions())) {
++#elif QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+         if (QQuickPixmap::isCached(m_source, ss, 0, QQuickImageProviderOptions())) {
+ #else
+         if (QQuickPixmap::isCached(m_source, ss, QQuickImageProviderOptions())) {
+
+From 2411c73d2201804b22cf59f84607219a08236870 Mon Sep 17 00:00:00 2001
+From: Luca Weiss <luca@z3ntu.xyz>
+Date: Tue, 16 Jun 2020 22:21:11 +0200
+Subject: [PATCH 2/2] UCBottomEdgePrivate: fix segfault under Qt 5.15
+
+Previously navigationActions would point to 0x3 which would then
+segfault when trying to call size() on it. Replace the code with
+QQmlListReference which "allows C++ programs to read from, and assign
+values to a QML list property in a simple and type-safe way".
+
+Additionally add a Q_ASSERT around the .append call to make sure it
+succeeds, otherwise it'll crash later.
+---
+ src/UbuntuToolkit/ucbottomedge.cpp | 16 +++++++---------
+ 1 file changed, 7 insertions(+), 9 deletions(-)
+
+diff --git a/src/UbuntuToolkit/ucbottomedge.cpp b/src/UbuntuToolkit/ucbottomedge.cpp
+index 1f2b49ced..e6afbe7ee 100644
+--- a/src/UbuntuToolkit/ucbottomedge.cpp
++++ b/src/UbuntuToolkit/ucbottomedge.cpp
+@@ -405,22 +405,20 @@ void UCBottomEdgePrivate::patchContentItemHeader()
+ 
+     LOG << "PATCH HEADER" << currentContentItem.data();
+     // get the navigationActions and inject an action there
+-    QVariant list(header->property("navigationActions"));
+-    QQmlListProperty<UCAction> actions = list.value< QQmlListProperty<UCAction> >();
+-    QList<UCAction*> *navigationActions = reinterpret_cast<QList<UCAction*>*>(actions.data);
++    QQmlListReference navigationActions(header, "navigationActions");
+ 
+     // do we have any action in the list?
+-    if (navigationActions->size()) {
++    if (navigationActions.count()) {
+         // we have actions in the list, check if those are ours
+-        UCCollapseAction *collapse = qobject_cast<UCCollapseAction*>(navigationActions->at(0));
++        UCCollapseAction *collapse = qobject_cast<UCCollapseAction*>(navigationActions.at(0));
+         if (!collapse) {
+             // not ours, clear the list
+-            navigationActions->clear();
++            navigationActions.clear();
+         }
+     }
+-    if (navigationActions->size() <= 0) {
++    if (navigationActions.count() <= 0) {
+         // no actions, patch
+-        navigationActions->append(new UCCollapseAction(header));
++        Q_ASSERT(navigationActions.append(new UCCollapseAction(header)));
+         // invoke PageHeader.navigationActionsChanged signal
+         int signal = header->metaObject()->indexOfSignal("navigationActionsChanged()");
+         if (signal >= 0) {
+@@ -431,7 +429,7 @@ void UCBottomEdgePrivate::patchContentItemHeader()
+     // are we committed?
+     if (status == UCBottomEdge::Committed) {
+         // activate the action
+-        UCCollapseAction *collapse = qobject_cast<UCCollapseAction*>(navigationActions->at(0));
++        UCCollapseAction *collapse = qobject_cast<UCCollapseAction*>(navigationActions.at(0));
+         Q_ASSERT(collapse);
+         collapse->activate();
+         QObject::connect(collapse, &UCAction::triggered, q_func(), &UCBottomEdge::collapse, Qt::DirectConnection);

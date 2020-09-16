@@ -1,0 +1,21 @@
+diff --git a/apicheck/apicheck.cpp b/apicheck/apicheck.cpp
+index 6b44d3675..afd6ac09d 100644
+--- a/apicheck/apicheck.cpp
++++ b/apicheck/apicheck.cpp
+@@ -911,11 +911,11 @@ int main(int argc, char *argv[])
+ #if QT_VERSION >= QT_VERSION_CHECK(5, 14, 0)
+             Q_FOREACH (const QQmlJS::DiagnosticMessage &e, p.errors(qmlDirFile.fileName())) {
+                 QString errorString = QLatin1String("qmldir");
+-                if (e.line > 0) {
+-                    errorString += QLatin1Char(':') + QString::number(e.line);
+-                    if (e.column > 0)
+-                        errorString += QLatin1Char(':') + QString::number(e.column);
+-                }
++                //if (e.line > 0) {
++                //    errorString += QLatin1Char(':') + QString::number(e.line);
++                //    if (e.column > 0)
++                //        errorString += QLatin1Char(':') + QString::number(e.column);
++                //}
+ 
+                 errorString += QLatin1String(": ") + e.message;
+                 std::cerr << qPrintable( errorString ) << std::endl;

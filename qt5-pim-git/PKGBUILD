@@ -2,7 +2,7 @@
 
 pkgname=qt5-pim-git
 _pkgname=qtpim
-pkgver=v5.0.0.beta1.r218.g3f567865
+pkgver=v5.0.0.beta1.r220.g8fec622c
 pkgrel=1
 pkgdesc='Qt Personal Information Management'
 url='http://code.qt.io/cgit/qt/qtpim.git'
@@ -34,7 +34,10 @@ check() {
 package() {
   cd ${_pkgname}
   make INSTALL_ROOT="${pkgdir}/" install
-  
+
+  # Drop Qt5Contacts_.cmake as its only used for development source
+  rm "$pkgdir/usr/lib/cmake/Qt5Contacts/Qt5Contacts_.cmake"
+
   # Drop QMAKE_PRL_BUILD_DIR because it references the build dir
   find "$pkgdir/usr/lib" -type f -name '*.prl' \
     -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;

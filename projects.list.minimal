@@ -9,9 +9,7 @@ ubuntu-download-manager-git
 properties-cpp
 ubuntu-app-launch-git
 process-cpp
-net-cpp-git
 zmqpp
-lttng-tools
 url-dispatcher-git
 persistent-cache-cpp-git
 thumbnailer-git
@@ -28,14 +26,10 @@ settings-components-git
 history-service-git
 dbus-cpp
 trust-store-git
-location-service-git
-platform-api-git
-qtunity-appmenutheme-git
 click-git
 accountsservice-ubuntu
 geonames-git
 qmenumodel-git
-ofono
 libqofono-qt5
 system-settings-git
 gmenuharness-bzr
