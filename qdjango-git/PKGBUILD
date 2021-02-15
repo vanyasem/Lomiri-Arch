@@ -15,12 +15,18 @@ depends=(qt5-base)
 makedepends=(git)
 provides=(qdjango)
 conflicts=(qdjango)
-source=('git+https://github.com/jlaine/qdjango.git')
-sha256sums=('SKIP')
+source=('git+https://github.com/jlaine/qdjango.git' qdjango.patch)
+sha256sums=('SKIP'
+            '74e802a40c57b0685a0bd951884d476b273e775551338b5e7e0212fabd53e974')
 
 pkgver() {
   cd ${_pkgname}
   git describe --tags | sed 's/-/+/g'
+}
+
+prepare() {
+  cd ${_pkgname}
+  patch -Np1 -i ../qdjango.patch
 }
 
 build() {
@@ -34,6 +40,5 @@ build() {
 package() {
   cd ${_pkgname}/build
   make INSTALL_ROOT="${pkgdir}/" install
-  rm -r ${pkgdir}/usr/tests/
 }
 # vim:set ts=2 sw=2 et:
